@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>LRC - Login</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
