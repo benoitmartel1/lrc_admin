@@ -11,7 +11,7 @@ jobs:
     - name: Copy folder content recursively to remote
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: /index.htm
+        local: ./index.htm
         remote: scp/public_html/admin
         host: ${{ secrets.host }}
         username: ${{ secrets.user }}
