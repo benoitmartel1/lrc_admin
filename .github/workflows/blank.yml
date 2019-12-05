@@ -7,8 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Parent working dir
-        run: ${{ github.repository }}
+      - name: Checkitout due
+        uses: actions/checkout@v2-beta  
+      - name: Workspace
+        run: $GITHUB_WORKSPACE
       - name: Copy folder content recursively to remote1
         uses: garygrossgarten/github-action-scp@release
         with:
