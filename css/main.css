@@ -1,10 +1,12 @@
 body {
   font-family: "Nunito", sans-serif;
   margin: 0;
-  font-size: 140%;
+  font-size: 20px;
 }
 
 .header {
+  clear: both;
+  overflow: hidden;
   padding: 20px;
   background-color: #2299cb;
   color: white;
