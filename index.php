@@ -24,8 +24,8 @@
 		  <div class="log-info">
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Bienvenue <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">Déconnexion</a> </p>
+    	<div>Bienvenue <strong><?php echo $_SESSION['username']; ?></strong></div>
+    	<div> <a href="index.php?logout='1'" style="color: red;">Déconnexion</a> </div>
 	<?php endif ?>
 </div>
 </header>
