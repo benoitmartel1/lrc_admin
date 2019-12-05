@@ -1,0 +1,13 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 100%;
+}
+header .log-info {
+  float: right;
+}

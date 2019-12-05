@@ -15,25 +15,11 @@
 <html>
 <head>
 	<title>LRC - Panneau de contrôle</title>
-	<link rel="stylesheet" type="text/css" href="registration/style.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="header">
-	<h2>Home Page</h2>
-</div>
 <div class="content">
-  	<!-- notification message -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
   	<header>
 		  <div class="log-info">
     <!-- logged in user information -->
