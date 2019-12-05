@@ -1,1 +1,1 @@
-gogogo
+console.log("loaded");
