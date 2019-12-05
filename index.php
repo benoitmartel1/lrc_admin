@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="content">
-  	<header>
+  	<div class="header">
 		  <div class="log-info">
     <!-- logged in user information -->
 	<?php  if (isset($_SESSION['username'])) : ?>
@@ -31,7 +31,7 @@
 
 	<?php endif ?>
 </div>
-</header>
+</div>
 </div>
 		
 </body>

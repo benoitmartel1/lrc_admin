@@ -4,13 +4,16 @@ body {
   font-size: 140%;
 }
 
-header {
+.header {
   padding: 20px;
   background-color: #2299cb;
   color: white;
 }
-header .log-info {
+.header .log-info {
   float: right;
+}
+.header .log-info div {
+  display: inline;
 }
 .logout {
   color: paleturquoise;
