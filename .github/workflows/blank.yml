@@ -8,11 +8,11 @@ jobs:
 
     steps:
       - name: Parent working dir
-        run: ls ${{ github.repository }}
+        run: ${{ github.repository }}
       - name: Copy folder content recursively to remote1
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ${{ github.repository }}/test
+          local: ${{ github.repository }}
           remote: public_html/admin
           host: ${{ secrets.host }}
           username: ${{ secrets.user }}
