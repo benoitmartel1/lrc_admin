@@ -13,6 +13,6 @@ jobs:
       with:
         local: ./
         remote: ~/public_html/admin
-        host: renaudcoursol.com
-        username: renaudcoursol
-        password: xuY8#VdvNQE8
+        host: ${{ secrets.host }}
+        username: ${{ secrets.user }}
+        password: ${{ secrets.password }}
