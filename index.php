@@ -15,7 +15,7 @@
 <html>
 <head>
 	<title>LRC - Login</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="registration/style.css">
 </head>
 <body>
 
