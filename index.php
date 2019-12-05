@@ -15,7 +15,7 @@
 <html>
 <head>
 	<title>LRC - Panneau de contrôle</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 </head>
 <body>
