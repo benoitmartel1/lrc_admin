@@ -18,6 +18,15 @@ body {
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
 }
+header {
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 100%;
+}
+header .log-info {
+  float: right;
+}
 form,
 .content {
   width: 30%;

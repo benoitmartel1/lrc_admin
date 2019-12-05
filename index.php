@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LRC - Login</title>
+	<title>LRC - Panneau de contrôle</title>
 	<link rel="stylesheet" type="text/css" href="registration/style.css">
 </head>
 <body>
@@ -34,12 +34,15 @@
       	</h3>
       </div>
   	<?php endif ?>
-
+  	<header>
+		  <div class="log-info">
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
+    	<p>Bienvenue <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">Déconnexion</a> </p>
+	<?php endif ?>
+</div>
+</header>
 </div>
 		
 </body>
