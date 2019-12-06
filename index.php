@@ -1,4 +1,5 @@
 <?php 
+  include('php/activities.php');
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
