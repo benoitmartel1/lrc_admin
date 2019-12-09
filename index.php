@@ -14,8 +14,8 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>LRC - Panneau de contrôle</title>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>LRC - Panneau de contr么le</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
