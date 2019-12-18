@@ -20,3 +20,10 @@ body {
 .logout {
   color: paleturquoise;
 }
+.flip-list-view .flip-entry-info {
+  display: inline-block;
+  width: 270px;
+}
+iframe body {
+  overflow: hidden;
+}
