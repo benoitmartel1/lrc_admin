@@ -41,13 +41,17 @@ var options = {
 
 $(programs).each(function(){
 	$(this.Activities).each(function(){
+		var date=new Date(this.StartDate);
 		$('.list').append(
 				`
 				<li>
-				<img class="thumb" src="${this.PictureUrl}"/>
+				<img class="thumb" src="${this.PictureUrl}"/> 
 				<div class="name">${this.Name}</div>
-				<span class="price">${this.Price}</span>
-				<span class="ageMin">${this.Age.Min}</span>
+				<div class="price">${this.Price}</div>
+				<div class="ageMin">${this.Age.Min}</div>
+				<div class="startDate">${this.StartDate}</div>
+				<div class="day">${date.getDay()}</div>
+				<div class="hour">${date.getHours()}</div>
 				</li>
 				`
 		);
@@ -60,3 +64,10 @@ var userList = new List('users', options);
 </body>
 
 </html>
+<!-- userList.filter(function(item) {
+if (item.values().price < 80) {
+   return true;
+} else {
+   return false;
+}
+});  -->
