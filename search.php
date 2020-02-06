@@ -36,7 +36,7 @@ var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
 
 var options = {
-  valueNames: [ 'name', 'price', "ageMin" ] 
+  valueNames: [ 'name', 'price', "ageMin", "day", "hour" ] 
 };
 
 $(programs).each(function(){
@@ -65,7 +65,7 @@ var userList = new List('users', options);
 
 </html>
 <!-- userList.filter(function(item) {
-if (item.values().price < 80) {
+if (item.values().day == 4) {
    return true;
 } else {
    return false;
