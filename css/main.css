@@ -20,6 +20,18 @@ body {
 .logout {
   color: paleturquoise;
 }
+
+ul {
+  list-style: none;
+}
+li {
+  border-bottom: 1px black solid;
+}
+.thumb {
+  width: 100px;
+  height: auto;
+}
+
 .flip-list-view .flip-entry-info {
   display: inline-block;
   width: 270px;
