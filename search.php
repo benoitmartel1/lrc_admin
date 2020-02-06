@@ -17,8 +17,10 @@ console.log(programs);
 var options = {
   valueNames: [ 'name', 'price' ]
 };
-
+$(document).ready(function(){
 var userList = new List('users', options);
+});
+
 
 
 </script>
