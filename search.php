@@ -16,6 +16,10 @@ var options = {
 };
 
 var values = [
+  {
+    name: 'Jonas Arnklint',
+    price: 1985
+  }
 ];
 
 var userList = new List('users', options, values);
