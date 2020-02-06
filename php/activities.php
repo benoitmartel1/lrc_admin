@@ -1,4 +1,6 @@
 <?php
+//This file loads all activities currently offered in a $programs object.
+
 //Authorization obtained through Postman -- https://www.amilia.com/ApiDocs
 $auth_data = array('Authorization: Basic bWFydGVsLmJAZ21haWwuY29tOmxhdXJlbnRtNw==');
 $auth_url = 'https://www.amilia.com/api/v3/authenticate';
@@ -27,22 +29,16 @@ if(!$token){die("Connection Failure");}else{
 	
 	$programs=json_decode($result)->Items;
 
-	//Process the returned items
+	//For each Program, get its activities and add them as a property
     foreach($programs as $program){
         $id=$program->Id;
         $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
         $auth_data = array('Authorization: Bearer '.$token);
         $result=sendHTTPrequest($curl, $auth_url, $auth_data);
 		$activities=json_decode($result)->Items;
+		//Add the activities array to property Activities of currently processed Program.
 		$program->Activities=$activities;
-    //   $activities=$activities->Items;
-    //   foreach($activities as $activity){
-    //       echo $activity->Name.'<br>';
-    //   }
 	};
-	echo json_encode($programs);
 };
-
 curl_close($curl);
-
 ?>
