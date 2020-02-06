@@ -29,6 +29,9 @@ ul {
 li {
   border-bottom: 1px black solid;
 }
+li div {
+  display: inline;
+}
 .thumb {
   width: 100px;
   height: auto;
