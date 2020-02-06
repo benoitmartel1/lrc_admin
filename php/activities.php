@@ -27,7 +27,7 @@ if(!$token){die("Connection Failure");}else{
     $auth_data = array('Authorization: Bearer '.$token);
 	$result=sendHTTPrequest($curl, $auth_url, $auth_data);
 	
-	$programs=json_decode($result, true)->Items;
+	$programs=json_decode($result)->Items;
 
 	//For each Program, get its activities and add them as a property
     foreach($programs as $program){
