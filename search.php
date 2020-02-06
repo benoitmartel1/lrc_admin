@@ -8,10 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="js/jquery-3.4.1.js"></script>
 <script>
-var obj = $.parseJSON('<?php echo json_encode($programs) ?>');
+var obj = '<?php echo json_encode($programs); ?>';
 console.log(obj);
-var obj2 = $.parseJSON('<?php echo json_encode($programsJSON) ?>');
-console.log(obj2);
+var obj= '<?php echo $programsJSON; ?>>'
+console.log(obj);
 </script>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
