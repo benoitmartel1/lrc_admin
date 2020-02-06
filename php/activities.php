@@ -39,7 +39,24 @@ if(!$token){die("Connection Failure");}else{
 		//Add the activities array to property Activities of currently processed Program.
 		$program->Activities=$activities;
 	};
+	$programs=object_to_array($programs);
 	$programs=json_encode($programs);
 };
 curl_close($curl);
+
+function object_to_array($data)
+{
+    if(is_array($data) || is_object($data))
+    {
+        $result = array();
+ 
+        foreach($data as $key => $value) {
+            $result[$key] = $this->object_to_array($value);
+        }
+ 
+        return $result;
+    }
+ 
+    return $data;
+}
 ?>
