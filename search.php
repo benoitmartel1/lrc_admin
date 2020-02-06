@@ -42,7 +42,14 @@ var options = {
 $(programs).each(function(){
 	$(this.Activities).each(function(){
 		$('.list').append(
-			    '<li><img class="thumb" src="'+this.PictureUrl+'"/><div class="name">'+this.Name+'</div><span class="price">'+this.Price+'</span><span class="ageMin">'+this.Age.Min+'</span></li>'
+				`
+				<li>
+				<img class="thumb" src="${this.PictureUrl}"/>
+				<div class="name">${this.Name}</div>
+				<span class="price">${this.Price}</span>
+				<span class="ageMin">${this.Age.Min}</span>
+				</li>
+				`
 		);
 	});
 });
