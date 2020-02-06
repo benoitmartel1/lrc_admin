@@ -25,23 +25,22 @@ if(!$token){die("Connection Failure");}else{
     $auth_data = array('Authorization: Bearer '.$token);
 	$result=sendHTTPrequest($curl, $auth_url, $auth_data);
 	
-	$items=json_decode($result)->Items;
+	$programs=json_decode($result)->Items;
 
-	echo $items;
-	
 	//Process the returned items
-    // foreach($items as $item){
-    //     $id=$item->Id;
-    //     //echo $item->Name.'<br><br>';
-    //     $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
-    //     $auth_data = array('Authorization: Bearer '.$token);
-    //     $result=sendHTTPrequest($curl, $auth_url, $auth_data);
-    //     $activities=json_decode($result);
+    foreach($programs as $program){
+        $id=$program->Id;
+        $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
+        $auth_data = array('Authorization: Bearer '.$token);
+        $result=sendHTTPrequest($curl, $auth_url, $auth_data);
+		$activities=json_decode($result);
+		$program[]=$activities;
     //   $activities=$activities->Items;
     //   foreach($activities as $activity){
     //       echo $activity->Name.'<br>';
     //   }
-    // };
+	};
+	echo json_encode($programs);
 };
 
 curl_close($curl);
