@@ -20,7 +20,9 @@ body {
 .logout {
   color: paleturquoise;
 }
-
+.hidden {
+  display: none;
+}
 ul {
   list-style: none;
 }

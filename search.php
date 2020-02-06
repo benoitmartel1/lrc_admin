@@ -51,9 +51,9 @@ $(programs).each(function(){
 				<div class="price">${this.Price}</div>
 				<div class="ageMin">${this.Age.Min}</div>
 				<div class="startDate">${this.StartDate}</div>
-				<div class="day">${sDate.getDay()}</div>
-				<div class="hour">${sDate.getHours()}</div>
-				<div class="duration">${((eDate.getHours()+eDate.getMinutes()/60)-(sDate.getHours()+sDate.getMinutes()/60))+' hours'}</div>
+				<div class="day hidden">${sDate.getDay()}</div>
+				<div class="hour hidden">${sDate.getHours()}</div>
+				<div class="duration hidden">${(eDate.getHours()+eDate.getMinutes()/60)-(sDate.getHours()+sDate.getMinutes()/60)}</div>
 				</li>
 				`
 		);
@@ -67,7 +67,7 @@ var userList = new List('users', options);
 
 </html>
 <!-- userList.filter(function(item) {
-if (item.values().day == 4) {
+if (item.values().duration.split(' ')[0] < 1) {
    return true;
 } else {
    return false;
