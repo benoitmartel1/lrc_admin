@@ -34,7 +34,7 @@ if(!$token){die("Connection Failure");}else{
         $activities=json_decode($result);
       $activities=$activities->Items;
       foreach($activities as $activity){
-          //echo $activity->Name.'<br>';
+          echo $activity->Name.'<br>';
       }
     };
 };
