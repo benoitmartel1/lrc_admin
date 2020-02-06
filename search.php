@@ -43,19 +43,7 @@ var userList = new List('users', options, values);
     <li>
 <!-- The innerHTML of children with class="name" becomes this items "name" value -->
       <h3 class="name">Jonny Stromberg</h3>
-      <p class="born">1986</p>
-    </li>
-    <li>
-      <h3 class="name">Jonas Arnklint</h3>
-      <p class="born">1985</p>
-    </li>
-    <li>
-      <h3 class="name">Martina Elm</h3>
-      <p class="born">1986</p>
-    </li>
-    <li>
-      <h3 class="name">Gustaf Lindqvist</h3>
-      <p class="born">1983</p>
+      <p class="price">1986</p>
     </li>
   </ul>
 
