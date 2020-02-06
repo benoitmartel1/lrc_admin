@@ -37,23 +37,17 @@ var options = {
   valueNames: [ 'name', 'price' ],
   item: '<li><h3 class="name"></h3><p class="price"></p></li>' 
 };
-var values = [{ 
-    name: 'Jonny Strömberg', 
-    price: 1986 
-  }, 
-  { 
-    name: 'Jonas Arnklint', 
-    price: 1985 
-  }, 
-  { 
-    name: 'Martina Elm', 
-    price: 1986 
-}]; 
 
 
-var userList = new List('users', options, values);
 
+var userList = new List('users', options);
 
+$(programs).each(function(){
+	$(this.Activities).each(function(){
+		userList.add(
+			{name:this.Name,
+				price:this.Price
+			})})});
 
 
 </script>
