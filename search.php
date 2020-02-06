@@ -26,7 +26,9 @@
   </button>
 
 <!-- Child elements of container with class="list" becomes list items -->
-  <ul class="list"></ul>
+  <ul class="list">
+
+  </ul>
 
 </div>
 <script>
@@ -34,21 +36,18 @@ var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
 
 var options = {
-  valueNames: [ 'name', 'price' ],
-  item: '<li><h3 class="name"></h3><p class="price"></p></li>' 
+  valueNames: [ 'name', 'price', "ageMin" ] 
 };
-
-
-
-var userList = new List('users', options);
 
 $(programs).each(function(){
 	$(this.Activities).each(function(){
-		userList.add(
-			{name:this.Name,
-				price:this.Price
-			})})});
+		$('.list').append(
+			    '<li><img class="thumb" src="'+this.PictureUrl+'"/><div class="name">'+this.Name+'</div><span class="price">'+this.Price+'</span><span class="ageMin">'+this.Age.Min+'</span></li>'
+		);
+	});
+});
 
+var userList = new List('users', options);
 
 </script>
 </body>
