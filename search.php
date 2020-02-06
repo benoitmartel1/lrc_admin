@@ -6,12 +6,14 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>LRC - Panneau de contrôle</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="js/jquery-3.4.1.js"></script>
 <script src="js/list.min.js"></script>
 <script>
 var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
-$(document).ready(function(){
+
 var options = {
   valueNames: [ 'name', 'price' ]
 };
@@ -19,11 +21,8 @@ var options = {
 var userList = new List('users', options);
 
 
-});
-
 </script>
-	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 
 <body>
