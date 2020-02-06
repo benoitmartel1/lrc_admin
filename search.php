@@ -21,15 +21,15 @@ var options = {
 };
 var values = [{ 
     name: 'Jonny Strömberg', 
-    born: 1986 
+    price: 1986 
   }, 
   { 
     name: 'Jonas Arnklint', 
-    born: 1985 
+    price: 1985 
   }, 
   { 
     name: 'Martina Elm', 
-    born: 1986 
+    price: 1986 
 }]; 
 
 
