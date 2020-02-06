@@ -40,7 +40,7 @@ if(!$token){die("Connection Failure");}else{
 		$program->Activities=$activities;
 	};
 	// $programsArray=object_to_array($programs);
-	$programs=json_encode($programs);
+	//$programs=json_encode($programs);
 };
 curl_close($curl);
 
