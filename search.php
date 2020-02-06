@@ -11,7 +11,7 @@
 <script>
 var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
-$('document').ready(function(){
+$(document).ready(function(){
 var options = {
   valueNames: [ 'name', 'price' ]
 };
