@@ -34,7 +34,7 @@ if(!$token){die("Connection Failure");}else{
         $auth_data = array('Authorization: Bearer '.$token);
         $result=sendHTTPrequest($curl, $auth_url, $auth_data);
 		$activities=json_decode($result);
-		$program[]=$activities;
+		$program->Activities=$activities;
     //   $activities=$activities->Items;
     //   foreach($activities as $activity){
     //       echo $activity->Name.'<br>';
