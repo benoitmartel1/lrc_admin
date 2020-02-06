@@ -11,6 +11,24 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="js/jquery-3.4.1.js"></script>
 
+
+
+</head>
+
+<body>
+<div id="users">
+
+<!-- class="search" automagically makes an input a search field. -->
+  <input class="search" placeholder="Search" />
+<!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
+  <button class="sort" data-sort="name">
+    Sort
+  </button>
+
+<!-- Child elements of container with class="list" becomes list items -->
+  <ul class="list"></ul>
+
+</div>
 <script>
 var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
@@ -39,22 +57,6 @@ var userList = new List('users', options, values);
 
 
 </script>
-
-</head>
-
-<body>
-<div id="users">
-
-<!-- class="search" automagically makes an input a search field. -->
-  <input class="search" placeholder="Search" />
-<!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
-  <button class="sort" data-sort="name">
-    Sort
-  </button>
-
-<!-- Child elements of container with class="list" becomes list items -->
-  <ul class="list"></ul>
-
-</div>
 </body>
+
 </html>
