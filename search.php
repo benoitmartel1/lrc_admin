@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="js/jquery-3.4.1.js"></script>
 <script>
-var programs = "<?php echo json_encode($programs) ?>";
+var programs = "<?php echo $programs ?>";
 console.log($.parseJSON(programs));
 </script>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
