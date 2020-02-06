@@ -18,6 +18,7 @@ var options = {
   valueNames: [ 'name', 'price' ]
 };
 $(document).ready(function(){
+	console.log('ready');
 var userList = new List('users', options);
 });
 
