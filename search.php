@@ -8,9 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="js/jquery-3.4.1.js"></script>
 <script>
-var obj = '<?php echo json_encode($programs); ?>';
+var obj = <?php echo json_encode($programs); ?>;
 console.log(obj);
-var obj= '<?php echo $programsJSON; ?>>'
+var obj= <?php echo $programsJSON; ?>>;
 console.log(obj);
 </script>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
