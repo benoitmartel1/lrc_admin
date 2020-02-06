@@ -15,14 +15,8 @@ var options = {
   valueNames: [ 'name', 'price' ]
 };
 
-var values = [
-  {
-    name: 'Jonas Arnklint',
-    price: 1985
-  }
-];
 
-var userList = new List('users', options, values);
+var userList = new List('users', options);
 </script>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
