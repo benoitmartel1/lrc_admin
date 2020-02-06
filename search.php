@@ -36,12 +36,13 @@ var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
 
 var options = {
-  valueNames: [ 'name', 'price', "ageMin", "day", "hour" ] 
+  valueNames: [ 'name', 'price', "ageMin", "day", "hour", "duration" ] 
 };
 
 $(programs).each(function(){
 	$(this.Activities).each(function(){
-		var date=new Date(this.StartDate);
+		var sDate=new Date(this.StartDate);
+		var eDate=new Date(this.EndDate);
 		$('.list').append(
 				`
 				<li>
@@ -50,8 +51,9 @@ $(programs).each(function(){
 				<div class="price">${this.Price}</div>
 				<div class="ageMin">${this.Age.Min}</div>
 				<div class="startDate">${this.StartDate}</div>
-				<div class="day">${date.getDay()}</div>
-				<div class="hour">${date.getHours()}</div>
+				<div class="day">${sDate.getDay()}</div>
+				<div class="hour">${sDate.getHours()}</div>
+				<div class="duration">${(eDate.getHours()-sDate.getHours())+'hours'}</div>
 				</li>
 				`
 		);
