@@ -39,8 +39,8 @@ if(!$token){die("Connection Failure");}else{
 		//Add the activities array to property Activities of currently processed Program.
 		$program->Activities=$activities;
 	};
-	$programs=object_to_array($programs);
-	$programs=json_encode($programs);
+	$programsArray=object_to_array($programs);
+	$programs=json_encode($programsArray);
 };
 curl_close($curl);
 
