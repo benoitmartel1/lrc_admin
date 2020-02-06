@@ -53,7 +53,7 @@ $(programs).each(function(){
 				<div class="startDate">${this.StartDate}</div>
 				<div class="day">${sDate.getDay()}</div>
 				<div class="hour">${sDate.getHours()}</div>
-				<div class="duration">${((eDate.getHours()+eDate.getMinutes()/60)-(sDate.getHours()+eDate.getMinutes()/60))+' hours'}</div>
+				<div class="duration">${((eDate.getHours()+eDate.getMinutes()/60)-(sDate.getHours()+sDate.getMinutes()/60))+' hours'}</div>
 				</li>
 				`
 		);
