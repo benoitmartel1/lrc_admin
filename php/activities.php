@@ -24,7 +24,7 @@ if(!$token){die("Connection Failure");}else{
     $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs';
     $auth_data = array('Authorization: Bearer '.$token);
 	$result=sendHTTPrequest($curl, $auth_url, $auth_data);
-	echo $result;
+echo "<pre>" . $result . "</pre>";
 	// $items=json_decode($result)->Items;
 
 	//Process the returned items
