@@ -34,7 +34,7 @@ $(document).ready(function() {
 				<div class="ageMin">${this.Age.Min}</div>
 				<div class="ageMax">${this.Age.Max}</div>
 				<div class="startDate">${this.StartDate}</div>
-				<div class="day hidden">${sDate.getDay()}</div>
+				<div class="day hidden">${daysOfWeek[sDate.getDay()]}</div>
 				<div class="hour hidden">${sDate.getHours()}</div>
 				<div class="subCategory">${this.SubCategoryName}</div>
 				<div class="duration hidden">${eDate.getHours() +
