@@ -5,9 +5,9 @@ $(document).ready(function() {
     userList.filter(function(item) {
       var minCheck = item.values().ageMin <= targetedAge ? true : false;
       var preMaxCheck = item.values().ageMax > targetedAge ? true : false;
-      var maxCheck = item.values().ageMax == null ? true : preMaxCheck;
+      var maxCheck = item.values().ageMax == "null" ? true : preMaxCheck;
       console.log(
-        item.values().ageMax + " : " + (item.values().ageMax == null)
+        item.values().ageMax + " : " + (item.values().ageMax == "null")
       );
       if (minCheck && maxCheck) {
         return true;
