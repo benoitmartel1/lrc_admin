@@ -1,3 +1,7 @@
+$("#ageFilter a").click(function(e) {
+  alert($(this).text());
+});
+
 $(document).ready(function() {
   $(programs).each(function() {
     $(this.Activities).each(function() {
