@@ -8,6 +8,9 @@ $(document).ready(function() {
         item.values().ageMax == null || item.values().ageMax > targetedAge
           ? true
           : false;
+      console.log(item.values().ageMin + " : " + item.values().ageMax);
+      console.log(minCheck + " : " + maxCheck);
+      console.log("\n");
       if (minCheck && maxCheck) {
         return true;
       } else {
