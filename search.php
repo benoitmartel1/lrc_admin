@@ -32,6 +32,8 @@ console.log(programs);
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" data="18" href="#">Adulte</a>
     <div class="dropdown-divider"></div>
+	    <a class="dropdown-item" data="18" href="#">18</a>
+		    <a class="dropdown-item" data="18" href="#">Bachibouzouk</a>
   </div>
 </div>
 </div>
