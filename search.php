@@ -12,7 +12,7 @@
 <script src="js/jquery-3.4.1.js"></script>
 <script src="js/text_FR.js"></script>
 <script>
-var programs = <? php echo json_encode($programs); ?>;
+var programs = <?php echo json_encode($programs); ?>;
 console.log(programs);
 </script>
 <script src="js/search.js"></script>
