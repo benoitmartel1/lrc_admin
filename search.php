@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="js/jquery-3.4.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="js/text_FR.js"></script>
 <script>
 var programs = <?php echo json_encode($programs); ?>;
