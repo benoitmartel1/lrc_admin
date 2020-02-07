@@ -1,9 +1,10 @@
-$(programs).each(function() {
-  $(this.Activities).each(function() {
-    var sDate = new Date(this.StartDate);
-    var eDate = new Date(this.EndDate);
-    $(".list").append(
-      `
+$(document).ready(function() {
+  $(programs).each(function() {
+    $(this.Activities).each(function() {
+      var sDate = new Date(this.StartDate);
+      var eDate = new Date(this.EndDate);
+      $(".list").append(
+        `
 				<li>
 				<div class="name">${this.Name}</div>
 				<div class="price">${this.Price}</div>
@@ -18,6 +19,7 @@ $(programs).each(function() {
           (sDate.getHours() + sDate.getMinutes() / 60)}</div>
 				</li>
 				`
-    );
+      );
+    });
   });
 });
