@@ -24,15 +24,16 @@ console.log(programs);
 
 <body>
 <div class="filters">
-  <div id="ageFilter" class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Âge
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
+<div class="dropdown" id="ageFilter">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" data="18" href="#">Adulte</a>
+    <a class="dropdown-item" data="7" href="#">7</a>
+    <a class="dropdown-item" data="3" href="#">3</a>
   </div>
+</div>
 </div>
 
 
@@ -55,10 +56,3 @@ console.log(programs);
 </body>
 
 </html>
-<!-- userList.filter(function(item) {
-if (item.values().duration < 1) {
-   return true;
-} else {
-   return false;
-}
-});  -->

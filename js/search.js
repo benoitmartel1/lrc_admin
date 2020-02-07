@@ -1,7 +1,19 @@
 $(document).ready(function() {
-  $("#ageFilter a").click(function(e) {
-    console.log("clicked");
-    alert($(this).text());
+  $("#ageFilter a").click(function() {
+    console.log($(this).attr("data"));
+    var targetedAge = $(this).attr("data");
+    userList.filter(function(item) {
+      var minCheck = item.values().ageMin <= targetedAge ? true : false;
+      var maxCheck =
+        item.values().ageMax == null || item.values().ageMax > targetedAge
+          ? true
+          : false;
+      if (minCheck && maxCheck) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   });
   $(programs).each(function() {
     $(this.Activities).each(function() {
