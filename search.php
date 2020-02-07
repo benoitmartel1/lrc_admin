@@ -10,7 +10,12 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="js/jquery-3.4.1.js"></script>
-
+<script src="js/text_FR.js"></script>
+<script>
+var programs = <? php echo json_encode($programs); ?>;
+console.log(programs);
+</script>
+<script src="js/search.js"></script>
 
 
 </head>
@@ -32,42 +37,16 @@
 
 </div>
 <script>
-var programs = <?php echo json_encode($programs); ?>;
-console.log(programs);
-
 var options = {
-  valueNames: [ 'name', 'price', "ageMin", "day", "hour", "duration" ] 
+  valueNames: [ 'name', 'price', "ageMin","ageMax", "day", "hour", "duration", "subCategory" ] 
 };
-
-$(programs).each(function(){
-	$(this.Activities).each(function(){
-		var sDate=new Date(this.StartDate);
-		var eDate=new Date(this.EndDate);
-		$('.list').append(
-				`
-				<li>
-				<img class="thumb" src="${this.PictureUrl}"/> 
-				<div class="name">${this.Name}</div>
-				<div class="price">${this.Price}</div>
-				<div class="ageMin">${this.Age.Min}</div>
-				<div class="startDate">${this.StartDate}</div>
-				<div class="day hidden">${sDate.getDay()}</div>
-				<div class="hour hidden">${sDate.getHours()}</div>
-				<div class="duration hidden">${(eDate.getHours()+eDate.getMinutes()/60)-(sDate.getHours()+sDate.getMinutes()/60)}</div>
-				</li>
-				`
-		);
-	});
-});
-
 var userList = new List('users', options);
-
 </script>
 </body>
 
 </html>
 <!-- userList.filter(function(item) {
-if (item.values().duration.split(' ')[0] < 1) {
+if (item.values().duration < 1) {
    return true;
 } else {
    return false;
