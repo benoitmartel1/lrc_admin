@@ -1,4 +1,5 @@
 $("#ageFilter a").click(function(e) {
+  console.log("clicked");
   alert($(this).text());
 });
 
