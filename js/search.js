@@ -1,14 +1,20 @@
 $(document).ready(function() {
+  for (i = 17; i > 0; i++) {
+    $("#ageFilter .dropdown-menu").append(
+      '<a class="dropdown-item" data="' + i + '" href="#">' + i + "</a>"
+    );
+  }
+
   $("#ageFilter a").click(function() {
     var targetedAge = parseInt($(this).attr("data"));
 
     userList.filter(function(item) {
       var minCheck = item.values().ageMin <= targetedAge ? true : false;
-      var preMaxCheck = item.values().ageMax > targetedAge ? true : false;
-      var maxCheck = item.values().ageMax == "null" ? true : preMaxCheck;
-      console.log(
-        item.values().ageMax + " : " + (item.values().ageMax == "null")
-      );
+      var maxCheck =
+        item.values().ageMax > targetedAge || item.values().ageMax == "null"
+          ? true
+          : false;
+
       if (minCheck && maxCheck) {
         return true;
       } else {
