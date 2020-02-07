@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  console.log(daysOfWeek[2]);
   for (i = 17; i > 0; i--) {
     $("#ageFilter .dropdown-menu").append(
       '<a class="dropdown-item" data="' + i + '" href="#">' + i + "</a>"
@@ -26,6 +27,8 @@ $(document).ready(function() {
     $(this.Activities).each(function() {
       var sDate = new Date(this.StartDate);
       var eDate = new Date(this.EndDate);
+      console.log(sDate.getDay());
+      console.log(daysOfWeek[sDate.getDay()]);
       $(".list").append(
         `
 				<li>

@@ -23,6 +23,7 @@ console.log(programs);
 
 <body>
 <div class="filters">
+<div class="activeFilters"></div>
 <div class="dropdown" id="ageFilter">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Âge
