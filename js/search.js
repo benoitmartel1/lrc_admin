@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  for (i = 17; i > 0; i++) {
+  for (i = 17; i > 0; i--) {
     $("#ageFilter .dropdown-menu").append(
       '<a class="dropdown-item" data="' + i + '" href="#">' + i + "</a>"
     );
