@@ -1,8 +1,3 @@
-for (i = 17; i > 0; i--) {
-  $("#ageFilter .dropdown-menu").append(
-    '<a class="dropdown-item" data="' + i + '" href="#">' + i + "</a>"
-  );
-}
 $(document).ready(function() {
   $("#ageFilter a").click(function() {
     var targetedAge = parseInt($(this).attr("data"));

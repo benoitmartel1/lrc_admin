@@ -33,8 +33,14 @@ console.log(programs);
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" data="18" href="#">Adulte</a>
     <div class="dropdown-divider"></div>
-	    <a class="dropdown-item" data="18" href="#">18</a>
-		    <a class="dropdown-item" data="18" href="#">Bachibouzouk</a>
+	<a class="dropdown-item" data="17" href="#">17</a>
+	<a class="dropdown-item" data="16" href="#">16</a>
+	<a class="dropdown-item" data="15" href="#">15</a>
+	<a class="dropdown-item" data="14" href="#">14</a>
+	<a class="dropdown-item" data="13" href="#">13</a>
+	<a class="dropdown-item" data="12" href="#">12</a>
+	<a class="dropdown-item" data="11" href="#">11</a>
+	<a class="dropdown-item" data="10" href="#">10</a>
   </div>
 </div>
 </div>
