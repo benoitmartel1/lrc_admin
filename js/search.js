@@ -1,9 +1,8 @@
-$("#ageFilter a").click(function(e) {
-  console.log("clicked");
-  alert($(this).text());
-});
-
 $(document).ready(function() {
+  $("#ageFilter a").click(function(e) {
+    console.log("clicked");
+    alert($(this).text());
+  });
   $(programs).each(function() {
     $(this.Activities).each(function() {
       var sDate = new Date(this.StartDate);
