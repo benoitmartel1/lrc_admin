@@ -36,12 +36,7 @@ console.log(programs);
   </ul>
 
 </div>
-<script>
-var options = {
-  valueNames: [ 'name', 'price', "ageMin","ageMax", "day", "hour", "duration", "subCategory" ] 
-};
-var userList = new List('users', options);
-</script>
+
 </body>
 
 </html>

@@ -22,4 +22,17 @@ $(document).ready(function() {
       );
     });
   });
+  var options = {
+    valueNames: [
+      "name",
+      "price",
+      "ageMin",
+      "ageMax",
+      "day",
+      "hour",
+      "duration",
+      "subCategory"
+    ]
+  };
+  var userList = new List("users", options);
 });
