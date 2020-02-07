@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#ageFilter a").click(function() {
-    console.log($(this).attr("data"));
-    var targetedAge = $(this).attr("data");
+    var targetedAge = parseInt($(this).attr("data"));
+    console.log(targetedAge);
     userList.filter(function(item) {
       var minCheck = item.values().ageMin <= targetedAge ? true : false;
       var maxCheck =
