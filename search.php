@@ -23,17 +23,15 @@ console.log(programs);
 
 <body>
 <div class="filters">
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Âge
-  </button>
-  <div id="ageFilter" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Adulte</a>
-	<div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">18</a>
-    <a class="dropdown-item" href="#">17</a>
+  <div id="ageFilter" class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Âge
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
   </div>
-</div>
 </div>
 
 
