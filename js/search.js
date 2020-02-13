@@ -32,7 +32,7 @@ $(document).ready(function() {
       $(".list").append(
         `
 				<li>
-				<div class="header">
+				<div class="main">
 					<div class="name">${this.Name}</div>
 					<div class="price">${this.Price}</div>
 					<div class="age">${this.AgeSummary}</div>

@@ -1,16 +1,21 @@
 .list li {
   width: 100%;
   background-color: white;
+  border-bottom: 1px black solid;
 }
-.list li div {
+.header div,
+.details div {
   display: inline-block;
 }
 .details {
   display: none;
 }
-.header .name {
-  width: 40%;
+.main .name {
+  width: 60%;
 }
-.header .price {
+.main .price {
   color: red;
+}
+.signup {
+  float: right;
 }
