@@ -36,7 +36,7 @@ $(document).ready(function() {
 					<div class="name">${this.Name}</div>
 					<div class="price">${this.Price}</div>
 					<div class="age">${this.AgeSummary}</div>
-					<div class="isFull">${SpotsRemaining > 0 ? "" : "FULL"}</div>
+					<div class="isFull">${this.SpotsRemaining > 0 ? "" : "FULL"}</div>
 					<button class="signup">S'inscrire</button>
 				</div>
 				<div class="details">
