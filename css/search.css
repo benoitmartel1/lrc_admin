@@ -1,0 +1,13 @@
+.list li {
+  width: 100%;
+  background-color: white;
+}
+.details {
+  display: none;
+}
+.header .name {
+  width: 40%;
+}
+.header .price {
+  color: red;
+}
