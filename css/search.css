@@ -3,7 +3,7 @@
   background-color: white;
   border-bottom: 1px black solid;
 }
-.header div,
+.main div,
 .details div {
   display: inline-block;
 }

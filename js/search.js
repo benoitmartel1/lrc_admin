@@ -34,9 +34,10 @@ $(document).ready(function() {
 				<li>
 				<div class="main">
 					<div class="name">${this.Name}</div>
-					<div class="price">${this.Price}</div>
+					<div class="price">${this.Price}<span> $</span></div>
 					<div class="age">${this.AgeSummary}</div>
 					<div class="isFull">${this.SpotsRemaining > 0 ? "" : "FULL"}</div>
+					<div class="day">${daysOfWeek[sDate.getDay()]}</div>
 					<button class="signup">S'inscrire</button>
 				</div>
 				<div class="details">
@@ -57,7 +58,7 @@ $(document).ready(function() {
 					<div class="subCategory">${this.SubCategoryName}</div>
 				</div>
 
-				<div class="day">${daysOfWeek[sDate.getDay()]}</div>
+
 	
 
 				</li>
