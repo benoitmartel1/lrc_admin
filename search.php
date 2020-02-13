@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>LRC - Panneau de contrôle</title>
 
 
@@ -51,7 +52,7 @@ console.log(programs);
 <div id="users">
 
 <!-- class="search" automagically makes an input a search field. -->
-  <input class="search" placeholder="Search" />
+  <input class="search" placeholder="Quelle activité cherchez-vous?" />
 <!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
   <button class="sort" data-sort="name">
     Sort
