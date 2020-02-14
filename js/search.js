@@ -16,11 +16,12 @@ $(document).ready(function() {
       }
     });
   });
-
-  $(".main").click(() => {
+  //-- When you click on li item, the div with details info toggles.
+  $("li").click(() => {
+    console.log(this);
     $(this)
-      .siblings(".details")
-      .toggle();
+      .find(".details")
+      .slideToggle();
   });
 
   $(programs).each(function() {
