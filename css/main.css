@@ -24,6 +24,7 @@ body {
   display: none;
 }
 ul {
+  padding: 0;
   list-style: none;
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
