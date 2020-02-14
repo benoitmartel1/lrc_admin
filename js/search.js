@@ -39,7 +39,11 @@ $(function() {
 					<div class="age">${this.Age.Min + " à " + this.Age.Max + " ans"}</div>
 					${
             this.SpotsRemaining > 0
-              ? "<button class='signup'>S'inscrire</button>"
+              ? "<a class='signup' target='_blank' href='https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/" +
+                this.Id +
+                "?quickRegisterId=" +
+                this.Id +
+                "'>S'inscrire</a>"
               : "<div class='isFull'>FULL</div>"
           }
 					<div class="day">${daysOfWeek[sDate.getDay()]}</div>
