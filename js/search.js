@@ -79,11 +79,11 @@ $(function() {
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
     var target = $(e.target).closest("li");
-    if (!$(target).hasClass("active")) {
+    if ($(target).find("img").length == 0) {
       var pictureUrl = $(target)
         .find(".thumb")
         .text();
-      $(".details", target).append("<img src=" + pictureUrl + ">");
+      $(".details", target).prepend("<img src=" + pictureUrl + ">");
     }
     $(target).toggleClass("active");
     $(".details", target).slideToggle("fast");
