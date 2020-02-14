@@ -73,9 +73,9 @@ $(function() {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
-    var context = $(e.target).closest("li");
-    console.log(context);
-    $(".details", context).slideToggle("fast");
+    var target = $(e.target).closest("li");
+    $(target).toggleClass("active");
+    $(".details", target).slideToggle("fast");
   });
 
   var options = {

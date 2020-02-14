@@ -1,12 +1,12 @@
 .list li {
-  background-color: white;
+  background-color: #ddd;
   padding: 2px 10px;
   border-radius: 5px;
   margin-bottom: 5px;
   width: 100%;
 }
 .list li:hover {
-  background-color: #bbb;
+  background-color: #ccc;
 }
 .main div,
 .details div {
