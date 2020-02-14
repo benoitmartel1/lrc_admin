@@ -73,6 +73,7 @@ $(function() {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(event => {
+    event.stopPropagation();
     console.log($(event.target));
     $(".details", event.target).slideToggle("fast");
   });
