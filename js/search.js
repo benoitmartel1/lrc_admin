@@ -69,7 +69,7 @@ $(document).ready(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $("li").click(function() {
+  $("li").on("click", function() {
     console.log(this);
     $(this)
       .find(".details")
