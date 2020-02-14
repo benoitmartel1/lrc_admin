@@ -83,7 +83,7 @@ $(function() {
       var pictureUrl = $(target)
         .find("thumb")
         .text();
-      $(".details", target).append("<img src='" + pictureUrl + "'>");
+      $(".details", target).append("<img src=" + pictureUrl + ">");
     }
     $(target).toggleClass("active");
     $(".details", target).slideToggle("fast");
