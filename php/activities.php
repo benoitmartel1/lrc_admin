@@ -43,7 +43,7 @@ if(!$token){die("Connection Failure");}else{
 	        $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/events?from=2020-01-01&to=2020-12-30';
 			$staff=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
 			foreach($staff as $item){
-				print_r($item->Activity."<br>");
+				print_r($item, true);
 			}
 
 
