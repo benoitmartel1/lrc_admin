@@ -72,9 +72,9 @@ $(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $("li").click(() => {
-    var context = $(this).closest("li");
-    console.log($(this).closest("li"));
+  $("li").click(e => {
+    var context = $(e.target).closest("li");
+    console.log(context);
     $(".details", context).slideToggle("fast");
   });
 
