@@ -73,9 +73,7 @@ $(function() {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(() => {
-    $(this)
-      .find(".details")
-      .slideToggle("fast");
+    $(".details", this).slideToggle("fast");
   });
 
   var options = {
