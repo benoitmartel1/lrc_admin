@@ -49,10 +49,10 @@ if(!$token){die("Connection Failure");}else{
 				print_r($id);
 	        	$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/activities/'.$id.'/persons';
         		$persons=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-			// foreach($persons as $person){
-			// 	print_r()
-			// };
-				  print_r($persons); echo "</pre>";
+			foreach($persons as $person){
+				print_r($person->FullName)
+			};
+				   echo "</pre>";
 			}
 
 
