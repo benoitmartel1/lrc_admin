@@ -31,6 +31,10 @@ console.log(programs);
 </head>
 
 <body>
+<div class="wrapper">
+
+
+
 <div class="filters">
 <div class="activeFilters"></div>
 <div class="dropdown" id="ageFilter">
@@ -68,7 +72,7 @@ console.log(programs);
   </ul>
 
 </div>
-
+</div>
 </body>
 
 </html>
