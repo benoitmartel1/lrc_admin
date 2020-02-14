@@ -73,6 +73,7 @@ $(function() {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(() => {
+    console.log($(this));
     $(".details", this).slideToggle("fast");
   });
 
