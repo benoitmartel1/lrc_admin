@@ -34,7 +34,7 @@ $(function() {
         `
 				<li class="container">
 				<div class="row main">
-					<div class="name col-5 col-sm-12">${this.Name}</div>
+					<div class="name col-12 col-md-5">${this.Name}</div>
 					<div class="price">${this.Price}<span> $</span></div>
 					<div class="age">${this.Age.Min + " à " + this.Age.Max + " ans"}</div>
 					${
