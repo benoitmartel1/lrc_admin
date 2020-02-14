@@ -81,7 +81,7 @@ $(function() {
     var target = $(e.target).closest("li");
     if (!$(target).hasClass("active")) {
       var pictureUrl = $(target)
-        .find("thumb")
+        .find(".thumb")
         .text();
       $(".details", target).append("<img src=" + pictureUrl + ">");
     }
