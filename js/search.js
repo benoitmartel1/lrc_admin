@@ -69,8 +69,10 @@ $(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $(".list li").on("click", function() {
-    $(this).hide();
+  $(".list li").on("click", () => {
+    $(this)
+      .find(".details")
+      .slideToggle("fast");
   });
 
   var options = {
