@@ -65,15 +65,17 @@ $(document).ready(function() {
 				</li>
 				`
       );
-      //-- When you click on li item, the div with details info toggles.
-      $("li").click(() => {
-        console.log(this);
-        $(this)
-          .find(".details")
-          .slideToggle();
-      });
     });
   });
+
+  //-- When you click on li item, the div with details info toggles.
+  $("li").click(() => {
+    console.log(this);
+    $(this)
+      .find(".details")
+      .slideToggle();
+  });
+
   var options = {
     valueNames: [
       "name",
