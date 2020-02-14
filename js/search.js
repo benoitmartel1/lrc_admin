@@ -16,6 +16,13 @@ $(document).ready(function() {
       }
     });
   });
+
+  $(".main").click(() => {
+    $(this)
+      .siblings(".details")
+      .toggle();
+  });
+
   $(programs).each(function() {
     $(this.Activities).each(function() {
       var sDate = new Date(this.StartDate);
