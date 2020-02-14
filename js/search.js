@@ -72,8 +72,8 @@ $(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $(".list li").on("click", e => {
-    $(e.target)
+  $("li").click(() => {
+    $(this)
       .find(".details")
       .slideToggle("fast");
   });
