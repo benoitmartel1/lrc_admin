@@ -16,13 +16,6 @@ $(document).ready(function() {
       }
     });
   });
-  //-- When you click on li item, the div with details info toggles.
-  $("li").click(() => {
-    console.log(this);
-    $(this)
-      .find(".details")
-      .slideToggle();
-  });
 
   $(programs).each(function() {
     $(this.Activities).each(function() {
@@ -72,6 +65,13 @@ $(document).ready(function() {
 				</li>
 				`
       );
+      //-- When you click on li item, the div with details info toggles.
+      $("li").click(() => {
+        console.log(this);
+        $(this)
+          .find(".details")
+          .slideToggle();
+      });
     });
   });
   var options = {
