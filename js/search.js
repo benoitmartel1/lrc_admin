@@ -57,6 +57,7 @@ $(function() {
 					<div class="subCategory">${this.SubCategoryName}</div>
 				</div>
 				<div class="hidden">
+					<div class="thumb">${this.PictureUrl}</div>
 					<div class="keywords">${keywords}</div>
 					<div class="ageMin">${this.Age.Min}</div>
 					<div class="ageMax">${this.Age.Max}</div>
@@ -73,11 +74,15 @@ $(function() {
 				`
       );
     });
-  });
+  });s
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
-    var target = $(e.target).closest("li");
+	var target = $(e.target).closest("li");
+	if (!$(target).hasClass('active')) {
+		var pictureUrl=$(target).find('thumb').text();
+		$(".details", target).append("<img src='"+pictureUrl+"'>");
+	};
     $(target).toggleClass("active");
     $(".details", target).slideToggle("fast");
   });
