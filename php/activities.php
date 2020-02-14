@@ -42,7 +42,7 @@ if(!$token){die("Connection Failure");}else{
 
 	        $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/staff';
 			$staff=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-			echo $staff;
+			print_r($staff);
 
 };
 curl_close($curl);
