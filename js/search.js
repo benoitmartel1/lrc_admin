@@ -74,15 +74,17 @@ $(function() {
 				`
       );
     });
-  });s
+  });
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
-	var target = $(e.target).closest("li");
-	if (!$(target).hasClass('active')) {
-		var pictureUrl=$(target).find('thumb').text();
-		$(".details", target).append("<img src='"+pictureUrl+"'>");
-	};
+    var target = $(e.target).closest("li");
+    if (!$(target).hasClass("active")) {
+      var pictureUrl = $(target)
+        .find("thumb")
+        .text();
+      $(".details", target).append("<img src='" + pictureUrl + "'>");
+    }
     $(target).toggleClass("active");
     $(".details", target).slideToggle("fast");
   });
