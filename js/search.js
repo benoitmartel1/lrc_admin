@@ -32,9 +32,9 @@ $(function() {
 
       $(".list").append(
         `
-				<li>
-				<div class="main">
-					<div class="name">${this.Name}</div>
+				<li class="container">
+				<div class="row main">
+					<div class="name col-5 col-sm-12">${this.Name}</div>
 					<div class="price">${this.Price}<span> $</span></div>
 					<div class="age">${this.Age.Min + " à " + this.Age.Max + " ans"}</div>
 					${
@@ -48,7 +48,7 @@ $(function() {
           }
 					<div class="day">${daysOfWeek[sDate.getDay()]}</div>
 				</div>
-				<div class="details">
+				<div class="row details">
 					<div class="description">${this.Description}</div>
 					<div class="prerequisite">${this.Prerequisite}</div>
 					<div class="note">${this.Note}</div>
@@ -56,7 +56,7 @@ $(function() {
 					<div class="duration">${duration}</div>
 					<div class="subCategory">${this.SubCategoryName}</div>
 				</div>
-				<div class="hidden">
+				<div class="row hidden">
 					<div class="thumb">${this.PictureUrl}</div>
 					<div class="keywords">${keywords}</div>
 					<div class="ageMin">${this.Age.Min}</div>
