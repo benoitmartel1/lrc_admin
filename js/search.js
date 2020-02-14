@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
   $("#ageFilter a").click(function() {
     var targetedAge = parseInt($(this).attr("data"));
 
@@ -69,10 +69,8 @@ $(document).ready(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $(".list li").on("click", function(e) {
-    $(e.target)
-      .find(".details")
-      .slideToggle();
+  $(".list li").on("click", function() {
+    $(this).hide();
   });
 
   var options = {
