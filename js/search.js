@@ -36,7 +36,7 @@ $(function() {
 				<div class="main">
 					<div class="name">${this.Name}</div>
 					<div class="price">${this.Price}<span> $</span></div>
-					<div class="age">${this.AgeSummary}</div>
+					<div class="age">${this.Age.Min + " à " + this.Age.Max + " ans"}</div>
 					${
             this.SpotsRemaining > 0
               ? "<button class='signup'>S'inscrire</button>"
