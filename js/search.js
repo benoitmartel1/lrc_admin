@@ -37,9 +37,12 @@ $(function() {
 					<div class="name">${this.Name}</div>
 					<div class="price">${this.Price}<span> $</span></div>
 					<div class="age">${this.AgeSummary}</div>
-					<div class="isFull">${this.SpotsRemaining > 0 ? "" : "FULL"}</div>
+					${
+            this.SpotsRemaining > 0
+              ? "<button class='signup'>S'inscrire</button>"
+              : "<div class='isFull'>FULL</div>"
+          }
 					<div class="day">${daysOfWeek[sDate.getDay()]}</div>
-					<button class="signup">S'inscrire</button>
 				</div>
 				<div class="details">
 					<div class="description">${this.Description}</div>
@@ -69,8 +72,8 @@ $(function() {
   });
 
   //-- When you click on li item, the div with details info toggles.
-  $(".list li").on("click", () => {
-    $(this)
+  $(".list li").on("click", e => {
+    $(e.target)
       .find(".details")
       .slideToggle("fast");
   });
