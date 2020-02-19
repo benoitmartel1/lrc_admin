@@ -1,5 +1,4 @@
 <?php 
-  include('php/activities.php');
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
@@ -11,11 +10,18 @@
   	unset($_SESSION['username']);
   	header("location: registration/login.php");
   }
+
+ include('php/staff.php');
+ 
+?>
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>LRC - Panneau de contr么le</title>
+	<title>LRC - Panneau de contrôle</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -31,10 +37,13 @@
 
 
 	<?php endif ?>
+		</div>
+	</div>
+
+
+
+
 </div>
-</div>
-</div>
-		<!-- <iframe src="https://drive.google.com/embeddedfolderview?id=1hsuRy_H6ATRs7XRrLxH14Yrh5YLEx-ix#list" style="width:100%; height:600px; border:0;"></iframe> -->
 
 </body>
 </html>
