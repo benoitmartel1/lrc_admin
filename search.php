@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 <script>
-var programs = <?php echo json_encode($programs); ?>;
+var programs = <?php echo json_encode($programs) ?>;
 console.log(programs);
 </script>
 
