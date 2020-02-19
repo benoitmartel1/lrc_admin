@@ -29,8 +29,8 @@
   crossorigin="anonymous"></script>
 <script>
 var staff = <?php echo json_encode($staff); ?>;
-$(staff).each(()=>{
-	console.log($(this).nom);
+staff.forEach((item)=>{
+	console.log(item);
 });
 </script>
 
