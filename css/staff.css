@@ -6,6 +6,9 @@
   margin-bottom: 5px;
   width: 100%;
 }
+.list li div {
+display: inline-block;
+}
 .list li:hover {
   background-color:#ddd;
 }
