@@ -41,7 +41,7 @@
 		</div>
 	</div>
 
-<?php printf($staff); ?>;
+<?php print_r($staff); ?>;
 
 
 </div>
