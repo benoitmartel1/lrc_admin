@@ -30,7 +30,12 @@
 <script>
 var staff = <?php echo json_encode($staff); ?>;
 staff.forEach((item)=>{
-	console.log(item);
+	$('.staff-list').append( `
+				<li id="${item.id}">
+				<div>${item.nom.toUpperCase()+" "+item.prenom}<div>
+				</li>
+				`);
+	// console.log(item);
 });
 </script>
 

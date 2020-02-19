@@ -6,11 +6,11 @@ if (!$db->set_charset("utf8")) {
     printf("Error loading character set utf8: %s\n", $db->error);
     exit();
 } else {
-	
+
 }
 
 
-$user_check_query = "SELECT nom, prenom, email, phone, cell FROM staff";
+$user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM staff";
   $result = mysqli_query($db, $user_check_query);
 $staff = $result->fetch_all( MYSQLI_ASSOC );
 ?>
