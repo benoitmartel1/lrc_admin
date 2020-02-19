@@ -30,7 +30,7 @@
 <script>
 var staff = <?php echo json_encode($staff); ?>;
 $(staff).each(()=>{
-	console.log(this.name);
+	console.log(this.nom);
 });
 </script>
 
