@@ -29,16 +29,8 @@
   crossorigin="anonymous"></script>
 <script>
 var staff = <?php echo json_encode($staff); ?>;
-staff.forEach((item)=>{
-	$('.staff-list').append( `
-				<li id="${item.id}">
-				<div>${item.nom.toUpperCase()} ${item.prenom}</div>
-				</li>
-				`);
-	// console.log(item);
-});
 </script>
-
+	<script src="js/staff.js"></script>
 </head>
 <body>
 <div class="content">
@@ -54,8 +46,21 @@ staff.forEach((item)=>{
 		</div>
 	</div>
 
-		<ul class="staff-list"></ul>
+<div id="staff">
 
+<!-- class="search" automagically makes an input a search field. -->
+  <input class="search" placeholder="" />
+<!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
+  <button class="sort" data-sort="name">
+    Sort
+  </button>
+
+<!-- Child elements of container with class="list" becomes list items -->
+  <ul class="list">
+
+  </ul>
+
+</div>
 
 </div>
 
