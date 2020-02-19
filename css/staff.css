@@ -1,0 +1,11 @@
+.list li {
+  cursor: pointer;
+  background-color: #f5ebff;
+  /* padding: 2px 10px; */
+  border-radius: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.list li:hover {
+  background-color:#ddd;
+}
