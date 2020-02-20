@@ -32,6 +32,14 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
 var programs = <?php echo json_encode($programs); ?>;
+var activities=[];
+programs.forEach(program => {
+	program.forEach(activity => {
+		console.log(activity.Id+" "+activity.Name);
+	});
+});
+
+
 console.log(programs);
 </script>
 	<!-- <script src="js/edit.js"></script> -->
@@ -44,13 +52,13 @@ console.log(programs);
 <form>
 <div class="row">
 	<div class="col-6">
-	  	<div class="form-group row">
+	  	<div class="form-group row names">
 			<label for="prenom" class="col-sm-2 col-form-label">Prénom</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
 			</div>
 		</div>
-		<div class="form-group row">
+		<div class="form-group row phones">
 			<label for="nom"  class="col-sm-2 col-form-label">Nom</label>
 			<div class="col-sm-10">
 	   			 <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
@@ -72,11 +80,7 @@ console.log(programs);
 	    <label for="work">Travail</label>
     <input type="tel" class="form-control" id="work">
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Sauvegarder</button>
 </form>
 
 
