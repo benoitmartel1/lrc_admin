@@ -1,14 +1,11 @@
-<?php 
-  session_start(); 
+<div class="header">
+		  <div class="log-info">
+    <!-- logged in user information -->
+	<?php  if (isset($_SESSION['username'])) : ?>
+			    	<div>Bienvenue <strong><?php echo $_SESSION['username']; ?></strong></div>
+		<div> <a href="index.php?logout='1'"><i class="fa fa-sign-out logout"></i></a> </div>
 
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: registration/login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: registration/login.php");
-  }
 
-  ?>
+	<?php endif ?>
+		</div>
+	</div>
