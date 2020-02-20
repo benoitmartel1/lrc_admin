@@ -63,7 +63,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC );
 		</div>
 	</div>
 
-<?php echo $infos->nom; ?>
+<?php echo $infos[0]->nom; ?>
 
 </div>
 
