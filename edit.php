@@ -8,7 +8,7 @@ include('php/activities.php');
 
 $id=$_REQUEST['id'];
 
-$member_infos = "SELECT id, nom, prenom, email, phone, cell FROM staff WHERE id=$id";
+$member_infos = "SELECT id, nom, prenom, email, phone, cell, work, address FROM staff WHERE id=$id";
 $result = mysqli_query($db, $member_infos);
 $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 ?>
@@ -34,10 +34,10 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 var programs = <?php echo json_encode($programs); ?>;
 var activities=[];
 programs.forEach(program => {
-	console.log(program);
-	// program.forEach(activity => {
-	// 	console.log(activity.Id+" "+activity.Name);
-	// });
+
+	program.Activities.forEach(activity => {
+		console.log(activity.Id+" "+activity.Name);
+	});
 });
 
 
