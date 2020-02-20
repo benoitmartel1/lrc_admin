@@ -34,7 +34,7 @@ $(function () {
 var activities=[];
 programs.forEach(program => {
 	program.Activities.forEach(activity => {
-		$('#activities .list').append(`<li id="${activity.Id}"><div class="activity"${activity.Name}</div></li>`);
+		$('#activities .list').append(`<li id="${activity.Id}"><div class="activity">${activity.Name}</div></li>`);
 	});
 });
   var options = {
