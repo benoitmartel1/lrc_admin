@@ -1,4 +1,8 @@
+.list{
+	display: table;
+}
 .list li {
+	display: table-row;
   cursor: pointer;
   background-color: #f5ebff;
   /* padding: 2px 10px; */
@@ -7,7 +11,9 @@
   width: 100%;
 }
 .list li div {
-display: inline-block;
+    display: table-cell;
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
 }
 .list li:hover {
   background-color:#ddd;
