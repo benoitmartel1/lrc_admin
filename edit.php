@@ -4,18 +4,11 @@ include('header.php');
   //db connect  
 include('db_connect.php');
 
-  $id=$_REQUEST['id'];
+$id=$_REQUEST['id'];
 
-/* change character set to utf8 */
-if (!$db->set_charset("utf8")) {
-    printf("Error loading character set utf8: %s\n", $db->error);
-    exit();
-};
-
-$user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM staff WHERE id=$id";
-  $result = mysqli_query($db, $user_check_query);
-$infos = $result->fetch_all( MYSQLI_ASSOC );
-
+$member_infos = "SELECT id, nom, prenom, email, phone, cell FROM staff WHERE id=$id";
+$result = mysqli_query($db, $member_infos);
+$infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,9 +27,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC );
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<script>
-// var staff = <?php echo json_encode($infos); ?>;
-</script>
+
 	<!-- <script src="js/edit.js"></script> -->
 </head>
 <body>
