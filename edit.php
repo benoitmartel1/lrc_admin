@@ -22,8 +22,6 @@ if (!$db->set_charset("utf8")) {
     exit();
 };
 
-
-
 $user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM staff WHERE id=$id";
   $result = mysqli_query($db, $user_check_query);
 $infos = $result->fetch_all( MYSQLI_ASSOC );
@@ -49,7 +47,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC );
 <script>
 // var staff = <?php echo json_encode($infos); ?>;
 </script>
-	<script src="js/staff.js"></script>
+	<!-- <script src="js/edit.js"></script> -->
 </head>
 <body>
 <div class="content">
