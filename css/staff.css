@@ -9,8 +9,11 @@ display: table-row;
 .list li div {
     display: table-cell;
     border-bottom: 1px solid #ddd;
-    padding: 4px;
+	padding: 4px 20px;
 }
 .list li:hover {
   background-color:#ddd;
+}
+.nom{
+	font-weight: bold;
 }

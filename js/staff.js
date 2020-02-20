@@ -2,7 +2,7 @@ $(function () {
   staff.forEach(item => {
     $(".list").append(`
 				<li id="${item.id}">
-				<div class="nom">${item.nom.toUpperCase()}</div>
+				<div class="nom">${item.nom}</div>
 				<div class="prenom">${item.prenom}</div>
 				<div class="phone">${item.phone}</div>
 				</li>
@@ -11,9 +11,7 @@ $(function () {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
-    e.stopPropagation();
-    console.log(e.target);
-    console.log($(e.target).attr("id"));
+    console.log($(e.target).closest("li").attr("id"));
   });
 
   var options = {
