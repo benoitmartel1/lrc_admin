@@ -32,6 +32,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
 var programs = <?php echo json_encode($programs); ?>;
+$(function () {
 var activities=[];
 programs.forEach(program => {
 	program.Activities.forEach(activity => {
@@ -39,7 +40,7 @@ programs.forEach(program => {
 	});
 });
 var activitiesList = new List("activities");
-
+});
 console.log(programs);
 </script>
 	<!-- <script src="js/edit.js"></script> -->
