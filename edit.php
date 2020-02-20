@@ -36,7 +36,7 @@ $(function () {
 var activities=[];
 programs.forEach(program => {
 	program.Activities.forEach(activity => {
-		$('#activities .list').append(`<li class="activity" id="${activity.Id}">${activity.Name}</li>`);
+		$('#activities .list').append(`<li id="${activity.Id}"><div class="activity"${activity.Name}</div></li>`);
 	});
 });
   var options = {
@@ -44,7 +44,6 @@ programs.forEach(program => {
   };
 var activitiesList = new List("activities", options);
 });
-console.log(programs);
 </script>
 	<!-- <script src="js/edit.js"></script> -->
 </head>
