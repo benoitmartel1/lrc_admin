@@ -36,10 +36,13 @@ $(function () {
 var activities=[];
 programs.forEach(program => {
 	program.Activities.forEach(activity => {
-		$('#activities .list').append(`<li id="${activity.Id}">${activity.Name}</li>`);
+		$('#activities .list').append(`<li class="activity" id="${activity.Id}">${activity.Name}</li>`);
 	});
 });
-var activitiesList = new List("activities");
+  var options = {
+    valueNames: ["activity"]
+  };
+var activitiesList = new List("activities", options);
 });
 console.log(programs);
 </script>
@@ -49,7 +52,7 @@ console.log(programs);
 <?php include_once('header.php'); ?>
 
 <div class="content">
-<a href="index.php"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+<a href="index.php"><i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i></a>
 <form>
 <div class="row">
 	<div class="col-6">
