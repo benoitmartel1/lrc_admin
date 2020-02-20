@@ -11,6 +11,9 @@
   	header("location: registration/login.php");
   }
 
+  //db connect  
+include('db_connect.php');
+
   $id=$_REQUEST['id'];
 
 /* change character set to utf8 */
@@ -18,6 +21,8 @@ if (!$db->set_charset("utf8")) {
     printf("Error loading character set utf8: %s\n", $db->error);
     exit();
 };
+
+
 
 $user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM staff WHERE id=$id";
   $result = mysqli_query($db, $user_check_query);
