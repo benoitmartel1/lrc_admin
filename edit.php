@@ -20,7 +20,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/staff.css">
+	<link rel="stylesheet" type="text/css" href="css/edit.css">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -94,7 +94,7 @@ var activitiesList = new List("activities", options);
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
 
 </div>
 <div class="row">
@@ -110,8 +110,6 @@ var activitiesList = new List("activities", options);
 </div>
   <button type="submit" class="btn btn-primary">Sauvegarder</button>
 </form>
-
-
 </div>
 
 </body>
