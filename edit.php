@@ -3,6 +3,8 @@
 include('log_check.php');
   //db connect  
 include('db_connect.php');
+  //db connect  
+include('php/activities.php');
 
 $id=$_REQUEST['id'];
 
@@ -39,24 +41,24 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 <form>
 <div class="row">
 	<div class="col-6">
-	  <div class="form-group row">
-	  	    <label for="prenom">Prénom</label>
-	  	<div class="col-10">
-    <input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
-	</div>
-	</div>
-		  <div class="form-group row">
-	<label for="nom">Nom</label>
-	<div class="col-10">
-	    <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
-
-	</div>
-  </div>
+	  	<div class="form-group row">
+			<label for="prenom" class="col-sm-2 col-form-label">Prénom</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="nom"  class="col-sm-2 col-form-label">Nom</label>
+			<div class="col-sm-10">
+	   			 <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
+			</div>
+ 		</div>
     </div>
-	</div>
-	<div class="col-6">
+		<div class="col-6">
 	
 	</div>
+	</div>
+
 </div>
 
   <div class="form-group">
