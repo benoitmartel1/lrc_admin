@@ -43,7 +43,7 @@ programs.forEach(program => {
       .closest("li")
 	  .attr("id");
 	let staff_id = $('form').attr('id');
-	$.post( "php.activityToStaff.php", {
+	$.post( "php/activityToStaff.php", {
 		activity_id:activity_id,
 		staff_id:staff_id
 	}
