@@ -1,5 +1,8 @@
 <?php 
-  include('php/activities.php');
+//db connect  
+include('db_connect.php');
+//get staff members
+ include('php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>

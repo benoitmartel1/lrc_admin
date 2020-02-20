@@ -11,7 +11,11 @@
   	header("location: registration/login.php");
   }
 
+//db connect  
+include('db_connect.php');
+//get staff members
  include('php/staff.php');
+ 
 ?>
 <!DOCTYPE html>
 <html>
