@@ -11,6 +11,8 @@ $(function () {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
+    e.stopPropagation();
+    console.log(e.target);
     console.log($(e.target).attr("id"));
   });
 
