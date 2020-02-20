@@ -1,6 +1,6 @@
 <?php 
 //Login Check
-include('header.php');
+include('log_check.php');
   //db connect  
 include('db_connect.php');
 
@@ -32,9 +32,30 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 </head>
 <body>
 <?php include_once('header.php'); ?>
-<?php echo $infos['nom']; ?>
+
 <div class="content">
 
+<form>
+  <div class="form-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" class="form-control" id="prenom"><?php echo $infos['prenom']; ?>
+	<label for="nom">Nom</label>
+    <input type="text" class="form-control" id="nom"><?php echo $infos['nom']; ?>
+  </div>
+  <div class="form-group">
+    <label for="phone">Téléphone</label>
+    <input type="tel" class="form-control" id="phone"><?php echo $infos['phone']; ?>
+	    <label for="cell">Cellulaire</label>
+    <input type="tel" class="form-control" id="cell">
+	    <label for="work">Travail</label>
+    <input type="tel" class="form-control" id="work">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 
 </div>

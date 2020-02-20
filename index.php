@@ -1,6 +1,6 @@
 <?php 
-//db connect  
-include('db_connect.php');
+//Log Check
+include('log_check.php');
 //db connect  
 include('db_connect.php');
 //get staff members
@@ -29,8 +29,9 @@ var staff = <?php echo json_encode($staff); ?>;
 	<script src="js/staff.js"></script>
 </head>
 <body>
-<div class="content">
 <?php include_once('header.php'); ?>
+<div class="content">
+
 
 <div id="staff">
 
