@@ -1,5 +1,6 @@
 <?php
 //This file loads all activities currently offered in a $programs object.
+//Returns $programs array.
 
 //Authorization obtained through Postman -- https://www.amilia.com/ApiDocs
 $auth_data = array('Authorization: Basic bWFydGVsLmJAZ21haWwuY29tOmxhdXJlbnRtNw==');
@@ -38,25 +39,6 @@ if(!$token){die("Connection Failure");}else{
 		//Add the activities array to property Activities of currently processed Program.
 		$program->Activities=$activities;
 	};
-
-
-	        // $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/events?from=2020-01-01&to=2020-12-30';
-			// $staff=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-			
-			// foreach($staff as $item){
-			// 	$staff=$item->Staff;
-			// 	$id=$item->Activity->Id;
-			// 	// echo $id;
-			// 	// echo '<br>';
-	        // 	$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/activities/'.$id.'/persons';
-        	// 	$persons=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-			// foreach($persons as $person){
-			// 	// echo $person->FullName.'<br>';
-			// };
-			// 	// echo '<br>';
-			// }
-
-
 };
 curl_close($curl);
 ?>

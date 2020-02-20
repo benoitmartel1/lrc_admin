@@ -1,16 +1,16 @@
 <?php
-$db = mysqli_connect('localhost', 'renaudcoursol', 'xuY8#VdvNQE8', 'renaudcoursol_admin');
-  
+
+//This file loads all activities currently offered in a $programs object.
+//Returns $staff array.
+
+include('../db_connect.php');
+
 /* change character set to utf8 */
 if (!$db->set_charset("utf8")) {
     printf("Error loading character set utf8: %s\n", $db->error);
     exit();
-} else {
-
-}
-
+};
 
 $user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM staff";
   $result = mysqli_query($db, $user_check_query);
 $staff = $result->fetch_all( MYSQLI_ASSOC );
-?>
