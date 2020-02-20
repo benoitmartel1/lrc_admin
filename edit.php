@@ -34,9 +34,10 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 var programs = <?php echo json_encode($programs); ?>;
 var activities=[];
 programs.forEach(program => {
-	program.forEach(activity => {
-		console.log(activity.Id+" "+activity.Name);
-	});
+	console.log(program);
+	// program.forEach(activity => {
+	// 	console.log(activity.Id+" "+activity.Name);
+	// });
 });
 
 
@@ -52,34 +53,49 @@ console.log(programs);
 <form>
 <div class="row">
 	<div class="col-6">
-	  	<div class="form-group row names">
+	  	<div class="form-group row">
 			<label for="prenom" class="col-sm-2 col-form-label">Prénom</label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
 			</div>
 		</div>
-		<div class="form-group row phones">
+		<div class="form-group row">
 			<label for="nom"  class="col-sm-2 col-form-label">Nom</label>
 			<div class="col-sm-10">
 	   			 <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
 			</div>
  		</div>
+		<div class="form-group row">
+			<label for="phone"  class="col-sm-2 col-form-label">Téléphone</label>
+			<div class="col-sm-10">
+	   			 <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
+			</div>
+ 		</div>
+		 		<div class="form-group row">
+			<label for="cell"  class="col-sm-2 col-form-label">Cellulaire</label>
+			<div class="col-sm-10">
+	   			 <input type="tel" class="form-control" id="cell" value="<?php echo $infos['cell']; ?>">
+			</div>
+ 		</div>
+		 		<div class="form-group row">
+			<label for="work"  class="col-sm-2 col-form-label">Travail</label>
+			<div class="col-sm-10">
+	   			 <input type="tel" class="form-control" id="work" value="<?php echo $infos['work']; ?>">
+			</div>
+ 		</div>
     </div>
 		<div class="col-6">
-	
+		  	<div class="form-group row">
+			<label for="address" class="col-sm-2 col-form-label">Adresse</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="address" value="<?php echo $infos['address']; ?>">
+			</div>
+		</div>
 	</div>
 	</div>
 
 </div>
 
-  <div class="form-group">
-    <label for="phone">Téléphone</label>
-    <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
-	    <label for="cell">Cellulaire</label>
-    <input type="tel" class="form-control" id="cell">
-	    <label for="work">Travail</label>
-    <input type="tel" class="form-control" id="work">
-  </div>
   <button type="submit" class="btn btn-primary">Sauvegarder</button>
 </form>
 
