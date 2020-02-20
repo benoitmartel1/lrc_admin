@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
   staff.forEach(item => {
     $(".list").append(`
 				<li id="${item.id}">
@@ -11,7 +11,9 @@ $(function () {
 
   //-- When you click on li item, the div with details info toggles.
   $("li").click(e => {
-    let id = $(e.target).closest("li").attr("id");
+    let id = $(e.target)
+      .closest("li")
+      .attr("id");
     window.open("edit.php?id=" + id, "_self");
   });
 

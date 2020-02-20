@@ -32,7 +32,7 @@ if(!$token){die("Connection Failure");}else{
 
 	//For each Program, get its activities and add them as a property
     foreach($programs as $program){
-        $id=$program->Id;
+      	$id=$program->Id;
         $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
         $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
 		// $activities=json_decode($result)->Items;

@@ -1,19 +1,19 @@
-.list{
-	display: table;
+.list {
+  display: table;
 }
 .list li {
-display: table-row;
+  display: table-row;
   cursor: pointer;
   width: 100%;
 }
 .list li div {
-    display: table-cell;
-    border-bottom: 1px solid #ddd;
-	padding: 4px 20px;
+  display: table-cell;
+  border-bottom: 1px solid #ddd;
+  padding: 4px 20px;
 }
 .list li:hover {
-  background-color:#ddd;
+  background-color: #ddd;
 }
-.nom{
-	font-weight: bold;
+.nom {
+  font-weight: bold;
 }

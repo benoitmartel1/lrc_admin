@@ -37,6 +37,19 @@ programs.forEach(program => {
 		$('#activities .list').append(`<li id="${activity.Id}"><div class="activity">${activity.Name}</div></li>`);
 	});
 });
+
+  $("li").click(e => {
+    let activity_id = $(e.target)
+      .closest("li")
+	  .attr("id");
+	let staff_id = $('form').attr('id');
+	$.post( "php.activityToStaff.php", {
+		activity_id:activity_id,
+		staff_id:staff_id
+	}
+	);
+  });
+
   var options = {
     valueNames: ["activity"]
   };
@@ -50,7 +63,7 @@ var activitiesList = new List("activities", options);
 
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
-<form>
+<form id="<?php echo $infos['id']; ?>">
 <div class="row">
 	<div class="col-6">
 	  	<div class="form-group row">
