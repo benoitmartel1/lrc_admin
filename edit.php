@@ -37,12 +37,28 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 <div class="content">
 
 <form>
-  <div class="form-group">
-    <label for="prenom">Prénom</label>
+<div class="row">
+	<div class="col-6">
+	  <div class="form-group row">
+	  	    <label for="prenom">Prénom</label>
+	  	<div class="col-10">
     <input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
+	</div>
+	</div>
+		  <div class="form-group row">
 	<label for="nom">Nom</label>
-    <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
+	<div class="col-10">
+	    <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
+
+	</div>
   </div>
+    </div>
+	</div>
+	<div class="col-6">
+	
+	</div>
+</div>
+
   <div class="form-group">
     <label for="phone">Téléphone</label>
     <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
