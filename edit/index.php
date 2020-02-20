@@ -10,7 +10,12 @@
   	unset($_SESSION['username']);
   	header("location: registration/login.php");
   }
+
+  $id=$_REQUEST['id'];
+  echo $id;
  include('php/staff.php');
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +35,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
-var staff = <?php echo json_encode($staff); ?>;
+// var staff = <?php echo json_encode($staff); ?>;
 </script>
 	<script src="js/staff.js"></script>
 </head>
@@ -48,23 +53,7 @@ var staff = <?php echo json_encode($staff); ?>;
 		</div>
 	</div>
 
-<div id="staff">
 
-<!-- class="search" automagically makes an input a search field. -->
-  <input class="search" placeholder="" />
-<!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
-  <button class="sort" data-sort="nom">
-    Nom
-  </button>
-  <button class="sort" data-sort="prenom">
-    Prénom
-  </button>
-<!-- Child elements of container with class="list" becomes list items -->
-  <ul class="list">
-
-  </ul>
-
-</div>
 
 </div>
 
