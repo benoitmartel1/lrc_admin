@@ -57,10 +57,12 @@ var staff = <?php echo json_encode($staff); ?>;
 <!-- class="search" automagically makes an input a search field. -->
   <input class="search" placeholder="" />
 <!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
-  <button class="sort" data-sort="name">
-    Sort
+  <button class="sort" data-sort="nom">
+    Nom
   </button>
-
+  <button class="sort" data-sort="prenom">
+    Prénom
+  </button>
 <!-- Child elements of container with class="list" becomes list items -->
   <ul class="list">
 

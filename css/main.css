@@ -23,14 +23,16 @@ body {
 .hidden {
   display: none;
 }
-ul {
-  padding: 0;
-  list-style: none;
+.no-select {
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+ul{
+	  padding: 0;
+  list-style: none;
 }
 
 .thumb {

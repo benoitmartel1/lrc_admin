@@ -65,7 +65,7 @@
   </button>
 
 <!-- Child elements of container with class="list" becomes list items -->
-  <ul class="list">
+  <ul class="list no-select">
 
   </ul>
 
