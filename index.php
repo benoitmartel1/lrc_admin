@@ -1,6 +1,4 @@
 <?php 
-
-
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
@@ -14,7 +12,6 @@
   }
 
  include('php/staff.php');
-
 ?>
 <!DOCTYPE html>
 <html>
