@@ -14,6 +14,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>LRC - Personnel - Éditer</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -38,13 +39,13 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 <form>
   <div class="form-group">
     <label for="prenom">Prénom</label>
-    <input type="text" class="form-control" id="prenom"><?php echo $infos['prenom']; ?>
+    <input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
 	<label for="nom">Nom</label>
-    <input type="text" class="form-control" id="nom"><?php echo $infos['nom']; ?>
+    <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
   </div>
   <div class="form-group">
     <label for="phone">Téléphone</label>
-    <input type="tel" class="form-control" id="phone"><?php echo $infos['phone']; ?>
+    <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
 	    <label for="cell">Cellulaire</label>
     <input type="tel" class="form-control" id="cell">
 	    <label for="work">Travail</label>
