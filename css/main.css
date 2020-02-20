@@ -34,7 +34,10 @@ ul{
 	  padding: 0;
   list-style: none;
 }
+.content{
+	padding:0 50px;
 
+}
 .thumb {
   width: 100px;
   height: auto;

@@ -51,7 +51,7 @@ var activitiesList = new List("activities", options);
 <?php include_once('header.php'); ?>
 
 <div class="content">
-<a href="index.php"><i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i></a>
+<a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
 <form>
 <div class="row">
 	<div class="col-6">
