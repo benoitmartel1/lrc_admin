@@ -106,8 +106,6 @@ var activitiesList = new List("activities", options);
 		</div>
 	</div>
 </div>
-
-</div>
 <div class="row">
 <div id="activities">
 <!-- class="search" automagically makes an input a search field. -->
@@ -119,6 +117,8 @@ var activitiesList = new List("activities", options);
 </div>
 
 </div>
+</div>
+
   <button type="submit" class="btn btn-primary">Sauvegarder</button>
 </form>
 </div>
