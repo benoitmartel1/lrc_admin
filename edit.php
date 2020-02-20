@@ -34,12 +34,11 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 var programs = <?php echo json_encode($programs); ?>;
 var activities=[];
 programs.forEach(program => {
-
 	program.Activities.forEach(activity => {
-		console.log(activity.Id+" "+activity.Name);
+		$('#activities .list').append(`<li id="${activity.Id}">${activity.Name}</li>`);
 	});
 });
-
+var activitiesList = new List("activities");
 
 console.log(programs);
 </script>
@@ -54,40 +53,40 @@ console.log(programs);
 <div class="row">
 	<div class="col-6">
 	  	<div class="form-group row">
-			<label for="prenom" class="col-sm-2 col-form-label">Prénom</label>
-			<div class="col-sm-10">
+			<label for="prenom" class="col-sm-4 col-form-label">Prénom</label>
+			<div class="col-sm-8">
 				<input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="nom"  class="col-sm-2 col-form-label">Nom</label>
-			<div class="col-sm-10">
+			<label for="nom"  class="col-sm-4 col-form-label">Nom</label>
+			<div class="col-sm-8">
 	   			 <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
 			</div>
  		</div>
 		<div class="form-group row">
-			<label for="phone"  class="col-sm-2 col-form-label">Téléphone</label>
-			<div class="col-sm-10">
+			<label for="phone"  class="col-sm-4 col-form-label">Téléphone</label>
+			<div class="col-sm-8">
 	   			 <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
-			<label for="cell"  class="col-sm-2 col-form-label">Cellulaire</label>
-			<div class="col-sm-10">
+			<label for="cell"  class="col-sm-4 col-form-label">Cellulaire</label>
+			<div class="col-sm-8">
 	   			 <input type="tel" class="form-control" id="cell" value="<?php echo $infos['cell']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
-			<label for="work"  class="col-sm-2 col-form-label">Travail</label>
-			<div class="col-sm-10">
+			<label for="work"  class="col-sm-4 col-form-label">Travail</label>
+			<div class="col-sm-8">
 	   			 <input type="tel" class="form-control" id="work" value="<?php echo $infos['work']; ?>">
 			</div>
  		</div>
     </div>
 		<div class="col-6">
 		  	<div class="form-group row">
-			<label for="address" class="col-sm-2 col-form-label">Adresse</label>
-			<div class="col-sm-10">
+			<label for="address" class="col-sm-4 col-form-label">Adresse</label>
+			<div class="col-sm-8">
 				<input type="text" class="form-control" id="address" value="<?php echo $infos['address']; ?>">
 			</div>
 		</div>
@@ -95,7 +94,17 @@ console.log(programs);
 	</div>
 
 </div>
+<div class="row">
+<div id="activities">
+<!-- class="search" automagically makes an input a search field. -->
+  <input class="search" placeholder="Quelle activité ?" />
+<!-- Child elements of container with class="list" becomes list items -->
+  <ul class="list no-select">
+  </ul>
 
+</div>
+
+</div>
   <button type="submit" class="btn btn-primary">Sauvegarder</button>
 </form>
 
