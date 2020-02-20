@@ -40,8 +40,8 @@ $infos = $result->fetch_all( MYSQLI_ASSOC );
 	<!-- <script src="js/edit.js"></script> -->
 </head>
 <body>
-<?php echo $infos[0]->nom; ?>
-<?php echo $infos; ?>
+<?php echo $infos->nom; ?>
+<?php print_r($infos); ?>
 <div class="content">
   	<div class="header">
 		  <div class="log-info">
