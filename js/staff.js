@@ -1,4 +1,15 @@
 $(function() {
+  var keyDownHandler = function(evt) {
+    alert(evt.keyCode);
+    if (evt.key === "VolumeDown") {
+      // process logic of volume-down
+    } else if (evt.keyCode === 175) {
+      alert("YEAH!");
+    }
+    evt.preventDefault(); // to stop system app from processing keydown event
+  };
+
+  window.addEventListener("keydown", keyDownHandler);
   staff.forEach(item => {
     $(".list").append(`
 				<li id="${item.id}">
