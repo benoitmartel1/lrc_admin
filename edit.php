@@ -29,7 +29,7 @@ $person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
-var programs = <?php echo json_encode($person_data); ?>;
+var programs = <?php echo json_encode($programs); ?>;
 $(function () {
 var activities=[];
 programs.forEach(program => {
