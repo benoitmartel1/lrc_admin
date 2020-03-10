@@ -2,8 +2,8 @@
 include('../db_connect.php');
 
 $person_id=$_POST['id'];
-$name=mysqli_real_escape_string($_POST['name']);
-$surname=mysqli_real_escape_string($_POST['surname']);
+$name=$db->real_escape_string($_POST['name']);
+$surname=$db->real_escape_string($_POST['surname']);
 
 function updatePerson($person_id, $name, $surname){
 $query="UPDATE person SET name='$name', surname='$surname' WHERE id=$person_id"
