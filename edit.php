@@ -86,6 +86,7 @@ var activitiesList = new List("activities", options);
 
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+<a href="edit.php?id=<?php echo ++$person_id; ?>"><i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i></a>
 <form>
 <input type="text" class="hidden" name="id" value="<?php echo $person_id; ?>">
 <div class="row">
