@@ -8,9 +8,9 @@ include('php/activities.php');
 
 $id=$_REQUEST['id'];
 
-$member_infos = "SELECT id, nom, prenom, email, phone, cell, work, address FROM staff WHERE id=$id";
-$result = mysqli_query($db, $member_infos);
-$infos = $result->fetch_all( MYSQLI_ASSOC )[0];
+$query = "SELECT * FROM person WHERE id=$id";
+$result = mysqli_query($db, $query);
+$person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@ $infos = $result->fetch_all( MYSQLI_ASSOC )[0];
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
-var programs = <?php echo json_encode($programs); ?>;
+var programs = <?php echo json_encode($person_data); ?>;
 $(function () {
 var activities=[];
 programs.forEach(program => {
@@ -69,31 +69,31 @@ var activitiesList = new List("activities", options);
 	  	<div class="form-group row">
 			<label for="prenom" class="col-sm-4 col-form-label">Prénom</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="prenom" value="<?php echo $infos['prenom']; ?>">
+				<input type="text" class="form-control" id="prenom" value="<?php echo $person_data['surname']; ?>">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="nom"  class="col-sm-4 col-form-label">Nom</label>
 			<div class="col-sm-8">
-	   			 <input type="text" class="form-control" id="nom" value="<?php echo $infos['nom']; ?>">
+	   			 <input type="text" class="form-control" id="nom" value="<?php echo $person_data['name']; ?>">
 			</div>
  		</div>
 		<div class="form-group row">
 			<label for="phone"  class="col-sm-4 col-form-label">Téléphone</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="phone" value="<?php echo $infos['phone']; ?>">
+	   			 <input type="tel" class="form-control" id="phone" value="<?php echo $person_data['phone']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
 			<label for="cell"  class="col-sm-4 col-form-label">Cellulaire</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="cell" value="<?php echo $infos['cell']; ?>">
+	   			 <input type="tel" class="form-control" id="cell" value="<?php echo $person_data['cell']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
 			<label for="work"  class="col-sm-4 col-form-label">Travail</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="work" value="<?php echo $infos['work']; ?>">
+	   			 <input type="tel" class="form-control" id="work" value="<?php echo $person_data['work']; ?>">
 			</div>
  		</div>
     </div>
@@ -101,7 +101,7 @@ var activitiesList = new List("activities", options);
 		  	<div class="form-group row">
 			<label for="address" class="col-sm-4 col-form-label">Adresse</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="address" value="<?php echo $infos['address']; ?>">
+				<input type="text" class="form-control" id="address" value="<?php echo $person_data['address']; ?>">
 			</div>
 		</div>
 	</div>
