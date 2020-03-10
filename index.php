@@ -52,6 +52,6 @@ var staff = <?php echo json_encode($staff); ?>;
 </div>
 
 </div>
-<button onclick="window.location.href = 'php/new_person.php';">New</button>
+<button onclick="window.location.href = 'edit.php?id=new';">New</button>
 </body>
 </html>

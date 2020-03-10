@@ -2,6 +2,14 @@
 include('../db_connect.php');
 
 $person_id=$_POST['id'];
+
+//If new, create row
+if($_POST['id']=="new"){
+	$query="INSERT INTO person (name) VALUES (null)";
+	$db->query($query);
+	$person_id=$db->insert_id;
+}
+
 $name=$db->real_escape_string($_POST['name']);
 $surname=$db->real_escape_string($_POST['surname']);
 $phone=$db->real_escape_string($_POST['phone']);
