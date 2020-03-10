@@ -101,19 +101,19 @@ var activitiesList = new List("activities", options);
 		<div class="form-group row">
 			<label for="phone"  class="col-sm-4 col-form-label">Téléphone</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="phone" value="<?php echo $person_data['phone']; ?>">
+	   			 <input type="tel" class="form-control" name="phone" value="<?php echo $person_data['phone']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
 			<label for="cell"  class="col-sm-4 col-form-label">Cellulaire</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="cell" value="<?php echo $person_data['cell']; ?>">
+	   			 <input type="tel" class="form-control" name="cell" value="<?php echo $person_data['cell']; ?>">
 			</div>
  		</div>
 		 		<div class="form-group row">
 			<label for="work"  class="col-sm-4 col-form-label">Travail</label>
 			<div class="col-sm-8">
-	   			 <input type="tel" class="form-control" id="work" value="<?php echo $person_data['work']; ?>">
+	   			 <input type="tel" class="form-control" name="work" value="<?php echo $person_data['work']; ?>">
 			</div>
  		</div>
     </div>
@@ -121,19 +121,19 @@ var activitiesList = new List("activities", options);
 		  	<div class="form-group row">
 			<label for="address" class="col-sm-4 col-form-label">Adresse</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="address" value="<?php echo $person_data['address']; ?>">
+				<input type="text" class="form-control" name="address" value="<?php echo $person_data['address']; ?>">
 			</div>
 			</div>
 			<div class="form-group row">
 			<label for="address" class="col-sm-4 col-form-label">Ville</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="city" value="<?php echo $person_data['city']; ?>">
+				<input type="text" class="form-control" name="city" value="<?php echo $person_data['city']; ?>">
 			</div>
 			</div>
 			<div class="form-group row">
 			<label for="address" class="col-sm-4 col-form-label">Code postal</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="zipcode" value="<?php echo $person_data['zipcode']; ?>">
+				<input type="text" class="form-control" name="zipcode" value="<?php echo $person_data['zipcode']; ?>">
 			</div>
 			</div>
 	</div>
