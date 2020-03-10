@@ -19,7 +19,7 @@ $pdq_delivery_date=$db->real_escape_string($_POST['pdq_delivery_date']);
 $is_rcr=$db->$_POST['is_rcr'];
 
 $query="REPLACE INTO person SET 
-id=$person_id,
+id=NULLIF('$person_id',''),
 name='$name',
 surname='$surname',
 phone='$phone',
