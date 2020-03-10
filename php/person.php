@@ -27,12 +27,12 @@ work='$work',
 address='$address',
 city='$city',
 zipcode='$zipcode',
-birthdate=null,
-creation_date='$creation_date',
+birthdate='null',
+creation_date='null',
 employee_number='$employee_number',
 pdq_number='$pdq_number',
 pdq_status='$pdq_status',
-pdq_delivery_date='$pdq_delivery_date',
+pdq_delivery_date='null',
 is_rcr='$is_rcr'
 WHERE id=$person_id";
 
