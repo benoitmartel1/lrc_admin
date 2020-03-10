@@ -38,6 +38,25 @@ programs.forEach(program => {
 	});
 });
 
+$("form").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+
+    var form = $(this);
+    var url = 'php/person.php';
+
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+           }
+         });
+});
+
+
   $("li").click(e => {
     let activity_id = $(e.target)
       .closest("li")
@@ -64,18 +83,19 @@ var activitiesList = new List("activities", options);
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
 <form id="<?php echo $infos['id']; ?>">
+<input type="text" class="form-control" name="id" value="<?php echo $person_data['id']; ?>">
 <div class="row">
 	<div class="col-6">
 	  	<div class="form-group row">
 			<label for="prenom" class="col-sm-4 col-form-label">Prénom</label>
 			<div class="col-sm-8">
-				<input type="text" class="form-control" id="prenom" value="<?php echo $person_data['surname']; ?>">
+				<input type="text" class="form-control" name="surname" value="<?php echo $person_data['surname']; ?>">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="nom"  class="col-sm-4 col-form-label">Nom</label>
 			<div class="col-sm-8">
-	   			 <input type="text" class="form-control" id="nom" value="<?php echo $person_data['name']; ?>">
+	   			 <input type="text" class="form-control" name="name" value="<?php echo $person_data['name']; ?>">
 			</div>
  		</div>
 		<div class="form-group row">
