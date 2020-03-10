@@ -38,8 +38,8 @@ programs.forEach(program => {
 	});
 });
 
-$("form").submit(function(e) {
-
+$(".form").submit(function(e) {
+	console.log('submit');
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
     var form = $(this);
@@ -82,7 +82,7 @@ var activitiesList = new List("activities", options);
 
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
-<form id="<?php echo $infos['id']; ?>">
+<form class="form" id="<?php echo $infos['id']; ?>">
 <input type="text" class="form-control" name="id" value="<?php echo $person_data['id']; ?>">
 <div class="row">
 	<div class="col-6">
