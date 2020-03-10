@@ -31,9 +31,9 @@ birthdate=NULLIF('$birthdate',''),
 creation_date=NULLIF('$creation_date',''),
 employee_number='$employee_number',
 pdq_number='$pdq_number',
-pdq_status='$pdq_status',
+pdq_status=NULLIF('$pdq_status',''),
 pdq_delivery_date=NULLIF('$pdq_delivery_date',''),
-is_rcr='$is_rcr'
+is_rcr=NULLIF('$is_rcr',''),
 WHERE id=$person_id";
 
 if (!$db -> query($query)) {
