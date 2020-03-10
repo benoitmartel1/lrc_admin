@@ -18,22 +18,8 @@ $pdq_status=$db->$_POST['pdq_status'];
 $pdq_delivery_date=$db->real_escape_string($_POST['pdq_delivery_date']);
 $is_rcr=$db->$_POST['is_rcr'];
 
-$query="UPDATE person SET 
-name='$name',
-surname='$surname',
-phone='$phone',
-cell='$cell',
-work='$work',
-address='$address',
-city='$city',
-zipcode='$zipcode',
-birthdate=NULLIF('$birthdate',''),
-creation_date=NULLIF('$creation_date',''),
-employee_number='$employee_number',
-pdq_number='$pdq_number',
-pdq_status=NULLIF('$pdq_status',''),
-pdq_delivery_date=NULLIF('$pdq_delivery_date',''),
-is_rcr=NULLIF('$is_rcr','')
+$query="REPLACE INTO person (name, surname, phone, cell, work, address, city, zipcode, birthdate, creation_date, employee_number, pdq_number, pdq_status, pdq_delivery_date, is_rcr) 
+VALUES ('$name','$surname','$phone','$cell','$work','$address','$city','$zipcode',NULLIF('$birthdate',''),NULLIF('$creation_date',''),'$employee_number','$pdq_number',NULLIF('$pdq_status',''),NULLIF('$pdq_delivery_date',''),NULLIF('$is_rcr','')
 WHERE id=$person_id";
 
 if (!$db -> query($query)) {

@@ -8,12 +8,7 @@ include('php/activities.php');
 
 $person_id=$_REQUEST['id'];
 
-if(!isset($id)){
-	$query="INSERT INTO person";
-	$db->query($query);
-	$person_id=$db->insert_id;
-};
-
+//Get all data from person
 $query = "SELECT * FROM person WHERE id=$person_id";
 $result = $db -> query($query);
 $person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
