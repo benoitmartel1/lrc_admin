@@ -8,10 +8,13 @@ include('php/activities.php');
 
 $person_id=$_REQUEST['id'];
 
-//Get all data from person
-$query = "SELECT * FROM person WHERE id=$person_id";
-$result = $db -> query($query);
-$person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
+if($person_id!=='new'){
+	//Get all data from person
+	$query = "SELECT * FROM person WHERE id=$person_id";
+	$result = $db -> query($query);
+	$person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
+};
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,7 +87,7 @@ var activitiesList = new List("activities", options);
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
 <form>
-<input type="text" class="hidden" name="id" value="<?php echo $person_data['id']; ?>">
+<input type="text" class="hidden" name="id" value="<?php echo $person_id; ?>">
 <div class="row">
 	<div class="col-6">
 	  	<div class="form-group row">
