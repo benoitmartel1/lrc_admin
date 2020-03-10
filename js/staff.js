@@ -2,8 +2,8 @@ $(function() {
   staff.forEach(item => {
     $(".list").append(`
 				<li id="${item.id}">
-				<div class="nom">${item.nom}</div>
-				<div class="prenom">${item.prenom}</div>
+				<div class="nom">${item.name}</div>
+				<div class="prenom">${item.surname}</div>
 				<div class="phone">${item.phone}</div>
 				</li>
 				`);

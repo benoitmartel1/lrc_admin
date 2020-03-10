@@ -9,7 +9,7 @@ if (!$db->set_charset("utf8")) {
     exit();
 };
 
-$user_check_query = "SELECT id, nom, prenom, email, phone, cell FROM person";
+$user_check_query = "SELECT id, name, surname, email, phone, cell FROM person";
   $result = $db->query($user_check_query);
 $staff = $result->fetch_all( MYSQLI_ASSOC );
 
