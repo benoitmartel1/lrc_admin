@@ -18,8 +18,7 @@ $pdq_status=$db->$_POST['pdq_status'];
 $pdq_delivery_date=$db->real_escape_string($_POST['pdq_delivery_date']);
 $is_rcr=$db->$_POST['is_rcr'];
 
-$query="REPLACE INTO person SET 
-id=NULLIF('$person_id',''),
+$query="UPDATE person SET 
 name='$name',
 surname='$surname',
 phone='$phone',
@@ -34,7 +33,8 @@ employee_number='$employee_number',
 pdq_number='$pdq_number',
 pdq_status=NULLIF('$pdq_status',''),
 pdq_delivery_date=NULLIF('$pdq_delivery_date',''),
-is_rcr=NULLIF('$is_rcr','')";
+is_rcr=NULLIF('$is_rcr','')
+WHERE id=$person_id";
 
 if (!$db -> query($query)) {
   echo("Error description: " . $db -> error);
