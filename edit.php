@@ -38,7 +38,7 @@ programs.forEach(program => {
 	});
 });
 
-$(".form").submit(function(e) {
+$("form").submit(function(e) {
 	console.log('submit');
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
@@ -51,7 +51,7 @@ $(".form").submit(function(e) {
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
-               alert(data); // show response from the php script.
+               console.log(data); // show response from the php script.
            }
          });
 });
@@ -82,8 +82,8 @@ var activitiesList = new List("activities", options);
 
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
-<form class="form" id="<?php echo $infos['id']; ?>">
-<input type="text" class="form-control" name="id" value="<?php echo $person_data['id']; ?>">
+<form>
+<input type="text" class="hidden" name="id" value="<?php echo $person_data['id']; ?>">
 <div class="row">
 	<div class="col-6">
 	  	<div class="form-group row">
@@ -123,7 +123,19 @@ var activitiesList = new List("activities", options);
 			<div class="col-sm-8">
 				<input type="text" class="form-control" id="address" value="<?php echo $person_data['address']; ?>">
 			</div>
-		</div>
+			</div>
+			<div class="form-group row">
+			<label for="address" class="col-sm-4 col-form-label">Ville</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" id="city" value="<?php echo $person_data['city']; ?>">
+			</div>
+			</div>
+			<div class="form-group row">
+			<label for="address" class="col-sm-4 col-form-label">Code postal</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" id="zipcode" value="<?php echo $person_data['zipcode']; ?>">
+			</div>
+			</div>
 	</div>
 </div>
 <div class="row">
