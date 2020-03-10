@@ -5,6 +5,8 @@ $person_id=$_POST['id'];
 $name=$db->real_escape_string($_POST['name']);
 $surname=$db->real_escape_string($_POST['surname']);
 
+$query="";
+
 function updatePerson($person_id, $name, $surname){
 $query="UPDATE person SET name='$name', surname='$surname' WHERE id=$person_id";
 }
