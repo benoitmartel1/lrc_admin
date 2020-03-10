@@ -9,7 +9,7 @@ include('php/activities.php');
 $id=$_REQUEST['id'];
 
 $query = "SELECT * FROM person WHERE id=$id";
-$result = mysqli_query($db, $query);
+$result = $db -> query($query);
 $person_data = $result->fetch_all( MYSQLI_ASSOC )[0];
 ?>
 <!DOCTYPE html>
