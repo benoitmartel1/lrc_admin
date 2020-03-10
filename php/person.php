@@ -19,8 +19,8 @@ $pdq_delivery_date=$db->real_escape_string($_POST['pdq_delivery_date']);
 $is_rcr=$db->$_POST['is_rcr'];
 
 $query="UPDATE person SET 
-name=$name,
-surname=$surname,
+name='$name',
+surname='$surname',
 phone='$phone',
 cell='$cell',
 work='$work',
