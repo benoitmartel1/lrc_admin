@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Administation | Loisirs Renaud-Coursol</title>
+  <title>Administration | Loisirs Renaud-Coursol</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
