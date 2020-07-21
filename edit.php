@@ -86,9 +86,10 @@ var activitiesList = new List("activities", options);
 
 <div class="content">
 <a href="index.php"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+
 <form>
 <input type="text" class="hidden" name="id" value="<?php echo $person_id; ?>">
-<div class="row">
+<div class="row infos">
 	<div class="col-6">
 	  	<div class="form-group row">
 			<label for="prenom" class="col-sm-4 col-form-label">Prénom</label>
@@ -142,7 +143,7 @@ var activitiesList = new List("activities", options);
 			</div>
 	</div>
 </div>
-<div class="row">
+<div class="row activities">
 <div id="activities">
 <!-- class="search" automagically makes an input a search field. -->
   <input class="search" placeholder="Quelle activité ?" />

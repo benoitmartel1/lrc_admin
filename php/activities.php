@@ -24,7 +24,7 @@ $token=sendHTTPrequest($curl, $auth_url, $auth_data)->Token;
 if(!$token){die("Connection Failure");}else{
 
 	//If the token is obtained, then make the request to the API
-    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs';
+    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=true';
     $auth_data = array('Authorization: Bearer '.$token);
 	$programs=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
 	
