@@ -31,16 +31,22 @@ if(!$token){die("Connection Failure");}else{
 	// $programs=json_decode($result)->Items;
 
 	//For each Program, get its activities and add them as a property
-    foreach($programs as $program){
-      	$id=$program->Id;
-		//$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
-		$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/44866/activities&showHidden=true';
+    // foreach($programs as $program){
+    //   	$id=$program->Id;
+	// 	$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
 
-        $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-		// $activities=json_decode($result)->Items;
-		//Add the activities array to property Activities of currently processed Program.
-		$program->Activities=$activities;
-	};
+    //     $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
+	// 	// $activities=json_decode($result)->Items;
+	// 	//Add the activities array to property Activities of currently processed Program.
+	// 	$program->Activities=$activities;
+	// };
+
+
+	$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/44866/activities&showHidden=true';
+	$activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
+	$programs->Activities=$activities;
+
+
 };
 curl_close($curl);
 ?>
