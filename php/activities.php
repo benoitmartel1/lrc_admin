@@ -44,7 +44,7 @@ if(!$token){die("Connection Failure");}else{
 
 	$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/44866/activities&showHidden=true';
 	$activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-	$programs->Activities=$activities;
+	$programs=$activities;
 
 
 };
