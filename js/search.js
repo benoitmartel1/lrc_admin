@@ -1,106 +1,234 @@
 $(function() {
-  $("#ageFilter a").click(function() {
-    var targetedAge = parseInt($(this).attr("data"));
+               //Populate age filter menu
+               for (a = 17; a > 0; a--) {
+                 $("#age-drop .dropdown-menu").append(
+                   $("<a>", {
+                     text: a,
+                     class: "dropdown-item",
+                   })
+                     .attr("data-type", "age")
+                     .attr("data-value", a)
+                 );
+               }
+               //Populate day filter menu
+               for (a = 0; a <= 7; a++) {
+                 $("#day-drop .dropdown-menu").append(
+                   $("<a>", {
+                     text: daysOfWeek[a],
+                     class: "dropdown-item",
+                   })
+                     .attr("data-type", "day")
+                     .attr("data-value", a)
+                 );
+               }
 
-    userList.filter(function(item) {
-      var minCheck = item.values().ageMin <= targetedAge ? true : false;
-      var maxCheck =
-        item.values().ageMax > targetedAge || item.values().ageMax == "null"
-          ? true
-          : false;
+               //Erase Search input
+               $(".erase").click(function () {
+                 $(".search").val("");
+                 userList.search("");
+               });
 
-      if (minCheck && maxCheck) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-  });
+               //Filter is selected from dropdown
+               $(".filter-drop a").click(function () {
+                 var type = $(this).attr("data-type");
+				 $('.applied-filters .filter[data-type="'+type+'"]').remove();
+                 addFilterLabel(this);
+                 filterResults();
+               });
 
-  $(programs).each(function() {
-    $(this.Activities).each(function() {
-      var sDate = new Date(this.StartDate);
-      var eDate = new Date(this.EndDate);
-      var duration =
-        eDate.getHours() +
-        eDate.getMinutes() / 60 -
-        (sDate.getHours() + sDate.getMinutes() / 60);
-      var keywords = "";
-      for (var i in this.Keywords) {
-        keywords += this.Keywords[i] + " ";
-      }
+               //Remove Filter Label
+               $("body").on("click", ".applied-filters .filter", function () {
+                 $(this).remove();
+                 filterResults();
+               });
 
-      $(".list").append(
-        `
-				<li class="container">
-				<div class="row main">
-					<div class="name col-12 col-md-5">${this.Name}</div>
-					<div class="price">${this.Price}<span> $</span></div>
-					<div class="age">${this.Age.Min + " à " + this.Age.Max + " ans"}</div>
-					${
-            this.SpotsRemaining > 0
-              ? "<a class='signup' target='_blank' href='https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/" +
-                this.Id +
-                "?quickRegisterId=" +
-                this.Id +
-                "'>S'inscrire</a>"
-              : "<div class='isFull'>FULL</div>"
-          }
-					<div class="day">${daysOfWeek[sDate.getDay()]}</div>
-				</div>
-				<div class="row details">
-					<div class="description">${this.Description}</div>
-					<div class="prerequisite">${this.Prerequisite}</div>
-					<div class="note">${this.Note}</div>
-					<div class="hour">${sDate.getHours()}</div>
-					<div class="duration">${duration}</div>
-					<div class="subCategory">${this.SubCategoryName}</div>
-				</div>
-				<div class="row hidden">
-					<div class="thumb">${this.PictureUrl}</div>
-					<div class="keywords">${keywords}</div>
-					<div class="ageMin">${this.Age.Min}</div>
-					<div class="ageMax">${this.Age.Max}</div>
-					<div class="startDate">${this.StartDate}</div>
-					<div class="hour">${sDate.getHours()}</div>
-					<div class="duration">${duration}</div>
-					<div class="subCategory">${this.SubCategoryName}</div>
-				</div>
+               //Attach filter label
+               function addFilterLabel(label) {
+                 var text = $(label).text();
+                 var type = $(label).attr("data-type");
+				 var value = $(label).attr("data-value");
+                 $(".applied-filters").append(
+                   $("<span>", {
+                     text: text,
+                     class: "filter",
+                   })
+                     .attr("data-type", type)
+                     .attr("data-value", value).append($('<span>',{text:'X',class:'filter-remove'}))
+                 );
+               }
 
+               //Apply filters to search
+               function filterResults() {
+                 var filters = {};
+                 $(".applied-filters .filter").each(function () {
+                   var type = $(this).attr("data-type");
+				   var value = $(this).attr("data-value");
+				   if (!filters[type]) {
+						filters[type] = [value];
+				   }else{
+					   filters[type]+= value;
+				   }
+				 });
+                 userList.filter();
+                 userList.filter(function (item) {
+                   var inList = true;
+                   if (filters.age)
+                     inList = filterAge(item, parseInt(filters.age[0]));
+                   //If still in list, check next filter
+                   if (filters.day && inList)
+                     inList = filterDay(item, parseInt(filters.day));
+                   return inList;
+                 });
+               }
+               function filterAge(item, age) {
+                 var minCheck = item.values().ageMin <= age ? true : false;
+                 var maxCheck =
+                   item.values().ageMax > age || item.values().ageMax == "null"
+                     ? true
+                     : false;
 
-	
+                 if (minCheck && maxCheck) {
+                   return true;
+                 } else {
+                   return false;
+                 }
+               }
+               function filterDay(item, day) {
+                 return item.values().day == day ? true : false;
+               }
 
-				</li>
-				`
-      );
-    });
-  });
+               $(categories).each(function () {
+                 var categoryTagClass = this.tag.toLowerCase();
+                 //Creates always visible header on top of category
+                 $(".list").append(createCategoryHeader(this, columnHeaders));
 
-  //-- When you click on li item, the div with details info toggles.
-  $("li").click(e => {
-    var target = $(e.target).closest("li");
-    if ($(target).find("img").length == 0) {
-      var pictureUrl = $(target)
-        .find(".thumb")
-        .text();
-      $(".details", target).prepend("<img src=" + pictureUrl + ">");
-    }
-    $(target).toggleClass("active");
-    $(".details", target).slideToggle("fast");
-  });
+                 //Get all activities that have a tag that matches the category
+                 var categoryActivities = programs[1].Activities.filter(
+                   getActivitiesByTag,
+                   this.tag
+                 );
 
-  var options = {
-    valueNames: [
-      "name",
-      "price",
-      "ageMin",
-      "ageMax",
-      "day",
-      "hour",
-      "duration",
-      "subCategory",
-      "keywords"
-    ]
-  };
-  var userList = new List("users", options);
-});
+                 //Sort those activities
+                 categoryActivities.sort(sortByName);
+
+                 //Create the list item for every activity
+                 $(categoryActivities).each(function () {
+                   // console.log(this.Id);
+                   if (
+                     !this.Name.toLowerCase().includes("hiver") &&
+                     !this.Name.toLowerCase().includes("printemps")
+                   ) {
+                     var sDate = new Date(this.StartDate);
+                     var eDate = new Date(this.EndDate);
+
+                     var duration =
+                       eDate.getHours() +
+                       eDate.getMinutes() / 60 -
+                       (sDate.getHours() + sDate.getMinutes() / 60);
+                     var keywords = "";
+                     for (var i in this.Keywords) {
+                       keywords += this.Keywords[i] + " ";
+                     }
+                     var tags = "";
+                     for (var i in this.Tags) {
+                       tags += this.Tags[i].Name + " ";
+                     }
+                     $(".list").append(
+                       `
+						<li class="activity grid ${categoryTagClass}">
+							<span class="name">${formatName(this.Name)}<span class="label ${isNew(
+                         this.Tags
+                       )}">${text.new}</span></span>
+							<span class="age">${formatAge(this.Age)}</span>
+							<span class="schedule">${formatSchedule(sDate, eDate)}</span>
+							<span class="price">${formatPrice(this.Price)}</span>
+							<span class="cours">${this.NumberOfOccurrences}</span>
+							<span class="location">${formatLocation(this.Id)}</span>
+							<span class="staff">${formatStaff(this.Staff)}</span>
+							<span class="start">${formatStartingDate(sDate)}</span>
+							${
+                this.SpotsRemaining > 0
+                  ? "<a class='signup' target='_blank' href='https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/" +
+                    this.Id +
+                    "?quickRegisterId=" +
+                    this.Id +
+                    "'>S'inscrire</a>"
+                  : "<div class='isFull'>" + text.full + "</div>"
+              }
+						<div class="details">
+			  				<span class="close">X</span>
+							<h1>${formatName(this.Name)}</h1>
+							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
+							<div class="description">${this.Description}</div>
+							<div class="prerequisite">${this.Prerequisite}</div>
+							<div class="note">${this.Note}</div>
+							<div class="hour">${sDate.getHours()}</div>
+							<div class="duration">${duration}</div>
+							<div class="subCategory">${this.SubCategoryName}</div>
+						</div>
+						<div class="hidden">
+							<div class="id">${this.Id}</div>
+							<div class="day">${sDate.getDay()}</div>
+							<div class="ageMin">${this.Age ? this.Age.Min : 0}</div>
+							<div class="ageMax">${this.Age ? this.Age.Max : 99}</div>
+							<div class="keywords">${keywords + tags}</div>
+							<div class="startDate">${this.StartDate}</div>
+							<div class="hour">${sDate.getHours()}</div>
+							<div class="duration">${duration}</div>
+							<div class="subCategory">${this.SubCategoryName}</div>
+						</div>
+						</li>
+					`
+                     );
+                   }
+                 });
+               });
+
+               //-- When you click on li item, the div with details info toggles.
+               $("li.activity").click((e) => {
+                 var target = $(e.target).closest("li");
+                 togglePopUp($(target).find(".details"));
+               });
+               function togglePopUp(target) {
+                 $(target).fadeToggle(100);
+                 $(".black").fadeToggle(100);
+               }
+               $(".close, .black").click((e) => {
+                 e.stopPropagation();
+                 togglePopUp($(".details:visible"));
+               });
+
+               var options = {
+                 valueNames: [
+                   "id",
+                   "name",
+                   "price",
+                   "ageMin",
+                   "ageMax",
+                   "day",
+                   "hour",
+                   "duration",
+                   "subCategory",
+                   "keywords",
+                 ],
+               };
+               var userList = new List("users", options);
+               userList.on("updated", function (list) {
+                 //Even if no result, listjs counts the categories header as showing. So if results are not greater than categories used, display no result message
+                 if (parseInt(list.matchingItems.length) > categories.length) {
+                   $(".noResult").hide();
+                 } else {
+                   console.log("showing");
+                   $(".noResult").show();
+                 }
+                 //If no result in given category, hide the header
+                 $(categories).each(function () {
+                   var header = $(".category-header." + this.tag.toLowerCase());
+                   if (!$(".activity." + this.tag.toLowerCase()).length) {
+                     $(header).hide();
+                   } else {
+                     $(header).show();
+                   }
+                 });
+               });
+             });
