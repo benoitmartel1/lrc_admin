@@ -38,6 +38,7 @@ $(document).ready(function() {
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
+					 console.log(this.Id);
                    if (
                      !this.Name.toLowerCase().includes("hiver") &&
                      !this.Name.toLowerCase().includes("printemps")
