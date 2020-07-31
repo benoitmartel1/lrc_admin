@@ -3,7 +3,7 @@
 //db connect  
 //include('db_connect.php');
 //get activities
- include('php/activities.php');
+ require('php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +18,9 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 	
+<script>
+var activities = <?php echo json_encode($activities); ?>;
+</script>
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -31,9 +34,7 @@
 
 	<script src="js/routines.js"></script>
 	<script src="js/search.js"></script>
-	<script>
-var activities = <?php echo json_encode($activities); ?>;
-</script>
+	
 </head>
 
 <body>
