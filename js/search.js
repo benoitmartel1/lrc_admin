@@ -101,7 +101,7 @@ $(document).ready(function() {
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
 							<div class="subCategory">${this.SubCategoryName}</div>
-							<div class="location-id">${this.Location.Id}</div>
+							<div class="location-id">${this.Location?this.Location.Id:null}</div>
 
 						</div>
 						</li>
