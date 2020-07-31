@@ -84,6 +84,14 @@ h1{
 .list .activity:not(.active):hover {
   background-color: #eee;
 }
+
+.category-header{
+	background-color: gray;
+}
+.span.name{
+	background-color: lightgray;
+}
+
 .activity span.name{
 	border-bottom: 1px solid white;
 }

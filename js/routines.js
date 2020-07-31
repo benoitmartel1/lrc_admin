@@ -76,7 +76,6 @@ function formatPrice(p){
 function getActivitiesById(obj){
 	var id=this;
 	if (obj.CategoryId == id) {
-		console.log('same '+id+' '+obj.CategoryId);
         return true;
       }else{
 		  return false;
