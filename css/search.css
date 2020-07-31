@@ -138,6 +138,7 @@ h1{
 }
 .details {
   display: none;
+box-shadow: 0 0 10px;
 }
 .main div {
   padding: 0 10px;

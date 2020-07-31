@@ -88,6 +88,11 @@ var sortByName = function (res1, res2) {
   return prod1.localeCompare(prod2);
 };
 
+//Return the text for the div according to its id text-*name*
+function placeTextInDiv(div){
+	var name=$(div).attr('id');
+	$(div).text(text[name.split("-")[1]]);
+};	
 //Return a div for the category Header
 function createCategoryHeader(cat, columnHeaders){
 	var top=$('<h1>',{

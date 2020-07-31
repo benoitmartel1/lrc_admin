@@ -9,5 +9,5 @@ var locations = [
   { Id: 10722, Name: "\u00c9cole Marcel-Vaillancourt" },
   { Id: 10707, Name: "\u00c9cole Coursol" },
   { Id: 10706, Name: "Pavillon Renaud-Coursol" },
-  { Id: 51411, Name: "Centre Raymond-Fortin", Activities: [2319268] },
+  { Id: 51411, Name: "Centre Raymond-Fortin" },
 ];

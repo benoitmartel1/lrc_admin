@@ -1,15 +1,15 @@
-<!-- <?php 
+<?php 
 
 //db connect  
-include('db_connect.php');
-//get staff members
+//include('db_connect.php');
+//get activities
  include('php/activities.php');
-?> -->
+?>
 <!DOCTYPE html>
 <html>
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>LRC - Panneau de contrôle</title>
+	<title>LRC - Programmation</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,6 +32,9 @@ include('db_connect.php');
 
 	<script src="js/routines.js"></script>
 	<script src="js/search.js"></script>
+	<script>
+var activities = <?php echo json_encode($activities); ?>;
+</script>
 </head>
 
 <body>
@@ -41,9 +44,10 @@ include('db_connect.php');
 
 
 <div class="filters">
+	<span id="text-filterBy"></span>
 	<div id="age-drop" class="dropdown filter-drop">
 		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Âge
+			<span id="text-age"></span>
 		</button>
 		<div data="age" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 			<a class="dropdown-item" data-type="age" data-value="18" href="#">Adulte</a>
@@ -53,12 +57,20 @@ include('db_connect.php');
 	<div id="day-drop" class="dropdown filter-drop">
 		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 			aria-haspopup="true" aria-expanded="false">
-			Jour
+			<span id="text-day"></span>
 		</button>
 		<div data="day" class="dropdown-menu" aria-labelledby="dropdownMenuButton">	
 		</div>
 	</div>
-		<div class="applied-filters"></div>
+	<div id="location-drop" class="dropdown filter-drop">
+		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false">
+			<span id="text-location"></span>
+		</button>
+		<div data="location" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		</div>
+	</div>
+	<div class="applied-filters"></div>
 
 </div>
 
@@ -79,7 +91,7 @@ include('db_connect.php');
     Sort
   </button> -->
 </div>
-	<div class="noResult">Désolé, cette activité n'est pas encore offerte. Avertissez-moi lorsque offerte.</div>
+	<div id="text-noResult" class="noResult"></div>
 
 <!-- Child elements of container with class="list" becomes list items -->
   <ul class="list no-select">

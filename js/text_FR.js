@@ -1,7 +1,12 @@
 var text = {
   free: "Gratuit",
   full: "Complet",
-  new:'Nouveau'
+  new:'Nouveau',
+  age:'Âge',
+  day:'Jour',
+  noResult:'Désolé, cette activité n\'est pas encore offerte. Avertissez-moi lorsque offerte.',
+  filterBy:'Filtrer par',
+  location:'Lieu'
 };
 
 

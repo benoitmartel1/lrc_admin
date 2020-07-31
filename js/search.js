@@ -1,109 +1,13 @@
 $(function() {
-               //Populate age filter menu
-               for (a = 17; a > 0; a--) {
-                 $("#age-drop .dropdown-menu").append(
-                   $("<a>", {
-                     text: a,
-                     class: "dropdown-item",
-                   })
-                     .attr("data-type", "age")
-                     .attr("data-value", a)
-                 );
-               }
-               //Populate day filter menu
-               for (a = 0; a <= 7; a++) {
-                 $("#day-drop .dropdown-menu").append(
-                   $("<a>", {
-                     text: daysOfWeek[a],
-                     class: "dropdown-item",
-                   })
-                     .attr("data-type", "day")
-                     .attr("data-value", a)
-                 );
-               }
-
-               //Erase Search input
-               $(".erase").click(function () {
-                 $(".search").val("");
-                 userList.search("");
-               });
-
-               //Filter is selected from dropdown
-               $(".filter-drop a").click(function () {
-                 var type = $(this).attr("data-type");
-				 $('.applied-filters .filter[data-type="'+type+'"]').remove();
-                 addFilterLabel(this);
-                 filterResults();
-               });
-
-               //Remove Filter Label
-               $("body").on("click", ".applied-filters .filter", function () {
-                 $(this).remove();
-                 filterResults();
-               });
-
-               //Attach filter label
-               function addFilterLabel(label) {
-                 var text = $(label).text();
-                 var type = $(label).attr("data-type");
-				 var value = $(label).attr("data-value");
-                 $(".applied-filters").append(
-                   $("<span>", {
-                     text: text,
-                     class: "filter",
-                   })
-                     .attr("data-type", type)
-                     .attr("data-value", value).append($('<span>',{text:'X',class:'filter-remove'}))
-                 );
-               }
-
-               //Apply filters to search
-               function filterResults() {
-                 var filters = {};
-                 $(".applied-filters .filter").each(function () {
-                   var type = $(this).attr("data-type");
-				   var value = $(this).attr("data-value");
-				   if (!filters[type]) {
-						filters[type] = [value];
-				   }else{
-					   filters[type]+= value;
-				   }
-				 });
-                 userList.filter();
-                 userList.filter(function (item) {
-                   var inList = true;
-                   if (filters.age)
-                     inList = filterAge(item, parseInt(filters.age[0]));
-                   //If still in list, check next filter
-                   if (filters.day && inList)
-                     inList = filterDay(item, parseInt(filters.day));
-                   return inList;
-                 });
-               }
-               function filterAge(item, age) {
-                 var minCheck = item.values().ageMin <= age ? true : false;
-                 var maxCheck =
-                   item.values().ageMax > age || item.values().ageMax == "null"
-                     ? true
-                     : false;
-
-                 if (minCheck && maxCheck) {
-                   return true;
-                 } else {
-                   return false;
-                 }
-               }
-               function filterDay(item, day) {
-                 return item.values().day == day ? true : false;
-               }
-
+               //--------------------POPULATE-----------------------//
+               //Populate the grid
                $(categories).each(function () {
                  var categoryTagClass = this.tag.toLowerCase();
                  //Creates always visible header on top of category
                  $(".list").append(createCategoryHeader(this, columnHeaders));
 
                  //Get all activities that have a tag that matches the category
-                 var categoryActivities = programs[1].Activities.filter(
+                 var categoryActivities = activities.filter(
                    getActivitiesByTag,
                    this.tag
                  );
@@ -183,20 +87,148 @@ $(function() {
                    }
                  });
                });
+               //Fill in text divs
+               $("[id*='text-']").each(function () {
+                 placeTextInDiv(this);
+               });
+               //Populate age filter menu
+               for (a = 17; a > 0; a--) {
+                 $("#age-drop .dropdown-menu").append(
+                   $("<a>", {
+                     text: a,
+                     class: "dropdown-item",
+                   })
+                     .attr("data-type", "age")
+                     .attr("data-value", a)
+                 );
+               }
+               //Populate day filter menu
+               for (a = 0; a <= 7; a++) {
+                 $("#day-drop .dropdown-menu").append(
+                   $("<a>", {
+                     text: daysOfWeek[a],
+                     class: "dropdown-item",
+                   })
+                     .attr("data-type", "day")
+                     .attr("data-value", a)
+                 );
+               }
 
-               //-- When you click on li item, the div with details info toggles.
+               //Sort locations according to Name
+               locations.sort(function (a, b) {
+                 //Remove accents and compare
+                 var textA = a.Name.normalize("NFD").replace(
+                   /[\u0300-\u036f]/g,
+                   ""
+                 );
+                 var textB = b.Name.normalize("NFD").replace(
+                   /[\u0300-\u036f]/g,
+                   ""
+                 );
+                 return textA < textB ? -1 : textA > textB ? 1 : 0;
+               });
+
+               //Populate location filter menu
+               for (a = 0; a < locations.length; a++) {
+                 $("#location-drop .dropdown-menu").append(
+                   $("<a>", {
+                     text: locations[a].Name,
+                     class: "dropdown-item",
+                   })
+                     .attr("data-type", "location")
+                     .attr("data-value", locations[a].Id)
+                 );
+               }
+               //--------------------LISTENERS-----------------------//
+               //Erase Search input
+               $(".erase").click(function () {
+                 $(".search").val("");
+                 userList.search("");
+               });
+               //Filter is selected from dropdown
+               $(".filter-drop a").click(function () {
+                 var type = $(this).attr("data-type");
+                 $(
+                   '.applied-filters .filter[data-type="' + type + '"]'
+                 ).remove();
+                 addFilterLabel(this);
+                 filterResults();
+               });
+               //Remove Filter Label
+               $("body").on("click", ".applied-filters .filter", function () {
+                 $(this).remove();
+                 filterResults();
+               });
+               //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
                  var target = $(e.target).closest("li");
                  togglePopUp($(target).find(".details"));
                });
-               function togglePopUp(target) {
-                 $(target).fadeToggle(100);
-                 $(".black").fadeToggle(100);
-               }
+               //Close the popup
                $(".close, .black").click((e) => {
                  e.stopPropagation();
                  togglePopUp($(".details:visible"));
                });
+
+               //--------------------FUNCTIONS-----------------------//
+               //Apply filters to search
+               function filterResults() {
+                 var filters = {};
+                 $(".applied-filters .filter").each(function () {
+                   var type = $(this).attr("data-type");
+                   var value = $(this).attr("data-value");
+                   if (!filters[type]) {
+                     filters[type] = [value];
+                   } else {
+                     filters[type] += value;
+                   }
+                 });
+                 userList.filter();
+                 userList.filter(function (item) {
+                   var inList = true;
+                   if (filters.age)
+                     inList = filterAge(item, parseInt(filters.age[0]));
+                   //If still in list, check next filter
+                   if (filters.day && inList)
+                     inList = filterDay(item, parseInt(filters.day));
+                   return inList;
+                 });
+               }
+               //Attach filter label
+               function addFilterLabel(label) {
+                 var text = $(label).text();
+                 var type = $(label).attr("data-type");
+                 var value = $(label).attr("data-value");
+                 $(".applied-filters").append(
+                   $("<span>", {
+                     text: text,
+                     class: "filter",
+                   })
+                     .attr("data-type", type)
+                     .attr("data-value", value)
+                     .append($("<span>", { text: "X", class: "filter-remove" }))
+                 );
+               }
+               function filterAge(item, age) {
+                 var minCheck = item.values().ageMin <= age ? true : false;
+                 var maxCheck =
+                   item.values().ageMax > age || item.values().ageMax == "null"
+                     ? true
+                     : false;
+
+                 if (minCheck && maxCheck) {
+                   return true;
+                 } else {
+                   return false;
+                 }
+               }
+               function filterDay(item, day) {
+                 return item.values().day == day ? true : false;
+               }
+               function togglePopUp(target) {
+                 $(target).fadeToggle(100);
+                 $(".black").fadeToggle(100);
+               }
 
                var options = {
                  valueNames: [
