@@ -75,7 +75,7 @@ function formatPrice(p){
 
 function getActivitiesByTag(obj){
 	var tagName=this;
-	if (obj.SubCategoryName == tagName) {
+	if (obj.CategoryName == tagName) {
         return true;
       }else{
 		  return false;

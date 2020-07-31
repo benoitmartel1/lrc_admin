@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 	
 <script>
-var activities = <?php echo json_encode($activities); ?>;
+var activities = <?php echo json_encode($allActivities); ?>;
 </script>
 
 <script

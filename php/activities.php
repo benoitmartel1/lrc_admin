@@ -21,26 +21,51 @@ function sendHTTPrequest($curl, $url, $headers){
 $token=sendHTTPrequest($curl, $auth_url, $auth_data)->Token;
 // $token=json_decode($token)->Token;
 
-if(!$token){die("Connection Failure");}else{
+$allActivities=array();
 
-	//If the token is obtained, then make the request to the API
-    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=true';
+if(!$token){die("Connection Failure");}else{
+    
+    //If the token is obtained, then make the request to the API
     $auth_data = array('Authorization: Bearer '.$token);
+    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/locations';
+    
+	$locations=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
+
+    
+    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=True';
 	$programs=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-	
-	// $programs=json_decode($result)->Items;
 
 	//For each Program, get its activities and add them as a property
     foreach($programs as $program){
       	$id=$program->Id;
-		//$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
-		$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities';
 
-        $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-		// $activities=json_decode($result)->Items;
-		//Add the activities array to property Activities of currently processed Program.
-		$program->Activities=$activities;
-	};
+        if ($id==55462) {
+    		$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities?showOccurrences=True&perPage=1000';
+            $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
+            
+            foreach($activities as $activity){
+                
+                //Handle Location
+                $loc=$activity->Occurrences[0]->Location;
+                if (!empty($loc)){
+                    $locationId=(!empty($loc->TopParentId))?$loc->TopParentId:$loc->Id;
+                    foreach($locations as $location){
+                        if ($location->Id==$locationId){
+                            $activity->Location=$location;
+                        };
+                    };
+                };
+                
+                //Handle Staff
+                $staff=$activity->Occurrences[0]->Staff;
+                if (!empty($staff[0])){
+                    $activity->Staff=$staff[0];
+                };
+                unset($activity->Occurrences);
+                array_push($allActivities,$activity);
+            };
+    	};
+    };
 };
 curl_close($curl);
 ?>
