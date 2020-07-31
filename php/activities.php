@@ -48,12 +48,11 @@ if(!$token){die("Connection Failure");}else{
                 //Handle Location
                 $loc=$activity->Occurrences[0]->Location;
                 if (!empty($loc)){
-                    $locationId=(!empty($loc->TopParentId))?$loc->TopParentId:$loc->Id;
-                    foreach($locations as $location){
-                        if ($location->Id==$locationId){
-                            $activity->Location=$location;
-                        };
-                    };
+                    $location=getElemById($locations, $loc->Id);
+                        if(!empty($location->TopParentId)){
+                           $location=getElemById($locations, $location->TopParentId);     
+                        } 
+                        $activity->Location=$location;
                 };
                 
                 //Handle Staff
@@ -67,5 +66,14 @@ if(!$token){die("Connection Failure");}else{
     	};
     };
 };
+function getElemById($arr,$id){
+    foreach($arr as $elem){
+        if ($elem->Id==$id){
+            return $elem;
+        }
+    }
+}
+
+
 curl_close($curl);
 ?>
