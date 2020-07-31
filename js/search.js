@@ -65,7 +65,7 @@ $(document).ready(function() {
 							<span class="schedule">${formatSchedule(sDate, eDate)}</span>
 							<span class="price">${formatPrice(this.Price)}</span>
 							<span class="cours">${this.NumberOfOccurrences}</span>
-							<span class="location">${formatLocation(this.Id)}</span>
+							<span class="location">${formatLocation(this.Location)}</span>
 							<span class="staff">${formatStaff(this.Staff)}</span>
 							<span class="start">${formatStartingDate(sDate)}</span>
 							${
@@ -98,6 +98,8 @@ $(document).ready(function() {
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
 							<div class="subCategory">${this.SubCategoryName}</div>
+							<div class="location-id">${this.Location.Id}</div>
+
 						</div>
 						</li>
 					`
@@ -259,7 +261,8 @@ $(document).ready(function() {
                    "hour",
                    "duration",
                    "subCategory",
-                   "keywords",
+				   "keywords",
+				   "location-id"
                  ],
                };
                var userList = new List("users", options);

@@ -37,15 +37,8 @@ function formatStaff(staff){
 		return '';
 	}
 }
-function formatLocation(id){
-	var textToReturn="";
-	$(locations).each(function(){
-		var loc=this;
-		if($.inArray(id, this.Activities) !== -1){
-			textToReturn=loc.Name;
-		}
-	});
-	return textToReturn;
+function formatLocation(loc){
+	return loc.FullName.match(/\(([^)]+)\)/)[1];
 };
 //Horaire 
 function formatSchedule(s,e) {
