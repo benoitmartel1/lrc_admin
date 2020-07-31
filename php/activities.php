@@ -30,7 +30,7 @@ if(!$token){die("Connection Failure");}else{
     $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/locations';
     
 	$locations=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
-
+	
     
     $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=True';
 	$programs=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
