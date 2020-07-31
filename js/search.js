@@ -154,7 +154,7 @@ $(document).ready(function() {
                //Populate location filter menu
                for (a = 0; a < locations.length; a++) {
 				   console.log(locations[a].TopParentId);
-				   if(locations[a].TopParentId!=null){
+				   if(locations[a].TopParentId==null){
 						$("#location-drop .dropdown-menu").append(
 						$("<a>", {
 							text: locations[a].FullName,
