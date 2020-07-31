@@ -29,25 +29,25 @@ var columnHeaders = {
   starting:"Début",
   staff:'Responsable'
 };
-var categories = [
-  {
-    tag: "Arts",
-    name: "Activités artistiques",
-  },
-  {
-    tag: "Sports",
-    name: "Activités physiques",
-  },
-  {
-    tag: "Danse",
-    name: "Danse",
-  },
-  {
-    tag: "Langues",
-    name: "Cours de langue",
-  },
-  {
-    tag: "Aquatique",
-    name: "Activités aquatiques",
-  },
-];
+// var categories = [
+//   {
+//     tag: "Arts",
+//     name: "Activités artistiques",
+//   },
+//   {
+//     tag: "Sports",
+//     name: "Activités physiques",
+//   },
+//   {
+//     tag: "Danse",
+//     name: "Danse",
+//   },
+//   {
+//     tag: "Langues",
+//     name: "Cours de langue",
+//   },
+//   {
+//     tag: "Aquatique",
+//     name: "Activités aquatiques",
+//   },
+// ];

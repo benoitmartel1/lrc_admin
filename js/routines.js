@@ -73,9 +73,9 @@ function formatPrice(p){
 	return (p==0)? text.free:p+" $";
 }
 
-function getActivitiesByTag(obj){
-	var tagName=this;
-	if (obj.CategoryName == tagName) {
+function getActivitiesById(obj){
+	var id=this;
+	if (obj.CategoryId == id) {
         return true;
       }else{
 		  return false;
@@ -112,12 +112,24 @@ function createCategoryHeader(cat, columnHeaders){
 </div>`;
 	
 	var header = $("<li>", {
-    class: cat.tag.toLowerCase() + " category-header",
+    class: convertToClassSafe(cat.name) + " category-header",
   })
     .attr("data-always-visible", "true")
     .append(top)
-	.append(columnHeaders);
+    .append(columnHeaders);
 	
 	return header;
 
 };
+
+function convertToClassSafe(name) {
+  return name.replace(/[^a-z0-9]/g, function (s) {
+    var c = s.charCodeAt(0);
+    if (c == 32) return "-";
+    if (c >= 65 && c <= 90) return s.toLowerCase();
+    return s
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  });
+}

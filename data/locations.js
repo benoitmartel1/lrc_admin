@@ -1,3 +1,5 @@
+//FOR DEVELOPING ONLY
+
 var locations = [
   { Id: 10724, Name: "Piscine - Val-Des-Arbres" },
   { Id: 420869, Name: "\u00c9cole de la Cime" },

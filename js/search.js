@@ -1,16 +1,33 @@
 $(document).ready(function() {
 	console.log(activities);
+
+	categories = [
+    ...new Set(
+      activities.map((n) => {
+        var cat = {};
+        cat.name = n.CategoryName;
+        cat.id = n.CategoryId;
+        return cat;
+      })
+    ),
+  ];
+
+  categories = categories.filter(
+    (cat, index, self) =>
+      self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
+  );
+
                //--------------------POPULATE-----------------------//
                //Populate the grid
                $(categories).each(function () {
-                 var categoryTagClass = this.tag.toLowerCase();
+                 //var categoryTagClass = this.tag.toLowerCase();
                  //Creates always visible header on top of category
                  $(".list").append(createCategoryHeader(this, columnHeaders));
 
                  //Get all activities that have a tag that matches the category
                  var categoryActivities = activities.filter(
-                   getActivitiesByTag,
-                   this.tag
+                   getActivitiesById,
+                   this.id
                  );
 
                  //Sort those activities
