@@ -57,7 +57,7 @@ $(document).ready(function() {
                      }
                      $(".list").append(
                        `
-						<li class="activity grid ${categoryTagClass}">
+						<li class="activity grid ${convertToClassSafe(this.CategoryName)}">
 							<span class="name">${formatName(this.Name)}<span class="label ${isNew(
                          this.Tags
                        )}">${text.new}</span></span>
