@@ -140,11 +140,11 @@ $(document).ready(function() {
                //Sort locations according to Name
                locations.sort(function (a, b) {
                  //Remove accents and compare
-                 var textA = a.Name.normalize("NFD").replace(
+                 var textA = a.FullName.normalize("NFD").replace(
                    /[\u0300-\u036f]/g,
                    ""
                  );
-                 var textB = b.Name.normalize("NFD").replace(
+                 var textB = b.FullName.normalize("NFD").replace(
                    /[\u0300-\u036f]/g,
                    ""
                  );
@@ -153,14 +153,17 @@ $(document).ready(function() {
 
                //Populate location filter menu
                for (a = 0; a < locations.length; a++) {
-                 $("#location-drop .dropdown-menu").append(
-                   $("<a>", {
-                     text: locations[a].Name,
-                     class: "dropdown-item",
-                   })
-                     .attr("data-type", "location")
-                     .attr("data-value", locations[a].Id)
-                 );
+				   console.log(locations[a].TopParentId);
+				   if(locations[a].TopParentId!=null){
+						$("#location-drop .dropdown-menu").append(
+						$("<a>", {
+							text: locations[a].FullName,
+							class: "dropdown-item",
+						})
+							.attr("data-type", "location")
+							.attr("data-value", locations[a].Id)
+						);
+				   }
                }
                //--------------------LISTENERS-----------------------//
                //Erase Search input
