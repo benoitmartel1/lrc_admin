@@ -20,6 +20,7 @@
 	
 <script>
 var activities = <?php echo json_encode($allActivities); ?>;
+var locations = <?php echo json_encode($locations); ?>;
 </script>
 
 <script

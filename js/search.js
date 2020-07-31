@@ -68,7 +68,7 @@ $(document).ready(function() {
 							<span class="schedule">${formatSchedule(sDate, eDate)}</span>
 							<span class="price">${formatPrice(this.Price)}</span>
 							<span class="cours">${this.NumberOfOccurrences}</span>
-							<span class="location">${formatLocation(this.Location)}</span>
+							<span class="location">${(this.Location)?formatLocation(this.Location):""}</span>
 							<span class="staff">${formatStaff(this.Staff)}</span>
 							<span class="start">${formatStartingDate(sDate)}</span>
 							${
