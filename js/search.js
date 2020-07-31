@@ -38,7 +38,7 @@ $(document).ready(function() {
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
-					 console.log(this);
+					//  console.log(this);
                    if (
                      !this.Name.toLowerCase().includes("hiver") &&
                      !this.Name.toLowerCase().includes("printemps")
@@ -101,7 +101,7 @@ $(document).ready(function() {
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
 							<div class="subCategory">${this.SubCategoryName}</div>
-							<div class="location-id">${this.Location?this.Location.Id:null}</div>
+							<div class="locationId">${this.Location?this.Location.Id:null}</div>
 
 						</div>
 						</li>
@@ -153,8 +153,8 @@ $(document).ready(function() {
 
                //Populate location filter menu
                for (a = 0; a < locations.length; a++) {
-				   console.log(locations[a].TopParentId);
-				   if(locations[a].TopParentId==null){
+				//    console.log(locations[a].TopParentId);
+				   if(locations[a].TopParentId=null){
 						$("#location-drop .dropdown-menu").append(
 						$("<a>", {
 							text: locations[a].FullName,
@@ -216,7 +216,10 @@ $(document).ready(function() {
                      inList = filterAge(item, parseInt(filters.age[0]));
                    //If still in list, check next filter
                    if (filters.day && inList)
-                     inList = filterDay(item, parseInt(filters.day));
+					 inList = filterDay(item, parseInt(filters.day));
+					 //If still in list, check next filter
+                   if (filters.location && inList)
+                     inList = filterLocation(item, parseInt(filters.location));
                    return inList;
                  });
                }
@@ -250,7 +253,10 @@ $(document).ready(function() {
                }
                function filterDay(item, day) {
                  return item.values().day == day ? true : false;
-               }
+			   }
+			   function filterLocation(item, id) {
+          			 return item.values().locationId == id ? true : false;
+        		 }
                function togglePopUp(target) {
                  $(target).fadeToggle(100);
                  $(".black").fadeToggle(100);
@@ -268,7 +274,7 @@ $(document).ready(function() {
                    "duration",
                    "subCategory",
 				   "keywords",
-				   "location-id"
+				   "locationId"
                  ],
                };
                var userList = new List("users", options);
