@@ -1,4 +1,5 @@
 $(function() {
+	console.log(activities);
                //--------------------POPULATE-----------------------//
                //Populate the grid
                $(categories).each(function () {

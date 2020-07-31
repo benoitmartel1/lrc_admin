@@ -27,7 +27,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="js/list.min.js"></script>
 	<script src="js/text_FR.js"></script>
-	<script src="data/activities.js"></script>
 		<script src="data/locations.js"></script>
 
 	<script src="js/routines.js"></script>
