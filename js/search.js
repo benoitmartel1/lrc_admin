@@ -5,7 +5,8 @@
     ...new Set(
       activities.map((n) => {
         var cat = {};
-        cat.name = n.CategoryName;
+		cat.name = n.CategoryName;
+		cat.class= convertToClassSafe(n.CategoryName);
         cat.id = n.CategoryId;
         return cat;
       })
@@ -20,7 +21,7 @@
                //--------------------POPULATE-----------------------//
                //Populate the grid
                $(categories).each(function () {
-                 //var categoryTagClass = this.tag.toLowerCase();
+				   var categoryClass = this.class;
                  //Creates always visible header on top of category
                  $(".list").append(createCategoryHeader(this, columnHeaders));
 
@@ -35,7 +36,6 @@
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
-                   // console.log(this.Id);
                    if (
                      !this.Name.toLowerCase().includes("hiver") &&
                      !this.Name.toLowerCase().includes("printemps")
@@ -57,7 +57,7 @@
                      }
                      $(".list").append(
                        `
-						<li class="activity grid ${convertToClassSafe(this.CategoryName)}">
+						<li class="activity grid ${categoryClass}">
 							<span class="name">${formatName(this.Name)}<span class="label ${isNew(
                          this.Tags
                        )}">${text.new}</span></span>
@@ -273,8 +273,8 @@
                  }
                  //If no result in given category, hide the header
                  $(categories).each(function () {
-                   var header = $(".category-header." + this.tag.toLowerCase());
-                   if (!$(".activity." + this.tag.toLowerCase()).length) {
+                   var header = $(".category-header." + this.class);
+                   if (!$(".activity." + this.class).length) {
                      $(header).hide();
                    } else {
                      $(header).show();
