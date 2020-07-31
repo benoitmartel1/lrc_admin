@@ -38,6 +38,7 @@ function formatStaff(staff){
 	}
 }
 function formatLocation(loc){
+	console.log(loc.FullName);
 	return loc.FullName.match(/\(([^)]+)\)/)[1];
 };
 //Horaire 

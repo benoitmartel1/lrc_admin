@@ -13,6 +13,8 @@ $(document).ready(function() {
     ),
   ];
 
+
+  
   categories = categories.filter(
     (cat, index, self) =>
       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
