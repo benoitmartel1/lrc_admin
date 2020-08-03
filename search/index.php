@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, maximum-scale=1; minimum-scale=1">
 	<title>LRC - Programmation</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@ var locations = <?php echo json_encode($locations); ?>;
 <div class="filters">
 	<span id="text-filterBy"></span>
 	<div id="age-drop" class="dropdown filter-drop">
-		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span id="text-age"></span>
 		</button>
 		<div data="age" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -54,7 +54,7 @@ var locations = <?php echo json_encode($locations); ?>;
 		</div>
 	</div>
 	<div id="day-drop" class="dropdown filter-drop">
-		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-day"></span>
 		</button>
@@ -62,7 +62,7 @@ var locations = <?php echo json_encode($locations); ?>;
 		</div>
 	</div>
 	<div id="location-drop" class="dropdown filter-drop">
-		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-location"></span>
 		</button>

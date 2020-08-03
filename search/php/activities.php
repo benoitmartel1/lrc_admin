@@ -44,24 +44,27 @@ if(!$token){die("Connection Failure");}else{
             $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
             
             foreach($activities as $activity){
-                
-                //Handle Location
-                $loc=$activity->Occurrences[0]->Location;
-                if (!empty($loc)){
-                    $location=getElemById($locations, $loc->Id);
-                        if(!empty($location->TopParentId)){
-                           $location=getElemById($locations, $location->TopParentId);     
-                        } 
-                        $activity->Location=$location;
-                };
-                
-                //Handle Staff
-                $staff=$activity->Occurrences[0]->Staff;
-                if (!empty($staff[0])){
-                    $activity->Staff=$staff[0];
-                };
-                unset($activity->Occurrences);
-                array_push($allActivities,$activity);
+                if(!empty($activity->Occurrences)){
+					//Handle Location
+					$loc=$activity->Occurrences[0]->Location;
+					if (!empty($loc)){
+						$location=getElemById($locations, $loc->Id);
+							if(!empty($location->TopParentId)){
+							$location=getElemById($locations, $location->TopParentId);     
+							} 
+							$activity->Location=$location;
+					};
+					
+					//Handle Staff
+					$staff=$activity->Occurrences[0]->Staff;
+					if (!empty($staff[0])){
+						$activity->Staff=$staff[0];
+					};
+					unset($activity->Occurrences);
+					array_push($allActivities,$activity);
+
+				};
+               
             };
     	};
     };

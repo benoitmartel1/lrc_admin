@@ -1,5 +1,13 @@
 $(document).ready(function() {
-	console.log(activities);
+
+
+	var sessionsToDisplay = [
+    // text.sessions.spring,
+    // text.sessions.summer,
+    text.sessions.fall,
+    text.sessions.winter,
+    text.sessions.yearly
+  ];
 
 	categories = [
     ...new Set(
@@ -25,7 +33,7 @@ $(document).ready(function() {
                $(categories).each(function () {
 				   var categoryClass = this.class;
                  //Creates always visible header on top of category
-                 $(".list").append(createCategoryHeader(this, columnHeaders));
+                 $(".list").append(createCategoryHeader(this));
 
                  //Get all activities that have a tag that matches the category
                  var categoryActivities = activities.filter(
@@ -38,13 +46,14 @@ $(document).ready(function() {
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
-					//  console.log(this);
+					var sDate = new Date(this.StartDate);
+					var eDate = new Date(this.EndDate);
+		   
                    if (
-                     !this.Name.toLowerCase().includes("hiver") &&
-                     !this.Name.toLowerCase().includes("printemps")
+					   	//SHow activity Only if part of session displayed
+						sessionsToDisplay.includes(formatSession(sDate,eDate))
                    ) {
-                     var sDate = new Date(this.StartDate);
-                     var eDate = new Date(this.EndDate);
+                     
 
                      var duration =
                        eDate.getHours() +
@@ -60,25 +69,26 @@ $(document).ready(function() {
                      }
                      $(".list").append(
                        `
-						<li class="activity grid ${categoryClass}">
+						<li class="activity grid ${categoryClass}" data-id='${this.Id}'>
 							<span class="name">${formatName(this.Name)}<span class="label ${isNew(
                          this.Tags
                        )}">${text.new}</span></span>
 							<span class="age">${formatAge(this.Age)}</span>
 							<span class="schedule">${formatSchedule(sDate, eDate)}</span>
+							<span class="session">${formatSession(sDate, eDate)}</span>
 							<span class="price">${formatPrice(this.Price)}</span>
 							<span class="cours">${this.NumberOfOccurrences}</span>
-							<span class="location">${(this.Location)?formatLocation(this.Location):""}</span>
+							<span class="location">${
+                this.Location ? formatLocation(this.Location) : ""
+              }</span>
 							<span class="staff">${formatStaff(this.Staff)}</span>
 							<span class="start">${formatStartingDate(sDate)}</span>
 							${
                 this.SpotsRemaining > 0
-                  ? "<a class='signup' target='_blank' href='https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/" +
-                    this.Id +
-                    "?quickRegisterId=" +
-                    this.Id +
-                    "'>S'inscrire</a>"
-                  : "<div class='isFull'>" + text.full + "</div>"
+                  ? "<button type='button' class='signup btn btn-outline-primary btn-sm'>S'inscrire</button>"
+                  : "<button class='signup isFull btn btn-light btn-sm' disabled>" +
+                    text.full +
+                    "</button>"
               }
 						<div class="details">
 			  				<span class="close">X</span>
@@ -101,7 +111,7 @@ $(document).ready(function() {
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
 							<div class="subCategory">${this.SubCategoryName}</div>
-							<div class="locationId">${this.Location?this.Location.Id:null}</div>
+							<div class="locationId">${this.Location ? this.Location.Id : null}</div>
 
 						</div>
 						</li>
@@ -129,7 +139,7 @@ $(document).ready(function() {
                for (a = 0; a <= 7; a++) {
                  $("#day-drop .dropdown-menu").append(
                    $("<a>", {
-                     text: daysOfWeek[a],
+                     text: text.daysOfWeek[a],
                      class: "dropdown-item",
                    })
                      .attr("data-type", "day")
@@ -165,7 +175,17 @@ $(document).ready(function() {
 						);
 				   }
                }
-               //--------------------LISTENERS-----------------------//
+			   //--------------------LISTENERS-----------------------//
+				$(".signup:not(.isFull)").click(function (e) {
+					e.stopPropagation();
+					var id=$(this).closest('li').attr('data-id');
+					console.log(id);
+                 window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
+                    id +
+                    '?quickRegisterId=' +
+                    id, '_blank');
+               });
+
                //Erase Search input
                $(".erase").click(function () {
                  $(".search").val("");

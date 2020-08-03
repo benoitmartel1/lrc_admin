@@ -41,9 +41,29 @@ function formatLocation(loc){
 	// console.log(loc.FullName);
 	return loc.FullName.match(/\(([^)]+)\)/)[1];
 };
+//Returns session season according to start and end date of activity
+function formatSession(sDate,eDate){
+	var s=sDate.getMonth();
+	var e=eDate.getMonth();
+	switch (true) {
+    case s < 3:
+      return text.sessions.winter;
+      break;
+    case s < 6:
+      return text.sessions.spring;
+      break;
+    case s > 6 && e > 6:
+      return text.sessions.fall;
+      break;
+    case s > 6 && e < 6:
+      return text.sessions.yearly;
+      break;
+  }
+};
+
 //Horaire 
 function formatSchedule(s,e) {
-	day=daysOfWeek[s.getDay()];
+	day=text.daysOfWeek[s.getDay()];
     startTime=formatTime(s);
 	endTime = formatTime(e);
 	return day+" "+startTime+" - "+endTime;
@@ -88,21 +108,22 @@ function placeTextInDiv(div){
 	$(div).text(text[name.split("-")[1]]);
 };	
 //Return a div for the category Header
-function createCategoryHeader(cat, columnHeaders){
+function createCategoryHeader(cat){
 	var top=$('<h1>',{
 		text:cat.name,
 		class:'top'
 	});
 
 	var columnHeaders = `<div class="grid">
-			<span class="column-header">${columnHeaders.activity}</span>	
-			<span class="column-header">${columnHeaders.age}</span>	
-			<span class="column-header">${columnHeaders.schedule}</span>	
-			<span class="column-header">${columnHeaders.price}</span>	
-			<span class="column-header">${columnHeaders.duration}</span>
-			<span class="column-header">${columnHeaders.location}</span>	
-			<span class="column-header">${columnHeaders.staff}</span>
-			<span class="column-header">${columnHeaders.starting}</span>	
+			<span class="column-header">${text.columnHeaders.activity}</span>	
+			<span class="column-header">${text.columnHeaders.age}</span>	
+			<span class="column-header">${text.columnHeaders.schedule}</span>	
+			<span class="column-header">${text.columnHeaders.session}</span>	
+			<span class="column-header">${text.columnHeaders.price}</span>	
+			<span class="column-header">${text.columnHeaders.duration}</span>
+			<span class="column-header">${text.columnHeaders.location}</span>	
+			<span class="column-header">${text.columnHeaders.staff}</span>
+			<span class="column-header">${text.columnHeaders.starting}</span>	
 </div>`;
 	
 	var header = $("<li>", {
