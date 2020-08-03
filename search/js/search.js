@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
 	var sessionsToDisplay = [
-    // text.sessions.spring,
+    text.sessions.spring,
     // text.sessions.summer,
     text.sessions.fall,
     text.sessions.winter,
@@ -70,27 +70,26 @@ $(document).ready(function() {
                      $(".list").append(
                        `
 						<li class="activity grid ${categoryClass}" data-id='${this.Id}'>
-							<span class="name">${formatName(this.Name)}<span class="label ${isNew(
-                         this.Tags
-                       )}">${text.new}</span></span>
-							<span class="age">${formatAge(this.Age)}</span>
-							<span class="schedule">${formatSchedule(sDate, eDate)}</span>
-							<span class="session">${formatSession(sDate, eDate)}</span>
-							<span class="price">${formatPrice(this.Price)}</span>
-							<span class="cours">${this.NumberOfOccurrences}</span>
-							<span class="location">${
+							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
+							<div class="age">${formatAge(this.Age)}</div>
+							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
+							<div class="session">${formatSession(sDate, eDate)}</div>
+							<div class="price">${formatPrice(this.Price)}</div>
+							<div class="cours">${this.NumberOfOccurrences}</div>
+							<div class="location">${
                 this.Location ? formatLocation(this.Location) : ""
-              }</span>
-							<span class="staff">${formatStaff(this.Staff)}</span>
-							<span class="start">${formatStartingDate(sDate)}</span>
+              }</div>
+							<div class="staff">${formatStaff(this.Staff)}</div>
+							<div class="start">${formatStartingDate(sDate)}</div>
+							<div class="signup">
 							${
                 this.SpotsRemaining > 0
-                  ? "<button type='button' class='signup btn btn-outline-primary btn-sm'>S'inscrire</button>"
-                  : "<button class='signup isFull btn btn-light btn-sm' disabled>" +
+                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>S'inscrire</button>"
+                  : "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"
-              }
-						<div class="details">
+              }</div>
+						<div class="details hidden">
 			  				<span class="close">X</span>
 							<h1>${formatName(this.Name)}</h1>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
@@ -176,10 +175,9 @@ $(document).ready(function() {
 				   }
                }
 			   //--------------------LISTENERS-----------------------//
-				$(".signup:not(.isFull)").click(function (e) {
+				$(".signup button:not(.isFull)").click(function (e) {
 					e.stopPropagation();
 					var id=$(this).closest('li').attr('data-id');
-					console.log(id);
                  window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
                     id +
                     '?quickRegisterId=' +
@@ -245,12 +243,13 @@ $(document).ready(function() {
                }
                //Attach filter label
                function addFilterLabel(label) {
-                 var text = $(label).text();
-                 var type = $(label).attr("data-type");
+				 var type = $(label).attr("data-type");
+				 var suffix =(type == "age") ? ' '+text.yearsOld : "";
+				var labelText = $(label).text()+suffix;
                  var value = $(label).attr("data-value");
                  $(".applied-filters").append(
                    $("<span>", {
-                     text: text,
+                     text: labelText,
                      class: "filter",
                    })
                      .attr("data-type", type)

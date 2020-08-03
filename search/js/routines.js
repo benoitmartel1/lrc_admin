@@ -1,12 +1,14 @@
 function isNew(tags){
-	var displayClass='hidden';
-	$(tags).each(function(){
-		if (this.Name.toLowerCase()=='nouveau') {
-			console.log('match');
-			displayClass = "";
-		}
-	});
-	return displayClass;
+	var label='';
+	if(tags){
+            $(tags).each(function () {
+              if (this.Name.toLowerCase() == "nouveau") {
+				label= `<span class="label">${text.new}</span>`;
+				return false;
+              }
+            });
+		  } 
+		  return label;
 }
 
 //Nom de l'activité
@@ -34,7 +36,7 @@ function formatStaff(staff){
 	if(staff){
 		return staff.FirstName;
 	}else{
-		return '';
+		return ' ';
 	}
 }
 function formatLocation(loc){
@@ -115,15 +117,15 @@ function createCategoryHeader(cat){
 	});
 
 	var columnHeaders = `<div class="grid">
-			<span class="column-header">${text.columnHeaders.activity}</span>	
-			<span class="column-header">${text.columnHeaders.age}</span>	
-			<span class="column-header">${text.columnHeaders.schedule}</span>	
-			<span class="column-header">${text.columnHeaders.session}</span>	
-			<span class="column-header">${text.columnHeaders.price}</span>	
-			<span class="column-header">${text.columnHeaders.duration}</span>
-			<span class="column-header">${text.columnHeaders.location}</span>	
-			<span class="column-header">${text.columnHeaders.staff}</span>
-			<span class="column-header">${text.columnHeaders.starting}</span>	
+			<div class="column-header">${text.columnHeaders.activity}</div>	
+			<div class="column-header">${text.columnHeaders.age}</div>	
+			<div class="column-header">${text.columnHeaders.schedule}</div>	
+			<div class="column-header">${text.columnHeaders.session}</div>	
+			<div class="column-header">${text.columnHeaders.price}</div>	
+			<div class="column-header">${text.columnHeaders.duration}</div>
+			<div class="column-header">${text.columnHeaders.location}</div>	
+			<div class="column-header">${text.columnHeaders.staff}</div>
+			<div class="column-header">${text.columnHeaders.starting}</div>	
 </div>`;
 	
 	var header = $("<li>", {

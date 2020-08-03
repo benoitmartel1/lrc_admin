@@ -6,16 +6,17 @@
     box-sizing: inherit; */
 }
 body{
+    line-height: 1.2em;
 	font-family: 'Nunito', sans-serif;
 	color:#333
 }
 .hidden{
 	display: none;
-}
-span.name{
+ }/*
+div.name{
 	display: flex;
 	align-items: center;
-}
+} */
 .label{	
 	font-size: 0.65em;
 	background-color: red;
@@ -56,19 +57,26 @@ h1{
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup";
 }
-.grid>span{
-	text-align: center;
+.grid>div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border-right:1px solid #999;
 }
-.grid>span:not(.column-header){
-	padding:2px 4px;
-	border-bottom:1px dotted #999;
+.grid>div.hidden{
+	display:none;
+}
+.grid>div:not(.column-header){
 	font-family: 'Roboto Condensed', sans-serif;
 }
-.grid>span.name{
+.grid>div.name{
+	display:inline-block;
 	text-align:left;
 	padding-left:15px;
 	border-right:none;
+}
+.grid>div:not(.name):not(.signup){
+	border-bottom:1px dotted #999;
 }
 .column-header{
 	font-size: 0.8em;
@@ -100,30 +108,37 @@ h1{
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-	.activity>.cours,
-	.activity>.signup
+	.activity>.cours	
 	{
 		display: none;
 	}
 	.grid{
 		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-auto-rows: 40px;
 		grid-template-areas: 
-		"name name name price"
-		"age schedule schedule location"
+		"name name name name"
+		"age schedule schedule schedule"
+		"location price . signup"
 		;
 	}
-	.grid>span:not(.column-header) {
+	.grid>div:not(.column-header) {
 		border-bottom: none;
 	}
 	.list .activity {
-		border-bottom:1px solid black;
-		margin-bottom:10px;
+		    border: 1px solid gray;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+	}
+	.activity>.name{
+		padding-top:10px;
+		padding-bottom:10px;
 	}
 }
 .category-header{
 	background-color: gray;
 }
-span.name{
+div.name{
 	background-color: lightgray;
 }
 .activity>.name{
@@ -147,6 +162,12 @@ span.name{
 }
 .activity>.session{
 	grid-area:session;
+}
+.activity>.signup{
+	grid-area:signup;
+}
+.activity>div:last-child{
+	border-right:0;
 }
 .arts.activity .name{
 	background-color:rgba(255,195,5,0.2);
@@ -278,5 +299,5 @@ body:not(.user-is-tabbing) textarea:focus {
 	display: inline-block;
 }
 .signup{
-	margin:8px;
+	margin:4px;
 }

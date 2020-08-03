@@ -58,7 +58,7 @@ var locations = <?php echo json_encode($locations); ?>;
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-day"></span>
 		</button>
-		<div data="day" class="dropdown-menu" aria-labelledby="dropdownMenuButton">	
+		<div data="day" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">	
 		</div>
 	</div>
 	<div id="location-drop" class="dropdown filter-drop">
@@ -66,7 +66,7 @@ var locations = <?php echo json_encode($locations); ?>;
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-location"></span>
 		</button>
-		<div data="location" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<div data="location" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
 		</div>
 	</div>
 	<div class="applied-filters"></div>

@@ -3,6 +3,7 @@ var text = {
   full: "Complet",
   new: "Nouveau",
   age: "Âge",
+  yearsOld:'ans',
   day: "Jour",
   noResult:
     "Désolé, cette activité n'est pas encore offerte. Avertissez-moi lorsque offerte.",
