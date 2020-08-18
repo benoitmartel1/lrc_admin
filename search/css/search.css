@@ -15,6 +15,9 @@ body ul li{
 	position:unset;
 	line-height: inherit;
 }
+#app{
+	width:90%;
+}
 .hidden{
 	display: none;
  }/*
@@ -36,17 +39,13 @@ div.name{
 	padding:0px 15px;
 	margin-bottom: 0;
 }
-.wrapper{
-	/* width: 1170px;
-    margin-right: auto;
-    margin-left: auto; */
-}
+
 .black{
 	display:none;
 	position:fixed;
     padding:0;
     margin:0;
-
+	z-index: 100;
     top:0;
     left:0;
 

@@ -37,7 +37,7 @@ var locations = <?php echo json_encode($locations); ?>;
 <body>
 <div class="black"></div>
 
-<div class="wrapper">
+<div id="app" class="wrapper">
 
 
 <div class="filters">
