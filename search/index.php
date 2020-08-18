@@ -1,9 +1,7 @@
 <?php 
+$path = $_SERVER['DOCUMENT_ROOT'].'/admin/search/';
 
-//db connect  
-//include('db_connect.php');
-//get activities
- require('php/activities.php');
+require($path.'php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,8 +13,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/search.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $path ?>css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $path ?>css/search.css">
 	
 <script>
 var activities = <?php echo json_encode($allActivities); ?>;
@@ -29,10 +27,10 @@ var locations = <?php echo json_encode($locations); ?>;
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="js/list.min.js"></script>
-	<script src="js/text_FR.js"></script>
-	<script src="js/routines.js"></script>
-	<script src="js/search.js"></script>
+	<script src="<?php echo $path ?>js/list.min.js"></script>
+	<script src="<?php echo $path ?>js/text_FR.js"></script>
+	<script src="<?php echo $path ?>js/routines.js"></script>
+	<script src="<?php echo $path ?>js/search.js"></script>
 	
 </head>
 
