@@ -3,11 +3,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, maximum-scale=1; minimum-scale=1">
+	<head>
 	<base href="https://renaudcoursol.com/admin/search/">
 
-	<title>LRC - Programmation</title>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -37,7 +35,7 @@ var locations = <?php echo json_encode($locations); ?>;
 <body>
 <div class="black"></div>
 
-<div id="app" class="wrapper">
+<div id="app">
 
 
 <div class="filters">

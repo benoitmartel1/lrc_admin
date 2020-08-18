@@ -16,7 +16,12 @@ body ul li{
 	line-height: inherit;
 }
 #app{
+	padding-top:30px;
 	width:90%;
+	margin:auto;
+}
+button{
+	height:auto;
 }
 .hidden{
 	display: none;
