@@ -9,11 +9,7 @@ body ul li{
 .wgl-theme-header.header_overlap{
 position: relative;
 };
-.wrapper{
-	width: 1170px;
-    margin-right: auto;
-    margin-left: auto;
-}
+
 
 .header {
   clear: both;

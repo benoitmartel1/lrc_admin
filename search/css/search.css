@@ -31,9 +31,10 @@ h1{
 	padding:0px 15px;
 	margin-bottom: 0;
 }
-.wrapper {
-	width: 100%;
-	padding: 10px;
+.wrapper{
+	width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .black{
 	display:none;
