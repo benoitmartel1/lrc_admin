@@ -3,6 +3,9 @@ body {
   margin: 0;
   font-size: 20px;
 }
+body ul li{
+	padding-left: 0;
+}
 .wgl-theme-header.header_overlap{
 position: relative;
 };
