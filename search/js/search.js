@@ -91,7 +91,7 @@ $(document).ready(function() {
               }</div>
 						<div class="details hidden">
 			  				<span class="close">X</span>
-							<h1>${formatName(this.Name)}</h1>
+							<div>${formatName(this.Name)}</div>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
 							<div class="description">${this.Description}</div>
 							<div class="prerequisite">${this.Prerequisite}</div>

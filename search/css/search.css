@@ -10,6 +10,11 @@ body{
 	font-family: 'Nunito', sans-serif;
 	color:#333
 }
+body ul li{
+	padding-left:0;
+	position:unset;
+	line-height: inherit;
+}
 .hidden{
 	display: none;
  }/*
@@ -25,7 +30,7 @@ div.name{
 	padding: 1px 4px;
 	margin-left:10px;
 }
-h1{
+.category-header .top{
 	font-weight:bold;
 	font-size:1.3em;
 	padding:0px 15px;
