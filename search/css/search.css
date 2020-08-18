@@ -32,9 +32,9 @@ h1{
 	margin-bottom: 0;
 }
 .wrapper{
-	width: 1170px;
+	/* width: 1170px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto; */
 }
 .black{
 	display:none;
