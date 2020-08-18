@@ -3,7 +3,9 @@ body {
   margin: 0;
   font-size: 20px;
 }
-
+.wgl-theme-header.header_overlap{
+position: relative;
+};
 .header {
   clear: both;
   overflow: hidden;
