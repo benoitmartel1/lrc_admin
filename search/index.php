@@ -1,5 +1,5 @@
 <?php 
-require($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>
