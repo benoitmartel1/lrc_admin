@@ -122,9 +122,7 @@ $(document).ready(function() {
                });
                //Fill in text divs
                $("[id*='text-']").each(function () {
-				   console.log('placing text '+$(div).attr("id"));
-			
-
+				   console.log('placing text '+$(this).attr("id"));
                  placeTextInDiv(this);
                });
                //Populate age filter menu
