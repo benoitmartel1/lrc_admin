@@ -96,8 +96,14 @@ function getActivitiesById(obj){
       }else{
 		  return false;
 	  }
-	};
-	
+	};	
+
+var sortCategoriesByName = function (res1, res2) {
+  var prod1 = res1.name;
+  var prod2 = res2.name;
+  return prod1.localeCompare(prod2);
+};
+
 var sortByName = function (res1, res2) {
   var prod1 = res1.Name;
   var prod2 = res2.Name;
