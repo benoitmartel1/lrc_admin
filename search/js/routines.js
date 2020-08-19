@@ -114,6 +114,7 @@ var sortByName = function (res1, res2) {
 function placeTextInDiv(div){
 	var name=$(div).attr('id');
 	$(div).text(text[name.split(" - ")[1]]);
+	console.log(text[name.split(" - ")[1]]);
 };	
 //Return a div for the category Header
 function createCategoryHeader(cat){
