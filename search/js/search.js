@@ -121,10 +121,8 @@ $(document).ready(function() {
                  });
                });
 			   //Fill in text divs
-			   	console.log(text);
                $("[id*='text-']").each(function () {
-				   console.log('placing text '+$(this).attr("id"));
-                 placeTextInDiv(this);
+                 placeTextInDiv(this,text);
                });
                //Populate age filter menu
                for (a = 17; a > 0; a--) {
