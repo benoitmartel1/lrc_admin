@@ -197,10 +197,10 @@ div.name{
 .langues.category-header{
 	background-color:rgba(45,205,75,1);
 }
-.sports.activity .name{
+.sportives.activity .name{
 	background-color:rgba(255,127,41,0.2);
 }
-.sports.category-header{
+.sportives.category-header{
 	background-color:rgba(255,127,41,1);
 }
 .danse.activity .name{
@@ -214,6 +214,12 @@ div.name{
 }
 .secourisme.category-header{
 	background-color:rgb(238, 12, 12);
+}
+.martiaux.activity .name{
+	background-color:rgba(116,33,211,0.2);
+}
+.martiaux.category-header{
+	background-color:rgb(116, 33, 211);
 }
 .danse.activity .name{
 	background-color:rgba(14,179,221,0.2);
