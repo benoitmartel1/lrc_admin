@@ -17,7 +17,7 @@ var text = {
     yearly: "Annuel"
   },
   daysOfWeek: [
-	  "Dimanche",
+	"Dimanche",
     "Lundi",
     "Mardi",
     "Mercredi",
