@@ -120,7 +120,8 @@ $(document).ready(function() {
                    }
                  });
                });
-               //Fill in text divs
+			   //Fill in text divs
+			   	console.log(text);
                $("[id*='text-']").each(function () {
 				   console.log('placing text '+$(this).attr("id"));
                  placeTextInDiv(this);
