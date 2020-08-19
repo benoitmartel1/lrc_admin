@@ -17,13 +17,13 @@ var text = {
     yearly: "Annuel"
   },
   daysOfWeek: [
+	  "Dimanche",
     "Lundi",
     "Mardi",
     "Mercredi",
     "Jeudi",
     "Vendredi",
-    "Samedi",
-    "Dimanche",
+    "Samedi"
   ],columnHeaders:{
   activity: "Activité",
   age: "Âge / niveau",
