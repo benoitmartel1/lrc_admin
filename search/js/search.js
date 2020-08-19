@@ -122,8 +122,14 @@ $(document).ready(function() {
                });
 			   //Fill in text divs
                $("[id*='text-']").each(function () {
-                 placeTextInDiv(this,text);
-               });
+         //Return the text for the div according to its id text-*name
+         var name = $(this).attr("id");
+                                                $(this).text(
+                                                         text[
+                                                           name.split(" - ")[1]
+                                                         ]
+                                                       );
+                                                   });
                //Populate age filter menu
                for (a = 17; a > 0; a--) {
                  $("#age-drop .dropdown-menu").append(
