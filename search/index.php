@@ -37,7 +37,7 @@ var locations = <?php echo json_encode($locations); ?>;
 
 <div id="app">
 
-
+<div class="sticky-header">
 <div class="filters">
 	<span id="text-filterBy"></span>
 	<div id="age-drop" class="dropdown filter-drop">
@@ -68,12 +68,6 @@ var locations = <?php echo json_encode($locations); ?>;
 	<div class="applied-filters"></div>
 
 </div>
-
-
-<div id="users">
-
-<div class="sticky-header">	
-<!-- class="search" automagically makes an input a search field. -->
 <div class="input-group search-field">
 	<input type="text" class="form-control search" placeholder="Quelle activité cherchez-vous?">
 	<button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
@@ -81,11 +75,15 @@ var locations = <?php echo json_encode($locations); ?>;
 	</button>
 </div>
 
+</div>
+<div id="users">
+
+
 <!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
   <!-- <button class="sort" data-sort="name">
     Sort
   </button> -->
-</div>
+
 	<div id="text-noResult" class="noResult"></div>
 
 <!-- Child elements of container with class="list" becomes list items -->

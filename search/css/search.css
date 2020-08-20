@@ -44,7 +44,11 @@ div.name{
 	padding:0px 15px;
 	margin-bottom: 0;
 }
-
+.sticky-header{
+	background-color: yellow;
+	position:fixed;
+	padding-bottom:20px;
+}
 /* .black{
 	display:none;
 	position:fixed;
