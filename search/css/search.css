@@ -15,6 +15,9 @@ body{
 	position:unset;
 	line-height: inherit;
 }
+#app ul{
+	margin-top: 100px;
+}
 #app{
 	padding-top:30px;
 	width:90%;
@@ -54,6 +57,7 @@ div.name{
 	-webkit-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 -moz-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
+
 }
 /* .black{
 	display:none;
