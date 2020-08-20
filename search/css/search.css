@@ -89,7 +89,7 @@ div.name{
 	padding-left:15px;
 	border-right:none;
 }
-.grid>div:not(.name):not(.signup){
+.activity.grid>div:not(.name):not(.signup){
 	border-bottom:1px dotted #999;
 }
 .column-header{
