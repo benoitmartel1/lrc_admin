@@ -10,6 +10,8 @@ function isNew(tags){
 		  } 
 		  return label;
 }
+
+//Returns formatted divs with property for Infos section
 function formatInfo(item, className, title){
 	var title='';
 	if (item){
