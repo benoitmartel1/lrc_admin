@@ -93,11 +93,13 @@ $(document).ready(function() {
 						<div class="details hidden">
 			  				<span class="close">X</span>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
-							<div class="description">${this.Description!=null?this.Description:""}</div>
-							<div class="prerequisite">${this.Prerequisite!=null?this.Prerequisite:""}</div>
-							<div class="note">${this.Note!=null?this.Note:""}</div>
-							<div class="hour">${sDate.getHours()}</div>
-							<div class="duration">${duration}</div>
+							<div class="infos">
+								<div class="description">${this.Description != null ? this.Description : ""}</div>
+								<div class="prerequisite"><div class="property">Prérequis</div>${this.Prerequisite != null ? this.Prerequisite : ""}</div>
+								<div class="note">${this.Note != null ? this.Note : ""}</div>
+								<div class="hour">${sDate.getHours()}</div>
+								<div class="duration">${duration}</div>	
+							</div>
 						</div>
 						<div class="hidden">
 							<div class="id">${this.Id}</div>
@@ -216,7 +218,8 @@ $(document).ready(function() {
                });
                //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
-				   var target=$(this).closest('.activity');
+				   var target=$(e.target).closest('.activity');
+				   console.log($(target).html());
 				if (!$(target).find('.details').is(':visible')){
 			
                		//Hide other details opened if any
