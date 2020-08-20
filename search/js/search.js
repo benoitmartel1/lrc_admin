@@ -57,10 +57,12 @@ $(document).ready(function() {
                    ) {
                      
 					var signupText = editMode == true ? text.edit : text.signup;
+
                      var duration =
-                       eDate.getHours() +
-                       eDate.getMinutes() / 60 -
-                       (sDate.getHours() + sDate.getMinutes() / 60);
+                       eDate.getHours() + " h "+
+                       (eDate.getMinutes() / 60 -
+					   (sDate.getHours() + sDate.getMinutes() / 60))*60+" min";
+					   
                      var keywords = "";
                      for (var i in this.Keywords) {
                        keywords += this.Keywords[i] + " ";
