@@ -61,8 +61,11 @@ div.name{
 .list .activity {
 	cursor: pointer;
 }
+.grid{
+	display: grid;;
+}
+
 .activity.grid, .category-header .grid{
-	display: grid;
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
