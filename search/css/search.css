@@ -276,7 +276,7 @@ div.name{
 	background-position: center;
 	background-size: cover;
 	height:200px;
-	display: none;
+	/* display: none; */
 }
 .description {
 	/* font-size: 0.8em; */
