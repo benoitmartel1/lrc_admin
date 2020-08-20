@@ -64,7 +64,7 @@ $(document).ready(function() {
 					   (sDate.getHours() + sDate.getMinutes() / 60);
 					 
 					 var duration = (dur>=1)?Math.floor(dur)+" h ":"";
-					 duration += dur % Math.floor(dur) * 60 + " min";  
+					 duration += (dur % 1>0)?dur % 1 * 60 + " min":"";  
 					   
                      var keywords = "";
                      for (var i in this.Keywords) {
