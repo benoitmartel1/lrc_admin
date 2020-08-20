@@ -77,9 +77,9 @@ $(document).ready(function() {
 							<div class="session">${formatSession(sDate, eDate)}</div>
 							<div class="price">${formatPrice(this.Price)}</div>
 							<div class="cours">${this.NumberOfOccurrences}</div>
-							<div class="location tooltip">${
-                this.Location ? formatLocation(this.Location) : ""
-              }<div class="tooltiptext">${this.Location?this.Location.FullName:""}</div></div>
+							<div class="location" data-toggle="tooltip" title="${
+                this.Location ? this.Location.FullName : ""
+              }">${this.Location ? formatLocation(this.Location) : ""}</div>
 							<div class="staff">${formatStaff(this.Staff)}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="signup">
@@ -119,7 +119,11 @@ $(document).ready(function() {
                      );
                    }
                  });
-               });
+			   });
+			   //Activate tooltips 
+			     $('[data-toggle="tooltip"]').tooltip();
+
+
 			   //Fill in text divs
                $("[id*='text-']").each(function () {
          //Return the text for the div according to its id text-*name
