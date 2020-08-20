@@ -56,7 +56,7 @@ $(document).ready(function() {
 						sessionsToDisplay.includes(formatSession(sDate,eDate))
                    ) {
                      
-
+					var signupText = editMode == true ? text.edit : text.signup;
                      var duration =
                        eDate.getHours() +
                        eDate.getMinutes() / 60 -
@@ -86,7 +86,7 @@ $(document).ready(function() {
 							<div class="signup">
 							${
                 this.SpotsRemaining > 0
-                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>"+(editMode==true)?text.edit:text.signup+"</button>"
+                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>"+signupText+"</button>"
                   : "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"
