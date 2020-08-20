@@ -92,14 +92,12 @@ $(document).ready(function() {
               }</div>
 						<div class="details hidden">
 			  				<span class="close">X</span>
-							<div class="name">${formatName(this.Name)}</div>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
 							<div class="description">${this.Description!=null?this.Description:""}</div>
 							<div class="prerequisite">${this.Prerequisite!=null?this.Prerequisite:""}</div>
 							<div class="note">${this.Note!=null?this.Note:""}</div>
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
-							<div class="subCategory">${this.SubCategoryName}</div>
 						</div>
 						<div class="hidden">
 							<div class="id">${this.Id}</div>
@@ -289,7 +287,7 @@ $(document).ready(function() {
           			 return item.values().locationId == id ? true : false;
         		 }
                function togglePopUp(target) {
-                 $(target).fadeToggle(100);
+                 $(target).slideToggle(100);
                  //$(".black").fadeToggle(100);
                }
 
