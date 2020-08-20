@@ -77,9 +77,9 @@ $(document).ready(function() {
 							<div class="session">${formatSession(sDate, eDate)}</div>
 							<div class="price">${formatPrice(this.Price)}</div>
 							<div class="cours">${this.NumberOfOccurrences}</div>
-							<div class="location">${
+							<div class="location tooltip">${
                 this.Location ? formatLocation(this.Location) : ""
-              }</div>
+              }<div class="tooltiptext">${this.Location.FullName}</div>
 							<div class="staff">${formatStaff(this.Staff)}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="signup">
