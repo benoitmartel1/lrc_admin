@@ -79,7 +79,7 @@ $(document).ready(function() {
 							<div class="cours">${this.NumberOfOccurrences}</div>
 							<div class="location tooltip">${
                 this.Location ? formatLocation(this.Location) : ""
-              }<div class="tooltiptext">${this.Location.FullName}</div>
+              }<div class="tooltiptext">${this.Location.FullName}</div></div>
 							<div class="staff">${formatStaff(this.Staff)}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="signup">
