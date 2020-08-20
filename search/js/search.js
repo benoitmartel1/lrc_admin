@@ -290,7 +290,7 @@ $(document).ready(function() {
           			 return item.values().locationId == id ? true : false;
         		 }
                function togglePopUp(target) {
-                 $(target).slideToggle(100);
+                 $(target).slideToggle(500);
                  //$(".black").fadeToggle(100);
                }
 
