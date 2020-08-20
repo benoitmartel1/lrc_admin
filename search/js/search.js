@@ -91,7 +91,6 @@ $(document).ready(function() {
                     "</button>"
               }</div>
 						<div class="details hidden">
-			  				<span class="close">X</span>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
 							<div class="infos">
 								<div class="description">${this.Description != null ? this.Description : ""}</div>
@@ -291,7 +290,7 @@ $(document).ready(function() {
         		 }
                function togglePopUp(target) {
                  $(target).slideToggle(250, "easing", function(){
-					 $(this).find('.thumb').show(500);
+					 if ($(this).is(":visible")) $(this).css("display", "grid");
 				 });
                  //$(".black").fadeToggle(100);
                }
