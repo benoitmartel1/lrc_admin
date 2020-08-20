@@ -13,12 +13,12 @@ function isNew(tags){
 
 //Returns formatted divs with property for Infos section
 function formatInfo(item, className, title){
-	var title='';
+	var titleContent='';
 	if (item){
 		if(title){
-			title='<div class="property">'+title+'</div>';
+			titleContent = '<div class="property">' + title + "</div>";
 		}
-		return '<div class="'+className+'">'+title+item+'</div>';
+		return '<div class="' + className + '">' + titleContent + item + "</div>";
 	}
 	return '';
 }
