@@ -10,7 +10,16 @@ function isNew(tags){
 		  } 
 		  return label;
 }
-
+function formatInfo(item, className, title){
+	var title='';
+	if (item){
+		if(title){
+			title='<div class="property">'+title+'</div>';
+		}
+		return '<div class="'+className+'">'+title+item+'</div>';
+	}
+	return '';
+}
 //Nom de l'activité
 function formatName(name) {
 	if (name.indexOf(" - ")!=-1) 

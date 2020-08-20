@@ -91,14 +91,15 @@ $(document).ready(function() {
                     "</button>"
               }</div>
 						<div class="details hidden">
-						<div class="grid">
-							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
-							<div class="infos">
-								<div class="description">${this.Description != null ? this.Description : ""}</div>
-								${this.Prerequisite != null ? '<div class="prerequisite"><div class="property">Prérequis</div>'+this.Prerequisite+'</div>' : ""}
-								<div class="note">${this.Note != null ? this.Note : ""}</div>
-								<div class="duration">${duration}</div>	
-							</div>
+							<div class="grid">
+								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
+								<div class="infos">
+									${formatInfo(this.Description, "description", null)}
+									${formatInfo(this.Staff.LastName, "responsible", text.infos.responsible)}
+									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
+									${formatInfo(this.Note, "note", text.infos.note)}
+									${formatInfo(duration, "duration", text.infos.duration)}
+								</div>
 							</div>
 						</div>
 						<div class="hidden">

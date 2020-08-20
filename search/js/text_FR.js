@@ -1,4 +1,10 @@
 var text = {
+	infos:{
+		responsible:'Responsable',
+		prerequisite:'Pré-requis',
+		duration:'Durée',
+		note:'Notes'	
+	},
   free: "Gratuit",
   full: "Complet",
   new: "Nouveau",
