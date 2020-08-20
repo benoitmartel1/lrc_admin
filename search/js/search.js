@@ -216,14 +216,12 @@ $(document).ready(function() {
                });
                //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
-					console.log($(this).closest(".details"));
-					console.log($(e.target).closest(".details"));
-				if (!$(this).closest('.details').is(':visible')){
+				if (!$(this).find('.details').is(':visible')){
 			
                		//Hide other details opened if any
               		 $(".details").hide();
             	 };
-					togglePopUp($(e.target).closest(".details"));  
+					togglePopUp($(e.target).find(".details"));  
                });
                //Close the popup
                $(".close, .details").click((e) => {
@@ -294,6 +292,7 @@ $(document).ready(function() {
           			 return item.values().locationId == id ? true : false;
         		 }
                function togglePopUp(target) {
+				   console.log(target);
                  $(target).slideToggle(500, function(){
 					 //$(this).find('.thumb').show(500);
 				 });
