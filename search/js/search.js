@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	var editMode=true;
 
 	var sessionsToDisplay = [
     text.sessions.spring,
@@ -70,7 +71,7 @@ $(document).ready(function() {
                      }
                      $(".list").append(
                        `
-						<li class="activity grid ${categoryClass}" data-id='${this.Id}'>
+						<li class="activity grid ${categoryClass}" data-id='${this.Id}' data-program-id='${this.ProgramId}'>
 							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
 							<div class="age">${formatAge(this.Age)}</div>
 							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
@@ -192,10 +193,21 @@ $(document).ready(function() {
 				$(".signup button:not(.isFull)").click(function (e) {
 					e.stopPropagation();
 					var id=$(this).closest('li').attr('data-id');
-                 window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
+					var programId = $(this).closest("li").attr("data-program-id");
+
+                if (!editMode){
+
+				 window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
                     id +
                     '?quickRegisterId=' +
-                    id, '_blank');
+					id, '_blank');
+				}else{
+					window.open(
+					"https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/55462?activityId=" +
+					id,
+					"_blank"
+				);
+				};
                });
 
                //Erase Search input
