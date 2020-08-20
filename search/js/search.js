@@ -131,7 +131,6 @@ $(document).ready(function() {
                $("[id*='text-']").each(function () {
          //Return the text for the div according to its id text-*name
 		 var name = $(this).attr("id");
-		 console.log(text[name.split("-")[1]]);
                                                 $(this).text(
                                                          text[
                                                            name.split("-")[1]
