@@ -65,7 +65,8 @@ div.name{
 	display: grid;
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-areas:
-	"name age schedule session price cours location staff start signup";
+	"name age schedule session price cours location staff start signup"
+	"details";
 }
 .grid>div{
 	display: flex;
@@ -87,6 +88,9 @@ div.name{
 }
 .grid>div:not(.name):not(.signup){
 	border-bottom:1px dotted #999;
+}
+.activity .details{
+	grid-column: 1 /-1;
 }
 .column-header{
 	font-size: 0.8em;
@@ -157,6 +161,9 @@ div.name{
 }
 .activity>.age{
 	grid-area:age;
+}
+.activity>.details{
+	grid-area:details;
 }
 .activity>.schedule{
 	grid-area:schedule;
