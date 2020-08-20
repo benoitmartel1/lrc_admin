@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var editMode=true;
-
+	console.log('EditMode='+editMode);
 	var sessionsToDisplay = [
     text.sessions.spring,
     // text.sessions.summer,
