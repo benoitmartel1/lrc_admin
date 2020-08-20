@@ -292,7 +292,8 @@ div.name{
 	/* line-height: 1.3; */
 }
 .property{
-	display:inline-block;
+	display: block;
+    margin-top: 10px;
 	color: rgb(34,153,203);
 }
 .details {
