@@ -122,6 +122,7 @@ $(document).ready(function() {
 			     $('[data-toggle="tooltip"]').tooltip();
 
 
+
 			   //Fill in text divs
                $("[id*='text-']").each(function () {
          //Return the text for the div according to its id text-*name
@@ -215,6 +216,8 @@ $(document).ready(function() {
                });
                //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
+				   //Hide other details opened if any
+				   $('.details').hide();
                  var target = $(e.target).closest("li");
                  togglePopUp($(target).find(".details"));
                });

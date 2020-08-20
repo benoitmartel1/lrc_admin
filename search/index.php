@@ -33,7 +33,7 @@ var locations = <?php echo json_encode($locations); ?>;
 </head>
 
 <body>
-<div class="black"></div>
+<!-- <div class="black"></div> -->
 
 <div id="app">
 
