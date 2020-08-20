@@ -270,6 +270,7 @@ div.name{
 	background-size: cover;
 	width:30%;
 	height:200px;
+	display: none;
 }
 .description {
 	font-size: 0.8em;

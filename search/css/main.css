@@ -44,10 +44,6 @@ ul {
 .content {
   padding: 0 50px;
 }
-.thumb {
-  width: 100px;
-  height: auto;
-}
 
 .flip-list-view .flip-entry-info {
   display: inline-block;
