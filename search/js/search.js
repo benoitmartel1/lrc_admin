@@ -58,10 +58,13 @@ $(document).ready(function() {
                      
 					var signupText = editMode == true ? text.edit : text.signup;
 
-                     var duration =
-                       eDate.getHours() + " h "+
-                       (eDate.getMinutes() / 60 -
-					   (sDate.getHours() + sDate.getMinutes() / 60))*60+" min";
+                     var dur =
+                       eDate.getHours() +
+                       eDate.getMinutes() / 60 -
+					   (sDate.getHours() + sDate.getMinutes() / 60);
+					 
+					 var duration = (dur>=1)?Math.floor(dur)+" h ":"";
+					 duration += dur % Math.floor(dur) * 60 + " min";  
 					   
                      var keywords = "";
                      for (var i in this.Keywords) {
