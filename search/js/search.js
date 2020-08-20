@@ -95,7 +95,7 @@ $(document).ready(function() {
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
 							<div class="infos">
 								<div class="description">${this.Description != null ? this.Description : ""}</div>
-								<div class="prerequisite"><div class="property">Prérequis</div>${this.Prerequisite != null ? this.Prerequisite : ""}</div>
+								${this.Prerequisite != null ? '<div class="prerequisite"><div class="property">Prérequis</div>'+this.Prerequisite+'</div>' : ""}
 								<div class="note">${this.Note != null ? this.Note : ""}</div>
 								<div class="duration">${duration}</div>	
 							</div>
