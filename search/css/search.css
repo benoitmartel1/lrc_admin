@@ -99,7 +99,7 @@ div.name{
 	background-color: #eee;
 }
 .btn{
-	    padding: 2px 6px;
+	    padding: 2px 6px!important;
 }
 @media (max-width: 1024px) {
 	.activity>.start,
