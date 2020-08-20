@@ -45,9 +45,9 @@ function formatAge(age){
 }
 function formatStaff(staff){
 	if(staff){
-		return staff.FirstName;
+		return staff.FirstName+" " +staff.LastName;
 	}else{
-		return ' ';
+		return null;
 	}
 }
 function formatLocation(loc){

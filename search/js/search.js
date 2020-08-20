@@ -80,7 +80,7 @@ $(document).ready(function() {
 							<div class="location" data-toggle="tooltip" title="${
                 this.Location ? this.Location.FullName : ""
               }">${this.Location ? formatLocation(this.Location) : ""}</div>
-							<div class="staff">${formatStaff(this.Staff)}</div>
+							<div class="staff">${formatStaff(this.Staff).split(" ")[0]}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="signup">
 							${
@@ -95,6 +95,7 @@ $(document).ready(function() {
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
 								<div class="infos">
 									${formatInfo(this.Description, "description", null)}
+									${formatInfo(formatStaff(this.Staff), "responsible", text.infos.responsible)}
 									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
 									${formatInfo(this.Note, "note", text.infos.note)}
 									${formatInfo(duration, "duration", text.infos.duration)}
