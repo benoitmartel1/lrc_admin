@@ -92,11 +92,11 @@ $(document).ready(function() {
               }</div>
 						<div class="details hidden">
 			  				<span class="close">X</span>
-							<div>${formatName(this.Name)}</div>
+							<div class="name">${formatName(this.Name)}</div>
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
-							<div class="description">${this.Description}</div>
-							<div class="prerequisite">${this.Prerequisite}</div>
-							<div class="note">${this.Note}</div>
+							<div class="description">${this.Description!=null?this.Description:""}</div>
+							<div class="prerequisite">${this.Prerequisite!=null?this.Prerequisite:""}</div>
+							<div class="note">${this.Note!=null?this.Note:""}</div>
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
 							<div class="subCategory">${this.SubCategoryName}</div>
