@@ -203,10 +203,12 @@ $(document).ready(function() {
 					id, '_blank');
 				}else{
 					window.open(
-					"https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/55462?activityId=" +
-					id,
-					"_blank"
-				);
+            "https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" +
+              programId +
+              "?activityId=" +
+              id,
+            "_blank"
+          );
 				};
                });
 
