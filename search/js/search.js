@@ -326,7 +326,7 @@ $(document).ready(function() {
 				   "locationId"
                  ],
                };
-               var userList = new List("users", options);
+               var userList = new List("app", options);
                userList.on("updated", function (list) {
                  //Even if no result, listjs counts the categories header as showing. So if results are not greater than categories used, display no result message
                  if (parseInt(list.matchingItems.length) > categories.length) {

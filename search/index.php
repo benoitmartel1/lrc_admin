@@ -76,7 +76,7 @@ var locations = <?php echo json_encode($locations); ?>;
 </div>
 
 </div>
-<div id="users">
+<div >
 
 
 <!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
