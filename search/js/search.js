@@ -221,7 +221,7 @@ $(document).ready(function() {
                  togglePopUp($(target).find(".details"));
                });
                //Close the popup
-               $(".close, .black").click((e) => {
+               $(".close, .details").click((e) => {
                  e.stopPropagation();
                  togglePopUp($(".details:visible"));
                });
@@ -290,7 +290,7 @@ $(document).ready(function() {
         		 }
                function togglePopUp(target) {
                  $(target).fadeToggle(100);
-                 $(".black").fadeToggle(100);
+                 //$(".black").fadeToggle(100);
                }
 
                var options = {
