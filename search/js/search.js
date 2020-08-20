@@ -216,12 +216,13 @@ $(document).ready(function() {
                });
                //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
-				if (!$(this).find('.details').is(':visible')){
+				   var target=$(this).closest('.activity');
+				if (!$(target).find('.details').is(':visible')){
 			
                		//Hide other details opened if any
               		 $(".details").hide();
             	 };
-					togglePopUp($(e.target).find(".details"));  
+					togglePopUp($(target).find(".details"));  
                });
                //Close the popup
                $(".close, .details").click((e) => {
@@ -294,7 +295,7 @@ $(document).ready(function() {
                function togglePopUp(target) {
 				   console.log(target);
                  $(target).slideToggle(500, function(){
-					 //$(this).find('.thumb').show(500);
+					 $(this).find('.thumb').show(500);
 				 });
                  //$(".black").fadeToggle(100);
                }
