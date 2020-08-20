@@ -278,6 +278,7 @@ div.name{
 	clear: both;
 }
 .thumb{
+	margin:13px;
 	grid-area: thumb;
 	background-position: center;
 	background-size: cover;
