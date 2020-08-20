@@ -86,7 +86,7 @@ $(document).ready(function() {
 							<div class="signup">
 							${
                 this.SpotsRemaining > 0
-                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>S'inscrire</button>"
+                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>"+(editMode)?text.edit:text.signup+"</button>"
                   : "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"
