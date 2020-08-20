@@ -5,7 +5,7 @@ var text = {
 		duration:'Durée',
 		note:'Notes'	
 	},
-	edit:"Éditer",
+	edit:'Éditer',
 	signup:"S'inscrire",
   free: "Gratuit",
   full: "Complet",
