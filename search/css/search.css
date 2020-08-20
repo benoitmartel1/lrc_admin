@@ -254,7 +254,9 @@ div.name{
 .details {
 	height:200px;
 	display: none;
-		grid-template-columns: 3fr 5fr 2fr ;
+}
+.details .grid{
+	grid-template-columns: 3fr 5fr 2fr ;
 		grid-template-areas: 
 		"thumb infos .";
 }

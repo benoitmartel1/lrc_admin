@@ -91,12 +91,14 @@ $(document).ready(function() {
                     "</button>"
               }</div>
 						<div class="details hidden">
+						<div class="grid">
 							<div class="thumb" style="background-image:url('${this.PictureUrl}')"/>
 							<div class="infos">
 								<div class="description">${this.Description != null ? this.Description : ""}</div>
 								<div class="prerequisite"><div class="property">Prérequis</div>${this.Prerequisite != null ? this.Prerequisite : ""}</div>
 								<div class="note">${this.Note != null ? this.Note : ""}</div>
 								<div class="duration">${duration}</div>	
+							</div>
 							</div>
 						</div>
 						<div class="hidden">
@@ -289,8 +291,6 @@ $(document).ready(function() {
         		 }
                function togglePopUp(target) {
                  $(target).slideToggle(250, function(){
-					 if ($(this).is(":visible")) $(this).css("display", "grid");
-					 $(this).find('.thumb').fade(1000);
 				 });
                  //$(".black").fadeToggle(100);
                }
