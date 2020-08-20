@@ -95,7 +95,6 @@ $(document).ready(function() {
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
 								<div class="infos">
 									${formatInfo(this.Description, "description", null)}
-									${formatInfo(this.Staff.FirstName, "responsible", text.infos.responsible)}
 									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
 									${formatInfo(this.Note, "note", text.infos.note)}
 									${formatInfo(duration, "duration", text.infos.duration)}
