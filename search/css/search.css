@@ -252,7 +252,6 @@ div.name{
 	display: inline-block;
 }
 .details {
-	height:200px;
 	display: none;
 }
 .details .grid{
