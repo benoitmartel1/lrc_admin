@@ -219,7 +219,6 @@ $(document).ready(function() {
                //Toggle the popup details/info of activity.
                $("li.activity").click((e) => {
 				   var target=$(e.target).closest('.activity');
-				   console.log($(target).html());
 				if (!$(target).find('.details').is(':visible')){
 			
                		//Hide other details opened if any
@@ -227,12 +226,7 @@ $(document).ready(function() {
             	 };
 					togglePopUp($(target).find(".details"));  
                });
-               //Close the popup
-               $(".close, .details").click((e) => {
-                 e.stopPropagation();
-                 togglePopUp($(".details:visible"));
-               });
-
+            
                //--------------------FUNCTIONS-----------------------//
                //Apply filters to search
                function filterResults() {
@@ -296,8 +290,7 @@ $(document).ready(function() {
           			 return item.values().locationId == id ? true : false;
         		 }
                function togglePopUp(target) {
-				   console.log(target);
-                 $(target).slideToggle(500, function(){
+                 $(target).slideToggle(250, "easing", function(){
 					 $(this).find('.thumb').show(500);
 				 });
                  //$(".black").fadeToggle(100);

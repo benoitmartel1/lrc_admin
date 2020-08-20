@@ -248,12 +248,17 @@ div.name{
 .noResult{
 	display:none;
 }
-.main div,
-.details div {
+.main div {
 	display: inline-block;
 }
 .details {
 	display: none;
+		grid-template-columns: 3fr 5fr 2fr ;
+		grid-template-areas: 
+		"thumb infos .";
+}
+.infos{
+	grid-area: infos;
 }
 .main div {
 	padding: 0 10px;
@@ -266,6 +271,7 @@ div.name{
 	clear: both;
 }
 .thumb{
+	grid-area: thumb;
 	background-position: center;
 	background-size: cover;
 	width:30%;
