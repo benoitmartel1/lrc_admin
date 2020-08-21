@@ -87,7 +87,7 @@ div.name{
 	grid-template-rows: minmax(40px, auto);;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
-	"name details details details details details details details details details";
+	". details details details details details details details details details";
 }
 .activity.grid>div,.category-header .grid>div{
 	display: flex;
@@ -317,7 +317,7 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .signup{
 	border-right:0;
-	margin:4px;
+	/* margin:4px; */
 }
 @media (max-width: 1024px) {
 	.activity>.start,
