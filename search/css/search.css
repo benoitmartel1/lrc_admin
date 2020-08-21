@@ -312,7 +312,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	.activity>.staff,
 	.activity>.session
 	{
-		display: none;
+		display: none!important;
 	}
 	.category-header .grid {
 		display: none;
@@ -331,11 +331,9 @@ body:not(.user-is-tabbing) textarea:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-	.activity>.cours,
-	.activity>.start,
-	.activity>.staff	
+	.activity>.cours
 	{
-		display: none;
+		display: none!important;
 	}
 	.activity.grid{
 		grid-template-columns: 1fr 1fr 1fr 1fr;
