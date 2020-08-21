@@ -76,14 +76,15 @@ box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 	cursor: pointer;
 }
 .grid{
-	display: grid;;
+	display: grid;
 }
 
 .activity.grid, .category-header .grid{
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
-	". details details details details details details details details details";
+	"name details details details details details details details details details";
 }
 .activity.grid>div,.category-header .grid>div{
 	display: flex;
