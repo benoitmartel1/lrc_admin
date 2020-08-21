@@ -84,7 +84,7 @@ div.name{
 
 .activity.grid, .category-header .grid{
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
+	grid-template-rows: minmax(30px, auto);;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
 	"name details details details details details details details details details";
@@ -113,7 +113,7 @@ div.name{
 	border-right:none;
 }
 .activity.grid>div:not(.name):not(.details){
-	border-bottom:1px dotted #999;
+	border-top:1px dotted #999;
 }
 .column-header{
 	font-size: 0.8em;
@@ -229,6 +229,8 @@ div.name{
 	display: inline-block;
 }
 .details {
+		border-top:1px dotted #999;
+
 	display: none;
 }
 .details .grid{
