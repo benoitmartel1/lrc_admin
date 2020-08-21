@@ -39,7 +39,7 @@ if(!$token){die("Connection Failure");}else{
     foreach($programs as $program){
       	$id=$program->Id;
 
-        if ($id==56381 || $id=55462) {
+        if ($id==56381 || $id==55462) {
     		$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities?showOccurrences=True&perPage=1000';
             $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
             
