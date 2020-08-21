@@ -32,14 +32,14 @@ if(!$token){die("Connection Failure");}else{
 	$locations=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
 	
     
-    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=True';
+    $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs?showHidden=False';
 	$programs=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
 
 	//For each Program, get its activities and add them as a property
     foreach($programs as $program){
       	$id=$program->Id;
 
-        if ($id==55462) {
+        // if ($id==55462) {
     		$auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities?showOccurrences=True&perPage=1000';
             $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
             
@@ -68,7 +68,7 @@ if(!$token){die("Connection Failure");}else{
             };
     	};
     };
-};
+// };
 function getElemById($arr,$id){
     foreach($arr as $elem){
         if ($elem->Id==$id){
