@@ -37,7 +37,7 @@ var locations = <?php echo json_encode($locations); ?>;
 
 <div id="app">
 
-<div class="sticky-header">
+<div class="header">
 <div class="filters">
 	<span id="text-filterBy"></span>
 	<div id="age-drop" class="dropdown filter-drop">

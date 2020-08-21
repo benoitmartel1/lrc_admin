@@ -47,17 +47,20 @@ div.name{
 	padding:0px 15px;
 	margin-bottom: 0;
 }
-.sticky-header{
+#app .header{
 	background-color: white;
     width: 90%;
-    position: fixed;
-    top: 0;
+    
     padding-bottom: 8px;
     padding-top: 160px;
 	-webkit-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 -moz-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 
+}
+.sticky{
+	position: fixed;
+    top: 0;
 }
 /* .black{
 	display:none;

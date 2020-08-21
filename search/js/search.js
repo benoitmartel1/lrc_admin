@@ -196,6 +196,29 @@ $(document).ready(function() {
 				   }
                }
 			   //--------------------LISTENERS-----------------------//
+
+			   // When the user scrolls the page, execute myFunction
+				window.onscroll = function() {myFunction()};
+
+			   var header= $('#app .header');
+				// Get the offset position of the navbar
+				var sticky = $(header).offsetTop;
+									console.log(sticky);
+
+
+				// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+				function myFunction() {
+				if (window.pageYOffset > sticky) {
+					console.log('add');
+					$(header).addClass("sticky");
+				} else {
+										console.log("remove");
+
+					$(header).removeClass("sticky");
+				}
+				}
+
+
 				$(".signup button:not(.isFull)").click(function (e) {
 					e.stopPropagation();
 					var id=$(this).closest('li').attr('data-id');
