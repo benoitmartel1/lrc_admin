@@ -331,7 +331,9 @@ body:not(.user-is-tabbing) textarea:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-	.activity>.cours	
+	.activity>.cours,
+	.activity>.start,
+	.activity>.staff	
 	{
 		display: none;
 	}
@@ -363,9 +365,8 @@ body:not(.user-is-tabbing) textarea:focus {
 	}
 }
 .input-group>.form-control{
-	flex:none;
-	width:unset;
+	width:100%;
 }
-.erase .bg-transparent{
+.erase{
 	padding:0;
 }
