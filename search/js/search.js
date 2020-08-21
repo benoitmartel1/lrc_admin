@@ -202,7 +202,7 @@ $(document).ready(function() {
 
 			   var header= $('#app .header');
 				// Get the offset position of the navbar
-				var sticky = $(header).offsetTop;
+				var sticky = $(header).offset().top;
 									console.log(sticky);
 
 
