@@ -84,7 +84,7 @@ div.name{
 
 .activity.grid, .category-header .grid{
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-rows: minmax(30px, auto);;
+	grid-template-rows: minmax(40px, auto);;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
 	"name details details details details details details details details details";
