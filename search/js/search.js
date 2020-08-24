@@ -158,9 +158,13 @@ function fillGrid(data){
 
 			   //Clean empty paragraphs
 			   $('p').each(function(){
-					if ($.trim($(this).text()) == "" || $.trim($(this).text()) == "&nbsp;") {
-            		$(this).remove();
-          			} 
+					if (
+            $.trim($(this).text()) == "" ||
+            $.trim($(this).text()) == "&nbsp;" ||
+            $.trim($(this).text()) == "<br>"
+          ) {
+            $(this).remove();
+          } 
 			   });
 			   //Activate tooltips 
 				$('[data-toggle="tooltip"]').tooltip();
@@ -357,7 +361,6 @@ function fillGrid(data){
                function togglePopUp(target) {
                  $(target).slideToggle(250, function(){
 				 });
-                 //$(".black").fadeToggle(100);
                }
 
                var options = {
@@ -372,7 +375,8 @@ function fillGrid(data){
                    "duration",
                    "subCategory",
 				   "keywords",
-				   "locationId"
+				   "locationId",
+				   "session"
                  ],
                };
                var userList = new List("app", options);
