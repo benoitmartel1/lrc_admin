@@ -233,11 +233,8 @@ function fillGrid(data){
 				// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 				function myFunction() {
 				if (window.pageYOffset > sticky) {
-					console.log('add');
 					$(header).addClass("sticky");
 				} else {
-										console.log("remove");
-
 					$(header).removeClass("sticky");
 				}
 				}
@@ -385,7 +382,6 @@ function fillGrid(data){
                  if (parseInt(list.matchingItems.length) > categories.length) {
                    $(".noResult").hide();
                  } else {
-                   console.log("showing");
                    $(".noResult").show();
                  }
                  //If no result in given category, hide the header
