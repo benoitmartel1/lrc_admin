@@ -14,7 +14,7 @@ $( document ).ready(function() {
 
 
 function fillGrid(data){
-	$(".loading").fadeOut(200);
+	$(".loading").slideUp();
 
 	var activities=data.allActivities;
 	var locations=data.locations;
@@ -57,7 +57,7 @@ function fillGrid(data){
                $(categories).each(function () {
 				   var categoryClass = this.class;
                  //Creates always visible header on top of category
-                 $(".list").append(createCategoryHeader(this)).hide().fadeIn(300);
+                 $(".list").append(createCategoryHeader(this));
 
                  //Get all activities that have a tag that matches the category
                  var categoryActivities = activities.filter(
@@ -145,7 +145,7 @@ function fillGrid(data){
 						</div>
 						</li>
 					`
-                     ).hide().fadeIn(300);
+                     );
                    }
                  });
 			   });
