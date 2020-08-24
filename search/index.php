@@ -81,6 +81,7 @@
   </ul>
   <!-- Loading animation -->
 <div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
+<div id="text-wait"></div>
 
 </div>
 </div>

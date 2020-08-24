@@ -401,10 +401,10 @@ body:not(.user-is-tabbing) textarea:focus {
 .lds-ellipsis div {
   position: absolute;
   top: 33px;
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background:blue;
+  background:#007bff;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

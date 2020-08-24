@@ -1,4 +1,5 @@
 var text = {
+	wait:"Recherche des activités en cours",
 	infos:{
 		responsible:'Responsable',
 		prerequisite:'Pré-requis',
