@@ -264,6 +264,11 @@ div.name{
     margin-top: 10px;
 	color: rgb(34,153,203);
 }
+.fa-info-circle{
+		color: rgb(34,153,203);
+
+}
+
 .details {
 	background-color: white;
 }
