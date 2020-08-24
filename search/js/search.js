@@ -3,7 +3,7 @@
 
 $( document ).ready(function() {
 
-	$.getJSON("http://jsonip.com/?callback=", function (data) {
+	$.getJSON("https://jsonip.com/?callback=", function (data) {
     var settings = {
       async: true,
       crossDomain: true,
