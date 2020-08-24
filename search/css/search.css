@@ -352,13 +352,10 @@ body:not(.user-is-tabbing) textarea:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-	/* .sticky{
-		top:0;
-	} */
 	.schedule{
 		border-right:0;
 	}
-	.activity>.cours
+	.activity>.cours, .activity .spacer
 	{
 		display: none!important;
 	}
@@ -390,7 +387,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	.list .activity {
 		    border-bottom: 1px solid gray;
     margin-bottom: 10px;
-    border-radius: 10px; 
+    border-radius:0; 
      overflow: hidden;
 	}
 	.activity>.name{
