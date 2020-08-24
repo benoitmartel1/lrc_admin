@@ -25,7 +25,6 @@
 
 <body>
 <!-- <div class="black"></div> -->
-<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
 <div id="app">
 
 <div class="header">
@@ -80,6 +79,8 @@
 <!-- Child elements of container with class="list" becomes list items -->
   <ul class="list no-select">
   </ul>
+  <!-- Loading animation -->
+<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
 
 </div>
 </div>

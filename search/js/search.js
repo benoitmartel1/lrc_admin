@@ -1,15 +1,26 @@
-$.get('php/activities.php',function(data){fillGrid(JSON.parse(data))});
+$( document ).ready(function() {
+	//Get all activities/locations to populate page
+	$.get('php/activities.php', function(data){
+		fillGrid(JSON.parse(data))
+	});
+
+	 //Fill in text divs
+    $("[id*='text-']").each(function () {
+		//Return the text for the div according to its id text-*name
+		var name = $(this).attr("id");
+		$(this).text(text[name.split("-")[1]]);
+	});
+};
+
 
 function fillGrid(data){
-	console.log('in');
-	console.log(data);
+
 	var activities=data.allActivities;
 	var locations=data.locations;
 	// If true, signup button becomes Edit and redirects to edit page in Amilia
 	//If false, signup button redirects to subscribe page in Amilia
 	var editMode=true;
 
-	//
 	var sessionsToDisplay = [
     text.sessions.spring,
     // text.sessions.summer,
@@ -136,20 +147,8 @@ function fillGrid(data){
                  });
 			   });
 			   //Activate tooltips 
-			     $('[data-toggle="tooltip"]').tooltip();
+				$('[data-toggle="tooltip"]').tooltip();
 
-
-
-			   //Fill in text divs
-               $("[id*='text-']").each(function () {
-         //Return the text for the div according to its id text-*name
-		 var name = $(this).attr("id");
-                                                $(this).text(
-                                                         text[
-                                                           name.split("-")[1]
-                                                         ]
-                                                       );
-                                                   });
                //Populate age filter menu
                for (a = 17; a > 0; a--) {
                  $("#age-drop .dropdown-menu").append(
@@ -381,6 +380,6 @@ function fillGrid(data){
 				 });
 				 window.scrollTo(0, 0);
 			   });
-			   $('.loading-animation').hide();
+			//    $('.loading-animation').hide();
 
              };
