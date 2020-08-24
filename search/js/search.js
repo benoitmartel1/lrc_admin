@@ -30,6 +30,7 @@ function fillGrid(data){
     text.sessions.yearly
   ];
 
+
 	categories = [
     ...new Set(
       activities.map((n) => {
@@ -41,10 +42,11 @@ function fillGrid(data){
       })
     ),
   ];
+
+  //Alpha sort
   categories.sort(sortCategoriesByName);
 
-
-  
+	//Remove duplicates  
   categories = categories.filter(
     (cat, index, self) =>
       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
@@ -55,7 +57,7 @@ function fillGrid(data){
                $(categories).each(function () {
 				   var categoryClass = this.class;
                  //Creates always visible header on top of category
-                 $(".list").append(createCategoryHeader(this)).fadeIn(400);
+                 $(".list").append(createCategoryHeader(this)).hide().fadeIn(2000);
 
                  //Get all activities that have a tag that matches the category
                  var categoryActivities = activities.filter(
@@ -143,7 +145,7 @@ function fillGrid(data){
 						</div>
 						</li>
 					`
-                     ).fadeIn(400);
+                     ).hide().fadeIn(2000);
                    }
                  });
 			   });
