@@ -2,10 +2,11 @@ $( document ).ready(function() {
 	var Timer;
 
 	$('input').on('input', function(){
+		var entry=$(this).val();
 		 clearTimeout(Timer);
 		Timer = setTimeout(function () {
-		if ($(this).val().length > 2) {
-			console.log($(this).val());
+		if ($(entry).length > 2) {
+			console.log(entry);
 		}
 		}, 2000);
 	})
