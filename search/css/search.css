@@ -105,7 +105,7 @@ div.name{
 .activity .name, .activity .spacer{
 	border-right: none;
 }
-.activity.grid>div:not(.name, .details, .spacer){
+.activity.grid>div:not(.name):not(.details):not(.spacer){
 	border-top:1px dotted #999;
 }
 .column-header{
