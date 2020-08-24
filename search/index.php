@@ -21,6 +21,7 @@
 	<script src="js/text_FR.js"></script>
 	<script src="js/routines.js"></script>
 	<script src="js/search.js"></script>
+	<script src="js/inputMonitor.js"></script>
 </head>
 
 <body>
