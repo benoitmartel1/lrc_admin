@@ -102,7 +102,7 @@ function fillGrid(data){
                          this.Id
                        }' data-program-id='${this.ProgramId}'>
 							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
-							<div class="info"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+							<div class="info" data-toggle="tooltip" title="${text.info}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
 							<div class="age">${formatAge(this.Age)}</div>
 							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
 							<div class="session">${formatSession(sDate, eDate)}</div>
@@ -113,6 +113,7 @@ function fillGrid(data){
               }">${this.Location ? formatLocation(this.Location) : ""}</div>
 							<div class="staff">${staff ? staff.split(" ")[0] : ""}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
+							<div class="spacer"></div>
 							<div class="signup">
 							${
                 this.SpotsRemaining > 0
