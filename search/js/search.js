@@ -55,7 +55,7 @@ function fillGrid(data){
                $(categories).each(function () {
 				   var categoryClass = this.class;
                  //Creates always visible header on top of category
-                 $(".list").append(createCategoryHeader(this));
+                 $(".list").append(createCategoryHeader(this)).fadeIn(400);
 
                  //Get all activities that have a tag that matches the category
                  var categoryActivities = activities.filter(
@@ -143,7 +143,7 @@ function fillGrid(data){
 						</div>
 						</li>
 					`
-                     );
+                     ).fadeIn(400);
                    }
                  });
 			   });

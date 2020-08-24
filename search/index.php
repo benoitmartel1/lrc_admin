@@ -81,8 +81,9 @@
   </ul>
   <!-- Loading animation -->
   <div class="loading">
+	  <h5 id="text-wait"></h5>
 	<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
-	<h5 id="text-wait"></h5>	
+		
   </div>
 </div>
 </div>
