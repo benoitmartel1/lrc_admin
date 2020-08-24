@@ -36,6 +36,7 @@ var text = {
     "Samedi"
   ],columnHeaders:{
   activity: "Activité",
+  info:"Infos",
   age: "Âge / niveau",
   schedule: "Horaire",
   price: "Coût",
