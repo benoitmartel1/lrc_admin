@@ -98,8 +98,11 @@ function fillGrid(data){
                      }
                      $(".list").append(
                        `
-						<li class="activity grid ${categoryClass}" data-id='${this.Id}' data-program-id='${this.ProgramId}'>
+						<li class="activity grid ${categoryClass}" data-id='${
+                         this.Id
+                       }' data-program-id='${this.ProgramId}'>
 							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
+							<div class="info"><i class="fa fa-info-circle" aria-hidden="true"></i>${text.info}</div>
 							<div class="age">${formatAge(this.Age)}</div>
 							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
 							<div class="session">${formatSession(sDate, eDate)}</div>
@@ -108,12 +111,14 @@ function fillGrid(data){
 							<div class="location" data-toggle="tooltip" title="${
                 this.Location ? this.Location.FullName : ""
               }">${this.Location ? formatLocation(this.Location) : ""}</div>
-							<div class="staff">${(staff)?staff.split(" ")[0]:""}</div>
+							<div class="staff">${staff ? staff.split(" ")[0] : ""}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="signup">
 							${
                 this.SpotsRemaining > 0
-                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>"+signupText+"</button>"
+                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>" +
+                    signupText +
+                    "</button>"
                   : "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"

@@ -77,8 +77,8 @@ div.name{
 	grid-template-columns: 2fr 1fr 2fr 1fr 1fr 0.5fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: minmax(40px, auto);;
 	grid-template-areas:
-	"name age schedule session price cours location staff start signup"
-	"spacer details details details details details details details details details";
+	"name info age schedule session price cours location staff start signup"
+	"spacer details details details details details details details details details details";
 }
 .activity.grid>div,.category-header .grid>div{
 	display: flex;
@@ -131,6 +131,9 @@ div.name{
 }
 .activity>.age{
 	grid-area:age;
+}
+.activity>.info{
+	grid-area:info;
 }
 .activity>.details{
 	grid-area:details;
