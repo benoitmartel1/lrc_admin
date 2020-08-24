@@ -159,7 +159,7 @@ function fillGrid(data){
 			   //Clean empty paragraphs
 			   $('p').each(function(){
 					if ($.trim($(this).text()) == "" || $.trim($(this).text()) == "&nbsp;") {
-            		$this.remove();
+            		$(this).remove();
           			} 
 			   });
 			   //Activate tooltips 
