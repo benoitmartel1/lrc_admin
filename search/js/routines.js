@@ -25,7 +25,7 @@ function formatInfo(item, className, title){
 //Nom de l'activité
 function formatName(name) {
 	if (name.indexOf(" - ")!=-1) 
-		name = name.substring(0, name.indexOf("-"));
+		name = name.substring(0, name.indexOf(" - "));
 	return name;
 };
 

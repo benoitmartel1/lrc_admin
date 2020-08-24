@@ -13,6 +13,7 @@ body{
 	padding-top:30px;
 	width:90%;
 	margin:auto;
+	    padding-bottom: 40px;
 }
 button{
 	z-index:1;
@@ -114,8 +115,8 @@ div.name{
 .activity .name, .activity .spacer{
 	border-right: none;
 }
-.activity.grid>div:not(.name):not(.details):not(.spacer){
-	border-top:1px dotted #999;
+.activity.grid>div:not(.name):not(.spacer){
+	border-bottom:1px dotted #999;
 }
 .column-header{
 	font-size: 0.8em;
@@ -237,7 +238,7 @@ div.name{
 	display: inline-block;
 }
 .details {
-		border-top:1px dotted #999;
+		/* border-top:1px dotted #999; */
 
 	display: none;
 }
