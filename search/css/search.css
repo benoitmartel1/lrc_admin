@@ -325,7 +325,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	border-right:0;
 	/* margin:4px; */
 }
-@media (max-width: 1024px) {
+@media (max-width: 1260px) {
 	.sticky{
 		top:0;
 	}
@@ -340,12 +340,12 @@ body:not(.user-is-tabbing) textarea:focus {
 	}	
 }
 
-@media (min-width: 480px) and (max-width: 1024px) {
+@media (min-width: 480px) and (max-width: 1260px) {
   .activity.grid, .category-header .grid{
 		grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr;
 		grid-template-areas: 
-		"name age schedule price cours location signup"
-		"name details details details details details details"
+		"name info age schedule price cours location signup"
+		"name details details details details details details details"
 		;
 	}
 }
