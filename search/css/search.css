@@ -101,9 +101,11 @@ div.name{
 	display: inline-flex;
     justify-content: left;
     padding-left: 15px;
-    border-right: none;
 }
-.activity.grid>div:not(.name):not(.details){
+.activity .name, .activity .spacer{
+	border-right: none;
+}
+.activity.grid>div:not(.name, .details, .spacer){
 	border-top:1px dotted #999;
 }
 .column-header{
@@ -165,37 +167,37 @@ div.name{
 .arts.category-header{
 	background-color:rgba(255,195,5,1);
 }
-.aquatique.activity .name{
+.aquatique.activity .name, .aquatique .spacer{
 	background-color:rgba(30,144,255,0.2);
 }
 .aquatique.category-header{
 	background-color:rgba(30,144,255,1);
 }
-.langues.activity .name{
+.langues.activity .name, .langues.spacer{
 	background-color:rgba(45,205,75,0.2);
 }
 .langues.category-header{
 	background-color:rgba(45,205,75,1);
 }
-.activites-sportives.activity .name{
+.activites-sportives.activity .name, .activites-sportives .spacer{
 	background-color:rgba(255,127,41,0.2);
 }
 .activites-sportives.category-header{
 	background-color:rgba(255,127,41,1);
 }
-.danse.activity .name{
+.danse.activity .name, .danse .spacer{
 	background-color:rgba(140,85,135,0.2);
 }
 .danse.category-header{
 	background-color:rgba(140,85,135,1);
 }
-.secourisme.activity .name{
+.secourisme.activity .name, .secourisme .spacer{
 	background-color:rgba(238,12,12,0.2);
 }
 .secourisme.category-header{
 	background-color:rgb(238, 12, 12);
 }
-.arts-martiaux.activity .name{
+.arts-martiaux.activity .name, .arts-martiaux .spacer{
 	background-color:rgba(116,33,211,0.2);
 }
 .arts-martiaux.category-header{
