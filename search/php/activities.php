@@ -67,7 +67,12 @@ if(!$token){die("Connection Failure");}else{
                
             };
     	};
-    };
+	};
+	$output=array(
+		"allActivities" => $allActivities,
+		"locations" => $locations
+	);
+	echo json_encode($output);
 };
 function getElemById($arr,$id){
     foreach($arr as $elem){

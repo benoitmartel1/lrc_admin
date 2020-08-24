@@ -1,5 +1,5 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
+// include_once($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/admin/search/php/activities.php');
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 	
 <script>
-var activities = <?php echo json_encode($allActivities); ?>;
-var locations = <?php echo json_encode($locations); ?>;
+// var activities = <?php echo json_encode($allActivities); ?>;
+// var locations = <?php echo json_encode($locations); ?>;
 </script>
 
 <script

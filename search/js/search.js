@@ -1,4 +1,13 @@
-$(document).ready(function() {
+
+
+
+
+$.get('php/activities.php',function(data){fillGrid(JSON.parse(data))});
+
+function fillGrid(data){
+	console.log(data);
+	var activities=data.allActivities;
+	var locations=data.locations;
 	// If true, signup button becomes Edit and redirects to edit page in Amilia
 	//If false, signup button redirects to subscribe page in Amilia
 	var editMode=true;
@@ -375,4 +384,4 @@ $(document).ready(function() {
 				 });
 				 window.scrollTo(0, 0);
                });
-             });
+             };
