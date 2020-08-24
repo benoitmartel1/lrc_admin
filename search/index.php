@@ -80,9 +80,10 @@
   <ul class="list no-select">
   </ul>
   <!-- Loading animation -->
-<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
-<div id="text-wait"></div>
-
+  <div class="loading">
+	<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
+	<h5 id="text-wait"></h5>	
+  </div>
 </div>
 </div>
 </body>

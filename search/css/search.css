@@ -400,7 +400,7 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .lds-ellipsis div {
   position: absolute;
-  top: 33px;
+  top: 8px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -409,19 +409,19 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
+  animation: lds-ellipsis1 0.4s infinite;
 }
 .lds-ellipsis div:nth-child(2) {
   left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
+  animation: lds-ellipsis2 0.4s infinite;
 }
 .lds-ellipsis div:nth-child(3) {
   left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
+  animation: lds-ellipsis2 0.4s infinite;
 }
 .lds-ellipsis div:nth-child(4) {
   left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
+  animation: lds-ellipsis3 0.4s infinite;
 }
 @keyframes lds-ellipsis1 {
   0% {

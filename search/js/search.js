@@ -14,6 +14,7 @@ $( document ).ready(function() {
 
 
 function fillGrid(data){
+	$(".loading").fadeOut(200);
 
 	var activities=data.allActivities;
 	var locations=data.locations;
@@ -380,6 +381,6 @@ function fillGrid(data){
 				 });
 				 window.scrollTo(0, 0);
 			   });
-			//    $('.loading-animation').hide();
+			
 
              };
