@@ -37,7 +37,7 @@ div.name{
 	font-weight:bold;
 	font-size:1.1em;
 	padding:0px 15px;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 }
 #app .header{
 	z-index:1;	
@@ -76,10 +76,13 @@ div.name{
 
 .activity.grid, .category-header .grid{
 	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
-	grid-template-rows: minmax(40px, auto);;
+	grid-template-rows: minmax(40px, auto);
 	grid-template-areas:
 	"name info age schedule session price cours location staff start signup"
 	"spacer details details details details details details details details details details";
+}
+.category-header .grid{
+	grid-template-rows: auto;
 }
 .activity.grid>div,.category-header .grid>div{
 	display: flex;

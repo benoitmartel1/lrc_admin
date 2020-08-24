@@ -1,28 +1,6 @@
-
-
-
 $( document ).ready(function() {
 
-	$.getJSON("https://jsonip.com/?callback=", function (data) {
-    var settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://apility-io-ip-geolocation-v1.p.rapidapi.com/"+data.ip,
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "apility-io-ip-geolocation-v1.p.rapidapi.com",
-        "x-rapidapi-key": "8fc55b1495msh5c4083f807eb176p18ab91jsn04ec34885074",
-        accept: "application/json",
-      },
-    };
 
-    $.ajax(settings).done(function (response) {
-      console.log("GEO IS ");
-      console.log(response);
-    });
-  });
-
-	
 	//Get all activities/locations to populate page
 	$.get('php/activities.php', function(data){
 		fillGrid(JSON.parse(data))
