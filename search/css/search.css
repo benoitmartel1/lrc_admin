@@ -342,7 +342,7 @@ body:not(.user-is-tabbing) textarea:focus {
 
 @media (min-width: 480px) and (max-width: 1260px) {
   .activity.grid, .category-header .grid{
-		grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 2fr 0.5fr 1fr 2fr 0.75fr 0.75fr 0.75fr 1fr;
 		grid-template-areas: 
 		"name info age schedule price cours location signup"
 		"name details details details details details details details"
