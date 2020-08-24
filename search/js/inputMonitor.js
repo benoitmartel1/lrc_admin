@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	console.log('ready');
-	$('input').change(function(){
+	$('input').on('input', function(){
 		console.log(this);
 		console.log($(this).val());
 	})
