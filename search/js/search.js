@@ -1,10 +1,7 @@
-
-
-
-
 $.get('php/activities.php',function(data){fillGrid(JSON.parse(data))});
 
 function fillGrid(data){
+	console.log('in');
 	console.log(data);
 	var activities=data.allActivities;
 	var locations=data.locations;
@@ -383,5 +380,7 @@ function fillGrid(data){
                    }
 				 });
 				 window.scrollTo(0, 0);
-               });
+			   });
+			   $('.loading-animation').hide();
+
              };

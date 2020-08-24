@@ -34,7 +34,7 @@
 
 <body>
 <!-- <div class="black"></div> -->
-
+<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
 <div id="app">
 
 <div class="header">
