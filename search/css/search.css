@@ -78,7 +78,7 @@ div.name{
 	grid-template-rows: minmax(40px, auto);;
 	grid-template-areas:
 	"name age schedule session price cours location staff start signup"
-	". details details details details details details details details details";
+	"spacer details details details details details details details details details";
 }
 .activity.grid>div,.category-header .grid>div{
 	display: flex;
@@ -122,9 +122,12 @@ div.name{
 div.name{
 	background-color: lightgray;
 }
+.activity>.spacer{
+	grid-area:spacer;
+}
 .activity>.name{
 	grid-area:name;
-	border-bottom: 1px solid white;
+	border-top: 1px solid white;
 }
 .activity>.age{
 	grid-area:age;
@@ -153,7 +156,7 @@ div.name{
 .activity>div:last-child{
 	border-right:0;
 }
-.arts.activity .name{
+.arts.activity .name, .arts .spacer{
 	background-color:rgba(255,195,5,0.2);
 }
 .arts.category-header{
