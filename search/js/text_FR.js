@@ -40,7 +40,7 @@ var text = {
   age: "Âge / niveau",
   schedule: "Horaire",
   price: "Coût",
-  duration: "Nb cours",
+  duration: "Cours",
   location: "Lieu",
   starting: "Début",
   staff: "Responsable",

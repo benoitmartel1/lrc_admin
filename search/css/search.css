@@ -74,7 +74,7 @@ div.name{
 }
 
 .activity.grid, .category-header .grid{
-	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.5fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
 	grid-template-rows: minmax(40px, auto);;
 	grid-template-areas:
 	"name info age schedule session price cours location staff start signup"
@@ -85,6 +85,11 @@ div.name{
 	align-items: center;
 	justify-content: center;
 	border-right:1px solid #999;
+}
+.category-header .grid>div{
+	align-items: flex-end;
+	padding-bottom:3px;
+	line-height:1em;
 }
 .signup, .details{
 	border-right:0!important
@@ -213,7 +218,7 @@ div.name{
 	color:white;
 	margin-top:15px;
 	padding-top:10px;
-	border-radius: 20px 20px 0 0;
+	border-radius: 15px 15px 0 0;
 }
 .category-header .top{
 	display: block;
