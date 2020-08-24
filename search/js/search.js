@@ -10,7 +10,7 @@ $( document ).ready(function() {
 		var name = $(this).attr("id");
 		$(this).text(text[name.split("-")[1]]);
 	});
-};
+});
 
 
 function fillGrid(data){
