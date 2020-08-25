@@ -239,27 +239,25 @@ function fillGrid(data){
 				}
 				}
 
-
+				//Signup button
 				$(".signup button:not(.isFull)").click(function (e) {
+
 					e.stopPropagation();
+
 					var id=$(this).closest('li').attr('data-id');
 					var programId = $(this).closest("li").attr("data-program-id");
 
-                if (!editMode){
-
-				 window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
-                    id +
-                    '?quickRegisterId=' +
-					id, '_blank');
-				}else{
-					window.open(
-            "https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" +
-              programId +
-              "?activityId=" +
-              id,
-            "_blank"
-          );
-				};
+					
+					if (!editMode){
+						//Tracker
+						sendTrackerInfo('signup', id);
+						
+						window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
+						id + '?quickRegisterId=' + id, '_blank');
+					}else{
+						window.open("https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" +
+						programId + "?activityId=" + id, "_blank");
+					};
                });
 
                //Erase Search input
