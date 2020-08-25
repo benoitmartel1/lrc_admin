@@ -25,9 +25,9 @@ function defineSessionId(){
 //       };
 //     }
 //   );
-	$.getJSON("https://ip-api.com/json?callback=?", function (data) {
-   	 console.log(data.query);
- 	});
+	$.getJSON("https://api.ipify.org?format=json", function (data) {
+    console.log(data.ip);
+  });
 	return id;
 };
 function inputTracker(sessionId, str) {
