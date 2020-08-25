@@ -17,7 +17,15 @@ $( document ).ready(function() {
 
 function defineSessionId(){
 	var id;
-	$.getJSON("http://ip-api.com/json?callback=?", function (data) {
+// 	return $.getJSON("http://api.embed.ly/1/oembed?key=:key&url=" + vurl).then(
+//     function (data) {
+//       return {
+//         thumbnail: data.thumbnail_url,
+//         vurl: vurl,
+//       };
+//     }
+//   );
+	$.getJSON("https://ip-api.com/json?callback=?", function (data) {
    	 console.log(data.query);
  	});
 	return id;
