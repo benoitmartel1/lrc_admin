@@ -9,6 +9,7 @@ $value=$db->real_escape_string($_POST['value']);
 $query = "INSERT INTO `tracker_input`(`session_id`, `value`) VALUES ($session_id, $value)";
 $result = mysqli_query($db, $query);
 
+echo 4;
 echo $result;
 
 ?>
