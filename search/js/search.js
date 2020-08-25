@@ -290,7 +290,7 @@ function fillGrid(data){
               		 $(".details").hide();
 				 };
 				 //Tracker
-				sendTrackerInfo('activity',$(target).attr("id"));
+				sendTrackerInfo('activity',$(target).attr("data-id"));
 				 //Open details drawer
 				togglePopUp($(target).find(".details"));  
                });
