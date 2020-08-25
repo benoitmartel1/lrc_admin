@@ -9,19 +9,20 @@ $( document ).ready(function() {
 		clearTimeout(Timer);
 		Timer = setTimeout(function () {
 		if (entry.length > 2) {
-			console.log(entry);
 			inputTracker(sessionId, entry);
 		}
-		}, 1500);
+		}, 2000);
 	})
 });
 
 function defineSessionId(){
-	var id=999;
+	var id;
+	$.getJSON("http://ip-api.com/json?callback=?", function (data) {
+   	 console.log(data.query);
+ 	});
 	return id;
 };
 function inputTracker(sessionId, str) {
-	console.log('sending'+str);
 	$.post('php/insertTracker.php',{
 		sessionId:sessionId,
 		type:'input',
