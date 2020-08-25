@@ -14,18 +14,23 @@ $( document ).ready(function() {
 		clearTimeout(Timer);
 		Timer = setTimeout(function () {
 		if (entry.length > 2) {
-			inputTracker(sessionId, entry);
+			sendTrackerInfo("input", entry);
 		}
-		}, 2000);
-	})
+		}, 1500);
+	});
+	
 });
-function inputTracker(sessionId, str) {
-	$.post('php/insertTracker.php',{
-		sessionId:sessionId,
-		type:'input',
-		value:str
-	}, function(data){console.log(data)});
+
+function sendTrackerInfo(type, value){
+$.post(
+  "php/insertTracker.php",
+  {
+    sessionId: sessionId,
+    type: type,
+    value: value,
+  },
+  function (data) {
+    console.log(data);
+  }
+);
 };
-function viewActivityTracker(sessionId, id) {};
-function filterTracker(sessionId, type, value) {};
-function signUpTracker(sessionId, id) {};

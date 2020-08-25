@@ -288,8 +288,11 @@ function fillGrid(data){
 			
                		//Hide other details opened if any
               		 $(".details").hide();
-            	 };
-					togglePopUp($(target).find(".details"));  
+				 };
+				 //Send to tracker
+				sendTrackerInfo('activity',$(target).attr("id"));
+				 //Open details drawer
+				togglePopUp($(target).find(".details"));  
                });
             
                //--------------------FUNCTIONS-----------------------//
