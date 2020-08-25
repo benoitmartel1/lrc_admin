@@ -9,7 +9,7 @@ $activities=json_decode($json)->allActivities;
 //Get all trackers
 $query = "SELECT * FROM trackers";
 $result = $db -> query($query);
-$trackers = $result->fetch_all( MYSQLI_ASSOC )[0];
+$trackers = $result->fetch_all( MYSQLI_ASSOC );
 
 print_r($trackers);
 
