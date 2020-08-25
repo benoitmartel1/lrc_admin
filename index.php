@@ -3,9 +3,9 @@
 include('log_check.php');
   //db connect  
 include('db_connect.php');
-  //db connect  
-include('search/php/activities.php');
-
+  //Get activities
+$json = file_get_contents('search/php/activities.php');
+$allActivities=json_decode($json);
 //Get all trackers
 $query = "SELECT * FROM trackers";
 $result = $db -> query($query);
