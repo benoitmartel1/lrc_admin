@@ -16,20 +16,13 @@ $( document ).ready(function() {
 });
 
 function defineSessionId(){
-	var id;
-// 	return $.getJSON("http://api.embed.ly/1/oembed?key=:key&url=" + vurl).then(
-//     function (data) {
-//       return {
-//         thumbnail: data.thumbnail_url,
-//         vurl: vurl,
-//       };
-//     }
-//   );
-	$.getJSON("https://api.ipify.org?format=json", function (data) {
-    console.log(data.ip);
-  });
-	return id;
-};
+                            
+                        return $.getJSON("https://api.ipify.org?format=json").then(
+                                function (data) {
+                                  return data.ip;
+                                }
+                              );
+                        };
 function inputTracker(sessionId, str) {
 	$.post('php/insertTracker.php',{
 		sessionId:sessionId,
