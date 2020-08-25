@@ -1,10 +1,10 @@
-$( document ).ready(function() {
+var sessionId;
+$.getJSON("https://api.ipify.org?format=json", function (data) {
+  sessionId = data.ip;
+  console.log(sessionId);
+});
 
-	var sessionId;
-	 $.getJSON("https://api.ipify.org?format=json", function(data){
-		 sessionId=data.ip;
-		 console.log(sessionId);
-	 });
+$( document ).ready(function() {
 
 	var Timer;
 
