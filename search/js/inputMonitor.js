@@ -1,7 +1,7 @@
 var sessionId;
 $.getJSON("https://api.ipify.org?format=json", function (data) {
   sessionId = data.ip;
-  console.log(sessionId);
+  //console.log(sessionId);
 });
 
 $( document ).ready(function() {
