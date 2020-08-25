@@ -289,7 +289,7 @@ function fillGrid(data){
                		//Hide other details opened if any
               		 $(".details").hide();
 				 };
-				 //Send to tracker
+				 //Tracker
 				sendTrackerInfo('activity',$(target).attr("id"));
 				 //Open details drawer
 				togglePopUp($(target).find(".details"));  
@@ -327,7 +327,11 @@ function fillGrid(data){
 				 var type = $(label).attr("data-type");
 				 var suffix =(type == "age") ? ' '+text.yearsOld : "";
 				var labelText = $(label).text()+suffix;
-                 var value = $(label).attr("data-value");
+				 var value = $(label).attr("data-value");
+				 
+				//Tracker
+				sendTrackerInfo('f-'+type, value);
+
                  $(".applied-filters").append(
                    $("<span>", {
                      text: labelText,
