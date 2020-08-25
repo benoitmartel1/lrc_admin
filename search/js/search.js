@@ -283,14 +283,11 @@ function fillGrid(data){
                $("li.activity").click((e) => {
 				   var target=$(e.target).closest('.activity');
 				if (!$(target).find('.details').is(':visible')){
-			
+					//Tracker
+                	sendTrackerInfo("activity", $(target).attr("data-id"));
                		//Hide other details opened if any
               		 $(".details").hide();
-				 }else{
-                //Tracker
-                sendTrackerInfo("activity", $(target).attr("data-id"));
               };
-				 
 				 //Open details drawer
 				togglePopUp($(target).find(".details"));  
                });
