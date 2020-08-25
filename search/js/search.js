@@ -251,7 +251,7 @@ function fillGrid(data){
 					if (!editMode){
 						//Tracker
 						sendTrackerInfo('signup', id);
-						
+
 						window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' +
 						id + '?quickRegisterId=' + id, '_blank');
 					}else{
@@ -286,9 +286,11 @@ function fillGrid(data){
 			
                		//Hide other details opened if any
               		 $(".details").hide();
-				 };
-				 //Tracker
-				sendTrackerInfo('activity',$(target).attr("data-id"));
+				 }else{
+                //Tracker
+                sendTrackerInfo("activity", $(target).attr("data-id"));
+              };
+				 
 				 //Open details drawer
 				togglePopUp($(target).find(".details"));  
                });
