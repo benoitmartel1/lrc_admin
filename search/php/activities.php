@@ -72,7 +72,6 @@ if(!$token){die("Connection Failure");}else{
 		"allActivities" => $allActivities,
 		"locations" => $locations
 	);
-	header('Content-type:application/json;charset=utf-8');
 	echo json_encode($output);
 };
 function getElemById($arr,$id){
