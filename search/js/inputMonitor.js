@@ -21,11 +21,12 @@ function defineSessionId(){
 	return id;
 };
 function inputTracker(sessionId, str) {
+	console.log('sending'+str);
 	$.post('php/insertTracker.php',{
 		sessionId:sessionId,
 		type:'input',
 		value:str
-	});
+	}, function(data){console.log(data)});
 };
 function viewActivityTracker(sessionId, id) {};
 function filterTracker(sessionId, type, value) {};
