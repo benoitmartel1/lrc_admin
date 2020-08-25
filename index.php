@@ -4,15 +4,15 @@ include('log_check.php');
   //db connect  
 include('db_connect.php');
   //Get activities
-$json = file_get_contents('search/php/activities.php');
-$allActivities=json_decode($json);
+$json = file_get_contents('https://renaudcoursol.com/admin/search/php/activities.php');
+$activities=json_decode($json)->allActivities;
 //Get all trackers
 $query = "SELECT * FROM trackers";
 $result = $db -> query($query);
 $trackers = $result->fetch_all( MYSQLI_ASSOC )[0];
 
-var_dump($trackers);
-var_dump($allActivities);
+print_r($trackers);
+
 
 ?>
 <!DOCTYPE html>
