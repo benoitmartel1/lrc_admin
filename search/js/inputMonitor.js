@@ -1,6 +1,11 @@
 $( document ).ready(function() {
 
-	var sessionId=defineSessionId();
+	var sessionId;
+	 $.getJSON("https://api.ipify.org?format=json", function(data){
+		 sessionId=data.ip;
+		 console.log(sessionId);
+	 });
+
 	var Timer;
 
 	//Listeners
@@ -14,15 +19,6 @@ $( document ).ready(function() {
 		}, 2000);
 	})
 });
-
-function defineSessionId(){
-                            
-                        return $.getJSON("https://api.ipify.org?format=json").then(
-                                function (data) {
-                                  return data.ip;
-                                }
-                              );
-                        };
 function inputTracker(sessionId, str) {
 	$.post('php/insertTracker.php',{
 		sessionId:sessionId,
