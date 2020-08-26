@@ -287,7 +287,15 @@ function fillGrid(data){
                //Activity li click
                $("li.activity").click((e) => {
 				   var target=$(e.target).closest('.activity');
-					//Align clicked item top top of page
+					
+				//Check if the click is to open the activity		
+				if (!$(target).find('.details').is(':visible')){
+					//Tracker
+                	sendTrackerInfo("activity", $(target).attr("data-id"));
+               		//Hide other details opened if any
+              		 $(".details").hide();
+			  };
+			  //Align clicked item top top of page
 					$("html, body").animate(
 						{
 						scrollTop:
@@ -297,13 +305,6 @@ function fillGrid(data){
 						},
 						"fast"
 					);
-				//Check if the click is to open the activity		
-				if (!$(target).find('.details').is(':visible')){
-					//Tracker
-                	sendTrackerInfo("activity", $(target).attr("data-id"));
-               		//Hide other details opened if any
-              		 $(".details").hide();
-              };
 				//Open details drawer
 				togglePopUp($(target).find(".details"));  
                });
