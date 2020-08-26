@@ -233,7 +233,7 @@ div.name{
 	display: none;
 }
 .details .grid{
-	grid-template-columns: 1.5fr 3fr 4.5fr 1fr;
+	grid-template-columns: 1.5fr 2fr 5.5fr 1fr;
 	grid-template-areas: "thumb summary infos .";
 }
 .infos, .summary{
