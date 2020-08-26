@@ -82,12 +82,23 @@ function formatSchedule(s,e) {
 	return day+" "+startTime+" - "+endTime;
 };
 function formatLiteralSchedule(s,e) {
-	day=text.daysOfWeek[s.getDay()];
+	day=text.daysOfWeek[s.getDay()].toLowerCase();
     startTime=formatTime(s);
 	endTime = formatTime(e);
 	return "Le " +day+" de "+startTime+" à "+endTime;
 };
-
+function formatSpan(s,e) {
+    start = s.toLocaleTimeString("fr-CA", {
+      day: "numeric",
+      month: "long",
+    });
+	end = s.toLocaleTimeString("fr-CA", {
+    day: "numeric",
+	month: "long",
+	year:"numeric"
+  });
+	return "Du " +start+" au "+end;
+};
 function formatTime(t){
 	return t.toLocaleTimeString("en-US", {
       hour12: false,
