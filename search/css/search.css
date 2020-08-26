@@ -67,7 +67,7 @@ div.name{
 	grid-template-rows: minmax(40px, auto);
 	grid-template-areas:
 	"name info age schedule session price cours location staff start signup"
-	"spacer details details details details details details details details details summary";
+	"spacer details details details details details details details details details details";
 }
 .category-header .grid{
 	grid-template-rows: auto;

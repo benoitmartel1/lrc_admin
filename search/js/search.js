@@ -138,11 +138,10 @@ function fillGrid(data){
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
 								<div class="summary">
-			  						${formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>'}
-			  						${'Du '+sDate+' au '+eDate, "span", '<i class="far fa-calendar-alt"></i>'}
-									${this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):""}
+			  						${formatInfo(formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>')}
+			  						${formatInfo('Du '+sDate+' au '+eDate, "span", '<i class="far fa-calendar-alt"></i>')}
+									${formatInfo(this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):"")}
 									${formatInfo(staff, "responsible", '<i class="fas fa-user"></i>')}
-
 								</div>
 							</div>
 						</div>
