@@ -401,6 +401,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	width:100%;
 }
 .erase{
+	    z-index: 20;
 	padding:0;
 }
 
