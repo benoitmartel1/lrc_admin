@@ -349,6 +349,7 @@ body:not(.user-is-tabbing) textarea:focus {
 @media (max-width: 480px) { 
 	.details{
 		font-size:.8em;
+		line-height: .9em;
 	}
 	.schedule{
 		border-right:0;
