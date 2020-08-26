@@ -300,8 +300,8 @@ function fillGrid(data){
 						{
 						scrollTop:
 							$(target).offset().top -
-							$(".header").position().top +
-							$(".header").outerHeight(true),
+							($(".header").position().top +
+							$(".header").outerHeight(true)),
 						},
 						"fast"
 					);
