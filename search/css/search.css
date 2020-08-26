@@ -237,7 +237,7 @@ div.name{
 		grid-template-areas: 
 		"thumb infos .";
 }
-.infos{
+.infos, .summary{
 	padding:10px;
 	grid-area: infos;
 	font-size: 0.9em;

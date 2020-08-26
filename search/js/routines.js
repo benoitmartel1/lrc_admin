@@ -81,6 +81,12 @@ function formatSchedule(s,e) {
 	endTime = formatTime(e);
 	return day+" "+startTime+" - "+endTime;
 };
+function formatLiteralSchedule(s,e) {
+	day=text.daysOfWeek[s.getDay()];
+    startTime=formatTime(s);
+	endTime = formatTime(e);
+	return "Le " +day+" de "+startTime+" à "+endTime;
+};
 
 function formatTime(t){
 	return t.toLocaleTimeString("en-US", {

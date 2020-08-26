@@ -132,14 +132,17 @@ function fillGrid(data){
 							<div class="grid">
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
 								<div class="infos">
-									${formatInfo(this.Description, "description", null)}
-									${formatInfo(staff, "responsible", text.infos.responsible)}
+									${formatInfo(this.Description, "description", text.infos.description)}
 									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
 									${formatInfo(this.Note, "note", text.infos.note)}
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
 								<div class="summary">
+			  						${formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>'}
+			  						${'Du '+sDate+' au '+eDate, "span", '<i class="far fa-calendar-alt"></i>'}
 									${this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):""}
+									${formatInfo(staff, "responsible", '<i class="fas fa-user"></i>')}
+
 								</div>
 							</div>
 						</div>

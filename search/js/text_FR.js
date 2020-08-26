@@ -2,6 +2,7 @@ var text = {
 	wait:"Recherche des activités en cours",
 	info:"Cliquer pour en savoir plus",
 	infos:{
+		description:'Description',
 		responsible:'Responsable',
 		prerequisite:'Pré-requis',
 		duration:'Durée',
