@@ -139,7 +139,7 @@ function fillGrid(data){
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
 								<div class="summary">
-									${formatInfo(this.Location.FullName, "fullLocation", <i class="fas fa-map-marker-alt"></i>)}
+									${formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>')}
 								</div>
 							</div>
 						</div>
