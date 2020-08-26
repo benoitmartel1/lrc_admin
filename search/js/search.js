@@ -239,11 +239,11 @@ function fillGrid(data){
 				var sticky = $(header).offset().top;
 				// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 				function myFunction() {
-				if (window.pageYOffset > sticky) {
-					$(header).addClass("sticky");
-				} else {
-					$(header).removeClass("sticky");
-				}
+					if (window.pageYOffset > sticky) {
+						$(header).addClass("sticky");
+					} else {
+						$(header).removeClass("sticky");
+					}
 				}
 
 				//Signup button

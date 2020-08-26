@@ -88,11 +88,11 @@ function formatLiteralSchedule(s,e) {
 	return "Le " +day+" de "+startTime+" à "+endTime;
 };
 function formatSpan(s,e) {
-    start = s.toLocaleTimeString("fr-CA", {
+    start = s.toLocaleDateString("fr-CA", {
       day: "numeric",
       month: "long",
     });
-	end = s.toLocaleTimeString("fr-CA", {
+	end = s.toLocaleDateString("fr-CA", {
     day: "numeric",
 	month: "long",
 	year:"numeric"

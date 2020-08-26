@@ -234,7 +234,7 @@ div.name{
 }
 .details .grid{
 	grid-template-columns: 1.5fr 3fr 4.5fr 1fr;
-	grid-template-areas: "thumb infos summary .";
+	grid-template-areas: "thumb summary infos .";
 }
 .infos, .summary{
     padding: 5px 0px 30px 15px;
@@ -314,6 +314,7 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .filters>*{
 	display: inline-block;
+	    margin-right: 5px;
 }
 .signup{
 	border-right:0;
