@@ -104,7 +104,9 @@ function fillGrid(data){
                          this.Id
                        }' data-program-id='${this.ProgramId}'>
 							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
-							<div class="info" data-toggle="tooltip" title="${text.info}"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+							<div class="info" data-toggle="tooltip" title="${
+                text.info
+              }"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
 							<div class="age">${formatAge(this.Age)}</div>
 							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
 							<div class="session">${formatSession(sDate, eDate)}</div>
@@ -135,6 +137,9 @@ function fillGrid(data){
 									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
 									${formatInfo(this.Note, "note", text.infos.note)}
 									${formatInfo(duration, "duration", text.infos.duration)}
+								</div>
+								<div class="summary">
+									${formatInfo(this.Location.FullName, "fullLocation", <i class="fas fa-map-marker-alt"></i>)}
 								</div>
 							</div>
 						</div>
@@ -279,16 +284,27 @@ function fillGrid(data){
                  $(this).remove();
                  filterResults();
                });
-               //Toggle the popup details/info of activity.
+               //Activity li click
                $("li.activity").click((e) => {
 				   var target=$(e.target).closest('.activity');
+					//Align clicked item top top of page
+					$("html, body").animate(
+						{
+						scrollTop:
+							$(target).offset().top -
+							$(".header").position().top +
+							$(".header").outerHeight(true),
+						},
+						"fast"
+					);
+				//Check if the click is to open the activity		
 				if (!$(target).find('.details').is(':visible')){
 					//Tracker
                 	sendTrackerInfo("activity", $(target).attr("data-id"));
                		//Hide other details opened if any
               		 $(".details").hide();
               };
-				 //Open details drawer
+				//Open details drawer
 				togglePopUp($(target).find(".details"));  
                });
             
