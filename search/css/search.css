@@ -155,7 +155,7 @@ div.name{
 .activity>.signup{
 	grid-area:signup;
 }
-.activity>.summary{
+.activity .summary{
 	grid-area:summary;
 }
 .activity>div:last-child{
@@ -235,7 +235,7 @@ div.name{
 .details .grid{
 	grid-template-columns: 3fr 5fr 2fr ;
 		grid-template-areas: 
-		"thumb infos .";
+		"thumb infos summary";
 }
 .infos, .summary{
 	padding:10px;
