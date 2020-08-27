@@ -67,7 +67,7 @@ function fillGrid(data){
                    this.id
                  );
 
-                 //Sort those activities
+                 //Sort those activities 1
                  categoryActivities.sort(sortByName);
 
                  //Create the list item for every activity
