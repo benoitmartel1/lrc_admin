@@ -92,7 +92,6 @@ function formatSpan(s,e) {
       day: "numeric",
       month: "long",
 	});
-	console.log(start);
 	end = e.toLocaleDateString("fr-CA", {
     day: "numeric",
 	month: "long",

@@ -139,7 +139,7 @@ function fillGrid(data){
 								<div class="summary">
 			  						${formatInfo(formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>')}
 			  						${formatInfo(formatSpan(sDate, eDate), "span", '<i class="far fa-calendar-alt"></i>')}
-									${formatInfo(this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):"")}
+									${this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):""}
 									${formatInfo(staff, "responsible", '<i class="fas fa-user"></i>')}
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
