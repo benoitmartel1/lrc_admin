@@ -81,7 +81,7 @@ function fillGrid(data){
                    ) {
                      
 					var signupText = editMode == true ? text.edit : text.signup;
-
+					console.log(this.Location);
                      var dur =
                        eDate.getHours() +
                        eDate.getMinutes() / 60 -
