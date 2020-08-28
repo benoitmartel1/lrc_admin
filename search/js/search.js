@@ -397,7 +397,8 @@ function fillGrid(data){
 				$(target).find('.details .grid>div').hide();
                  $(target).slideToggle(250, function(){
 					$('<img/>').attr('src', imgSrc).on('load',function(){
-					$(target).find('.details .grid').each(function(index) {
+					$(target).find('.details .grid>div').each(function(index) {
+						console.log(this);
 						$(this).delay(1200*index).fadeIn(1000);
 					});
 					});
