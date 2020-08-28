@@ -392,7 +392,7 @@ function fillGrid(data){
 				return item.values().category == cat ? true : false;
 				}
                function togglePopUp(target) {
-				  var imgSrc=$(target).find(".thumb").css('background-image');
+				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 				  console.log(imgSrc);
 				  $(target).find(".thumb").attr('src', imgSrc).on('load', function(){console.log('loaded');}); 
                  $(target).slideToggle(250, function(){
