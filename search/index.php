@@ -58,7 +58,7 @@
 	<div id="category-drop" class="dropdown filter-drop">
 		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 			aria-haspopup="true" aria-expanded="false">
-			<span id="text-location"></span>
+			<span id="text-category"></span>
 		</button>
 		<div data="category" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
 		</div>

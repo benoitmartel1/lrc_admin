@@ -153,7 +153,7 @@ function fillGrid(data){
 							<div class="startDate">${this.StartDate}</div>
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
-							<div class="category">${this.CategoryName}</div>
+							<div class="category">${categoryClass}</div>
 							<div class="locationId">${this.Location ? this.Location.Id : null}</div>
 
 						</div>
@@ -201,14 +201,13 @@ function fillGrid(data){
                }
 				//Populate category filter menu
 			   $(categories).each(function(c){
-					console.log(this);
 					$("#category-drop .dropdown-menu").append(
 					$("<a>", {
 						text: this.name,
 						class: "dropdown-item",
 					})
 						.attr("data-type", "category")
-						.attr("data-value", this.name)
+						.attr("data-value", this.class)
 					);
 			   });
                //Sort locations according to Name
