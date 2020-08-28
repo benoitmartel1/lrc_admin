@@ -278,7 +278,7 @@ div.name{
 	margin: 10px 0;
 }
 .search-field button{
-	z-index:1;
+	z-index:1!important;
 	border-radius:20px!important;
 }
 .search{

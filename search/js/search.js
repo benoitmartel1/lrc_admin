@@ -345,7 +345,7 @@ function fillGrid(data){
                    if (filters.location && inList)
 					 inList = filterLocation(item, parseInt(filters.location));
 				   if (filters.category && inList)
-                     inList = filterCategory(item, parseInt(filters.category));
+                     inList = filterCategory(item, filters.category);
                    return inList;
                  });
                }
