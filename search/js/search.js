@@ -392,13 +392,15 @@ function fillGrid(data){
 				return item.values().category == cat ? true : false;
 				}
                function togglePopUp(target) {
-				   $(target).find('.thumb').hide();
+				
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-				  console.log(imgSrc);
-				$('<img/>').attr('src', imgSrc).on('load',function(){
-					$(target).find('.thumb').fadeIn('slow');
-				});
+				$(target).find('.details .grid>div').hide();
                  $(target).slideToggle(250, function(){
+					$('<img/>').attr('src', imgSrc).on('load',function(){
+					$(target).find('.details .grid').each(function(index) {
+						$(this).delay(1200*index).fadeIn(1000);
+					});
+					});
 				 });
                }
 
