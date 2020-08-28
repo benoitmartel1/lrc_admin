@@ -130,11 +130,6 @@ function fillGrid(data){
 						<div class="details hidden">
 							<div class="grid">
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
-								<div class="infos">
-									${formatInfo(this.Description, "description", text.infos.description)}
-									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
-									${formatInfo(this.Note, "note", text.infos.note)}
-								</div>
 								<div class="summary">
 			  						${formatInfo(formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>')}
 			  						${formatInfo(formatSpan(sDate, eDate), "span", '<i class="far fa-calendar-alt"></i>')}
@@ -142,6 +137,12 @@ function fillGrid(data){
 									${formatInfo(staff, "responsible", '<i class="fas fa-user"></i>')}
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
+								<div class="infos">
+									${formatInfo(this.Description, "description", text.infos.description)}
+									${formatInfo(this.Prerequisite, "prerequisite", text.infos.prerequisite)}
+									${formatInfo(this.Note, "note", text.infos.note)}
+								</div>
+								
 							</div>
 						</div>
 						<div class="hidden">
@@ -399,7 +400,7 @@ function fillGrid(data){
 					$('<img/>').attr('src', imgSrc).on('load',function(){
 					$(target).find('.grid>div').each(function(index) {
 						console.log(this);
-						$(this).delay(1200*index).fadeIn(1000);
+						$(this).delay(400*index).fadeIn(600);
 					});
 					});
 				 });
