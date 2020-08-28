@@ -167,10 +167,10 @@ div.name{
 .arts.category-header{
 	background-color:rgba(255,195,5,1);
 }
-.aquatique.activity .name, .aquatique .spacer{
+.arts-martiaux.activity .name, .arts-martiaux .spacer{
 	background-color:rgba(30,144,255,0.2);
 }
-.aquatique.category-header{
+.arts-martiaux.category-header{
 	background-color:rgba(30,144,255,1);
 }
 .langues.activity .name, .langues.spacer{
@@ -197,12 +197,12 @@ div.name{
 .secourisme.category-header{
 	background-color:rgb(238, 12, 12);
 }
-.arts-martiaux.activity .name, .arts-martiaux .spacer{
+/* .arts-martiaux.activity .name, .arts-martiaux .spacer{
 	background-color:rgba(116,33,211,0.2);
 }
 .arts-martiaux.category-header{
 	background-color:rgb(116, 33, 211);
-}
+} */
 /* .danse.activity .name{
 	background-color:rgba(14,179,221,0.2);
 }
@@ -233,7 +233,7 @@ div.name{
 	display: none;
 }
 .details .grid{
-	grid-template-columns: 1.5fr 2fr 5.5fr 1fr;
+	grid-template-columns: 3.5fr 2fr 3.5fr 1fr;
 	grid-template-areas: "thumb summary infos .";
 }
 .infos, .summary{
