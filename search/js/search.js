@@ -394,10 +394,10 @@ function fillGrid(data){
                function togglePopUp(target) {
 				
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-				$(target).find('.details .grid>div').hide();
+				$(target).find('.grid>div').hide();
                  $(target).slideToggle(250, function(){
 					$('<img/>').attr('src', imgSrc).on('load',function(){
-					$(target).find('.details .grid>div').each(function(index) {
+					$(target).find('.grid>div').each(function(index) {
 						console.log(this);
 						$(this).delay(1200*index).fadeIn(1000);
 					});
