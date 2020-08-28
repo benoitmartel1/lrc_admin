@@ -50,10 +50,17 @@ function formatStaff(staff){
 		return null;
 	}
 }
-function formatLocation(loc){
-	// console.log(loc.FullName);
-	return loc.FullName.match(/\(([^)]+)\)/)[1];
-};
+function formatLocation(loc) {
+  // console.log(loc.FullName);
+  let abbreviation = loc.FullName.match(/\(([^)]+)\)/);
+  if (abbreviation) {
+    return abbreviation[1];
+  } else {
+    return loc.FullName.split(/[\s-]+/)
+      .reduce((re, word) => (re += word.slice(0, 1)), "")
+      .toUpperCase();
+  }
+}
 //Returns session season according to start and end date of activity
 function formatSession(sDate,eDate){
 	var s=sDate.getMonth();
