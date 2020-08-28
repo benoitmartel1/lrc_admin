@@ -395,12 +395,12 @@ function fillGrid(data){
                function togglePopUp(target) {
 				
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-				$(target).find('.grid>div').hide();
+				$(target).find('.grid>div').css('opacity',0);
                  $(target).slideToggle(250, function(){
 					$('<img/>').attr('src', imgSrc).on('load',function(){
 					$(target).find('.grid>div').each(function(index) {
 						console.log(this);
-						$(this).delay(400*index).fadeIn(600);
+						$(this).delay(100*index).animate({ opacity: 1 }, 300);
 					});
 					});
 				 });
