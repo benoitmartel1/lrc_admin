@@ -81,7 +81,6 @@ function fillGrid(data){
                    ) {
                      
 					var signupText = editMode == true ? text.edit : text.signup;
-					console.log(this.Location);
                      var dur =
                        eDate.getHours() +
                        eDate.getMinutes() / 60 -
@@ -205,11 +204,11 @@ function fillGrid(data){
 					console.log(this);
 					$("#category-drop .dropdown-menu").append(
 					$("<a>", {
-						text: this,
+						text: this.name,
 						class: "dropdown-item",
 					})
 						.attr("data-type", "category")
-						.attr("data-value", this)
+						.attr("data-value", this.name)
 					);
 			   });
                //Sort locations according to Name

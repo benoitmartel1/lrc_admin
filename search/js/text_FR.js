@@ -20,6 +20,7 @@ var text = {
     "Désolé, cette activité n'est pas encore offerte.",
   filterBy: "Filtrer par",
   location: "Lieu",
+  category:"Catégorie",
   sessions: {
     winter: "Hiver",
     spring: "Printemps",
