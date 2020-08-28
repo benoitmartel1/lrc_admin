@@ -392,9 +392,12 @@ function fillGrid(data){
 				return item.values().category == cat ? true : false;
 				}
                function togglePopUp(target) {
+				   $(target).find('.thumb').hide();
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 				  console.log(imgSrc);
-				  $(target).find(".thumb").css('background-image', 'url('+imgSrc+')').on('load', function(){console.log('loaded');}); 
+				$('<img/>').attr('src', imgSrc).on('load',function(){
+					$(target).find('.thumb').show()
+				});
                  $(target).slideToggle(250, function(){
 				 });
                }

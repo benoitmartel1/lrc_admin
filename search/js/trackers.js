@@ -30,7 +30,7 @@ $.post(
     value: value,
   },
   function (data) {
-    console.log(data);
+    // console.log(data);
   }
 );
 };
