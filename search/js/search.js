@@ -394,7 +394,7 @@ function fillGrid(data){
                function togglePopUp(target) {
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 				  console.log(imgSrc);
-				  $(target).find(".thumb").attr('src', imgSrc).on('load', function(){console.log('loaded');}); 
+				  $(target).find(".thumb").css('background-image', 'url('+imgSrc+')').on('load', function(){console.log('loaded');}); 
                  $(target).slideToggle(250, function(){
 				 });
                }
