@@ -17,5 +17,6 @@ jobs:
           local: ./
           remote: public_html/admin
           host: ${{ secrets.host }}
+          port: 2243
           username: ${{ secrets.user }}
           password: ${{ secrets.password }}
