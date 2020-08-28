@@ -396,7 +396,7 @@ function fillGrid(data){
 				  var imgSrc=$(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 				  console.log(imgSrc);
 				$('<img/>').attr('src', imgSrc).on('load',function(){
-					$(target).find('.thumb').show()
+					$(target).find('.thumb').fadeIn('slow');
 				});
                  $(target).slideToggle(250, function(){
 				 });
