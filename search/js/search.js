@@ -154,7 +154,7 @@ function fillGrid(data){
 							<div class="startDate">${this.StartDate}</div>
 							<div class="hour">${sDate.getHours()}</div>
 							<div class="duration">${duration}</div>
-							<div class="subCategory">${this.SubCategoryName}</div>
+							<div class="category">${this.CategoryName}</div>
 							<div class="locationId">${this.Location ? this.Location.Id : null}</div>
 
 						</div>
@@ -200,7 +200,18 @@ function fillGrid(data){
                      .attr("data-value", a)
                  );
                }
-
+				//Populate category filter menu
+			   $(categories).each(function(c){
+					console.log(this);
+					$("#category-drop .dropdown-menu").append(
+					$("<a>", {
+						text: this,
+						class: "dropdown-item",
+					})
+						.attr("data-type", "category")
+						.attr("data-value", this)
+					);
+			   });
                //Sort locations according to Name
                locations.sort(function (a, b) {
                  //Remove accents and compare
@@ -334,7 +345,9 @@ function fillGrid(data){
 					 inList = filterDay(item, parseInt(filters.day));
 					 //If still in list, check next filter
                    if (filters.location && inList)
-                     inList = filterLocation(item, parseInt(filters.location));
+					 inList = filterLocation(item, parseInt(filters.location));
+				   if (filters.category && inList)
+                     inList = filterCategory(item, parseInt(filters.category));
                    return inList;
                  });
                }
@@ -376,7 +389,10 @@ function fillGrid(data){
 			   }
 			   function filterLocation(item, id) {
           			 return item.values().locationId == id ? true : false;
-        		 }
+				 }
+			   function filterCategory(item, cat) {
+				return item.values().category == cat ? true : false;
+				}
                function togglePopUp(target) {
                  $(target).slideToggle(250, function(){
 				 });
@@ -392,7 +408,7 @@ function fillGrid(data){
                    "day",
                    "hour",
                    "duration",
-                   "subCategory",
+                   "category",
 				   "keywords",
 				   "locationId",
 				   "session"
