@@ -44,8 +44,7 @@ div.name{
 	z-index:1;	
 	background-color: white;
     width: 100%;
-    padding-bottom: 8px;
-    padding-top: 20px;
+	padding:20px 100px 15px 100px;
 }
 .sticky{
 	position: fixed;
@@ -276,7 +275,7 @@ div.name{
 .search-field{
     margin-top: 10px;
     background: rgba(167,167,167,0.1);
-    border: 1px #666 solid;
+    border: 1px #bbb solid;
 	border-radius: 15px;
 	    padding-right: 9px;
 	    display: flex;
@@ -300,6 +299,7 @@ body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none;
+  border:none;
 }
 .applied-filters .filter{
 	/* display:inline-block; */
@@ -328,6 +328,9 @@ body:not(.user-is-tabbing) textarea:focus {
 	/* margin:4px; */
 }
 @media (max-width: 1260px) {
+	#app .header{
+			padding:20px  0 15px 0;
+	}
 	.sticky{
 		top:0;
 	}

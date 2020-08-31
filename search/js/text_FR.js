@@ -18,7 +18,7 @@ var text = {
   day: "Jour",
   noResult:
     "Désolé, cette activité n'est pas encore offerte.",
-  filterBy: "Filtrer par",
+  filterBy: "Filtrer",
   location: "Lieu",
   category:"Catégorie",
   sessions: {

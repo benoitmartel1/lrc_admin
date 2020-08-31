@@ -68,9 +68,9 @@
 </div>
 <div class="input-group search-field">
 	<input type="text" class="form-control search" placeholder="Quelle activité cherchez-vous?">
-	<button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
+	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
-	</button>
+	</button> -->
 	<div class="applied-filters"></div>
 </div>
 
