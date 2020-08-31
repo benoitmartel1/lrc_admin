@@ -297,9 +297,13 @@ div.name{
     background: rgba(167,167,167,0.1);
     border: 1px #bbb solid;
 	border-radius: 15px;
-	    padding-right: 9px;
+	    padding: 9px;
 	    display: flex;
     align-items: center;
+}
+.search-field input{
+	padding:0!important;
+font-size: 1.2em;
 }
 .search-field button{
 	z-index:1!important;
