@@ -342,6 +342,9 @@ body:not(.user-is-tabbing) textarea:focus {
 	margin-left:8px;
 	cursor: pointer;
 }
+.filters{
+	display:none;
+}
 .filters>*{
 	display: inline-block;
 	    /* margin-right: 5px; */

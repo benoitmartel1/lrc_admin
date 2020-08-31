@@ -3,6 +3,8 @@ $( document ).ready(function() {
 
 	//Get all activities/locations to populate page
 	$.get('php/activities.php', function(data){
+		$(".loading").slideUp();
+		$(".filters").fadeIn();
 		fillGrid(JSON.parse(data))
 	});
 
@@ -16,7 +18,7 @@ $( document ).ready(function() {
 
 
 function fillGrid(data){
-	$(".loading").slideUp();
+	
 
 	var activities=data.allActivities;
 	var locations=data.locations;

@@ -17,7 +17,7 @@ var text = {
   yearsOld:'ans',
   day: "Jour",
   noResult:
-    "Désolé, cette activité n'est pas encore offerte.",
+    "Désolé, cette activité n'est pas encore offerte. Restez au courant des nouveautés en vous inscrivant à l'infolettre.",
   filterBy: "Filtrer",
   location: "Lieu",
   category:"Catégorie",
