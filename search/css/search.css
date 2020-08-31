@@ -360,7 +360,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	}
 	.activity>.start,
 	.activity>.staff,
-	.activity>.session
+	.activity>.location
 	{
 		display: none!important;
 	}
@@ -373,7 +373,7 @@ body:not(.user-is-tabbing) textarea:focus {
   .activity.grid, .category-header .grid{
 		grid-template-columns: 2fr 0.5fr 1fr 2fr 0.75fr 0.75fr 0.75fr 1fr;
 		grid-template-areas: 
-		"name info age schedule price cours location signup"
+		"name info age schedule price cours session signup"
 		"spacer details details details details details details details"
 		;
 	}
@@ -398,7 +398,7 @@ body:not(.user-is-tabbing) textarea:focus {
 		grid-template-areas: 
 		"name name name info"
 		"age schedule schedule schedule"
-		"location price signup signup"
+		"session price signup signup"
 		"details details details details"
 		;
 	}
