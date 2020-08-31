@@ -303,6 +303,7 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .applied-filters .filter{
 	/* display:inline-block; */
+	font-size: .8em;
 	background-color: rgba(30,144,255,1);
     color: white;
     padding: 3px 10px;

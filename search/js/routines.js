@@ -67,13 +67,13 @@ function formatSession(sDate,eDate){
 	var e=eDate.getMonth();
 	switch (true) {
     case s < 3:
-	  return '<i class="fal fa-snowflake" aria-hidden="true"></i>' + text.sessions.winter;
+	  return text.sessions.winter;
       break;
     case s < 6:
-      return '<i class="fal fa-sun" aria-hidden="true"></i>' + text.sessions.spring;
+      return text.sessions.spring;
       break;
     case s > 6 && e > 6:
-      return '<i class="fal fa-leaf" aria-hidden="true"></i>' + text.sessions.fall;
+      return text.sessions.fall;
       break;
     case s > 6 && e < 6:
       return text.sessions.yearly;
