@@ -1,3 +1,7 @@
+::selection{
+	background-color: darkgrey;
+}
+
 textarea:hover, 
 input:hover, 
 textarea:active, 
@@ -64,7 +68,7 @@ div.name{
     width: 100%;
 }
 #app .header, .header-padding{
-	padding:20px 100px 15px 100px;
+	padding:20px 150px 15px 150px;
 }
 .sticky{
 	position: fixed;
@@ -308,11 +312,6 @@ font-size: 1.2em!important;
 .search-field button{
 	z-index:1!important;
 	border-radius:20px!important;
-}
-.search{
-	color:#999!important;
-	border-radius:20px;
-	font-size:1.6em;
 }
 button, button:focus, input[type="button"]:focus, input[type="button"]:active {
 	outline:0;
