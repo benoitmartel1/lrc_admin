@@ -381,6 +381,9 @@ body:not(.user-is-tabbing) textarea:focus {
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
+	#text-filterBy{
+		display: none;
+	}
 	.details{
 		font-size:.8em;
 		line-height: .9em;
