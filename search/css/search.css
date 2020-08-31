@@ -406,8 +406,8 @@ body:not(.user-is-tabbing) textarea:focus {
 .input-group input{
 	display: inline-block;
 	flex: 1;
-    border: none;
-	background: none;
+    border: none!important;
+    background: none!important;
 	height: unset;
 }
 .erase{
