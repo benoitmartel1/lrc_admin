@@ -303,7 +303,7 @@ div.name{
 }
 .search-field input{
 	padding:0!important;
-font-size: 1.2em;
+font-size: 1.2em!important;
 }
 .search-field button{
 	z-index:1!important;
