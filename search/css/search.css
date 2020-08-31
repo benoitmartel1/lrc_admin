@@ -187,38 +187,38 @@ div.name{
 .arts.activity .name, .arts .spacer{
 	background-color:rgba(255,195,5,0.2);
 }
-.arts.category-header{
-	background-color:rgba(255,195,5,1);
+.arts.category-header, .filter[data-value=arts]{
+	background-color:rgba(255,195,5,1)!important;
 }
 .arts-martiaux.activity .name, .arts-martiaux .spacer{
 	background-color:rgba(30,144,255,0.2);
 }
-.arts-martiaux.category-header{
-	background-color:rgba(30,144,255,1);
+.arts-martiaux.category-header, .filter[data-value=arts-martiaux]{
+	background-color:rgba(30,144,255,1)!important;
 }
 .langues.activity .name, .langues.spacer{
 	background-color:rgba(45,205,75,0.2);
 }
-.langues.category-header{
-	background-color:rgba(45,205,75,1);
+.langues.category-header, .filter[data-value=langues]{
+	background-color:rgba(45,205,75,1)!important;
 }
 .activites-sportives.activity .name, .activites-sportives .spacer{
 	background-color:rgba(255,127,41,0.2);
 }
-.activites-sportives.category-header{
-	background-color:rgba(255,127,41,1);
+.activites-sportives.category-header, .filter[data-value=activites-sportives]{
+	background-color:rgba(255,127,41,1)!important;
 }
 .danse.activity .name, .danse .spacer{
 	background-color:rgba(140,85,135,0.2);
 }
-.danse.category-header{
-	background-color:rgba(140,85,135,1);
+.danse.category-header, .filter[data-value=danse]{
+	background-color:rgba(140,85,135,1)!important;
 }
 .secourisme.activity .name, .secourisme .spacer{
 	background-color:rgba(238,12,12,0.2);
 }
-.secourisme.category-header{
-	background-color:rgb(238, 12, 12);
+.secourisme.category-header, .filter[data-value=secourisme]{
+	background-color:rgb(238, 12, 12)!important;
 }
 /* .arts-martiaux.activity .name, .arts-martiaux .spacer{
 	background-color:rgba(116,33,211,0.2);
