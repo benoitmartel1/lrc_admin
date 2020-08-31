@@ -329,7 +329,7 @@ body:not(.user-is-tabbing) textarea:focus {
 	font-size: .8em;
 	background-color: rgba(30,144,255,1);
     color: white;
-    padding: 3px 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     min-width: 60px;
     font-weight: bold;
@@ -379,7 +379,10 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
+	.applied-filters .filter{
+		padding: 3px 10px;
+	} 
 	#text-filterBy{
 		display: none;
 	}
