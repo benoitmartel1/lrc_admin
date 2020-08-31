@@ -274,8 +274,13 @@ div.name{
 	background-color: white;
 }
 .search-field{
-	width:50%;
-	margin: 10px 0;
+    margin-top: 10px;
+    background: rgba(167,167,167,0.1);
+    border: 1px #666 solid;
+	border-radius: 15px;
+	    padding-right: 9px;
+	    display: flex;
+    align-items: center;
 }
 .search-field button{
 	z-index:1!important;
@@ -286,8 +291,8 @@ div.name{
 	border-radius:20px;
 	font-size:1.6em;
 }
-button, input[type="button"]:focus, input[type="button"]:active {
-	outline:none;
+button, button:focus, input[type="button"]:focus, input[type="button"]:active {
+	outline:0;
 	border:none;
 }
 body:not(.user-is-tabbing) button:focus,
@@ -297,15 +302,15 @@ body:not(.user-is-tabbing) textarea:focus {
   outline: none;
 }
 .applied-filters .filter{
-	display:inline-block;
-	background-color:rgba(30,144,255,1);	
-	color:white;
-	padding:3px 10px;
-	border-radius: 10px;
-	min-width:60px;
-	font-weight: bold;
-	text-align: center;
-	margin-right:10px;
+	/* display:inline-block; */
+	background-color: rgba(30,144,255,1);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 10px;
+    min-width: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 5px;
 }
 .applied-filters .filter-remove{
 	font-size:0.8em;
@@ -398,8 +403,12 @@ body:not(.user-is-tabbing) textarea:focus {
 		width:100%;
 	}
 }
-.input-group>.form-control{
-	width:100%;
+.input-group input{
+	display: inline-block;
+	flex: 1;
+    border: none;
+	background: none;
+	height: unset;
 }
 .erase{
 	    z-index: 20;

@@ -63,7 +63,7 @@
 		<div data="category" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
 		</div>
 	</div>
-	<div class="applied-filters"></div>
+	
 
 </div>
 <div class="input-group search-field">
@@ -71,6 +71,7 @@
 	<button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button>
+	<div class="applied-filters"></div>
 </div>
 
 </div>
