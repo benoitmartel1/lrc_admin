@@ -67,7 +67,7 @@
 
 </div>
 <div class="input-group search-field">
-	<input type="text" class="form-control search" placeholder="Quelle activité cherchez-vous?">
+	<input type="text" class="search" placeholder="Quelle activité cherchez-vous?">
 	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button> -->
@@ -83,13 +83,13 @@
     Sort
   </button> -->
 
-	<div id="text-noResult" class="noResult"></div>
+	<div id="text-noResult" class="noResult header-padding"></div>
 
 <!-- Child elements of container with class="list" becomes list items -->
   <ul class="list no-select">
   </ul>
   <!-- Loading animation -->
-  <div class="loading">
+  <div class="loading header-padding">
 	  <h5 id="text-wait"></h5>
 	<div class="lds-ellipsis loading-animation"><div></div><div></div><div></div><div></div></div>
 		

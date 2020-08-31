@@ -1,3 +1,21 @@
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
 body{
     line-height: 1.2em;
 	font-family: 'Nunito', sans-serif;
@@ -44,6 +62,8 @@ div.name{
 	z-index:1;	
 	background-color: white;
     width: 100%;
+}
+#app .header, .header-padding{
 	padding:20px 100px 15px 100px;
 }
 .sticky{
@@ -321,14 +341,14 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 .filters>*{
 	display: inline-block;
-	    margin-right: 5px;
+	    /* margin-right: 5px; */
 }
 .signup{
 	border-right:0;
 	/* margin:4px; */
 }
 @media (max-width: 1260px) {
-	#app .header{
+	#app .header, .header-padding{
 			padding:20px  0 15px 0;
 	}
 	.sticky{
