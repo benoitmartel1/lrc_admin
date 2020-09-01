@@ -158,13 +158,25 @@ var age2 = res2.Age !== null ? res2.Age.Min : 0;
  if (age1 > age2) return 1;
  if (age1 < age2) return -1;
 console.log("Egalité " + age1 + " " + age2);
+
+
 	var day1 = new Date(res1.StartDate).getDay();
 	var day2 = new Date(res2.StartDate).getDay();
    //2nd criterion if tied
    if (day1 > day2) return 1;
    if (day1 < day2) return -1;
 
+   var day1 = new Date(res1.StartDate).getHours();
+   var day2 = new Date(res2.StartDate).getHours();
+   //2nd criterion if tied
+   if (day1 > day2) return 1;
+   if (day1 < day2) return -1;
    
+      var day1 = new Date(res1.StartDate);
+      var day2 = new Date(res2.StartDate);
+      //2nd criterion if tied
+      if (day1 > day2) return 1;
+      if (day1 < day2) return -1;
   //return prod1.localeCompare(prod2);
 };
 
