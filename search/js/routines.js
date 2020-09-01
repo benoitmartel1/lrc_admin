@@ -145,7 +145,7 @@ var sortByName = function (res1, res2) {
   //1st criterion
   if (res1.Name > res2.Name) return 1;
   if (res1.Name < res2.Name) return -1;
-
+console.log('Egalité '+res1.Name+" "+res2.Name);
    //2nd criterion if tied
    if (res1.Age.Min > res2.Age.Min) return 1;
    if (res1.Age.Min < res2.Age.Min) return -1;
