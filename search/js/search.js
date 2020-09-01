@@ -21,7 +21,7 @@ function fillGrid(data){
 	
 	var activities=data.allActivities;
 	
-	console.log(activities);
+	//console.log(activities);
 	var locations=data.locations;
 	// If true, signup button becomes Edit and redirects to edit page in Amilia
 	//If false, signup button redirects to subscribe page in Amilia
