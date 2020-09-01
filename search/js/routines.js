@@ -140,9 +140,18 @@ var sortCategoriesByName = function (res1, res2) {
 };
 
 var sortByName = function (res1, res2) {
-  var prod1 = res1.Name;
-  var prod2 = res2.Name;
-  return prod1.localeCompare(prod2);
+  //var prod1 = res1.Name;
+ // var prod2 = res2.Name;
+  //1st criterion
+  if (res1.Name > res2.Name) return 1;
+  if (res1.Name < res2.Name) return -1;
+
+   //2nd criterion if tied
+   if (res1.Age.Min > res2.Age.Min) return 1;
+   if (res1.Age.Min < res2.Age.Min) return -1;
+
+   
+  //return prod1.localeCompare(prod2);
 };
 
 
