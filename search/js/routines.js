@@ -142,10 +142,13 @@ var sortCategoriesByName = function (res1, res2) {
 var sortByName = function (res1, res2) {
   //var prod1 = res1.Name;
  // var prod2 = res2.Name;
+ var name1 = formatName(res1.Name);
+var name2 = formatName(res2.Name);
+
   //1st criterion
-  if (res1.Name > res2.Name) return 1;
-  if (res1.Name < res2.Name) return -1;
-console.log('Egalité '+res1.Name+" "+res2.Name);
+  if (name1 > name2) return 1;
+  if (name1 < name2) return -1;
+console.log('Egalité '+name1+" "+name2);
    //2nd criterion if tied
    if (res1.Age.Min > res2.Age.Min) return 1;
    if (res1.Age.Min < res2.Age.Min) return -1;
