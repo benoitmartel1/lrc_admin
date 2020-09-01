@@ -75,7 +75,7 @@ function fillGrid(data){
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
-					console.log(this.Id+" : "+this.SpotsRemaining);
+					// console.log(this.Id+" : "+this.SpotsRemaining);
 					this.Name = formatName(this.Name);
 					var sDate = new Date(this.StartDate);
 					var eDate = new Date(this.EndDate);
