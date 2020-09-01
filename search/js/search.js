@@ -76,7 +76,7 @@ function fillGrid(data){
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
 					console.log(this.Id+" : "+this.SpotsRemaining);
-
+					this.Name = formatName(this.Name);
 					var sDate = new Date(this.StartDate);
 					var eDate = new Date(this.EndDate);
 					var staff= formatStaff(this.Staff);
@@ -107,7 +107,7 @@ function fillGrid(data){
 						<li class="activity grid ${categoryClass}" data-id='${
                          this.Id
                        }' data-program-id='${this.ProgramId}'>
-							<div class="name">${formatName(this.Name)}${isNew(this.Tags)}</div>
+							<div class="name">${this.Name}${isNew(this.Tags)}</div>
 							<div class="info" data-toggle="tooltip" title="${
                 text.info
               }"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
@@ -124,21 +124,37 @@ function fillGrid(data){
 							<div class="spacer"></div>
 							<div class="signup">
 							${
-                this.SpotsRemaining > 0
-                  ? "<button type='button' class='btn btn-outline-primary btn-sm'>" +
-                    signupText +
-                    "</button>"
-                  : "<button class='isFull btn btn-light btn-sm' disabled>" +
+                this.SpotsRemaining == 0
+                  ? "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"
-              }</div>
+                  : "<button type='button' class='btn btn-outline-primary btn-sm'>" +
+                    signupText +
+					"</button>"
+				}</div>
 						<div class="details hidden">
 							<div class="grid">
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
 								<div class="summary">
-			  						${formatInfo(formatLiteralSchedule(sDate, eDate), "literalSchedule", '<i class="far fa-clock"></i>')}
-			  						${formatInfo(formatSpan(sDate, eDate), "span", '<i class="far fa-calendar-alt"></i>')}
-									${this.Location?formatInfo(this.Location.FullName, "fullLocation", '<i class="fas fa-map-marker-alt"></i>'):""}
+			  						${formatInfo(
+                      formatLiteralSchedule(sDate, eDate),
+                      "literalSchedule",
+                      '<i class="far fa-clock"></i>'
+                    )}
+			  						${formatInfo(
+                      formatSpan(sDate, eDate),
+                      "span",
+                      '<i class="far fa-calendar-alt"></i>'
+                    )}
+									${
+                    this.Location
+                      ? formatInfo(
+                          this.Location.FullName,
+                          "fullLocation",
+                          '<i class="fas fa-map-marker-alt"></i>'
+                        )
+                      : ""
+                  }
 									${formatInfo(staff, "responsible", '<i class="fas fa-user"></i>')}
 									${formatInfo(duration, "duration", text.infos.duration)}
 								</div>
