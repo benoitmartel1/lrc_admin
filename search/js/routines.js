@@ -153,8 +153,11 @@ console.log('Egalité '+name1+" "+name2);
 var age1 = res1.Age!==null?res1.Age.Min:0;
 var age2 = res2.Age !== null ? res2.Age.Min : 0;
 
-console.log("Egalité " + age1 + " " + age2);
 
+
+ if (age1 > age2) return 1;
+ if (age1 < age2) return -1;
+console.log("Egalité " + age1 + " " + age2);
 	var day1 = new Date(res1.StartDate);
 	var day2 = new Date(res2.StartDate);
    //2nd criterion if tied
