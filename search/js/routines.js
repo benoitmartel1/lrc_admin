@@ -149,9 +149,12 @@ var name2 = formatName(res2.Name);
   if (name1 > name2) return 1;
   if (name1 < name2) return -1;
 console.log('Egalité '+name1+" "+name2);
+
+var age1 = res1.Age!==null?res1.Age.Min:0;
+var age2 = res2.Age !== null ? res2.Age.Min : 0;
    //2nd criterion if tied
-   if (res1.Age.Min > res2.Age.Min) return 1;
-   if (res1.Age.Min < res2.Age.Min) return -1;
+   if (age1 > age2) return 1;
+   if (age1 < age2) return -1;
 
    
   //return prod1.localeCompare(prod2);
