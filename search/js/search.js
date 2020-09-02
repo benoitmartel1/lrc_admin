@@ -1,4 +1,4 @@
-console.log(js);
+console.log('js');
 $( document ).ready(function() {
 
 	
