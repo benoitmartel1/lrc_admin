@@ -1,6 +1,7 @@
+console.log(js);
 $( document ).ready(function() {
 
-
+	
 	//Get all activities/locations to populate page
 	$.get('php/activities.php', function(data){
 		$(".loading").slideUp();
@@ -18,7 +19,7 @@ $( document ).ready(function() {
 
 
 function fillGrid(data){
-	
+	console.log(data.allActivities);
 	var activities=data.allActivities;
 	
 	//console.log(activities);
