@@ -10,17 +10,15 @@
 #app{
 	padding-top:0;
 	padding-bottom:0;
+	width:1024px;
 }
 #app .header{
 	display:none;
-	width:1024px;
+	
 }
 .signup, .info{
 	display:none!important;
 }
-@media print  
-{
-    div {
+    div, li {
         page-break-inside: avoid;
     }
-}
