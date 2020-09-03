@@ -1,5 +1,4 @@
-remove doctype
-	<head>
+<head>
 	<base href="https://renaudcoursol.com/admin/search/">
 
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
