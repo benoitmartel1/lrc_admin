@@ -37,12 +37,12 @@ function fillGrid(data){
   ];
 
 
-	categories = activities.map((n) => {
+	categories = activities.map(function(n){
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
 		cat.id = n.CategoryId;
-		console.log(cat);
+		//console.log(cat);
         return cat;
       });
 console.log(categories);
