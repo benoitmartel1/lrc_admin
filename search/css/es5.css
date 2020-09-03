@@ -9,15 +9,14 @@
 	display:inline-block!important;
 }
 .info{
-	width:3%;
+	width:3%!important;
 }
 .cours, .price, .location{
-	width:4%;
+	width:4%!important;
 }
 .schedule{
-	name:13%;
+	width:13%!important;
 }
-.info{
-	width:3%;
-}
+
+
 }

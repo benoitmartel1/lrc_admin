@@ -16,7 +16,8 @@ gulp.task("css", () => {
       postcss([
         require("precss"),
         require("autoprefixer")({
-          overrideBrowserslist: ["last 2 versions", "ie 6-11", "Firefox > 20"],
+		  overrideBrowserslist: ["last 2 versions", "ie 6-11", "Firefox > 20"],
+		  grid:true
         }),
       ])
     )
