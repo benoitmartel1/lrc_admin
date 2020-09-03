@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+remove doctype
 	<head>
 	<base href="https://renaudcoursol.com/admin/search/">
 
@@ -108,5 +107,3 @@
 </div>
 </div>
 </body>
-
-</html>
