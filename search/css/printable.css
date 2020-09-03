@@ -1,12 +1,26 @@
 .activity.grid, .category-header .grid {
-    grid-template-columns: 2fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr;
+    grid-template-columns: 2fr 1.25fr 2.25fr 1fr 1fr 0.5fr 0.75fr 1fr 1fr;
     grid-template-rows: minmax(40px, auto);
     grid-template-areas:
         "name age schedule session price cours location staff start";
 }
+.category-header .grid div:last-child {
+    border-right: 0!important;
+}
+#app{
+	padding-top:0;
+	padding-bottom:0;
+}
 #app .header{
 	display:none;
+	width:1024px;
 }
 .signup, .info{
 	display:none!important;
+}
+@media print  
+{
+    div {
+        page-break-inside: avoid;
+    }
 }
