@@ -191,16 +191,16 @@ function createCategoryHeader(cat){
 	});
 
 	var columnHeaders = `<div class="grid">
-			<div class="column-header">${text.columnHeaders.activity}</div>	
+			<div class="column-header name">${text.columnHeaders.activity}</div>	
 			<div class="column-header info">${text.columnHeaders.info}</div>		
-			<div class="column-header">${text.columnHeaders.age}</div>
-			<div class="column-header">${text.columnHeaders.schedule}</div>	
-			<div class="column-header">${text.columnHeaders.session}</div>	
-			<div class="column-header">${text.columnHeaders.price}</div>	
-			<div class="column-header">${text.columnHeaders.duration}</div>
-			<div class="column-header">${text.columnHeaders.location}</div>	
+			<div class="column-header age">${text.columnHeaders.age}</div>
+			<div class="column-header schedule">${text.columnHeaders.schedule}</div>	
+			<div class="column-header session">${text.columnHeaders.session}</div>	
+			<div class="column-header price">${text.columnHeaders.price}</div>	
+			<div class="column-header duration">${text.columnHeaders.duration}</div>
+			<div class="column-header location">${text.columnHeaders.location}</div>	
 			<div class="column-header staff">${text.columnHeaders.staff}</div>
-			<div class="column-header">${text.columnHeaders.starting}</div>	
+			<div class="column-header starting">${text.columnHeaders.starting}</div>	
 </div>`;
 	
 	var header = $("<li>", {
