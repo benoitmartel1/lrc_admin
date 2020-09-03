@@ -1,0 +1,460 @@
+::-moz-selection{
+	background-color: darkgrey;
+}
+
+::selection{
+	background-color: darkgrey;
+}
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
+body{
+    line-height: 1.2em;
+	font-family: 'Nunito', sans-serif;
+	color:#333
+}
+#app ul li{
+	padding-left:0;
+	position:unset;
+	line-height: inherit;
+}
+
+#app{
+	padding-top:30px;
+	width:90%;
+	margin:auto;
+	    padding-bottom: 40px;
+}
+button{
+	z-index:0;
+	height:auto;
+}
+.hidden{
+	display: none;
+ }/*
+div.name{
+	display: flex;
+	align-items: center;
+} */
+.name .label{	
+	font-size: 0.65em;
+	background-color: red;
+	color:white;
+	font-weight: bold;
+	padding: 1px 4px;
+	margin-left:10px;
+}
+.category-header .top{
+	font-weight:bold;
+	font-size:1.1em;
+	padding:0px 15px;
+	margin-bottom: 5px;
+}
+#app .header{
+	z-index:1;	
+	background-color: white;
+    width: 100%;
+}
+#app .header, .header-padding{
+	padding:20px 150px 15px 150px;
+}
+.sticky{
+	position: fixed;
+	top: 100px;
+	width:90%!important;
+	box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
+}
+.list .activity {
+	cursor: pointer;
+}
+.grid{
+	display: grid;
+}
+
+.activity.grid, .category-header .grid{
+	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
+	grid-template-rows: minmax(40px, auto);
+	grid-template-areas:
+	"name info age schedule session price cours location staff start signup"
+	"spacer details details details details details details details details details details";
+}
+.category-header .grid{
+	grid-template-rows: auto;
+}
+.activity.grid>div,.category-header .grid>div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right:1px solid #999;
+}
+.activity.grid>div:not(.name),.category-header .grid>div{
+	text-align: center;
+}
+.category-header .grid>div{
+	align-items: flex-end;
+	padding-bottom:3px;
+	line-height:1em;
+}
+.signup, .details{
+	border-right:0!important
+}
+
+
+.grid>div.hidden{
+	display:none;
+}
+.grid>div:not(.column-header){
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.grid>div.name{
+	display: inline-flex;
+    justify-content: left;
+    padding-left: 15px;
+}
+.activity .name, .activity .spacer{
+	border-right: none;
+}
+.activity.grid>div:not(.name):not(.spacer){
+	border-bottom:1px dotted #999;
+}
+.column-header{
+	font-size: 0.8em;
+}
+/* .list .activity:not(.active):hover {
+	background-color: #eee;
+} */
+.btn{
+	    padding: 2px 6px!important;
+}
+
+.category-header{
+	background-color: gray;
+}
+div.name{
+	background-color: lightgray;
+}
+.activity>.spacer{
+	grid-area:spacer;
+}
+.activity>.name{
+	grid-area:name;
+	border-top: 1px solid white;
+}
+.activity>.age{
+	grid-area:age;
+}
+.activity>.info{
+	grid-area:info;
+}
+.activity>.details{
+	grid-area:details;
+}
+.activity>.schedule{
+	grid-area:schedule;
+}
+.activity>.price{
+	grid-area:price;
+}
+.activity>.cours{
+	grid-area:cours;
+}
+.activity>.location{
+	grid-area:location;
+}
+.activity>.session{
+	grid-area:session;
+}
+.activity>.signup{
+	grid-area:signup;
+}
+.activity .summary{
+	grid-area:summary;
+}
+.activity>div:last-child{
+	border-right:0;
+}
+.arts.activity .name, .arts .spacer{
+	background-color:rgba(255,195,5,0.2);
+}
+.arts.category-header, .filter[data-value=arts]{
+	background-color:rgba(255,195,5,1)!important;
+}
+.arts-martiaux.activity .name, .arts-martiaux .spacer{
+	background-color:rgba(30,144,255,0.2);
+}
+.arts-martiaux.category-header, .filter[data-value=arts-martiaux]{
+	background-color:rgba(30,144,255,1)!important;
+}
+.langues.activity .name, .langues.spacer{
+	background-color:rgba(45,205,75,0.2);
+}
+.langues.category-header, .filter[data-value=langues]{
+	background-color:rgba(45,205,75,1)!important;
+}
+.activites-sportives.activity .name, .activites-sportives .spacer{
+	background-color:rgba(255,127,41,0.2);
+}
+.activites-sportives.category-header, .filter[data-value=activites-sportives]{
+	background-color:rgba(255,127,41,1)!important;
+}
+.danse.activity .name, .danse .spacer{
+	background-color:rgba(140,85,135,0.2);
+}
+.danse.category-header, .filter[data-value=danse]{
+	background-color:rgba(140,85,135,1)!important;
+}
+.secourisme.activity .name, .secourisme .spacer{
+	background-color:rgba(238,12,12,0.2);
+}
+.secourisme.category-header, .filter[data-value=secourisme]{
+	background-color:rgb(238, 12, 12)!important;
+}
+/* .arts-martiaux.activity .name, .arts-martiaux .spacer{
+	background-color:rgba(116,33,211,0.2);
+}
+.arts-martiaux.category-header{
+	background-color:rgb(116, 33, 211);
+} */
+/* .danse.activity .name{
+	background-color:rgba(14,179,221,0.2);
+}
+.danse.category-header{
+	background-color:rgb(14, 179, 221);
+} */
+.category-header{
+	color:white;
+	margin-top:15px;
+	padding-top:10px;
+	border-radius: 15px 15px 0 0;
+}
+.category-header .top{
+	display: block;
+}
+.column-header{
+	border-color: white!important;
+}
+.noResult{
+	display:none;
+}
+.main div {
+	display: inline-block;
+}
+.details {
+		/* border-top:1px dotted #999; */
+
+	display: none;
+}
+.details .grid{
+	grid-template-columns: 3.5fr 2fr 3.5fr 1fr;
+	grid-template-areas: "thumb summary infos .";
+}
+.infos, .summary{
+    padding: 5px 0px 30px 15px;
+	grid-area: infos;
+	font-size: 0.9em;
+}
+.main div {
+	padding: 0 10px;
+	min-width: 8%;
+}
+.main div:not(.name) {
+	text-align: center;
+}
+.main {
+	clear: both;
+}
+.thumb{
+	margin:13px;
+	grid-area: thumb;
+	background-position: center;
+	background-size: cover;
+	height:200px;
+	/* display: none; */
+}
+
+.property{
+	display: block;
+    margin-top: 7px;
+	color: rgb(34,153,203);
+}
+.fa-info-circle{
+		color: rgb(34,153,203);
+
+}
+
+.details {
+	background-color: white;
+}
+.search-field{
+    margin-top: 10px;
+    background: rgba(167,167,167,0.1);
+    border: 1px #bbb solid;
+	border-radius: 15px;
+	    padding: 9px;
+	    display: flex;
+    align-items: center;
+}
+.search-field input{
+	padding:0!important;
+font-size: 1.2em!important;
+}
+.search-field button{
+	z-index:1!important;
+	border-radius:20px!important;
+}
+button, button:focus, input[type="button"]:focus, input[type="button"]:active {
+	outline:0;
+	border:none;
+}
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+  border:none;
+}
+.applied-filters .filter{
+	/* display:inline-block; */
+	font-size: .8em;
+	background-color: rgba(30,144,255,1);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    min-width: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 5px;
+}
+.applied-filters .filter-remove{
+	font-size:0.8em;
+	color:white;
+	margin-left:8px;
+	cursor: pointer;
+}
+.filters{
+	display:none;
+}
+.filters>*{
+	display: inline-block;
+	    /* margin-right: 5px; */
+}
+.signup{
+	border-right:0;
+	/* margin:4px; */
+}
+
+.input-group input{
+	display: inline-block;
+	flex: 1;
+    border: none!important;
+    background: none!important;
+	height: unset;
+}
+.erase{
+	    z-index: 20;
+	padding:0;
+}
+
+
+/*  Loading animation   */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background:#007bff;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.4s infinite;
+          animation: lds-ellipsis1 0.4s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.4s infinite;
+          animation: lds-ellipsis2 0.4s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.4s infinite;
+          animation: lds-ellipsis2 0.4s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.4s infinite;
+          animation: lds-ellipsis3 0.4s infinite;
+}
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+/*# sourceMappingURL=search.css.map */
