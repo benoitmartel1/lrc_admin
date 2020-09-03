@@ -3,7 +3,7 @@ function isNew(tags){
 	if(tags){
             $(tags).each(function () {
               if (this.Name.toLowerCase() == "nouveau") {
-				label= `<span class="label">${text.new}</span>`;
+				label= '<span class="label">'+text.new+'</span>';
 				return false;
               }
             });

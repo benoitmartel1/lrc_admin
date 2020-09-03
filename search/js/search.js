@@ -37,17 +37,15 @@ function fillGrid(data){
   ];
 
 
-	categories = [
-    ...new Set(
-      activities.map((n) => {
+	categories = activities.map((n) => {
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
-        cat.id = n.CategoryId;
+		cat.id = n.CategoryId;
+		console.log(cat);
         return cat;
-      })
-    ),
-  ];
+      });
+console.log(categories);
 
   //Alpha sort
   categories.sort(sortCategoriesByName);
