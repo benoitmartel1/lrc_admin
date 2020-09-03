@@ -41,4 +41,7 @@
 .details{
 	line-height: 1.2!important;
 }
+.spacer{
+	display:none!important;
+}
 }
