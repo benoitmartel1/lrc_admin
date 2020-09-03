@@ -88,7 +88,7 @@ console.log("duplicates romved");
 
                    if (
 					   	//SHow activity Only if part of session displayed
-						sessionsToDisplay.includes(formatSession(sDate,eDate))
+						sessionsToDisplay.indexOf(formatSession(sDate,eDate))>-1
                    ) {
                      
 					var signupText = editMode == true ? text.edit : text.signup;
