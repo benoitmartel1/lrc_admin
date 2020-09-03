@@ -137,7 +137,7 @@ function formatTime(t) {
     hour12: false,
     hour: "numeric",
     minute: "numeric"
-  });
+  }).replace(/^0+/, "");
 }
 
 function formatStartingDate(d) {

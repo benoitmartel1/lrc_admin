@@ -107,11 +107,13 @@ function formatSpan(s,e) {
 	return "Du " +start+" au "+end;
 };
 function formatTime(t){
-	return t.toLocaleTimeString("en-US", {
+	return t
+    .toLocaleTimeString("en-US", {
       hour12: false,
       hour: "numeric",
       minute: "numeric",
-    });
+    })
+    .replace(/^0+/, "");
 }
 function formatStartingDate(d){
 	return d.toLocaleDateString("fr-CA", {
