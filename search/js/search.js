@@ -201,7 +201,7 @@ function fillGrid(data){
 				$('[data-toggle="tooltip"]').tooltip();
 
                //Populate age filter menu
-               for (a = 17; a > 0; a--) {
+               for (var a = 17; a > 0; a--) {
                  $("#age-drop .dropdown-menu").append(
                    $("<a>", {
                      text: a,
@@ -212,7 +212,7 @@ function fillGrid(data){
                  );
                }
                //Populate day filter menu
-               for (a = 0; a <= 7; a++) {
+               for (var a = 0; a <= 7; a++) {
                  $("#day-drop .dropdown-menu").append(
                    $("<a>", {
                      text: text.daysOfWeek[a],
@@ -248,7 +248,7 @@ function fillGrid(data){
                });
 
                //Populate location filter menu 
-               for (a = 0; a < locations.length; a++) {
+               for (var a = 0; a < locations.length; a++) {
 				//    console.log(locations[a].TopParentId); 
 				   if(locations[a].TopParentId==null){
 						$("#location-drop .dropdown-menu").append(
