@@ -4,8 +4,8 @@
 			"@babel/preset-env",
 			{
 				"targets": {
-					"ie":8				},
-				"debug":true
+					"ie":"8"
+				}
 			}
 		]
 	]

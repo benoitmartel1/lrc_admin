@@ -46,17 +46,18 @@ function fillGrid(data, text){
 		cat.class= convertToClassSafe(n.CategoryName);
         cat.id = n.CategoryId;
         return cat;
-      });
+      })
+    
+
 console.log("beforeSort");
   //Alpha sort
   categories.sort(sortCategoriesByName);
 console.log('sorted');
 	//Remove duplicates  
-//   categories = categories.filter(
-//     (cat, index, self) =>
-//       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
-//   );
-categories.reduce((x, y) => x.findIndex(e=>e.name==y.name)<0 ? [...x, y]: x, []);
+  categories = categories.filter(
+    (cat, index, self) =>
+      self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
+  );
 console.log("duplicates romved");
                //--------------------POPULATE-----------------------//
                //Populate the grid
