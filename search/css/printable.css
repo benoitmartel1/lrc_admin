@@ -25,3 +25,24 @@
     div, li {
         page-break-inside: avoid;
     }
+#app ul li {
+    line-height: 1.15;
+}
+li.activites-sportives{
+	line-height: 1.15!important;
+}
+li.arts{
+	line-height: 1.15!important;
+}
+li.danse{
+	line-height: 1.15!important;
+}
+li.arts-martiaux{
+	line-height: 1.15!important;
+}
+li.secourisme{
+	line-height: 1.15!important;
+}
+li.langues{
+	line-height: 1.15!important;
+}

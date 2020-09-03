@@ -117,7 +117,7 @@ function fillGrid(data, text){
 							<div class="schedule">${formatSchedule(sDate, eDate)}</div>
 							<div class="session">${formatSession(sDate, eDate)}</div>
 							<div class="price">${formatPrice(this.Price)}</div>
-							<div class="cours">${this.NumberOfOccurrences}</div>
+							<div class="cours">${this.NumberOfOccurrences<52?this.NumberOfOccurrences:""}</div>
 							<div class="location" data-toggle="tooltip" title="${
                 this.Location ? this.Location.FullName : ""
               }">${this.Location ? formatLocation(this.Location) : ""}</div>
