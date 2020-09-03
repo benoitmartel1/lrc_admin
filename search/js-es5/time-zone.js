@@ -21,8 +21,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 })(void 0, function (moment) {
   "use strict"; // Resolves es6 module loading issue
 
-  if (moment.version === undefined && moment.default) {
-    moment = moment.default;
+  if (moment.version === undefined && moment["default"]) {
+    moment = moment["default"];
   } // Do not load moment-timezone a second time.
   // if (moment.tz !== undefined) {
   // 	logError('Moment Timezone ' + moment.tz.version + ' was already loaded ' + (moment.tz.dataVersion ? 'with data from ' : 'without any data') + moment.tz.dataVersion);

@@ -6,7 +6,7 @@ function isNew(tags) {
   if (tags) {
     $(tags).each(function () {
       if (this.Name.toLowerCase() == "nouveau") {
-        label = '<span class="label">' + text.new + '</span>';
+        label = '<span class="label">' + text["new"] + '</span>';
         return false;
       }
     });
@@ -206,11 +206,11 @@ var sortByName = function sortByName(res1, res2) {
 function createCategoryHeader(cat) {
   var top = $('<h1>', {
     text: cat.name,
-    class: 'top'
+    "class": 'top'
   });
   var columnHeaders = "<div class=\"grid\">\n\t\t\t<div class=\"column-header\">".concat(text.columnHeaders.activity, "</div>\t\n\t\t\t<div class=\"column-header info\">").concat(text.columnHeaders.info, "</div>\t\t\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.age, "</div>\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.schedule, "</div>\t\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.session, "</div>\t\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.price, "</div>\t\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.duration, "</div>\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.location, "</div>\t\n\t\t\t<div class=\"column-header staff\">").concat(text.columnHeaders.staff, "</div>\n\t\t\t<div class=\"column-header\">").concat(text.columnHeaders.starting, "</div>\t\n</div>");
   var header = $("<li>", {
-    class: convertToClassSafe(cat.name) + " category-header"
+    "class": convertToClassSafe(cat.name) + " category-header"
   }).attr("data-always-visible", "true").append(top).append(columnHeaders);
   return header;
 }
