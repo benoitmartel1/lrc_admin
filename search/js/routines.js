@@ -190,7 +190,7 @@ function createCategoryHeader(cat){
 
 	var columnHeaders = `<div class="grid">
 			<div class="column-header">${text.columnHeaders.activity}</div>	
-			<div class="column-header">${text.columnHeaders.info}</div>		
+			<div class="column-header info">${text.columnHeaders.info}</div>		
 			<div class="column-header">${text.columnHeaders.age}</div>
 			<div class="column-header">${text.columnHeaders.schedule}</div>	
 			<div class="column-header">${text.columnHeaders.session}</div>	

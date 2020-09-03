@@ -4,3 +4,9 @@
     grid-template-areas:
         "name age schedule session price cours location staff start";
 }
+#app .header{
+	display:none;
+}
+.signup, .info{
+	display:none;
+}
