@@ -1061,6 +1061,7 @@ function convertToClassSafe(name) {
     var c = s.charCodeAt(0);
     if (c == 32) return "-";
     if (c >= 65 && c <= 90) return s.toLowerCase();
-    return s.latinize.replace(/[\u0300-\u036f]/g, "").toLowerCase(); //.normalize("NFD")
+    s = s.latinize();
+    return s.replace(/[\u0300-\u036f]/g, "").toLowerCase(); //.normalize("NFD")
   });
 }
