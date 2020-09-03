@@ -239,11 +239,11 @@ console.log("duplicates romved");
                //Sort locations according to Name
                locations.sort(function (a, b) {
                  //Remove accents and compare
-                 var textA = a.FullName.normalize("NFD").replace(
+                 var textA = a.FullName.latinize().replace(
                    /[\u0300-\u036f]/g,
                    ""
                  );
-                 var textB = b.FullName.normalize("NFD").replace(
+                 var textB = b.FullName.latinize().replace(
                    /[\u0300-\u036f]/g,
                    ""
                  );
