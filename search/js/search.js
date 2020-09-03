@@ -52,10 +52,11 @@ console.log("beforeSort");
   categories.sort(sortCategoriesByName);
 console.log('sorted');
 	//Remove duplicates  
-  categories = categories.filter(
-    (cat, index, self) =>
-      self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
-  );
+//   categories = categories.filter(
+//     (cat, index, self) =>
+//       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
+//   );
+categories.reduce((x, y) => x.findIndex(e=>e.name==y.name)<0 ? [...x, y]: x, []);
 console.log("duplicates romved");
                //--------------------POPULATE-----------------------//
                //Populate the grid
