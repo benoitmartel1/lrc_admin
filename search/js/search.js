@@ -7,7 +7,7 @@ $( document ).ready(function() {
 	$.get('php/activities.php', function(data){
 		$(".loading").slideUp();
 		$(".filters").fadeIn();
-		console.log(text);
+		// console.log(text);
 		fillGrid(JSON.parse(data), text);
 	});
 
@@ -21,7 +21,7 @@ $( document ).ready(function() {
 
 
 function fillGrid(data, text){
-	console.log(data.allActivities);
+	// console.log(data.allActivities);
 	var activities=data.allActivities;
 	
 	//console.log(activities);
@@ -40,7 +40,7 @@ function fillGrid(data, text){
 
 
 	var categories = activities.map((n) => {
-		  console.log(n);
+		//   console.log(n);
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
@@ -82,8 +82,7 @@ console.log("duplicates romved");
 					var eDate = new Date(this.EndDate);
 					var staff= formatStaff(this.Staff);
 
-							console.log(sessionsToDisplay);
-		console.log(formatSession(sDate, eDate));
+							
 
 
                    if (
@@ -426,7 +425,7 @@ console.log("duplicates romved");
                  $(target).slideToggle(250, function(){
 					$('<img/>').attr('src', imgSrc).on('load',function(){
 					$(target).find('.grid>div').each(function(index) {
-						console.log(this);
+						// console.log(this);
 						$(this).delay(100*index).animate({ opacity: 1 }, 300);
 					});
 					});

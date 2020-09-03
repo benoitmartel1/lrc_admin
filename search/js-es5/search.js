@@ -6,8 +6,8 @@ $(document).ready(function () {
   //Get all activities/locations to populate page
   $.get('php/activities.php', function (data) {
     $(".loading").slideUp();
-    $(".filters").fadeIn();
-    console.log(text);
+    $(".filters").fadeIn(); // console.log(text);
+
     fillGrid(JSON.parse(data), text);
   }); //Fill in text divs
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
 });
 
 function fillGrid(data, text) {
-  console.log(data.allActivities);
+  // console.log(data.allActivities);
   var activities = data.allActivities; //console.log(activities);
 
   var locations = data.locations; // If true, signup button becomes Edit and redirects to edit page in Amilia
@@ -29,7 +29,7 @@ function fillGrid(data, text) {
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
   var categories = activities.map(function (n) {
-    console.log(n);
+    //   console.log(n);
     var cat = {};
     cat.name = n.CategoryName;
     cat.class = convertToClassSafe(n.CategoryName);
@@ -64,8 +64,6 @@ function fillGrid(data, text) {
       var sDate = new Date(this.StartDate);
       var eDate = new Date(this.EndDate);
       var staff = formatStaff(this.Staff);
-      console.log(sessionsToDisplay);
-      console.log(formatSession(sDate, eDate));
 
       if ( //SHow activity Only if part of session displayed
       sessionsToDisplay.indexOf(formatSession(sDate, eDate)) > -1) {
@@ -281,7 +279,7 @@ function fillGrid(data, text) {
     $(target).slideToggle(250, function () {
       $('<img/>').attr('src', imgSrc).on('load', function () {
         $(target).find('.grid>div').each(function (index) {
-          console.log(this);
+          // console.log(this);
           $(this).delay(100 * index).animate({
             opacity: 1
           }, 300);
