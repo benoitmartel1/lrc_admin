@@ -25,7 +25,7 @@ function fillGrid(data, text) {
   var locations = data.locations; // If true, signup button becomes Edit and redirects to edit page in Amilia
   //If false, signup button redirects to subscribe page in Amilia
 
-  var editMode = true;
+  var editMode = false;
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
   var categories = activities.map(function (n) {
