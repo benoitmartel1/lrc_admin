@@ -13,7 +13,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 $(document).ready(function () {
-  console.log("js"); //Get all activities/locations to populate page
+  console.log('js'); //Get all activities/locations to populate page
 
   $.get('php/activities.php', function (data) {
     $(".loading").slideUp();
@@ -38,13 +38,15 @@ function fillGrid(data) {
   var editMode = true;
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
-  categories = _toConsumableArray(new Set(activities.map(function (n) {
+
+  var categories = _toConsumableArray(new Set(activities.map(function (n) {
     var cat = {};
     cat.name = n.CategoryName;
     cat["class"] = convertToClassSafe(n.CategoryName);
     cat.id = n.CategoryId;
     return cat;
   }))); //Alpha sort
+
 
   categories.sort(sortCategoriesByName); //Remove duplicates  
 

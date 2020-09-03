@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-console.log("js");
+console.log('js');
 	
 	//Get all activities/locations to populate page
 	$.get('php/activities.php', function(data){
@@ -37,7 +37,7 @@ function fillGrid(data){
   ];
 
 
-	categories = [
+	var categories = [
     ...new Set(
       activities.map((n) => {
         var cat = {};
