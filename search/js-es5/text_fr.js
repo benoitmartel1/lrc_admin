@@ -14,7 +14,7 @@ var text = {
   signup: "S'inscrire",
   free: "Gratuit",
   full: "Complet",
-  "new": "Nouveau",
+  new: "Nouveau",
   age: "Âge",
   yearsOld: 'ans',
   day: "Jour",

@@ -1,5 +1,17 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var sortCategoriesByName;
 $(document).ready(function () {
   // console.log('js');
@@ -28,14 +40,16 @@ function fillGrid(data, text) {
   var editMode = true;
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
-  var categories = activities.map(function (n) {
+
+  var categories = _toConsumableArray(new Set(activities.map(function (n) {
     console.log(n);
     var cat = {};
     cat.name = n.CategoryName;
-    cat["class"] = convertToClassSafe(n.CategoryName);
+    cat.class = convertToClassSafe(n.CategoryName);
     cat.id = n.CategoryId;
     return cat;
-  });
+  })));
+
   console.log("beforeSort"); //Alpha sort
 
   categories.sort(sortCategoriesByName);
@@ -50,7 +64,7 @@ function fillGrid(data, text) {
   //Populate the grid
 
   $(categories).each(function () {
-    var categoryClass = this["class"]; //Creates always visible header on top of category
+    var categoryClass = this.class; //Creates always visible header on top of category
 
     $(".list").append(createCategoryHeader(this)); //Get all activities that have a tag that matches the category
 
@@ -99,7 +113,7 @@ function fillGrid(data, text) {
   for (var a = 17; a > 0; a--) {
     $("#age-drop .dropdown-menu").append($("<a>", {
       text: a,
-      "class": "dropdown-item"
+      class: "dropdown-item"
     }).attr("data-type", "age").attr("data-value", a));
   } //Populate day filter menu
 
@@ -107,7 +121,7 @@ function fillGrid(data, text) {
   for (var a = 0; a <= 7; a++) {
     $("#day-drop .dropdown-menu").append($("<a>", {
       text: text.daysOfWeek[a],
-      "class": "dropdown-item"
+      class: "dropdown-item"
     }).attr("data-type", "day").attr("data-value", a));
   } //Populate category filter menu
 
@@ -115,8 +129,8 @@ function fillGrid(data, text) {
   $(categories).each(function (c) {
     $("#category-drop .dropdown-menu").append($("<a>", {
       text: this.name,
-      "class": "dropdown-item"
-    }).attr("data-type", "category").attr("data-value", this["class"]));
+      class: "dropdown-item"
+    }).attr("data-type", "category").attr("data-value", this.class));
   }); //Sort locations according to Name
 
   locations.sort(function (a, b) {
@@ -131,7 +145,7 @@ function fillGrid(data, text) {
     if (locations[a].TopParentId == null) {
       $("#location-drop .dropdown-menu").append($("<a>", {
         text: locations[a].FullName,
-        "class": "dropdown-item"
+        class: "dropdown-item"
       }).attr("data-type", "location").attr("data-value", locations[a].Id));
     }
   } //--------------------LISTENERS-----------------------//
@@ -243,10 +257,10 @@ function fillGrid(data, text) {
     sendTrackerInfo('f-' + type, value);
     $(".applied-filters").append($("<span>", {
       text: labelText,
-      "class": "filter"
+      class: "filter"
     }).attr("data-type", type).attr("data-value", value).append($("<span>", {
       text: "X",
-      "class": "filter-remove"
+      class: "filter-remove"
     })));
   }
 
@@ -302,9 +316,9 @@ function fillGrid(data, text) {
 
 
     $(categories).each(function () {
-      var header = $(".category-header." + this["class"]);
+      var header = $(".category-header." + this.class);
 
-      if (!$(".activity." + this["class"]).length) {
+      if (!$(".activity." + this.class).length) {
         $(header).hide();
       } else {
         $(header).show();
