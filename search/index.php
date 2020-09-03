@@ -67,11 +67,12 @@
 
 </div>
 <div class="input-group search-field">
+<div class="applied-filters"></div>
 	<input type="text" class="search" placeholder="Quelle activité cherchez-vous?">
 	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button> -->
-	<div class="applied-filters"></div>
+	
 </div>
 
 </div>

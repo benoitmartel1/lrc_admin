@@ -6,7 +6,8 @@ $( document ).ready(function() {
 	$.get('php/activities.php', function(data){
 		$(".loading").slideUp();
 		$(".filters").fadeIn();
-		fillGrid(JSON.parse(data))
+		console.log(text);
+		fillGrid(JSON.parse(data), text);
 	});
 
 	 //Fill in text divs
@@ -18,7 +19,7 @@ $( document ).ready(function() {
 });
 
 
-function fillGrid(data){
+function fillGrid(data, text){
 	console.log(data.allActivities);
 	var activities=data.allActivities;
 	
