@@ -1,9 +1,12 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
    /* IE10+ CSS */
+.details .grid > div{
+	vertical-align: top;
+}
 
 
 .grid>div:not(.hidden):not(.details){
-	width:9%;
+	width:7%;
 }
 .grid>div:not(.hidden){
 	display:inline-block!important;
@@ -12,11 +15,21 @@
 	width:3%!important;
 }
 .cours, .price, .location{
-	width:4%!important;
+	width:6%!important;
 }
 .schedule{
 	width:13%!important;
 }
-
-
+.name{
+	width:18%!important;
+}
+.summary{
+	width:20%;
+}
+.infos{
+	width:40%;
+}
+.thumb{
+	width:15%;
+}
 }
