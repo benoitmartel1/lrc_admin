@@ -95,11 +95,11 @@ function formatLiteralSchedule(s,e) {
 	return "Le " +day+" de "+startTime+" à "+endTime;
 };
 function formatSpan(s,e) {
-    start = s.toLocaleDateString("fr-CA", {
+    var start = s.toLocaleDateString("fr-CA", {
       day: "numeric",
       month: "long",
 	});
-	end = e.toLocaleDateString("fr-CA", {
+	var end = e.toLocaleDateString("fr-CA", {
     day: "numeric",
 	month: "long",
 	year:"numeric"
@@ -217,10 +217,8 @@ function convertToClassSafe(name) {
     var c = s.charCodeAt(0);
     if (c == 32) return "-";
     if (c >= 65 && c <= 90) return s.toLowerCase();
-    return s
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase();
+    return s.replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    //.normalize("NFD")
   });
 }
 
