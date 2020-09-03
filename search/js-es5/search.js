@@ -41,13 +41,15 @@ function fillGrid(data, text) {
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
 
   var categories = _toConsumableArray(new Set(activities.map(function (n) {
+    console.log(n);
     var cat = {};
     cat.name = n.CategoryName;
     cat["class"] = convertToClassSafe(n.CategoryName);
     cat.id = n.CategoryId;
     return cat;
-  }))); //Alpha sort
+  })));
 
+  console.log("beforeSort"); //Alpha sort
 
   categories.sort(sortCategoriesByName);
   console.log('sorted'); //Remove duplicates  

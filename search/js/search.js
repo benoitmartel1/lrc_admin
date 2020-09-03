@@ -41,6 +41,7 @@ function fillGrid(data, text){
 	var categories = [
     ...new Set(
       activities.map((n) => {
+		  console.log(n);
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
@@ -49,7 +50,7 @@ function fillGrid(data, text){
       })
     ),
   ];
-
+console.log("beforeSort");
   //Alpha sort
   categories.sort(sortCategoriesByName);
 console.log('sorted');
