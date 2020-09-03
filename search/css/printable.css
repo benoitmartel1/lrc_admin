@@ -8,5 +8,5 @@
 	display:none;
 }
 .signup, .info{
-	display:none;
+	display:none!important;
 }
