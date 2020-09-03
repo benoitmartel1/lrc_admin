@@ -81,6 +81,11 @@ console.log("duplicates romved");
 					var sDate = new Date(this.StartDate);
 					var eDate = new Date(this.EndDate);
 					var staff= formatStaff(this.Staff);
+
+							console.log(sessionsToDisplay);
+		console.log(formatSession(sDate, eDate));
+
+
                    if (
 					   	//SHow activity Only if part of session displayed
 						sessionsToDisplay.includes(formatSession(sDate,eDate))
