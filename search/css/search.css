@@ -101,7 +101,7 @@ div.name{
 	justify-content: center;
 	border-right:1px solid #999;
 }
-.activity.grid>div:not(.name),.category-header .grid>div{
+.activity.grid>div:not(.name):not(.details),.category-header .grid>div{
 	text-align: center;
 }
 .category-header .grid>div{

@@ -41,11 +41,11 @@ function fillGrid(data, text) {
   categories.sort(sortCategoriesByName);
   console.log('sorted'); //Remove duplicates  
 
-  categories = categories.filter(function (cat, index, self) {
-    return self.findIndex(function (t) {
-      return JSON.stringify(t) === JSON.stringify(cat);
-    }) === index;
-  });
+  categories = getUniqueArray(categories); //   categories = categories.filter(
+  //     (cat, index, self) =>
+  //       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
+  //   );
+
   console.log("duplicates romved"); //--------------------POPULATE-----------------------//
   //Populate the grid
 
