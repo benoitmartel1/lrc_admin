@@ -1,0 +1,6 @@
+.activity.grid, .category-header .grid {
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr;
+    grid-template-rows: minmax(40px, auto);
+    grid-template-areas:
+        "name age schedule session price cours location staff start";
+}
