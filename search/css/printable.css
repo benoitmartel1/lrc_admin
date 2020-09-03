@@ -54,3 +54,6 @@ li.secourisme{
 li.langues{
 	line-height: 1.15!important;
 }
+.activity.grid>div:not(.name):not(.spacer){
+	border-bottom:thin solid #999;
+}
