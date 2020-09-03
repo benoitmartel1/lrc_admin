@@ -4,6 +4,8 @@
     grid-template-areas:
         "name age schedule session price cours location staff start";
 }
+.secourisme .staff {display:none;
+}
 .category-header .grid div:last-child {
     border-right: 0!important;
 }
@@ -32,7 +34,7 @@ li.activites-sportives{
 	line-height: 1.15!important;
 }
 li.arts{
-	line-height: 1.15!important;
+	line-height: 1.35!important;
 }
 li.danse{
 	line-height: 1.15!important;

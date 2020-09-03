@@ -197,7 +197,7 @@ function createCategoryHeader(cat){
 			<div class="column-header">${text.columnHeaders.price}</div>	
 			<div class="column-header">${text.columnHeaders.duration}</div>
 			<div class="column-header">${text.columnHeaders.location}</div>	
-			<div class="column-header">${text.columnHeaders.staff}</div>
+			<div class="column-header staff">${text.columnHeaders.staff}</div>
 			<div class="column-header">${text.columnHeaders.starting}</div>	
 </div>`;
 	
