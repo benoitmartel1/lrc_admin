@@ -1,6 +1,6 @@
-console.log('js');
-$( document ).ready(function() {
 
+$( document ).ready(function() {
+console.log("js");
 	
 	//Get all activities/locations to populate page
 	$.get('php/activities.php', function(data){
