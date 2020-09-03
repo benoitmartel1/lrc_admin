@@ -100,18 +100,18 @@ function formatSession(sDate, eDate) {
 ; //Horaire 
 
 function formatSchedule(s, e) {
-  day = text.daysOfWeek[s.getDay()];
-  startTime = formatTime(s);
-  endTime = formatTime(e);
+  var day = text.daysOfWeek[s.getDay()];
+  var startTime = formatTime(s);
+  var endTime = formatTime(e);
   return day + " " + startTime + " - " + endTime;
 }
 
 ;
 
 function formatLiteralSchedule(s, e) {
-  day = text.daysOfWeek[s.getDay()].toLowerCase();
-  startTime = formatTime(s);
-  endTime = formatTime(e);
+  var day = text.daysOfWeek[s.getDay()].toLowerCase();
+  var startTime = formatTime(s);
+  var endTime = formatTime(e);
   return "Le " + day + " de " + startTime + " à " + endTime;
 }
 
