@@ -21,7 +21,8 @@ label:focus,
 {
     outline:0px !important;
     -webkit-appearance:none;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 body{
@@ -78,7 +79,8 @@ div.name{
 	position: fixed;
 	top: 100px;
 	width:90%!important;
-	box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
+	-webkit-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
+	        box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 }
 .list .activity {
 	cursor: pointer;
@@ -98,16 +100,28 @@ div.name{
 	grid-template-rows: auto;
 }
 .activity.grid>div,.category-header .grid>div{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	   -moz-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	   -moz-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	border-right:1px solid #999;
 }
 .activity.grid>div:not(.name):not(.details),.category-header .grid>div{
 	text-align: center;
 }
 .category-header .grid>div{
-	align-items: flex-end;
+	-webkit-box-align: end;
+	   -moz-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
 	padding-bottom:3px;
 	line-height:1em;
 }
@@ -122,9 +136,15 @@ div.name{
 .grid>div:not(.column-header){
 	font-family: 'Roboto Condensed', sans-serif;
 }
-.grid>div.name{
+.activity div.name{
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-    justify-content: left;
+    -webkit-box-pack: left;
+       -moz-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     padding-left: 15px;
 }
 .activity .name, .activity .spacer{
@@ -146,7 +166,7 @@ div.name{
 .category-header{
 	background-color: gray;
 }
-div.name{
+.activity .name{
 	background-color: lightgray;
 }
 .activity>.spacer{
@@ -307,8 +327,14 @@ div.name{
     border: 1px #bbb solid;
 	border-radius: 15px;
 	    padding: 9px;
+	    display: -webkit-box;
+	    display: -moz-box;
+	    display: -ms-flexbox;
 	    display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .search-field input{
 	padding:0!important;
@@ -361,7 +387,10 @@ body:not(.user-is-tabbing) textarea:focus {
 
 .input-group input{
 	display: inline-block;
-	flex: 1;
+	-webkit-box-flex: 1;
+	   -moz-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
     border: none!important;
     background: none!important;
 	height: unset;
@@ -411,50 +440,62 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 @-webkit-keyframes lds-ellipsis1 {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 @keyframes lds-ellipsis1 {
   0% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 @-webkit-keyframes lds-ellipsis3 {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 @keyframes lds-ellipsis3 {
   0% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 @-webkit-keyframes lds-ellipsis2 {
   0% {
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   100% {
-    transform: translate(24px, 0);
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 @keyframes lds-ellipsis2 {
   0% {
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
   100% {
-    transform: translate(24px, 0);
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
   }
 }
 /*# sourceMappingURL=search.css.map */

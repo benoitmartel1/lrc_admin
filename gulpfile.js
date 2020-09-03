@@ -12,7 +12,14 @@ gulp.task("css", () => {
   return gulp
     .src("search/css/*.css")
     .pipe(sourcemaps.init())
-    .pipe(postcss([require("precss"), require("autoprefixer")]))
+    .pipe(
+      postcss([
+        require("precss"),
+        require("autoprefixer")({
+          overrideBrowserslist: ["last 2 versions", "ie 6-11", "Firefox > 20"],
+        }),
+      ])
+    )
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("search/css-es5/"));
 });
