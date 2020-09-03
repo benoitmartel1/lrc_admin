@@ -1,3 +1,4 @@
+var sortCategoriesByName;
 
 $( document ).ready(function() {
 // console.log('js');

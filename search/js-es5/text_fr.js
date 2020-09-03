@@ -1,3 +1,5 @@
+"use strict";
+
 var text = {
   wait: "Recherche des activités en cours ",
   info: "Cliquer pour en savoir plus",
