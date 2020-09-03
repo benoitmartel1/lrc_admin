@@ -21,6 +21,11 @@
 	<script src="js-es5/routines.js"></script>
 	<script src="js-es5/search.js"></script>
 	<script src="js-es5/trackers.js"></script>
+	<script>
+		//Enable version to print format
+		var printable=false;
+		console.log("Printable : "+printable);
+	</script>
 </head>
 
 <body>
