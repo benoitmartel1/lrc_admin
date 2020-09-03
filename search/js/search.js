@@ -39,18 +39,14 @@ function fillGrid(data, text){
   ];
 
 
-	var categories = [
-    ...new Set(
-      activities.map((n) => {
+	var categories = activities.map((n) => {
 		  console.log(n);
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
         cat.id = n.CategoryId;
         return cat;
-	  })
-	)
-  ];
+	  });
 console.log("beforeSort");
   //Alpha sort
   categories.sort(sortCategoriesByName);
