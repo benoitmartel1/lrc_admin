@@ -120,7 +120,7 @@ div.name{
 .grid>div:not(.column-header){
 	font-family: 'Roboto Condensed', sans-serif;
 }
-.grid>div.name{
+.activity div.name{
 	display: inline-flex;
     justify-content: left;
     padding-left: 15px;
@@ -144,7 +144,7 @@ div.name{
 .category-header{
 	background-color: gray;
 }
-div.name{
+.activity .name{
 	background-color: lightgray;
 }
 .activity>.spacer{

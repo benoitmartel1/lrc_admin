@@ -1,0 +1,18 @@
+.grid>div:not(.hidden):not(.details){
+	width:9%;
+}
+.grid>div:not(.hidden){
+	display:inline-block!important;
+}
+.info{
+	width:3%;
+}
+.cours, .price, .location{
+	width:4%;
+}
+.schedule{
+	name:13%;
+}
+.info{
+	width:3%;
+}
