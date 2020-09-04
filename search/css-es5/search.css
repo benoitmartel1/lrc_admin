@@ -68,7 +68,7 @@ div.name{
 	margin-bottom: 5px;
 }
 #app .header{
-	z-index:1;	
+	z-index:2;	
 	background-color: white;
     width: 100%;
 }
@@ -77,7 +77,7 @@ div.name{
 }
 .sticky{
 	position: fixed;
-	top: 100px;
+	top: 130px;
 	width:90%!important;
 	-webkit-box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
 	        box-shadow: 0px 10px 7px -6px rgba(0,0,0,0.18);
@@ -497,5 +497,21 @@ body:not(.user-is-tabbing) textarea:focus {
     -webkit-transform: translate(24px, 0);
             transform: translate(24px, 0);
   }
+}
+
+select{
+	max-width:105px;
+	height:auto;
+	padding:2px;
+	font-size:.8em;
+}
+select:focus{
+	min-width:150px;
+}
+option{
+	background-color: white!important;
+}
+input.search {
+    height: 30px!important;
 }
 /*# sourceMappingURL=search.css.map */

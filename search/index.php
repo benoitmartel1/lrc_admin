@@ -24,7 +24,7 @@
 </div>
 <div class="input-group search-field">
 <div class="applied-filters"></div>
-	<input type="text" class="search" placeholder="Chercher une activité">
+	<input type="text" class="search" placeholder="Trouver une activité">
 	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button> -->

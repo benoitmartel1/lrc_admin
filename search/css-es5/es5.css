@@ -1,24 +1,48 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
    /* IE10+ CSS */
+.details .grid > div{
+	vertical-align: top;
+}
 
 
 .grid>div:not(.hidden):not(.details){
-	width:9%;
+	width:7%;
 }
-.grid>div:not(.hidden){
-	display:inline-block!important;
+.grid>div:not(.hidden):not(.spacer){
+	display:inline-block;
 }
 .info{
-	width:3%;
+	width:3%!important;
 }
 .cours, .price, .location{
-	width:4%;
+	width:6%!important;
 }
 .schedule{
-	name:13%;
+	width:16%!important;
 }
-.info{
-	width:3%;
+.age{
+	width:13%!important;
+}
+.name{
+	width:18%!important;
+}
+.summary{
+	width:20%!important;
+}
+.infos{
+	width:40%!important;
+}
+.thumb{
+	width:15%!important;
+}
+#app ul li{
+	line-height: 2;
+}
+.details{
+	line-height: 1.2!important;
+}
+.spacer{
+	display:none!important;
 }
 }
 /*# sourceMappingURL=es5.css.map */
