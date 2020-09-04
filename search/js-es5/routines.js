@@ -210,8 +210,8 @@ var sortByName = function sortByName(res1, res2) {
 
   if (day1 > day2) return 1;
   if (day1 < day2) return -1;
-  var day1 = new Date(res1.StartDate);
-  var day2 = new Date(res2.StartDate); //2nd criterion if tied
+  var day1 = new Date(res1.StartDate) - new Date();
+  var day2 = new Date(res2.StartDate) - new Date(); //2nd criterion if tied
 
   if (day1 > day2) return 1;
   if (day1 < day2) return -1; //return prod1.localeCompare(prod2);
