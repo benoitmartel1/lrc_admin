@@ -170,7 +170,7 @@ function fillGrid(data, text) {
     if (!editMode) {
       //Tracker
       sendTrackerInfo('signup', id);
-      window.open('https://www.amilia.com/store/en/loisirsrenaudcoursol/shop/activities/' + id + '?quickRegisterId=' + id, '_blank');
+      window.open('https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/' + id + '?quickRegisterId=' + id, '_blank');
     } else {
       window.open("https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" + programId + "?activityId=" + id, "_blank");
     }
