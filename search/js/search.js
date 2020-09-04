@@ -132,7 +132,7 @@ categories=getUniqueArray(categories);
                   ? "<button class='isFull btn btn-light btn-sm' disabled>" +
                     text.full +
                     "</button>"
-                  : "<button type='button' class='btn btn-outline-primary btn-sm'>" +
+                  : "<button type='button' class='btn btn-success btn-sm'>" +
                     signupText +
 					"</button>"
 				}</div>
@@ -228,7 +228,7 @@ categories=getUniqueArray(categories);
 				//Populate category filter menu
 			   $(categories).each(function(c){
 					$("#category-drop .dropdown-menu").append(
-					$("<a>", {
+					$("<option>", {
 						text: this.name,
 						class: "dropdown-item",
 					})

@@ -35,8 +35,8 @@
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-category"></span>
 		</button>
-		<div data="category" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
-		</div>
+		<select data="category" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
+		</select>
 	</div>
 	
 
