@@ -146,47 +146,52 @@ var sortCategoriesByName = function (res1, res2) {
 
 var sortByName = function (res1, res2) {
   //var prod1 = res1.Name;
- // var prod2 = res2.Name;
- var name1 = formatName(res1.Name);
-var name2 = formatName(res2.Name);
+  // var prod2 = res2.Name;
+  var name1 = formatName(res1.Name);
+  var name2 = formatName(res2.Name);
+
+  if (res1.Name.indexOf("Zumba") !== -1) {
+    console.log(
+      res1.Id + " - " + name1 + " compare to " + res2.Id + " - " + name2
+    );
+  }
 
   //1st criterion
   if (name1 > name2) return 1;
   if (name1 < name2) return -1;
-//console.log('Egalité '+name1+" "+name2);
+  //console.log('Egalité '+name1+" "+name2);
 
-var age1 = res1.Age!==null?res1.Age.Min:0;
-var age2 = res2.Age !== null ? res2.Age.Min : 0;
+  var age1 = res1.Age !== null ? res1.Age.Min : 0;
+  var age2 = res2.Age !== null ? res2.Age.Min : 0;
 
+  if (age1 > age2) return 1;
+  if (age1 < age2) return -1;
+  //console.log("Egalité " + age1 + " " + age2);
 
+  var day1 = new Date(res1.StartDate).getDay();
+  var day2 = new Date(res2.StartDate).getDay();
+  //2nd criterion if tied
+  if (day1 > day2) return 1;
+  if (day1 < day2) return -1;
 
- if (age1 > age2) return 1;
- if (age1 < age2) return -1;
-//console.log("Egalité " + age1 + " " + age2);
+  var day1 = new Date(res1.StartDate).getHours();
+  var day2 = new Date(res2.StartDate).getHours();
+  //2nd criterion if tied
+  if (day1 > day2) return 1;
+  if (day1 < day2) return -1;
 
-
-	var day1 = new Date(res1.StartDate).getDay();
-	var day2 = new Date(res2.StartDate).getDay();
-   //2nd criterion if tied
-   if (day1 > day2) return 1;
-   if (day1 < day2) return -1;
-
-   var day1 = new Date(res1.StartDate).getHours();
-   var day2 = new Date(res2.StartDate).getHours();
-   //2nd criterion if tied
-   if (day1 > day2) return 1;
-   if (day1 < day2) return -1;
-   
-      var day1 = (new Date(res1.StartDate)-new Date());
-	  var day2 = (new Date(res2.StartDate) - new Date());
-	  if(res1.Name.indexOf('Zumba')!==-1){
-	 	 console.log(res1.Id+" - "+day1 + " compare to " + res2.Id+" - "+day2);
-	  };
-      //2nd criterion if tied
-      if (day1 > day2) return 1;
-      if (day1 < day2) return -1;
+  var day1 = new Date(res1.StartDate) - new Date();
+  var day2 = new Date(res2.StartDate) - new Date();
+  if (res1.Name.indexOf("Zumba") !== -1) {
+    console.log(
+      res1.Id + " - " + day1 + " compare to " + res2.Id + " - " + day2
+    );
+  }
+  //2nd criterion if tied
+  if (day1 > day2) return 1;
+  if (day1 < day2) return -1;
   //return prod1.localeCompare(prod2);
-};
+};;
 
 
 //Return a div for the category Header

@@ -190,7 +190,12 @@ var sortByName = function sortByName(res1, res2) {
   //var prod1 = res1.Name;
   // var prod2 = res2.Name;
   var name1 = formatName(res1.Name);
-  var name2 = formatName(res2.Name); //1st criterion
+  var name2 = formatName(res2.Name);
+
+  if (res1.Name.indexOf("Zumba") !== -1) {
+    console.log(res1.Id + " - " + name1 + " compare to " + res2.Id + " - " + name2);
+  } //1st criterion
+
 
   if (name1 > name2) return 1;
   if (name1 < name2) return -1; //console.log('Egalité '+name1+" "+name2);
@@ -213,16 +218,16 @@ var sortByName = function sortByName(res1, res2) {
   var day1 = new Date(res1.StartDate) - new Date();
   var day2 = new Date(res2.StartDate) - new Date();
 
-  if (res1.Name.indexOf('Zumba') !== -1) {
+  if (res1.Name.indexOf("Zumba") !== -1) {
     console.log(res1.Id + " - " + day1 + " compare to " + res2.Id + " - " + day2);
-  }
+  } //2nd criterion if tied
 
-  ; //2nd criterion if tied
 
   if (day1 > day2) return 1;
   if (day1 < day2) return -1; //return prod1.localeCompare(prod2);
-}; //Return a div for the category Header
+};
 
+; //Return a div for the category Header
 
 function createCategoryHeader(cat) {
   var top = $('<h1>', {
