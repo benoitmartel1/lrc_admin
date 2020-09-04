@@ -21,10 +21,8 @@ $( document ).ready(function() {
 
 
 function fillGrid(data, text){
-	// console.log(data.allActivities);
 	var activities=data.allActivities;
 	
-	//console.log(activities);
 	var locations=data.locations;
 	// If true, signup button becomes Edit and redirects to edit page in Amilia
 	//If false, signup button redirects to subscribe page in Amilia
@@ -40,7 +38,6 @@ function fillGrid(data, text){
 
 
 	var categories = activities.map((n) => {
-		//   console.log(n);
         var cat = {};
 		cat.name = n.CategoryName;
 		cat.class= convertToClassSafe(n.CategoryName);
@@ -73,12 +70,11 @@ categories=getUniqueArray(categories);
 
                  //Create the list item for every activity
                  $(categoryActivities).each(function () {
-					// console.log(this.Id+" : "+this.SpotsRemaining);
 					this.Name = formatName(this.Name);
-					var sDate = new Date(this.StartDate);
-						  console.log(this.StartDate);
 
+					var sDate = new Date(this.StartDate);
 					var eDate = new Date(this.EndDate);
+					
 					var staff= formatStaff(this.Staff);
 
 							
