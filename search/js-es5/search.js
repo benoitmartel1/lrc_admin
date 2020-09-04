@@ -102,7 +102,7 @@ function fillGrid(data, text) {
   } //Populate day filter menu
 
 
-  for (var a = 0; a <= 7; a++) {
+  for (var a = 0; a < 7; a++) {
     $("#day-drop").append($("<option>", {
       text: text.daysOfWeek[a],
       class: "dropdown-item"
