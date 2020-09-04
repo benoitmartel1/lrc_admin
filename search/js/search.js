@@ -308,7 +308,7 @@ categories=getUniqueArray(categories);
                  userList.search("");
                });
                //Filter is selected from dropdown
-               $(".filter-drop a").click(function () {
+               $(".filter-drop a, .filter-drop option").click(function () {
                  var type = $(this).attr("data-type");
                  $(
                    '.applied-filters .filter[data-type="' + type + '"]'
