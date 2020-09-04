@@ -8,8 +8,8 @@
 .grid>div:not(.hidden):not(.details){
 	width:7%;
 }
-.grid>div:not(.hidden){
-	display:inline-block!important;
+.grid>div:not(.hidden):not(.spacer){
+	display:inline-block;
 }
 .info{
 	width:3%!important;
