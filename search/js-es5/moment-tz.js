@@ -11,10 +11,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   "use strict";
   /*global define*/
 
-  if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === 'object' && module.exports) {
-    module.exports = factory(require('moment')); // Node
-  } else if (typeof define === 'function' && define.amd) {
-    define(['moment'], factory); // AMD
+  if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && module.exports) {
+    module.exports = factory(require("moment")); // Node
+  } else if (typeof define === "function" && define.amd) {
+    define(["moment"], factory); // AMD
   } else {
     factory(root.moment); // Browser
   }
@@ -38,19 +38,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       guesses = {},
       cachedGuess;
 
-  if (!moment || typeof moment.version !== 'string') {
-    logError('Moment Timezone requires Moment.js. See https://momentjs.com/timezone/docs/#/use-it/browser/');
+  if (!moment || typeof moment.version !== "string") {
+    logError("Moment Timezone requires Moment.js. See https://momentjs.com/timezone/docs/#/use-it/browser/");
   }
 
-  var momentVersion = moment.version.split('.'),
+  var momentVersion = moment.version.split("."),
       major = +momentVersion[0],
       minor = +momentVersion[1]; // Moment.js version check
 
   if (major < 2 || major === 2 && minor < 6) {
-    logError('Moment Timezone requires Moment.js >= 2.6.0. You are using Moment.js ' + moment.version + '. See momentjs.com');
+    logError("Moment Timezone requires Moment.js >= 2.6.0. You are using Moment.js " + moment.version + ". See momentjs.com");
   }
   /************************************
-  	Unpacking
+  Unpacking
   ************************************/
 
 
@@ -66,9 +66,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function unpackBase60(string) {
     var i = 0,
-        parts = string.split('.'),
+        parts = string.split("."),
         whole = parts[0],
-        fractional = parts[1] || '',
+        fractional = parts[1] || "",
         multiplier = 1,
         num,
         out = 0,
@@ -121,24 +121,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function unpack(string) {
-    var data = string.split('|'),
-        offsets = data[2].split(' '),
-        indices = data[3].split(''),
-        untils = data[4].split(' ');
+    var data = string.split("|"),
+        offsets = data[2].split(" "),
+        indices = data[3].split(""),
+        untils = data[4].split(" ");
     arrayToInt(offsets);
     arrayToInt(indices);
     arrayToInt(untils);
     intToUntil(untils, indices.length);
     return {
       name: data[0],
-      abbrs: mapIndices(data[1].split(' '), indices),
+      abbrs: mapIndices(data[1].split(" "), indices),
       offsets: mapIndices(offsets, indices),
       untils: untils,
       population: data[5] | 0
     };
   }
   /************************************
-  	Zone object
+  Zone object
   ************************************/
 
 
@@ -213,7 +213,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   };
   /************************************
-  	Country object
+  Country object
   ************************************/
 
   function Country(country_name, zone_names) {
@@ -221,7 +221,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     this.zones = zone_names;
   }
   /************************************
-  	Current Timezone
+  Current Timezone
   ************************************/
 
 
@@ -233,7 +233,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       // 17:56:31 GMT-0600 (CST)
       // 17:56:31 GMT-0600 (Central Standard Time)
       abbr = abbr[0].match(/[A-Z]/g);
-      abbr = abbr ? abbr.join('') : undefined;
+      abbr = abbr ? abbr.join("") : undefined;
     } else {
       // 17:56:31 CST
       // 17:56:31 GMT+0800 (台北標準時間)
@@ -241,7 +241,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       abbr = abbr ? abbr[0] : undefined;
     }
 
-    if (abbr === 'GMT') {
+    if (abbr === "GMT") {
       abbr = undefined;
     }
 
@@ -259,7 +259,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
     this.offsetScore += Math.abs(this.zone.utcOffset(offsetAt.at) - offsetAt.offset);
 
-    if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, '') !== offsetAt.abbr) {
+    if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, "") !== offsetAt.abbr) {
       this.abbrScore++;
     }
   };
@@ -409,12 +409,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return cachedGuess;
   }
   /************************************
-  	Global Methods
+  Global Methods
   ************************************/
 
 
   function normalizeName(name) {
-    return (name || '').toLowerCase().replace(/\//g, '_');
+    return (name || "").toLowerCase().replace(/\//g, "_");
   }
 
   function addZone(packed) {
@@ -425,12 +425,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     for (i = 0; i < packed.length; i++) {
-      split = packed[i].split('|');
+      split = packed[i].split("|");
       name = split[0];
       normalized = normalizeName(name);
       zones[normalized] = packed[i];
       names[normalized] = name;
-      addToGuesses(normalized, split[2].split(' '));
+      addToGuesses(normalized, split[2].split(" "));
     }
   }
 
@@ -443,7 +443,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return zone;
     }
 
-    if (typeof zone === 'string') {
+    if (typeof zone === "string") {
       zone = new Zone(zone);
       zones[name] = zone;
       return zone;
@@ -487,7 +487,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     for (i = 0; i < aliases.length; i++) {
-      alias = aliases[i].split('|');
+      alias = aliases[i].split("|");
       normal0 = normalizeName(alias[0]);
       normal1 = normalizeName(alias[1]);
       links[normal0] = normal1;
@@ -502,9 +502,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (!data || !data.length) return;
 
     for (i = 0; i < data.length; i++) {
-      split = data[i].split('|');
+      split = data[i].split("|");
       country_code = split[0].toUpperCase();
-      country_zones = split[1].split(' ');
+      country_zones = split[1].split(" ");
       _countries[country_code] = new Country(country_code, country_zones);
     }
   }
@@ -549,17 +549,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function needsOffset(m) {
-    var isUnixTimestamp = m._f === 'X' || m._f === 'x';
+    var isUnixTimestamp = m._f === "X" || m._f === "x";
     return !!(m._a && m._tzm === undefined && !isUnixTimestamp);
   }
 
   function logError(message) {
-    if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    if (typeof console !== "undefined" && typeof console.error === "function") {
       console.error(message);
     }
   }
   /************************************
-  	moment.tz namespace
+  moment.tz namespace
   ************************************/
 
 
@@ -570,7 +570,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         out = moment.utc.apply(null, args);
 
     if (zone && !moment.isMoment(input) && needsOffset(out)) {
-      out.add(zone.parse(out), 'minutes');
+      out.add(zone.parse(out), "minutes");
     }
 
     out.tz(name);
@@ -578,7 +578,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   tz.version = VERSION;
-  tz.dataVersion = '';
+  tz.dataVersion = "";
   tz._zones = zones;
   tz._links = links;
   tz._names = names;
@@ -600,7 +600,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   tz.countries = getCountryNames;
   tz.zonesForCountry = zonesForCountry;
   /************************************
-  	Interface with Moment.js
+  Interface with Moment.js
   ************************************/
 
   var fn = moment.fn;
@@ -614,7 +614,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (mom._z === undefined) {
       if (zone && needsOffset(mom) && !mom._isUTC) {
         mom._d = moment.utc(mom._a)._d;
-        mom.utc().add(zone.parse(mom), 'minutes');
+        mom.utc().add(zone.parse(mom), "minutes");
       }
 
       mom._z = zone;
@@ -639,8 +639,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   fn.tz = function (name, keepTime) {
     if (name) {
-      if (typeof name !== 'string') {
-        throw new Error('Time zone name must be a string, got ' + name + ' [' + _typeof(name) + ']');
+      if (typeof name !== "string") {
+        throw new Error("Time zone name must be a string, got " + name + " [" + _typeof(name) + "]");
       }
 
       this._z = getZone(name);
@@ -691,7 +691,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   moment.tz.setDefault = function (name) {
     if (major < 2 || major === 2 && minor < 9) {
-      logError('Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js ' + moment.version + '.');
+      logError("Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js " + moment.version + ".");
     }
 
     moment.defaultZone = name ? getZone(name) : null;
@@ -701,10 +701,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   var momentProperties = moment.momentProperties;
 
-  if (Object.prototype.toString.call(momentProperties) === '[object Array]') {
+  if (Object.prototype.toString.call(momentProperties) === "[object Array]") {
     // moment 2.8.1+
-    momentProperties.push('_z');
-    momentProperties.push('_a');
+    momentProperties.push("_z");
+    momentProperties.push("_a");
   } else if (momentProperties) {
     // moment 2.7.0
     momentProperties._z = null;

@@ -19,9 +19,7 @@ $(document).ready(function () {
 });
 
 function fillGrid(data, text) {
-  // console.log(data.allActivities);
-  var activities = data.allActivities; //console.log(activities);
-
+  var activities = data.allActivities;
   var locations = data.locations; // If true, signup button becomes Edit and redirects to edit page in Amilia
   //If false, signup button redirects to subscribe page in Amilia
 
@@ -29,7 +27,6 @@ function fillGrid(data, text) {
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
   var categories = activities.map(function (n) {
-    //   console.log(n);
     var cat = {};
     cat.name = n.CategoryName;
     cat.class = convertToClassSafe(n.CategoryName);
@@ -56,11 +53,10 @@ function fillGrid(data, text) {
     categoryActivities.sort(sortByName); //Create the list item for every activity
 
     $(categoryActivities).each(function () {
-      // console.log(this.Id+" : "+this.SpotsRemaining);
       this.Name = formatName(this.Name);
       var sDate = new Date(this.StartDate);
-      console.log(this.StartDate);
       var eDate = new Date(this.EndDate);
+      var mDate = moment.parseZone(this.StartDate);
       var staff = formatStaff(this.Staff);
 
       if ( //SHow activity Only if part of session displayed
