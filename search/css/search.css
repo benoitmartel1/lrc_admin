@@ -426,3 +426,13 @@ body:not(.user-is-tabbing) textarea:focus {
     transform: translate(24px, 0);
   }
 }
+
+select{
+	max-width:105px;
+	height:auto;
+	padding:2px;
+	font-size:.8em;
+}
+option{
+	background-color: white!important;
+}

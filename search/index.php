@@ -35,7 +35,7 @@
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-category"></span>
 		</button> -->
-		<select data="category">
+		<select class="btn btn-outline-primary" data="category">
 			<option selected disabled>Catégorie</option>
 		</select>
 	</div>
