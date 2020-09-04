@@ -433,6 +433,9 @@ select{
 	padding:2px;
 	font-size:.8em;
 }
+select:not(#category-drop){
+	max-width:75px;
+}
 /* select:focus{
 	min-width:150px;
 } */

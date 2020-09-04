@@ -214,7 +214,7 @@ var sortByName = function sortByName(res1, res2) {
   var day2 = new Date(res2.StartDate) - new Date();
 
   if (res1.Name.indexOf('Zumba') !== -1) {
-    console.log(day1 + " compare to " + day2);
+    console.log(res1.id + " - " + day1 + " compare to " + res2.id + " - " + day2);
   }
 
   ; //2nd criterion if tied
