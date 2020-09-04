@@ -227,7 +227,7 @@ categories=getUniqueArray(categories);
                }
 				//Populate category filter menu
 			   $(categories).each(function(c){
-					$("#category-drop .dropdown-menu").append(
+					$("#category-drop select").append(
 					$("<option>", {
 						text: this.name,
 						class: "dropdown-item",

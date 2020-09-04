@@ -111,7 +111,7 @@ function fillGrid(data, text) {
 
 
   $(categories).each(function (c) {
-    $("#category-drop .dropdown-menu").append($("<option>", {
+    $("#category-drop select").append($("<option>", {
       text: this.name,
       class: "dropdown-item"
     }).attr("data-type", "category").attr("data-value", this.class));
