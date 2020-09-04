@@ -1,5 +1,7 @@
 "use strict";
 
+var editMode = false;
+var isOpenForRegistration = false;
 var sortCategoriesByName;
 $(document).ready(function () {
   // console.log('js');
@@ -23,7 +25,6 @@ function fillGrid(data, text) {
   var locations = data.locations; // If true, signup button becomes Edit and redirects to edit page in Amilia
   //If false, signup button redirects to subscribe page in Amilia
 
-  var editMode = false;
   var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
   text.sessions.fall, text.sessions.winter, text.sessions.yearly];
   var categories = activities.map(function (n) {
@@ -170,7 +171,12 @@ function fillGrid(data, text) {
     if (!editMode) {
       //Tracker
       sendTrackerInfo('signup', id);
-      window.open('https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/' + id + '?quickRegisterId=' + id, '_blank');
+
+      if (isOpenForRegistration) {
+        window.open('https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/' + id + '?quickRegisterId=' + id, '_blank');
+      } else {
+        alert('Inscriptions dès le 15 septembre 2020.');
+      }
     } else {
       window.open("https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" + programId + "?activityId=" + id, "_blank");
     }
