@@ -31,11 +31,11 @@
 		</div>
 	</div>
 	<div id="category-drop" class="dropdown filter-drop">
-		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+		<!-- <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
 			aria-haspopup="true" aria-expanded="false">
 			<span id="text-category"></span>
-		</button>
-		<select data="category" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
+		</button> -->
+		<select data="category" class="dropdown-menu btn btn-outline-primary" data-offset="window" aria-labelledby="dropdownMenuButton">
 		</select>
 	</div>
 	
