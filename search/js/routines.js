@@ -179,8 +179,9 @@ var age2 = res2.Age !== null ? res2.Age.Min : 0;
    
       var day1 = (new Date(res1.StartDate)-new Date());
 	  var day2 = (new Date(res2.StartDate) - new Date());
-	  
-	  console.log(day1+" compare to "+day2);
+	  if(res1.Name.indexOf('Zumba')!==-1){
+	 	 console.log(day1 + " compare to " + day2);
+	  };
       //2nd criterion if tied
       if (day1 > day2) return 1;
       if (day1 < day2) return -1;
