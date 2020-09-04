@@ -47,17 +47,14 @@ function fillGrid(data, text){
         cat.id = n.CategoryId;
         return cat;
 	  });
-console.log("beforeSort");
   //Alpha sort
   categories.sort(sortCategoriesByName);
-console.log('sorted');
 	//Remove duplicates  
 categories=getUniqueArray(categories);
 //   categories = categories.filter(
 //     (cat, index, self) =>
 //       self.findIndex((t) => JSON.stringify(t) === JSON.stringify(cat)) === index
 //   );
-console.log("duplicates romved");
                //--------------------POPULATE-----------------------//
                //Populate the grid
                $(categories).each(function () {
@@ -79,6 +76,8 @@ console.log("duplicates romved");
 					// console.log(this.Id+" : "+this.SpotsRemaining);
 					this.Name = formatName(this.Name);
 					var sDate = new Date(this.StartDate);
+						  console.log(this.StartDate);
+
 					var eDate = new Date(this.EndDate);
 					var staff= formatStaff(this.Staff);
 
