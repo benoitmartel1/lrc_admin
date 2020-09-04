@@ -27,7 +27,6 @@
 		//Enable version to print format
 		var printable=true;
 		console.log("Printable : "+printable);
-		moment().format();
 	</script>
 </head>
 
