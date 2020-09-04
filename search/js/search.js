@@ -72,11 +72,13 @@ categories=getUniqueArray(categories);
                  $(categoryActivities).each(function () {
 					this.Name = formatName(this.Name);
 
-					var sDate = new Date(this.StartDate);
-					var eDate = new Date(this.EndDate);
-					console.log(sDate);
-					var mDate = moment.parseZone(this.StartDate);
-					console.log(mDate);
+					// var sDate = new Date(this.StartDate);
+					// var eDate = new Date(this.EndDate);
+					// console.log(sDate);
+					moment.locale('fr');
+					var sDate = moment.parseZone(this.StartDate);
+					var eDate = moment.parseZone(this.EndDate);
+					// console.log(mDate);
 					var staff= formatStaff(this.Staff);
 
 							
@@ -89,9 +91,9 @@ categories=getUniqueArray(categories);
                      
 					var signupText = editMode == true ? text.edit : text.signup;
                      var dur =
-                       eDate.getHours() +
-                       eDate.getMinutes() / 60 -
-					   (sDate.getHours() + sDate.getMinutes() / 60);
+                       eDate.hours() +
+                       eDate.minutes() / 60 -
+					   (sDate.hours() + sDate.minutes() / 60);
 					 
 					 var duration = (dur>=1)?Math.floor(dur)+" h ":"";
 					 duration += (dur % 1>0)?dur % 1 * 60 + " min":"";  
@@ -170,12 +172,12 @@ categories=getUniqueArray(categories);
 						</div>
 						<div class="hidden">
 							<div class="id">${this.Id}</div>
-							<div class="day">${sDate.getDay()}</div>
+							<div class="day">${sDate.day()}</div>
 							<div class="ageMin">${this.Age ? this.Age.Min : 0}</div>
 							<div class="ageMax">${this.Age ? this.Age.Max : 99}</div>
 							<div class="keywords">${keywords + tags}</div>
 							<div class="startDate">${this.StartDate}</div>
-							<div class="hour">${sDate.getHours()}</div>
+							<div class="hour">${sDate.hour()}</div>
 							<div class="duration">${duration}</div>
 							<div class="category">${categoryClass}</div>
 							<div class="locationId">${this.Location ? this.Location.Id : null}</div>

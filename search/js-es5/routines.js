@@ -87,8 +87,8 @@ function formatLocation(loc) {
 
 
 function formatSession(sDate, eDate) {
-  var s = sDate.getMonth();
-  var e = eDate.getMonth();
+  var s = sDate.month();
+  var e = eDate.month();
 
   switch (true) {
     case s < 3:
@@ -112,7 +112,7 @@ function formatSession(sDate, eDate) {
 ; //Horaire 
 
 function formatSchedule(s, e) {
-  var day = text.daysOfWeek[s.getDay()];
+  var day = text.daysOfWeek[s.day()];
   var startTime = formatTime(s);
   var endTime = formatTime(e);
   return day + " " + startTime + " - " + endTime;
@@ -121,7 +121,7 @@ function formatSchedule(s, e) {
 ;
 
 function formatLiteralSchedule(s, e) {
-  var day = text.daysOfWeek[s.getDay()].toLowerCase();
+  var day = text.daysOfWeek[s.day()].toLowerCase();
   var startTime = formatTime(s);
   var endTime = formatTime(e);
   return "Le " + day + " de " + startTime + " à " + endTime;
@@ -130,33 +130,35 @@ function formatLiteralSchedule(s, e) {
 ;
 
 function formatSpan(s, e) {
-  var start = s.toLocaleDateString("fr-CA", {
-    day: "numeric",
-    month: "long"
-  });
-  var end = e.toLocaleDateString("fr-CA", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
-  return "Du " + start + " au " + end;
+  //     var start = s.toLocaleDateString("fr-CA", {
+  //       day: "numeric",
+  //       month: "long",
+  //  YYYY	});
+  // 	var end = e.toLocaleDateString("fr-CA", {
+  //     day: "numeric",
+  // 	month: "long",
+  // 	year:"numeric"
+  //   });
+  return "Du " + s.format("D MMMM") + " au " + e.format("D MMMM YYYY");
 }
 
 ;
 
 function formatTime(t) {
-  return t.toLocaleTimeString("en-US", {
-    hour12: false,
-    hour: "numeric",
-    minute: "numeric"
-  }).replace(/^0+/, "");
+  return t.format("h:mm"); // return t
+  // .toLocaleTimeString("en-US", {
+  //   hour12: false,
+  //   hour: "numeric",
+  //   minute: "numeric",
+  // })
+  // .replace(/^0+/, "");
 }
 
 function formatStartingDate(d) {
-  return d.toLocaleDateString("fr-CA", {
-    day: "numeric",
-    month: "short"
-  });
+  return d.format("D MMM"); // 	return d.toLocaleDateString("fr-CA", {
+  // 	day: "numeric",
+  // 	month: "short"
+  //   });
 }
 
 ;
@@ -1066,6 +1068,11 @@ String.prototype.latinize = String.prototype.latinise;
 
 String.prototype.isLatin = function () {
   return this == this.latinise();
+};
+
+var capitalize = function capitalize(s) {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
 function convertToClassSafe(name) {
