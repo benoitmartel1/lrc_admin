@@ -37,7 +37,8 @@ function formatAge(age){
 		} else if (age.Max == null && age.Min !== null) {
 			return age.Min + " ans et +";
 		} else {
-			return age.Min +" - " + age.Max+" ans";
+			let min=age.Min!==age.Max?age.Min +" - ":"";
+			return min + age.Max+" ans";
 		}
 	}else{
 		return "N/D"
