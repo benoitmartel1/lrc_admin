@@ -107,7 +107,7 @@ function formatSpan(s,e) {
 	return "Du " +s.format("D MMMM")+" au "+e.format("D MMMM YYYY");
 };
 function formatTime(t){
-	return t.format("h:mm");
+	return t.format("H:mm");
 	// return t
     // .toLocaleTimeString("en-US", {
     //   hour12: false,

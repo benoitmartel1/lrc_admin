@@ -145,7 +145,7 @@ function formatSpan(s, e) {
 ;
 
 function formatTime(t) {
-  return t.format("h:mm"); // return t
+  return t.format("H:mm"); // return t
   // .toLocaleTimeString("en-US", {
   //   hour12: false,
   //   hour: "numeric",
