@@ -56,7 +56,9 @@ function fillGrid(data, text) {
       this.Name = formatName(this.Name);
       var sDate = new Date(this.StartDate);
       var eDate = new Date(this.EndDate);
+      console.log(sDate);
       var mDate = moment.parseZone(this.StartDate);
+      console.log(mDate);
       var staff = formatStaff(this.Staff);
 
       if ( //SHow activity Only if part of session displayed

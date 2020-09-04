@@ -74,7 +74,9 @@ categories=getUniqueArray(categories);
 
 					var sDate = new Date(this.StartDate);
 					var eDate = new Date(this.EndDate);
+					console.log(sDate);
 					var mDate = moment.parseZone(this.StartDate);
+					console.log(mDate);
 					var staff= formatStaff(this.Staff);
 
 							
