@@ -268,8 +268,12 @@ categories=getUniqueArray(categories);
 
 
 			   $('select').change(function(){
-				   console.log($(this));
-				$(this).find("option:eq(0)").prop("selected", true);
+					let opt=$(this).find("option:selected");
+					var type = $(opt).attr("data-type");
+					$('.applied-filters .filter[data-type="' + type + '"]').remove();
+					addFilterLabel(opt);
+					filterResults();
+					$(this).find("option:eq(0)").prop("selected", true);
 			   });
 			   // When the user scrolls the page, execute myFunction
 				window.onscroll = function() {myFunction()};
