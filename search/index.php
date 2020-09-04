@@ -5,34 +5,18 @@
 <div class="header">
 <div class="filters">
 	<span id="text-filterBy"></span>
-	<div id="age-drop" class="dropdown filter-drop">
-		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<span id="text-age"></span>
-		</button>
-		<div data="age" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a class="dropdown-item" data-type="age" data-value="18" href="#">Adulte</a>
-			<div class="dropdown-divider"></div>
-		</div>
-	</div>
-	<div id="day-drop" class="dropdown filter-drop">
-		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-			aria-haspopup="true" aria-expanded="false">
-			<span id="text-day"></span>
-		</button>
-		<div data="day" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">	
-		</div>
-	</div>
-	<div id="location-drop" class="dropdown filter-drop">
-		<button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-			aria-haspopup="true" aria-expanded="false">
-			<span id="text-location"></span>
-		</button>
-		<div data="location" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
-		</div>
-	</div>
+		<select id="age-drop" class="btn btn-outline-primary" data="age">
+			<option id="text-age" selected disabled></option>
+		</select>
+		<select id="day-drop" class="btn btn-outline-primary" data="day">
+			<option id="text-day" selected disabled></option>
+		</select>
+		<select id="location-drop" class="btn btn-outline-primary" data="location">
+			<option id="text-location" selected disabled></option>
+		</select>
 	
 		<select id="category-drop" class="btn btn-outline-primary" data="category">
-			<option selected disabled>Catégorie</option>
+			<option id="text-category" selected disabled></option>
 		</select>
 	
 	

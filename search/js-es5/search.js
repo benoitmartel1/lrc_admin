@@ -95,7 +95,7 @@ function fillGrid(data, text) {
   $('[data-toggle="tooltip"]').tooltip(); //Populate age filter menu
 
   for (var a = 17; a > 0; a--) {
-    $("#age-drop .dropdown-menu").append($("<a>", {
+    $("#age-drop").append($("<option>", {
       text: a,
       class: "dropdown-item"
     }).attr("data-type", "age").attr("data-value", a));
@@ -103,7 +103,7 @@ function fillGrid(data, text) {
 
 
   for (var a = 0; a <= 7; a++) {
-    $("#day-drop .dropdown-menu").append($("<a>", {
+    $("#day-drop").append($("<option>", {
       text: text.daysOfWeek[a],
       class: "dropdown-item"
     }).attr("data-type", "day").attr("data-value", a));
@@ -127,7 +127,7 @@ function fillGrid(data, text) {
   for (var a = 0; a < locations.length; a++) {
     //    console.log(locations[a].TopParentId); 
     if (locations[a].TopParentId == null) {
-      $("#location-drop .dropdown-menu").append($("<a>", {
+      $("#location-drop").append($("<option>", {
         text: locations[a].FullName,
         class: "dropdown-item"
       }).attr("data-type", "location").attr("data-value", locations[a].Id));
