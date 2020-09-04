@@ -133,8 +133,12 @@ function fillGrid(data, text) {
       }).attr("data-type", "location").attr("data-value", locations[a].Id));
     }
   } //--------------------LISTENERS-----------------------//
-  // When the user scrolls the page, execute myFunction
 
+
+  $('select').change(function () {
+    console.log($(this));
+    $(this).find("option:eq(0)").prop("selected", true);
+  }); // When the user scrolls the page, execute myFunction
 
   window.onscroll = function () {
     myFunction();

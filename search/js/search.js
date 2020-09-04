@@ -266,6 +266,11 @@ categories=getUniqueArray(categories);
                }
 			   //--------------------LISTENERS-----------------------//
 
+
+			   $('select').change(function(){
+				   console.log($(this));
+				$(this).find("option:eq(0)").prop("selected", true);
+			   });
 			   // When the user scrolls the page, execute myFunction
 				window.onscroll = function() {myFunction()};
 

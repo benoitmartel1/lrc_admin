@@ -36,7 +36,7 @@
 			<span id="text-category"></span>
 		</button> -->
 		<select data="category">
-			<option value="">Catégorie</option>
+			<option selected disabled>Catégorie</option>
 		</select>
 	</div>
 	
@@ -44,7 +44,7 @@
 </div>
 <div class="input-group search-field">
 <div class="applied-filters"></div>
-	<input type="text" class="search" placeholder="Quelle activité cherchez-vous?">
+	<input type="text" class="search" placeholder="Chercher une activité">
 	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button> -->
