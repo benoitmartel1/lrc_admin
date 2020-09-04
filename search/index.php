@@ -30,15 +30,11 @@
 		<div data="location" class="dropdown-menu" data-offset="window" aria-labelledby="dropdownMenuButton">
 		</div>
 	</div>
-	<div id="category-drop" class="filter-drop">
-		<!-- <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-			aria-haspopup="true" aria-expanded="false">
-			<span id="text-category"></span>
-		</button> -->
-		<select class="btn btn-outline-primary" data="category">
+	
+		<select id="category-drop" class="btn btn-outline-primary" data="category">
 			<option selected disabled>Catégorie</option>
 		</select>
-	</div>
+	
 	
 
 </div>

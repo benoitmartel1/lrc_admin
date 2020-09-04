@@ -227,7 +227,7 @@ categories=getUniqueArray(categories);
                }
 				//Populate category filter menu
 			   $(categories).each(function(c){
-					$("#category-drop select").append(
+					$("#category-drop").append(
 					$("<option>", {
 						text: this.name,
 						class: "dropdown-item",
@@ -274,6 +274,7 @@ categories=getUniqueArray(categories);
 					addFilterLabel(opt);
 					filterResults();
 					$(this).find("option:eq(0)").prop("selected", true);
+					$('select').blur();
 			   });
 			   // When the user scrolls the page, execute myFunction
 				window.onscroll = function() {myFunction()};

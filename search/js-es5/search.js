@@ -111,7 +111,7 @@ function fillGrid(data, text) {
 
 
   $(categories).each(function (c) {
-    $("#category-drop select").append($("<option>", {
+    $("#category-drop").append($("<option>", {
       text: this.name,
       class: "dropdown-item"
     }).attr("data-type", "category").attr("data-value", this.class));
@@ -142,6 +142,7 @@ function fillGrid(data, text) {
     addFilterLabel(opt);
     filterResults();
     $(this).find("option:eq(0)").prop("selected", true);
+    $('select').blur();
   }); // When the user scrolls the page, execute myFunction
 
   window.onscroll = function () {
