@@ -505,13 +505,22 @@ select{
 	padding:2px;
 	font-size:.8em;
 }
-select:focus{
-	min-width:150px;
+select:not(#category-drop){
+	max-width:75px;
 }
+/* select:focus{
+	min-width:150px;
+} */
 option{
 	background-color: white!important;
 }
 input.search {
     height: 30px!important;
+}
+.signup button{
+	font-family: arial;
+    font-weight: bolder;
+    border-radius: 20px;
+    font-size: .8em;
 }
 /*# sourceMappingURL=search.css.map */

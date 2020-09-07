@@ -445,3 +445,9 @@ option{
 input.search {
     height: 30px!important;
 }
+.signup button{
+	font-family: arial;
+    font-weight: bolder;
+    border-radius: 20px;
+    font-size: .8em;
+}

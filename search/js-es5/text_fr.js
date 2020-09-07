@@ -11,7 +11,7 @@ var text = {
     note: 'Notes'
   },
   edit: 'Éditer',
-  signup: "S'inscrire",
+  signup: "M'inscrire",
   free: "Gratuit",
   full: "Complet",
   new: "Nouveau",
