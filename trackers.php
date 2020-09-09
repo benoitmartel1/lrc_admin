@@ -1,8 +1,8 @@
 <?php
 //Log Check
-include('../log_check.php');
+include('log_check.php');
 //db connect
-include('../db_connect.php');
+include('db_connect.php');
 
 $query = "SELECT * FROM trackers";
 $result = $db->query($query);
