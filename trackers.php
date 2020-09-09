@@ -4,9 +4,8 @@ include('log_check.php');
 //db connect
 include('db_connect.php');
 
-$query = "SELECT * FROM trackers";
+$query = "SELECT value FROM trackers WHERE type='input' ORDER BY timestamp DESC";
 $result = $db->query($query);
-$trackers = $result->fetch_all(MYSQLI_ASSOC);
 
 var_dump($trackers);
 ?>
@@ -24,6 +23,19 @@ var_dump($trackers);
   crossorigin="anonymous"></script>
 </head>
 <body>
+<?php
+echo "<table border='1'>
+<tr>
+<th>Recherche</th>
+</tr>";
 
+while ($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>" . $row['value'] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
+?>
 </body>
 </html>
