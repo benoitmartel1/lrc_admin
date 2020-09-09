@@ -6,6 +6,9 @@ include('db_connect.php');
 
 $query = "SELECT value FROM trackers WHERE type='input' ORDER BY timestamp DESC";
 $result = $db->query($query);
+$query = "SELECT value, COUNT(*) as nb FROM trackers WHERE type='f-age' GROUP BY value ORDER BY COUNT(*) DESC";
+$age = $db->query($query);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,10 +29,23 @@ echo "<table border='1'>
 <tr>
 <th>Recherche</th>
 </tr>";
-
 while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['value'] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
+echo "<table border='1'>
+<tr>
+<th>Âge</th>
+<th>#</th>
+</tr>";
+while ($row = mysqli_fetch_array($age)) {
+    echo "<tr>";
+    echo "<td>" . $row['age'] . "</td>";
+    echo "<td>" . $row['nb'] . "</td>";
+
     echo "</tr>";
 }
 echo "</table>";
