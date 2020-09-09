@@ -6,8 +6,6 @@ include('db_connect.php');
 
 $query = "SELECT value FROM trackers WHERE type='input' ORDER BY timestamp DESC";
 $result = $db->query($query);
-
-var_dump($trackers);
 ?>
 <!DOCTYPE html>
 <html>
