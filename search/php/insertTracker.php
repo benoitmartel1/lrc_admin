@@ -1,5 +1,6 @@
 <?php
 //db connect  
+//This file inserts user interactions as trackers in trackers db
 include('../../db_connect.php');
 
 $session_id=$db->real_escape_string($_POST['sessionId']);

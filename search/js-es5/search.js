@@ -1,12 +1,20 @@
 "use strict";
 
-var editMode = false;
-var isOpenForRegistration = false;
+var editMode = false; //If true, signup button becomes a link to Amilia activity edit
+
+var isOpenForRegistration = false; //If false, signup button alerts message instead of redirect
+
 var sortCategoriesByName;
 $(document).ready(function () {
   // console.log('js');
-  //Get all activities/locations to populate page
-  $.get('php/activities.php', function (data) {
+  $("#scroll_up").click(function (e) {
+    e.preventDefault();
+    document.body.scrollTop = 0; // For Safari
+
+    document.documentElement.scrollTop = 0; // For Chrome, Firefo
+  }); //Get all activities/locations to populate page
+
+  $.get("php/activities.php", function (data) {
     $(".loading").slideUp();
     $(".filters").fadeIn(); // console.log(text);
 
@@ -35,7 +43,7 @@ function fillGrid(data, text) {
     return cat;
   }); //Alpha sort
 
-  categories.sort(sortCategoriesByName); //Remove duplicates  
+  categories.sort(sortCategoriesByName); //Remove duplicates
 
   categories = getUniqueArray(categories); //   categories = categories.filter(
   //     (cat, index, self) =>
@@ -58,7 +66,7 @@ function fillGrid(data, text) {
       // var eDate = new Date(this.EndDate);
       // console.log(sDate);
 
-      moment.locale('fr');
+      moment.locale("fr");
       var sDate = moment.parseZone(this.StartDate);
       var eDate = moment.parseZone(this.EndDate); // console.log(mDate);
 
@@ -87,11 +95,11 @@ function fillGrid(data, text) {
     });
   }); //Clean empty paragraphs
 
-  $('p').each(function () {
+  $("p").each(function () {
     if ($.trim($(this).text()) == "" || $.trim($(this).text()) == "&nbsp;" || $.trim($(this).text()) == "<br>") {
       $(this).remove();
     }
-  }); //Activate tooltips 
+  }); //Activate tooltips
 
   $('[data-toggle="tooltip"]').tooltip(); //Populate age filter menu
 
@@ -123,10 +131,10 @@ function fillGrid(data, text) {
     var textA = a.FullName.latinize().replace(/[\u0300-\u036f]/g, "");
     var textB = b.FullName.latinize().replace(/[\u0300-\u036f]/g, "");
     return textA < textB ? -1 : textA > textB ? 1 : 0;
-  }); //Populate location filter menu 
+  }); //Populate location filter menu
 
   for (var a = 0; a < locations.length; a++) {
-    //    console.log(locations[a].TopParentId); 
+    //    console.log(locations[a].TopParentId);
     if (locations[a].TopParentId == null) {
       $("#location-drop").append($("<option>", {
         text: locations[a].FullName,
@@ -136,21 +144,21 @@ function fillGrid(data, text) {
   } //--------------------LISTENERS-----------------------//
 
 
-  $('select').change(function () {
+  $("select").change(function () {
     var opt = $(this).find("option:selected");
     var type = $(opt).attr("data-type");
     $('.applied-filters .filter[data-type="' + type + '"]').remove();
     addFilterLabel(opt);
     filterResults();
     $(this).find("option:eq(0)").prop("selected", true);
-    $('select').blur();
+    $("select").blur();
   }); // When the user scrolls the page, execute myFunction
 
   window.onscroll = function () {
     myFunction();
   };
 
-  var header = $('#app .header'); // Get the offset position of the navbar
+  var header = $("#app .header"); // Get the offset position of the navbar
 
   var sticky = $(header).offset().top; // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 
@@ -165,23 +173,21 @@ function fillGrid(data, text) {
 
   $(".signup button:not(.isFull)").click(function (e) {
     e.stopPropagation();
-    var id = $(this).closest('li').attr('data-id');
+    var id = $(this).closest("li").attr("data-id");
     var programId = $(this).closest("li").attr("data-program-id");
 
     if (!editMode) {
       //Tracker
-      sendTrackerInfo('signup', id);
+      sendTrackerInfo("signup", id);
 
       if (isOpenForRegistration) {
-        window.open('https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/' + id + '?quickRegisterId=' + id, '_blank');
+        window.open("https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/" + id + "?quickRegisterId=" + id, "_blank");
       } else {
-        alert('Inscriptions dès le 15 septembre 2020.');
+        alert("Inscriptions dès le 15 septembre 2020.");
       }
     } else {
       window.open("https://www.amilia.com/Activities/fr/loisirsrenaudcoursol/Edit/" + programId + "?activityId=" + id, "_blank");
     }
-
-    ;
   }); //Erase Search input
 
   $(".erase").click(function () {
@@ -202,16 +208,15 @@ function fillGrid(data, text) {
   }); //Activity li click
 
   $("li.activity").click(function (e) {
-    var target = $(e.target).closest('.activity'); //Check if the click is to open the activity		
+    var target = $(e.target).closest(".activity"); //Check if the click is to open the activity
 
-    if (!$(target).find('.details').is(':visible')) {
+    if (!$(target).find(".details").is(":visible")) {
       //Tracker
       sendTrackerInfo("activity", $(target).attr("data-id")); //Hide other details opened if any
 
       $(".details").hide();
-    }
+    } //Align clicked item top top of page
 
-    ; //Align clicked item top top of page
 
     $("html, body").animate({
       scrollTop: $(target).offset().top - ($(".header").position().top + $(".header").outerHeight(true))
@@ -249,11 +254,11 @@ function fillGrid(data, text) {
 
   function addFilterLabel(label) {
     var type = $(label).attr("data-type");
-    var suffix = type == "age" ? ' ' + text.yearsOld : "";
+    var suffix = type == "age" ? " " + text.yearsOld : "";
     var labelText = $(label).text() + suffix;
     var value = $(label).attr("data-value"); //Tracker
 
-    sendTrackerInfo('f-' + type, value);
+    sendTrackerInfo("f-" + type, value);
     $(".applied-filters").append($("<span>", {
       text: labelText,
       class: "filter"
@@ -287,11 +292,11 @@ function fillGrid(data, text) {
   }
 
   function togglePopUp(target) {
-    var imgSrc = $(target).find(".thumb").css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-    $(target).find('.grid>div').css('opacity', 0);
+    var imgSrc = $(target).find(".thumb").css("background-image").replace(/^url\(['"](.+)['"]\)/, "$1");
+    $(target).find(".grid>div").css("opacity", 0);
     $(target).slideToggle(250, function () {
-      $('<img/>').attr('src', imgSrc).on('load', function () {
-        $(target).find('.grid>div').each(function (index) {
+      $("<img/>").attr("src", imgSrc).on("load", function () {
+        $(target).find(".grid>div").each(function (index) {
           // console.log(this);
           $(this).delay(100 * index).animate({
             opacity: 1
@@ -326,5 +331,3 @@ function fillGrid(data, text) {
     window.scrollTo(0, 0);
   });
 }
-
-;
