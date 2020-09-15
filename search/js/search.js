@@ -1,5 +1,5 @@
 var editMode = false; //If true, signup button becomes a link to Amilia activity edit
-var isOpenForRegistration = false; //If false, signup button alerts message instead of redirect
+var isOpenForRegistration = true; //If false, signup button alerts message instead of redirect
 var sortCategoriesByName;
 
 $(document).ready(function () {
