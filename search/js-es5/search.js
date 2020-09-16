@@ -103,9 +103,9 @@ function fillGrid(data, text) {
 
   $('[data-toggle="tooltip"]').tooltip(); //Populate age filter menu
 
-  for (var a = 17; a > 0; a--) {
+  for (var a = 18; a > 0; a--) {
     $("#age-drop").append($("<option>", {
-      text: a,
+      text: a < 18 ? a : "Adulte",
       class: "dropdown-item"
     }).attr("data-type", "age").attr("data-value", a));
   } //Populate day filter menu
