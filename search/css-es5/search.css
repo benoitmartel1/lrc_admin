@@ -564,6 +564,14 @@ select#location-drop,
 select#category-drop {
   display: none;
 }
+.cours-virtuels.activity .name,
+.cours-virtuels .spacer {
+  background-color: rgba(30, 144, 255, 0.2);
+}
+.cours-virtuels.category-header,
+.filter[data-value="cours-virtuels"] {
+  background-color: rgb(0, 124, 248) !important;
+}
 /* ---------------------------------- */
 
 /*# sourceMappingURL=search.css.map */
