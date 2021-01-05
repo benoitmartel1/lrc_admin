@@ -5,9 +5,17 @@
 $auth_data = array('Authorization: Basic bWFydGVsLmJAZ21haWwuY29tOmxhdXJlbnRtNw==');
 $auth_url = 'https://www.amilia.com/api/v3/authenticate';
 
+
+//Eventually, get list of programs to show by querying a database so admnin can select which program.
+if (isset($_GET['visiblePrograms'])) {
+    $visiblePrograms=$_GET['visiblePrograms'];
+} else {
+    $visiblePrograms= [55462];
+}
+
+
 $curl = curl_init();
 $allActivities=array();
-$programsToShow=[55462]; //Eventually, get list of programs to show by querying a database so admnin can select which program.
 
 //Request to the API
 function sendHTTPrequest($curl, $url, $headers)
@@ -41,8 +49,7 @@ if (!$token) {
     foreach ($programs as $program) {
         $id=$program->Id;
 
-        if (in_array($id, $programsToShow)) {
-            //if ($id==55462){
+        if (in_array($id, $visiblePrograms)) {
             $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities?showOccurrences=True&perPage=1000';
             $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
             

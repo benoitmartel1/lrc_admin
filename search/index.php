@@ -14,13 +14,9 @@
 		<select id="location-drop" class="btn btn-outline-primary" data="location">
 			<option id="text-location" hidden selected disabled></option>
 		</select>
-	
 		<select id="category-drop" class="btn btn-outline-primary" data="category">
 			<option id="text-category" hidden selected disabled></option>
 		</select>
-	
-	
-
 </div>
 <div class="input-group search-field">
 <div class="applied-filters"></div>
