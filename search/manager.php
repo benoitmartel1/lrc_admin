@@ -56,10 +56,10 @@ $params['filters']=$params_filters;
 			return 'checkBox '+(!!value?'fas fa-check-square checked':'far fa-square');
 		};
 		$(document).ready(function () {
-			$('body').on('click', '.checkBox',function(){
-				var state=($(this).hasClass('checked'));
-				console.log(state);
-				$(this).removeClass().addClass(setCheckBox(!state));
+			$('body').on('click', 'li:has(.checkBox)',function(){
+				var checkBox=$(this).find('.checkBox');
+				var state=($(checkBox).hasClass('checked'));
+				$(checkBox).removeClass().addClass(setCheckBox(!state));
 			});
 			programs_from_api.forEach(p => {
 				var pref=params.programs.find(a=>a.id==p.Id);
