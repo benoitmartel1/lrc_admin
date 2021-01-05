@@ -1,6 +1,5 @@
 <?php
-//This file loads all activities currently offered in a $programs object.
-//Returns $programs array.
+//Returns $output JSON object that contains locations array and allActivities array for a given program.
 
 //Authorization obtained through Postman -- https://www.amilia.com/ApiDocs
 $auth_data = array('Authorization: Basic bWFydGVsLmJAZ21haWwuY29tOmxhdXJlbnRtNw==');
@@ -43,6 +42,7 @@ if (!$token) {
         $id=$program->Id;
 
         if (in_array($id, $programsToShow)) {
+            //if ($id==55462){
             $auth_url = 'https://www.amilia.com/api/v3/fr/org/loisirsrenaudcoursol/programs/'.$id.'/activities?showOccurrences=True&perPage=1000';
             $activities=sendHTTPrequest($curl, $auth_url, $auth_data)->Items;
             
@@ -68,6 +68,11 @@ if (!$token) {
             };
         };
     };
+    $output=array(
+        "allActivities" => $allActivities,
+        "locations" => $locations
+    );
+    echo json_encode($output);
 };
 function getElemById($arr, $id)
 {
