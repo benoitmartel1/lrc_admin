@@ -1,0 +1,51 @@
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  font-size: 20px;
+}
+
+.header {
+  clear: both;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #2299cb;
+  color: white;
+}
+.header .log-info {
+  float: right;
+}
+.header .log-info div {
+  display: inline;
+}
+.logout {
+  color: paleturquoise;
+}
+.hidden {
+  display: none;
+}
+.no-select {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+.content {
+  padding: 0 50px;
+}
+.thumb {
+  width: 100px;
+  height: auto;
+}
+
+.flip-list-view .flip-entry-info {
+  display: inline-block;
+  width: 270px;
+}
+iframe body {
+  overflow: hidden;
+}

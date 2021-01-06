@@ -35,7 +35,7 @@ function getParams($tableName, $db)
 		<title>Préférences</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/manager.css">
 		
 		<script src="https://kit.fontawesome.com/51b21781c6.js" crossorigin="anonymous"></script>
