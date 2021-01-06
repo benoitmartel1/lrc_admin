@@ -49,16 +49,24 @@ function getParams($tableName, $db)
 		var params=<?php echo json_encode($params); ?>;
 
 		function setCheckBox(value){
-			return 'checkBox '+(!!value?'fas fa-check-square checked':'far fa-square');
+			return 'checkBox '+(value==true?'fas fa-check-square checked':'far fa-square');
 		};
 		$(document).ready(function () {
+			//On value change, update db and checkbox
 			$('body').on('click', 'li:has(.checkBox)',function(){
+			    var target=$(this).find('.checkBox');
+			    
+				//Get infos of clicked item
 				var table=$(this).attr('id').split('-')[0];
 				var id=$(this).attr('id').split('-')[1];
-				console.log(table+" "+id);
-				var checkBox=$(this).find('.checkBox');
-				var state=($(checkBox).hasClass('checked'));
-				$(checkBox).removeClass().addClass(setCheckBox(!state));
+				var value=$(target).hasClass('checked');
+
+                console.log(value);
+				//Update db function(){
+				$.post('php/updateParams.php', {table:table, id:id, value:!value}).done(function(data){
+					//Si ok, Update CSS od checkbox
+					$(target).removeClass().addClass(setCheckBox(!value));
+				});
 			});
 			programs_from_api.slice(0,5).forEach(p => {
 				var pref=params.programs.find(a=>a.id==p.Id);
