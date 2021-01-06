@@ -3,15 +3,16 @@
 include('log_check.php');
   //db connect
 include('db_connect.php');
-  //Get activities
-$json = file_get_contents('https://renaudcoursol.com/admin/search/php/activities.php');
-$activities=json_decode($json)->allActivities;
-//Get all trackers
-$query = "SELECT * FROM trackers";
-$result = $db -> query($query);
-$trackers = $result->fetch_all(MYSQLI_ASSOC);
 
-print_r($trackers);
+//   //Get activities
+// $json = file_get_contents('https://renaudcoursol.com/admin/search/php/activities.php');
+// $activities=json_decode($json)->allActivities;
+// //Get all trackers
+// $query = "SELECT * FROM trackers";
+// $result = $db -> query($query);
+// $trackers = $result->fetch_all(MYSQLI_ASSOC);
+
+// print_r($trackers);
 
 
 ?>
