@@ -1,86 +1,21 @@
 "use strict";
 
 //Display parameters received from db search_params configured through manager.php
-var searchParams = {
-  editMode: false,
-  isOpenForRegistration: true,
-  programs: [{
-    id: 55462,
-    visible: 1
-  }, {
-    id: 55293,
-    visible: 0
-  }],
-  columns: [{
-    type: "name",
-    visible: 1,
-    width: 2
-  }, {
-    type: "info",
-    visible: 1,
-    width: 0.5
-  }, {
-    type: "age",
-    visible: 1,
-    width: 1
-  }, {
-    type: "schedule",
-    visible: 1,
-    width: 2
-  }, {
-    type: "session",
-    visible: 1,
-    width: 1
-  }, {
-    type: "price",
-    visible: 1,
-    width: 1
-  }, {
-    type: "cours",
-    visible: 1,
-    width: 0.75
-  }, {
-    type: "location",
-    visible: 0,
-    width: 1
-  }, {
-    type: "staff",
-    visible: 0,
-    width: 1
-  }, {
-    type: "start",
-    visible: 1,
-    width: 1
-  }, {
-    type: "signup",
-    visible: 1,
-    width: 1
-  }],
-  filters: [{
-    type: "age",
-    visible: 1
-  }, {
-    type: "day",
-    visible: 1
-  }, {
-    type: "location",
-    visible: 0
-  }]
-};
-var editMode = searchParams.editMode; //If true, signup button becomes a link to Amilia activity edit
+var searchParams = params;
+var editMode = false; //If true, signup button becomes a link to Amilia activity edit
 
-var isOpenForRegistration = searchParams.isOpenForRegistration; //If false, signup button alerts message instead of redirect
+var isOpenForRegistration = true; //If false, signup button alerts message instead of redirect
 
 var visiblePrograms = searchParams.programs.filter(function (a) {
-  return a.visible;
+  return a.visible == true;
 }).map(function (a) {
   return a.id;
 });
 var filtersToHide = searchParams.filters.filter(function (a) {
-  return a.visible == 0;
+  return a.visible == false;
 });
 var columnsToHide = searchParams.columns.filter(function (a) {
-  return a.visible == 0;
+  return a.visible == false;
 });
 var sortCategoriesByName;
 $(document).ready(function () {

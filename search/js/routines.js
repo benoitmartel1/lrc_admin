@@ -1,5 +1,50 @@
+"use strict";
+
+function _toConsumableArray(arr) {
+  return (
+    _arrayWithoutHoles(arr) ||
+    _iterableToArray(arr) ||
+    _unsupportedIterableToArray(arr) ||
+    _nonIterableSpread()
+  );
+}
+
+function _nonIterableSpread() {
+  throw new TypeError(
+    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+  );
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+    return _arrayLikeToArray(o, minLen);
+}
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter))
+    return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+  return arr2;
+}
+
 function isNew(tags) {
   var label = "";
+
   if (tags) {
     $(tags).each(function () {
       if (this.Name.toLowerCase() == "nouveau") {
@@ -8,42 +53,45 @@ function isNew(tags) {
       }
     });
   }
-  return label;
-}
 
-//Returns formatted divs with property for Infos section
+  return label;
+} //Returns formatted divs with property for Infos section
+
 function formatInfo(item, className, title) {
   var titleContent = "";
+
   if (item) {
     if (title) {
       titleContent = '<div class="property">' + title + "</div>";
     }
+
     return '<div class="' + className + '">' + titleContent + item + "</div>";
   }
+
   return "";
-}
-//Nom de l'activité
+} //Nom de l'activité
+
 function formatName(name) {
   if (name.indexOf(" - ") != -1) name = name.substring(0, name.indexOf(" - "));
   return name;
-}
+} //Âge ou niveau
 
-//Âge ou niveau
 function formatAge(age) {
-  var ans = age.Months ? " mois" : " ans";
   if (age != null) {
+    var ans = age.Months ? " mois" : " ans";
     if (age.Min == 18 && !age.Months) {
       return "Adulte";
     } else if (age.Max == null && age.Min !== null) {
       return age.Min + ans + " et +";
     } else {
-      let min = age.Min !== age.Max ? age.Min + " - " : "";
+      var min = age.Min !== age.Max ? age.Min + " - " : "";
       return min + age.Max + ans;
     }
   } else {
     return "N/D";
   }
 }
+
 function formatStaff(staff) {
   if (staff) {
     return staff.FirstName + " " + staff.LastName;
@@ -51,50 +99,59 @@ function formatStaff(staff) {
     return null;
   }
 }
+
 function formatLocation(loc) {
   // console.log(loc.FullName);
-  let abbreviation = loc.FullName.match(/\(([^)]+)\)/);
+  var abbreviation = loc.FullName.match(/\(([^)]+)\)/);
+
   if (abbreviation) {
     return abbreviation[1];
   } else {
     return loc.FullName.split(/[\s-]+/)
-      .reduce((re, word) => (re += word.slice(0, 1)), "")
+      .reduce(function (re, word) {
+        return (re += word.slice(0, 1));
+      }, "")
       .toUpperCase();
   }
-}
-//Returns session season according to start and end date of activity
+} //Returns session season according to start and end date of activity
+
 function formatSession(sDate, eDate) {
   var s = sDate.month();
   var e = eDate.month();
+
   switch (true) {
     case s < 3:
       return text.sessions.winter;
       break;
+
     case s < 6:
       return text.sessions.spring;
       break;
+
     case s > 6 && e > 6:
       return text.sessions.fall;
       break;
+
     case s > 6 && e < 6:
       return text.sessions.yearly;
       break;
   }
-}
+} //Horaire
 
-//Horaire
 function formatSchedule(s, e) {
   var day = text.daysOfWeek[s.day()];
   var startTime = formatTime(s);
   var endTime = formatTime(e);
   return day + " " + startTime + " - " + endTime;
 }
+
 function formatLiteralSchedule(s, e) {
   var day = text.daysOfWeek[s.day()].toLowerCase();
   var startTime = formatTime(s);
   var endTime = formatTime(e);
   return "Le " + day + " de " + startTime + " à " + endTime;
 }
+
 function formatSpan(s, e) {
   //     var start = s.toLocaleDateString("fr-CA", {
   //       day: "numeric",
@@ -107,9 +164,9 @@ function formatSpan(s, e) {
   //   });
   return "Du " + s.format("D MMMM") + " au " + e.format("D MMMM YYYY");
 }
+
 function formatTime(t) {
-  return t.format("H:mm");
-  // return t
+  return t.format("H:mm"); // return t
   // .toLocaleTimeString("en-US", {
   //   hour12: false,
   //   hour: "numeric",
@@ -117,95 +174,114 @@ function formatTime(t) {
   // })
   // .replace(/^0+/, "");
 }
+
 function formatStartingDate(d) {
-  return d.format("D MMM");
-  // 	return d.toLocaleDateString("fr-CA", {
+  return d.format("D MMM"); // 	return d.toLocaleDateString("fr-CA", {
   // 	day: "numeric",
   // 	month: "short"
   //   });
 }
+
 function formatPrice(p) {
   return p == 0 ? text.free : p + " $";
 }
+
 function getActivitiesById(obj) {
   var id = this;
+
   if (obj.CategoryId == id) {
     return true;
   } else {
     return false;
   }
 }
-var sortCategoriesByName = function (res1, res2) {
+
+var sortCategoriesByName = function sortCategoriesByName(res1, res2) {
   var prod1 = res1.name;
   var prod2 = res2.name;
   return prod1.localeCompare(prod2);
 };
-var sortByName = function (res1, res2) {
-  var name1 = formatName(res1.Name);
-  var name2 = formatName(res2.Name);
 
-  //1st criterion
+var sortByName = function sortByName(res1, res2) {
+  var name1 = formatName(res1.Name);
+  var name2 = formatName(res2.Name); //1st criterion
+
   if (name1 > name2) return 1;
   if (name1 < name2) return -1;
-
   var age1 = res1.Age !== null ? res1.Age.Min : 0;
   var age2 = res2.Age !== null ? res2.Age.Min : 0;
-
   if (age1 > age2) return 1;
-  if (age1 < age2) return -1;
-  //console.log("Egalité " + age1 + " " + age2);
+  if (age1 < age2) return -1; //console.log("Egalité " + age1 + " " + age2);
 
   var day1 = new Date(res1.StartDate).getDay();
-  var day2 = new Date(res2.StartDate).getDay();
+  var day2 = new Date(res2.StartDate).getDay(); //2nd criterion if tied
 
-  //2nd criterion if tied
   if (day1 > day2) return 1;
   if (day1 < day2) return -1;
-
   var day1 = new Date(res1.StartDate).getHours();
-  var day2 = new Date(res2.StartDate).getHours();
+  var day2 = new Date(res2.StartDate).getHours(); //2nd criterion if tied
 
-  //2nd criterion if tied
   if (day1 > day2) return 1;
   if (day1 < day2) return -1;
-
   var day1 = new Date(res1.StartDate) - new Date();
-  var day2 = new Date(res2.StartDate) - new Date();
+  var day2 = new Date(res2.StartDate) - new Date(); //2nd criterion if tied
 
-  //2nd criterion if tied
   if (day1 > day2) return 1;
-  if (day1 < day2) return -1;
-  //return prod1.localeCompare(prod2);
-};
-//Return a div for the category Header
+  if (day1 < day2) return -1; //return prod1.localeCompare(prod2);
+}; //Return a div for the category Header
+
 function createCategoryHeader(cat) {
   var top = $("<h1>", {
     text: cat.name,
     class: "top",
   });
-
-  var columnHeaders = `<div class="grid">
-			<div class="column-header name">${text.columnHeaders.activity}</div>	
-			<div class="column-header info">${text.columnHeaders.info}</div>		
-			<div class="column-header age">${text.columnHeaders.age}</div>
-			<div class="column-header schedule">${text.columnHeaders.schedule}</div>	
-			<div class="column-header session">${text.columnHeaders.session}</div>	
-			<div class="column-header price">${text.columnHeaders.price}</div>	
-			<div class="column-header cours">${text.columnHeaders.duration}</div>
-			<div class="column-header location">${text.columnHeaders.location}</div>	
-			<div class="column-header staff">${text.columnHeaders.staff}</div>
-			<div class="column-header starting">${text.columnHeaders.starting}</div>	
-</div>`;
-
+  var columnHeaders = '<div class="grid">\n\t\t\t<div class="column-header name">'
+    .concat(
+      text.columnHeaders.activity,
+      '</div>\t\n\t\t\t<div class="column-header info">'
+    )
+    .concat(
+      text.columnHeaders.info,
+      '</div>\t\t\n\t\t\t<div class="column-header age">'
+    )
+    .concat(
+      text.columnHeaders.age,
+      '</div>\n\t\t\t<div class="column-header schedule">'
+    )
+    .concat(
+      text.columnHeaders.schedule,
+      '</div>\t\n\t\t\t<div class="column-header session">'
+    )
+    .concat(
+      text.columnHeaders.session,
+      '</div>\t\n\t\t\t<div class="column-header price">'
+    )
+    .concat(
+      text.columnHeaders.price,
+      '</div>\t\n\t\t\t<div class="column-header cours">'
+    )
+    .concat(
+      text.columnHeaders.duration,
+      '</div>\n\t\t\t<div class="column-header location">'
+    )
+    .concat(
+      text.columnHeaders.location,
+      '</div>\t\n\t\t\t<div class="column-header staff">'
+    )
+    .concat(
+      text.columnHeaders.staff,
+      '</div>\n\t\t\t<div class="column-header starting">'
+    )
+    .concat(text.columnHeaders.starting, "</div>\t\n</div>");
   var header = $("<li>", {
     class: convertToClassSafe(cat.name) + " category-header",
   })
     .attr("data-always-visible", "true")
     .append(top)
     .append(columnHeaders);
-
   return header;
 }
+
 var Latinise = {};
 Latinise.latin_map = {
   Á: "A",
@@ -1033,17 +1109,20 @@ Latinise.latin_map = {
   ᵥ: "v",
   ₓ: "x",
 };
+
 String.prototype.latinise = function () {
   return this.replace(/[^A-Za-z0-9\[\] ]/g, function (a) {
     return Latinise.latin_map[a] || a;
   });
 };
+
 String.prototype.latinize = String.prototype.latinise;
+
 String.prototype.isLatin = function () {
   return this == this.latinise();
 };
 
-const capitalize = (s) => {
+var capitalize = function capitalize(s) {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
@@ -1054,24 +1133,31 @@ function convertToClassSafe(name) {
     if (c == 32) return "-";
     if (c >= 65 && c <= 90) return s.toLowerCase();
     s = s.latinize();
-    return s.replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    //.normalize("NFD")
+    return s.replace(/[\u0300-\u036f]/g, "").toLowerCase(); //.normalize("NFD")
   });
 }
-function getUniqueArray(arr = [], compareProps = []) {
-  let modifiedArray = [];
+
+function getUniqueArray() {
+  var arr =
+    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var compareProps =
+    arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+  var modifiedArray = [];
   if (compareProps.length === 0 && arr.length > 0)
-    compareProps.push(...Object.keys(arr[0]));
-  arr.map((item) => {
+    compareProps.push.apply(
+      compareProps,
+      _toConsumableArray(Object.keys(arr[0]))
+    );
+  arr.map(function (item) {
     if (modifiedArray.length === 0) {
       modifiedArray.push(item);
     } else {
       if (
-        !modifiedArray.some((item2) =>
-          compareProps.every(
-            (eachProps) => item2[eachProps] === item[eachProps]
-          )
-        )
+        !modifiedArray.some(function (item2) {
+          return compareProps.every(function (eachProps) {
+            return item2[eachProps] === item[eachProps];
+          });
+        })
       ) {
         modifiedArray.push(item);
       }

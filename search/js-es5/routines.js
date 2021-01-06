@@ -1,16 +1,39 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
 
 function isNew(tags) {
   var label = "";
@@ -50,9 +73,9 @@ function formatName(name) {
 
 
 function formatAge(age) {
-  var ans = age.Months ? " mois" : " ans";
-
   if (age != null) {
+    var ans = age.Months ? " mois" : " ans";
+
     if (age.Min == 18 && !age.Months) {
       return "Adulte";
     } else if (age.Max == null && age.Min !== null) {
@@ -210,7 +233,7 @@ function createCategoryHeader(cat) {
     text: cat.name,
     class: "top"
   });
-  var columnHeaders = "<div class=\"grid\">\n\t\t\t<div class=\"column-header name\">".concat(text.columnHeaders.activity, "</div>\t\n\t\t\t<div class=\"column-header info\">").concat(text.columnHeaders.info, "</div>\t\t\n\t\t\t<div class=\"column-header age\">").concat(text.columnHeaders.age, "</div>\n\t\t\t<div class=\"column-header schedule\">").concat(text.columnHeaders.schedule, "</div>\t\n\t\t\t<div class=\"column-header session\">").concat(text.columnHeaders.session, "</div>\t\n\t\t\t<div class=\"column-header price\">").concat(text.columnHeaders.price, "</div>\t\n\t\t\t<div class=\"column-header cours\">").concat(text.columnHeaders.duration, "</div>\n\t\t\t<div class=\"column-header location\">").concat(text.columnHeaders.location, "</div>\t\n\t\t\t<div class=\"column-header staff\">").concat(text.columnHeaders.staff, "</div>\n\t\t\t<div class=\"column-header starting\">").concat(text.columnHeaders.starting, "</div>\t\n</div>");
+  var columnHeaders = '<div class="grid">\n\t\t\t<div class="column-header name">'.concat(text.columnHeaders.activity, '</div>\t\n\t\t\t<div class="column-header info">').concat(text.columnHeaders.info, '</div>\t\t\n\t\t\t<div class="column-header age">').concat(text.columnHeaders.age, '</div>\n\t\t\t<div class="column-header schedule">').concat(text.columnHeaders.schedule, '</div>\t\n\t\t\t<div class="column-header session">').concat(text.columnHeaders.session, '</div>\t\n\t\t\t<div class="column-header price">').concat(text.columnHeaders.price, '</div>\t\n\t\t\t<div class="column-header cours">').concat(text.columnHeaders.duration, '</div>\n\t\t\t<div class="column-header location">').concat(text.columnHeaders.location, '</div>\t\n\t\t\t<div class="column-header staff">').concat(text.columnHeaders.staff, '</div>\n\t\t\t<div class="column-header starting">').concat(text.columnHeaders.starting, "</div>\t\n</div>");
   var header = $("<li>", {
     class: convertToClassSafe(cat.name) + " category-header"
   }).attr("data-always-visible", "true").append(top).append(columnHeaders);

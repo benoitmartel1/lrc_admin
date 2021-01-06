@@ -5,14 +5,7 @@
 $auth_data = array('Authorization: Basic bWFydGVsLmJAZ21haWwuY29tOmxhdXJlbnRtNw==');
 $auth_url = 'https://www.amilia.com/api/v3/authenticate';
 
-
-//Eventually, get list of programs to show by querying a database so admnin can select which program.
-if (isset($_GET['visiblePrograms'])) {
-    $visiblePrograms=$_GET['visiblePrograms'];
-} else {
-    $visiblePrograms= [55462];
-}
-
+$visiblePrograms=$_GET['visiblePrograms'];
 
 $curl = curl_init();
 $allActivities=array();

@@ -548,10 +548,7 @@ input.search {
 
 /* Modifications temporaires pour cours virtuels */
 /* ------------------------------ */
-.location,
-.staff {
-  display: none !important;
-}
+
 .activity.grid,
 .category-header .grid {
   grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
@@ -560,10 +557,7 @@ input.search {
     "name info age schedule session price cours start signup"
     "spacer details details details details details details details details";
 }
-select#location-drop,
-select#category-drop {
-  display: none;
-}
+
 .cours-virtuels.activity .name,
 .cours-virtuels .spacer {
   background-color: rgba(30, 144, 255, 0.2);
