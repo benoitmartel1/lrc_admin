@@ -1,7 +1,7 @@
-<?php 
+<?php
 //Login Check
 include('log_check.php');
-  //db connect  
+  //db connect
 include('db_connect.php');
   //Get activities
 $json = file_get_contents('https://renaudcoursol.com/admin/search/php/activities.php');
@@ -9,7 +9,7 @@ $activities=json_decode($json)->allActivities;
 //Get all trackers
 $query = "SELECT * FROM trackers";
 $result = $db -> query($query);
-$trackers = $result->fetch_all( MYSQLI_ASSOC );
+$trackers = $result->fetch_all(MYSQLI_ASSOC);
 
 print_r($trackers);
 
@@ -33,6 +33,7 @@ print_r($trackers);
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 </head>
 <body>
+<?php include_once('header.php'); ?>
 
 </body>
 </html>
