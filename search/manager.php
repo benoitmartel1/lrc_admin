@@ -1,6 +1,6 @@
 <?php
 //Login Check
-include('log_check.php');
+include($_SERVER['DOCUMENT_ROOT'].'/admin/log_check.php');
 //Get all existing programs in Amilia
 include('php/programs.php');
 //Local db connect
@@ -85,7 +85,7 @@ function getParams($tableName, $db)
 	</script>
 		</head>
 	<body>
-	<?php include_once('header.php'); ?>
+	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/admin/header.php'); ?>
 
 	<div class="tab search">
 		<h3>Programmes</h3>
