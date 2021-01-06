@@ -277,8 +277,20 @@ function fillGrid(data, text) {
 						<div class="hidden">
 							<div class="id">${this.Id}</div>
 							<div class="day">${sDate.day()}</div>
-							<div class="ageMin">${this.Age ? this.Age.Min : 0}</div>
-							<div class="ageMax">${this.Age ? this.Age.Max : 99}</div>
+							<div class="ageMin">${
+                this.Age
+                  ? this.Age.Months
+                    ? Math.floor(this.Age.Min / 12)
+                    : this.Age.Min
+                  : 0
+              }</div>
+							<div class="ageMax">${
+                this.Age
+                  ? this.Age.Months
+                    ? Math.ceil(this.Age.Max / 12)
+                    : this.Age.Max
+                  : 99
+              }</div>
 							<div class="keywords">${keywords + tags}</div>
 							<div class="startDate">${this.StartDate}</div>
 							<div class="hour">${sDate.hour()}</div>
@@ -308,7 +320,7 @@ function fillGrid(data, text) {
   $('[data-toggle="tooltip"]').tooltip();
 
   //Populate age filter menu
-  for (var a = 18; a > 0; a--) {
+  for (var a = 18; a >= 0; a--) {
     $("#age-drop").append(
       $("<option>", {
         text: a < 18 ? a : "Adulte",
