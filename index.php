@@ -35,6 +35,6 @@ include('db_connect.php');
 </head>
 <body>
 <?php include_once('header.php'); ?>
-
+<a href="search/manager.php">Paramètres d'affichage des activités</a>
 </body>
 </html>

@@ -1,4 +1,6 @@
 <?php
+//Login Check
+include('log_check.php');
 //Get all existing programs in Amilia
 include('php/programs.php');
 //Local db connect
@@ -83,6 +85,8 @@ function getParams($tableName, $db)
 	</script>
 		</head>
 	<body>
+	<?php include_once('header.php'); ?>
+
 	<div class="tab search">
 		<h3>Programmes</h3>
 		<ul id="programs"><li><span class="fas fa-eye"></span></li></ul>
