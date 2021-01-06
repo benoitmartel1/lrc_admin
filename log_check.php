@@ -1,7 +1,7 @@
 <?php
   session_start();
-
-  if (!isset($_SESSION['username'])) {
+  var_dump($_SESSION['privileges']);
+  if (!isset($_SESSION['username']) || is_null($_SESSION['privileges'])) {
       $_SESSION['msg'] = "You must log in first";
       header('location: https://renaudcoursol.com/admin/registration/login.php');
   }
