@@ -40,7 +40,7 @@ function getParams($tableName, $db)
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="search/css/manager.css">
 		<script src="https://kit.fontawesome.com/51b21781c6.js" crossorigin="anonymous"></script>
-		<script src="manager/js/routines.js"></script>
+		<script src="search/js/routines.js"></script>
 	<script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
