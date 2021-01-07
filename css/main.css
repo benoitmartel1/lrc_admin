@@ -9,6 +9,14 @@ li {
   text-decoration: none !important;
   color: inherit;
 }
+li {
+  cursor: pointer;
+  width: fit-content;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
 
 .header {
   padding: 10px;
@@ -19,11 +27,14 @@ li {
   max-width: 1024px;
   margin: auto;
   background-color: white;
-  padding: 0 60px;
+  padding: 0 30px;
+  overflow: hidden;
+  height: 100vh;
 }
 .header .wrapper-center {
   display: flex;
   background-color: unset;
+  height: unset;
 }
 .header .log-info {
   margin-left: auto;

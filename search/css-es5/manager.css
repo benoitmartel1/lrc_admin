@@ -1,27 +1,9 @@
-body {
-  background-color: #eee;
-}
-
-li {
-  cursor: pointer;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  -webkit-user-select: none; /* Chrome all / Safari all */
-  -moz-user-select: none; /* Firefox all */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none;
-}
 li .checkBox {
   margin-right: 10px;
   color: lightblue;
 }
 li .checkBox.checked {
   color: deepskyblue;
-}
-.tab {
-  background-color: white;
-  padding: 60px;
 }
 
 /*# sourceMappingURL=manager.css.map */
