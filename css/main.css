@@ -5,6 +5,8 @@ body {
   background-color: #f8f8f8;
 }
 a,
+a:hover,
+a:visited,
 li {
   text-decoration: none !important;
   color: inherit;
@@ -41,7 +43,7 @@ i h5 {
   background-color: white;
   padding: 0 30px;
   padding-top: 30px;
-  min-height: 1600px;
+  min-height: 100vh;
 }
 .right {
   float: right;

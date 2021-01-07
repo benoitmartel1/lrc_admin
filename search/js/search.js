@@ -7,6 +7,24 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 //Check if printable mode has been set, if not, set it to false for display mode
 var printable = typeof printable !== "undefined" ? printable : false;
 
+var newSizing = searchParams.columns
+  .filter(function (a) {
+    if (printable == true) {
+      return a.visiblePrint == false;
+    } else {
+      return a.visible == false;
+    }
+  })
+  .map(function (c) {
+    return c.width;
+  })
+  .join("fr ");
+
+$(".category-header .grid, .activity.grid").css(
+  "grid-template-columns",
+  newSizing
+);
+
 var visiblePrograms = searchParams.programs
   .filter(function (a) {
     if (printable == true) {
@@ -147,8 +165,7 @@ function fillGrid(data, text) {
           tags += this.Tags[i].Name + " ";
         }
         $(".list").append(
-          `
-						<li class="activity grid ${categoryClass}" data-id='${
+          `<li class="activity grid ${categoryClass}" data-id='${
             this.Id
           }' data-program-id='${this.ProgramId}'>
 							<div class="name">${this.Name}${isNew(this.Tags)}</div>
