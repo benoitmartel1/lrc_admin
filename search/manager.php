@@ -58,6 +58,8 @@ function getParams($tableName, $db)
 			return 'checkBox '+(value==true?'fas fa-check-square checked':'far fa-square');
 		};
 		$(document).ready(function () {
+			  //Activate tooltips
+			$('[data-toggle="tooltip"]').tooltip();
 			//On value change, update db and checkbox
 			$('body').on('click', '.checkBox',function(){
 			    var target=$(this);

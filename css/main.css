@@ -14,6 +14,11 @@ li {
 ::before {
   box-sizing: border-box;
 }
+fa,
+far,
+fas {
+  margin-right: 10px;
+}
 li {
   cursor: pointer;
   width: fit-content;
@@ -22,7 +27,7 @@ li {
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
 }
-h5 {
+i h5 {
   font-weight: bold;
 }
 .header {
@@ -35,7 +40,7 @@ h5 {
   margin: auto;
   background-color: white;
   padding: 0 30px;
-  padding-top: 1px;
+  padding-top: 30px;
   min-height: 1600px;
 }
 .right {
@@ -45,6 +50,7 @@ h5 {
   display: flex;
   background-color: unset;
   min-height: unset;
+  padding-top: 0;
 }
 .header .log-info {
   margin-left: auto;
