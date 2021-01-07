@@ -19,7 +19,7 @@ include('db_connect.php');
 <!DOCTYPE html>
 <html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>LRC Admin</title>
+	<title>Admin</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://kit.fontawesome.com/51b21781c6.js" crossorigin="anonymous"></script>
@@ -32,6 +32,6 @@ include('db_connect.php');
 </head>
 <body>
 <?php include_once('header.php'); ?>
-<a href="search/manager.php">Paramètres d'affichage des activités</a>
+<div class="wrapper-center"></div>
 </body>
 </html>

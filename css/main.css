@@ -2,6 +2,7 @@ body {
   font-family: "Nunito", sans-serif;
   margin: 0;
   font-size: 20px;
+  background-color: #f8f8f8;
 }
 a,
 li {
@@ -10,13 +11,14 @@ li {
 }
 
 .header {
-  padding: 20px;
+  padding: 10px;
   background-color: #2299cb;
   color: white;
 }
 .wrapper-center {
   max-width: 1024px;
   margin: auto;
+  background-color: white;
 }
 .header .wrapper-center {
   display: flex;
