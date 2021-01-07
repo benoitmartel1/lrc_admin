@@ -28,8 +28,8 @@ li {
   margin: auto;
   background-color: white;
   padding: 0 30px;
-  overflow: hidden;
-  height: 100vh;
+  padding-top: 1px;
+  min-height: 1600px;
 }
 .header .wrapper-center {
   display: flex;

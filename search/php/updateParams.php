@@ -3,6 +3,7 @@ include('../../db_connect.php');
 
 $table=$_POST['table'];
 $id=$_POST['id'];
+$prop=$_POST['prop'];
 $value=$_POST['value'];
 
 //Make sure program id exists in db
@@ -12,7 +13,7 @@ if ($table=='programs') {
 }
 
 //Update the property
-$query = "UPDATE `search_params_{$table}` SET visible=$value WHERE id='$id'";
+$query = "UPDATE `search_params_{$table}` SET $prop=$value WHERE id=$id";
 
 $result = mysqli_query($db, $query);
 if ($result) {

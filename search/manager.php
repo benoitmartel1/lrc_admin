@@ -61,6 +61,7 @@ function getParams($tableName, $db)
 				//Get infos of clicked item
 				var table=$(this).attr('id').split('-')[0];
 				var id=$(this).attr('id').split('-')[1];
+				var prop=$(target).attr('data');
 				var value=$(target).hasClass('checked');
 
                 console.log(value);
@@ -73,13 +74,14 @@ function getParams($tableName, $db)
 			programs_from_api.slice(0,5).forEach(p => {
 				var pref=params.programs.find(a=>a.id==p.Id);
 				var visible=(pref)?pref.visible:p.IsVisible;
-				$('#programs').append('<li id="programs-'+p.Id+'"><span class="'+setCheckBox(visible)+'"></span>'+p.Name+'</li>');
+				var visiblePrint=(pref)?pref.visiblePrint:p.IsVisible;
+				$('#programs').append('<li id="programs-'+p.Id+'"><span data="visible" class="'+setCheckBox(visible)+'"></span><span data="visiblePrint" class="'+setCheckBox(visiblePrint)+'"></span>'+p.Name+'</li>');
 			});
 			params.columns.forEach(p => {
-				$('#columns').append('<li id="columns-'+p.id+'"><span class="'+setCheckBox(p.visible)+'"></span>'+capitalize(p.name)+'</li>');
+				$('#columns').append('<li id="columns-'+p.id+'"><span data="visible" class="'+setCheckBox(p.visible)+'"></span><span data="visiblePrint" class="'+setCheckBox(p.visiblePrint)+'"></span>'+capitalize(p.name)+'</li>');
 			});
 			params.filters.forEach(p => {
-				$('#filters').append('<li id="filters-'+p.id+'"><span class="'+setCheckBox(p.visible)+'"></span>'+capitalize(p.name)+'</li>');
+				$('#filters').append('<li id="filters-'+p.id+'"><span data="visible" class="'+setCheckBox(p.visible)+'"></span><span data="visiblePrint" class="'+setCheckBox(p.visiblePrint)+'"></span>'+capitalize(p.name)+'</li>');
 			});
 		});
 	</script>
@@ -90,7 +92,7 @@ function getParams($tableName, $db)
 	<div class="wrapper-center">
 		<div class="tab">
 			<h3>Programmes</h3>
-			<ul id="programs"><li><span class="fas fa-eye"></span></li></ul>
+			<ul id="programs"><li><span class="fas fa-eye"></span><span class="fas fa-print"></span></li></ul>
 			<h3>Colonnes</h3>
 			<ul id="columns"></ul>
 			<h3>Filtres</h3>
