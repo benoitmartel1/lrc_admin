@@ -20,8 +20,6 @@ li .checkBox.checked {
   color: deepskyblue;
 }
 .tab {
-  margin: auto;
-  width: 60%;
   background-color: white;
   padding: 60px;
 }

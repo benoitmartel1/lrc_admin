@@ -27,6 +27,9 @@ li {
 .header .log-info div {
   display: inline;
 }
+.navbar a {
+  margin-right: 10px;
+}
 .logout {
   color: paleturquoise;
 }
