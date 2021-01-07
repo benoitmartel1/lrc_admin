@@ -1,7 +1,7 @@
 body {
   font-family: "Nunito", sans-serif;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   background-color: #f8f8f8;
 }
 a,
@@ -22,6 +22,7 @@ li {
 }
 .header .wrapper-center {
   display: flex;
+  background-color: unset;
 }
 .header .log-info {
   margin-left: auto;
