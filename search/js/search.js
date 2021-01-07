@@ -4,18 +4,35 @@ var searchParams = params;
 var editMode = false; //If true, signup button becomes a link to Amilia activity edit
 var isOpenForRegistration = true; //If false, signup button alerts message instead of redirect
 
+//Check if printable mode has been set, if not, set it to false for display mode
+if (typeof printable !== "undefined") {
+  var printable = false;
+}
+
 var visiblePrograms = searchParams.programs
   .filter(function (a) {
-    return a.visible == true;
+    if (printable == false) {
+      return a.visible == true;
+    } else {
+      return a.visiblePrint == true;
+    }
   })
   .map(function (a) {
     return a.id;
   });
 var filtersToHide = searchParams.filters.filter(function (a) {
-  return a.visible == false;
+  if (printable == false) {
+    return a.visible == true;
+  } else {
+    return a.visiblePrint == true;
+  }
 });
 var columnsToHide = searchParams.columns.filter(function (a) {
-  return a.visible == false;
+  if (printable == false) {
+    return a.visible == true;
+  } else {
+    return a.visiblePrint == true;
+  }
 });
 
 var sortCategoriesByName;
