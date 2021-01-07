@@ -55,12 +55,12 @@ function getParams($tableName, $db)
 		};
 		$(document).ready(function () {
 			//On value change, update db and checkbox
-			$('body').on('click', 'li:has(.checkBox)',function(){
-			    var target=$(this).find('.checkBox');
-			    
+			$('body').on('click', '.checkBox',function(){
+			    var target=$(this);
+				var parent=$(this).closest('li');
 				//Get infos of clicked item
-				var table=$(this).attr('id').split('-')[0];
-				var id=$(this).attr('id').split('-')[1];
+				var table=$(parent).attr('id').split('-')[0];
+				var id=$(parent).attr('id').split('-')[1];
 				var prop=$(target).attr('data');
 				var value=$(target).hasClass('checked');
 

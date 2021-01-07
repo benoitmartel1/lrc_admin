@@ -34,7 +34,7 @@ li {
 .header .wrapper-center {
   display: flex;
   background-color: unset;
-  height: unset;
+  min-height: unset;
 }
 .header .log-info {
   margin-left: auto;
