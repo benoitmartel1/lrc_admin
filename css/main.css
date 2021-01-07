@@ -3,13 +3,20 @@ body {
   margin: 0;
   font-size: 20px;
 }
+a,
+li {
+  text-decoration: none !important;
+  color: inherit;
+}
 
 .header {
-  clear: both;
-  overflow: hidden;
   padding: 20px;
   background-color: #2299cb;
   color: white;
+}
+.wrapper-center {
+  width: 1200px;
+  margin: auto;
 }
 .header .log-info {
   float: right;
