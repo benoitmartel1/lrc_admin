@@ -87,12 +87,14 @@ function getParams($tableName, $db)
 	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/admin/header.php'); ?>
 
 	<div class="wrapper-center">
-		<h3>Programmes</h3>
-		<ul id="programs"><li><span class="fas fa-eye"></span></li></ul>
-		<h3>Colonnes</h3>
-		<ul id="columns"></ul>
-		<h3>Filtres</h3>
-		<ul id="filters"></ul>
+		<div class="tab">
+			<h3>Programmes</h3>
+			<ul id="programs"><li><span class="fas fa-eye"></span></li></ul>
+			<h3>Colonnes</h3>
+			<ul id="columns"></ul>
+			<h3>Filtres</h3>
+			<ul id="filters"></ul>
+		</div>
 	</div>
 	</body>
 </html>

@@ -3,13 +3,12 @@ body {
   margin: 0;
   font-size: 20px;
 }
-body ul li{
-	padding-left: 0;
+body ul li {
+  padding-left: 0;
 }
-.wgl-theme-header.header_overlap{
-position: relative;
-};
-
+.wgl-theme-header.header_overlap {
+  position: relative;
+}
 
 .header {
   clear: both;
@@ -23,6 +22,9 @@ position: relative;
 }
 .header .log-info div {
   display: inline;
+}
+.navbar a {
+  margin-right: 15px;
 }
 .logout {
   color: paleturquoise;
