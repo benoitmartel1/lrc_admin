@@ -40,9 +40,7 @@ function getParams($tableName, $db)
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="search/css/manager.css">
 		<script src="https://kit.fontawesome.com/51b21781c6.js" crossorigin="anonymous"></script>
-		<script src="js/routines.js"></script>
-
-
+		<script src="manager/js/routines.js"></script>
 	<script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -88,7 +86,7 @@ function getParams($tableName, $db)
 	<body>
 	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/admin/header.php'); ?>
 
-	<div class="tab search">
+	<div class="wrapper-center">
 		<h3>Programmes</h3>
 		<ul id="programs"><li><span class="fas fa-eye"></span></li></ul>
 		<h3>Colonnes</h3>

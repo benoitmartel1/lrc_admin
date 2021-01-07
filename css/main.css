@@ -15,11 +15,14 @@ li {
   color: white;
 }
 .wrapper-center {
-  width: 1200px;
+  max-width: 1024px;
   margin: auto;
 }
+.header .wrapper-center {
+  display: flex;
+}
 .header .log-info {
-  float: right;
+  margin-left: auto;
 }
 .header .log-info div {
   display: inline;
