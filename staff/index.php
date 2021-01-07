@@ -1,10 +1,10 @@
-<?php 
+<?php
 //Log Check
-include('log_check.php');
-//db connect  
-include('db_connect.php');
+include('../log_check.php');
+//db connect
+include('../db_connect.php');
 //get staff members
-include('php/staff.php');
+include('../php/staff.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,22 +14,20 @@ include('php/staff.php');
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,800&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/staff.css">
-
-<script
+	<script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<script>
-var staff = <?php echo json_encode($staff); ?>;
-</script>
+	<script>
+	var staff = <?php echo json_encode($staff); ?>;
+	</script>
 	<script src="js/staff.js"></script>
 </head>
 <body>
-<?php include_once('header.php'); ?>
+<?php include_once('../header.php'); ?>
 <div class="content">
 
 
