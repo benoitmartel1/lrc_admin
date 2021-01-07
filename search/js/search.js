@@ -34,7 +34,7 @@ var columnsToHide = searchParams.columns.filter(function (a) {
     return a.visiblePrint == true;
   }
 });
-
+console.log(columnsToHide);
 var sortCategoriesByName;
 
 $(document).ready(function () {
