@@ -1,3 +1,30 @@
+<?php
+
+//Get all existing programs in Amilia
+include('php/programs.php');
+//Local db connect
+include('../db_connect.php');
+
+//Params object that holds all configurable items from db to be passed to js.
+$params=[];
+
+$paramsTables=['programs','columns','filters'];
+
+foreach ($paramsTables as $paramsTable) {
+    $params[$paramsTable]=getParams($paramsTable, $db);
+};
+
+function getParams($tableName, $db)
+{
+    $temp=[];
+    $query = "SELECT * FROM `search_params_{$tableName}`";
+    $result = $db -> query($query);
+    while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
+        $temp[]=$row;
+    }
+    return $temp;
+};
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,16 +46,19 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"></script>
+	<script>
+		//Enable version to print format
+		var printable=true;
+		console.log("Printable : "+printable);
+		var programs_from_api = <?php echo json_encode($programs); ?>;
+		var params=<?php echo json_encode($params); ?>;
+	</script>
 	<script src="js-es5/list.min.js"></script>
 	<script src="js-es5/text_fr.js"></script>
 	<script src="js-es5/routines.js"></script>
 	<script src="js-es5/search.js"></script>
 	<script src="js-es5/trackers.js"></script>
-	<script>
-		//Enable version to print format
-		var printable=true;
-		console.log("Printable : "+printable);
-	</script>
+
 </head>
 
 <body>
