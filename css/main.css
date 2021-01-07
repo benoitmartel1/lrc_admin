@@ -14,9 +14,9 @@ li {
 ::before {
   box-sizing: border-box;
 }
-fa,
-far,
-fas {
+.fa,
+.far,
+.fas {
   margin-right: 10px;
 }
 li {
