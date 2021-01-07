@@ -93,14 +93,17 @@ function getParams($tableName, $db)
 	<?php include_once($_SERVER['DOCUMENT_ROOT'].'/admin/header.php'); ?>
 
 	<div class="wrapper-center">
-		<a class="btn btn-primary" href="https://renaudcoursol.com/activites" role="button">Version site web</a>
-		<a class="btn btn-primary" href="https://renaudcoursol.com/admin/search/printable.php" role="button">Version imprimable</a>
+		<div class="right">		
+			<a class="btn btn-primary" href="https://renaudcoursol.com/activites" role="button">Version site web</a>
+			<a class="btn btn-primary" href="https://renaudcoursol.com/admin/search/printable.php" role="button">Version imprimable</a>
+	</div>
+
 		<div class="tab">
-			<h3>Programmes</h3>
+			<h5>Programmes</h5>
 			<ul id="programs"><li><span class="fas fa-eye"></span><span class="fas fa-print"></span></li></ul>
-			<h3>Colonnes</h3>
+			<h5>Colonnes</h5>
 			<ul id="columns"></ul>
-			<h3>Filtres</h3>
+			<h5>Filtres</h5>
 			<ul id="filters"></ul>
 		</div>
 	</div>

@@ -17,7 +17,9 @@ li {
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
 }
-
+h5 {
+  font-weight: bold;
+}
 .header {
   padding: 10px;
   background-color: #2299cb;
@@ -31,6 +33,9 @@ li {
   padding-top: 1px;
   min-height: 1600px;
 }
+.right {
+  float: right;
+}
 .header .wrapper-center {
   display: flex;
   background-color: unset;
@@ -42,7 +47,7 @@ li {
 .header .log-info div {
   display: inline;
 }
-.navbar a {
+.nav a {
   margin-right: 10px;
 }
 .logout {

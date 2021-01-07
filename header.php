@@ -1,6 +1,6 @@
 <div class="header">
 	<div class="wrapper-center">
-		<div class="navbar">
+		<div class="nav">
 			<a class="/" href="#"><i class="fa fa-fw fa-home"></i></a> 
 			<a href="search/manager.php"><i class="far fa-list-alt"></i> Grille de cours</a> 
 			<a href="stats/"><i class="fas fa-chart-bar"></i> Statistiques</a> 
