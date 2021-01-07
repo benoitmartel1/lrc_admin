@@ -24,8 +24,8 @@ $age = $db->query($query);
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="wrapper-center">
 	<?php include_once('../header.php'); ?>
+	<div class="wrapper-center">
 	<?php
     echo "<table border='1'>
 	<tr>

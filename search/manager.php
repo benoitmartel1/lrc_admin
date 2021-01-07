@@ -65,7 +65,7 @@ function getParams($tableName, $db)
 
                 console.log(value);
 				//Update db function(){
-				$.post('php/updateParams.php', {table:table, id:id, value:!value}).done(function(data){
+				$.post('search/php/updateParams.php', {table:table, id:id, value:!value}).done(function(data){
 					//Si ok, Update CSS od checkbox
 					$(target).removeClass().addClass(setCheckBox(!value));
 				});

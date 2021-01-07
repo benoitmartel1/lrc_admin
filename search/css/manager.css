@@ -17,7 +17,3 @@ li .checkBox {
 li .checkBox.checked {
   color: deepskyblue;
 }
-.tab {
-  background-color: white;
-  padding: 60px;
-}
