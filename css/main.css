@@ -9,6 +9,11 @@ li {
   text-decoration: none !important;
   color: inherit;
 }
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 li {
   cursor: pointer;
   width: fit-content;

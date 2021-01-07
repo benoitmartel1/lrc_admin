@@ -94,13 +94,13 @@ function getParams($tableName, $db)
 
 	<div class="wrapper-center">
 		<div class="right">		
-			<a class="btn btn-primary" href="https://renaudcoursol.com/activites" role="button">Version site web</a>
-			<a class="btn btn-primary" href="https://renaudcoursol.com/admin/search/printable.php" role="button">Version imprimable</a>
+			<a class="btn btn-success" href="https://renaudcoursol.com/activites" target="_blank" role="button"><i class="far fa-eye"></i>Site web</a>
+			<a class="btn btn-success" href="https://renaudcoursol.com/admin/search/printable.php" target="_blank" role="button"><i class="fas fa-print"></i>Imprimable</a>
 	</div>
 
 		<div class="tab">
 			<h5>Programmes</h5>
-			<ul id="programs"><li><span class="fas fa-eye"></span><span class="fas fa-print"></span></li></ul>
+			<ul id="programs"><li><span data-toggle="tooltip" title="Visibilité sur le site web" class="fas fa-eye"></span><span data-toggle="tooltip" title="Visibilité sur la version imprimable" class="fas fa-print"></span></li></ul>
 			<h5>Colonnes</h5>
 			<ul id="columns"></ul>
 			<h5>Filtres</h5>
