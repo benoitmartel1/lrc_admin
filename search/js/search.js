@@ -7,7 +7,7 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 //Check if printable mode has been set, if not, set it to false for display mode
 var printable = typeof printable !== "undefined" ? printable : false;
 
-var newSizing = searchParams.columns
+var gridCssTemplateColumns = searchParams.columns
   .filter(function (a) {
     if (printable == true) {
       return a.visiblePrint == false;
@@ -20,10 +20,25 @@ var newSizing = searchParams.columns
   })
   .join("fr ");
 
-$(".category-header .grid, .activity.grid").css(
-  "grid-template-columns",
-  newSizing
-);
+var gridCssTemplateAreas = searchParams.columns
+  .filter(function (a) {
+    if (printable == true) {
+      return a.visiblePrint == false;
+    } else {
+      return a.visible == false;
+    }
+  })
+  .map(function (c) {
+    return c.type;
+  })
+  .join(" ");
+
+// $(".category-header .grid, .activity.grid").css(
+//   "grid-template-columns",
+//   newSizing
+// );
+console.log("New columns is : " + gridCssTemplateColumns);
+console.log("New areas is : " + gridCssTemplateAreas);
 
 var visiblePrograms = searchParams.programs
   .filter(function (a) {
