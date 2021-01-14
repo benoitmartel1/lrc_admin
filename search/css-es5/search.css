@@ -29,6 +29,12 @@ body {
   font-family: "Nunito", sans-serif;
   color: #333;
 }
+.row {
+  -webkit-box-align: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 #app ul li {
   padding-left: 0;
   position: unset;

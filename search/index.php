@@ -18,21 +18,16 @@
 			<option id="text-category" hidden selected disabled></option>
 		</select>
 </div>
-<div class="row">
-    <div class="col-8">
-<div class="input-group search-field">
-<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
-    </div>
-     	</div>
-        <div class="col-4">   
-	<div class="btn btn-danger btn-lg"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div><!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
-		<i class="fa fa-times"></i>
-	</button> -->
-</div>	
-</div>
-
-
-
+	<div class="row">
+		<div class="col-9">
+			<div class="input-group search-field">
+				<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
+				</div>
+			</div>
+		<div class="col-3">   
+			<a href="https://renaudcoursol.com/wp-content/uploads/2021/01/DepliantLRCH2021-2.pdf" target=" _blank"><div class="btn btn-danger btn-lg"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div></a>
+		</div>	
+	</div>
 </div>
 <div >
 
