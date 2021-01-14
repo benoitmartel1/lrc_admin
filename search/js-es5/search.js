@@ -16,7 +16,7 @@ var columnsToHide = searchParams.columns.filter(function (c) {
   }
 }); //Keep only visible columns
 
-searchParams.columns.filter(function (c) {
+searchParams.columns = searchParams.columns.filter(function (c) {
   return printable == true ? c.visiblePrint == true : c.visible == true;
 }); //Order columns by their rank
 
