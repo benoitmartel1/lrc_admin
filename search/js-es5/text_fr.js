@@ -4,19 +4,19 @@ var text = {
   wait: "Recherche des activités en cours ",
   info: "Cliquer pour en savoir plus",
   infos: {
-    description: 'Description',
-    responsible: 'Responsable',
-    prerequisite: 'Pré-requis',
-    duration: 'Durée',
-    note: 'Notes'
+    description: "Description",
+    responsible: "Responsable",
+    prerequisite: "Pré-requis",
+    duration: "Durée",
+    note: "Notes"
   },
-  edit: 'Éditer',
+  edit: "Éditer",
   signup: "S'inscrire",
   free: "Gratuit",
   full: "Complet",
   new: "Nouveau",
   age: "Âge",
-  yearsOld: 'ans',
+  yearsOld: "ans",
   day: "Jour",
   noResult: "Désolé, cette activité n'est pas encore offerte.",
   filterBy: "Filtrer",
@@ -38,7 +38,7 @@ var text = {
     price: "Coût",
     duration: "Cours",
     location: "Lieu",
-    starting: "Début",
+    start: "Début",
     staff: "Responsable",
     session: "Session"
   }
