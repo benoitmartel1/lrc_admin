@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		<div class="col-3">   
-			<a href="https://renaudcoursol.com/wp-content/uploads/2021/01/DepliantLRCH2021-2.pdf" target=" _blank"><div class="btn btn-danger btn-lg"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div></a>
+			<a href="https://renaudcoursol.com/wp-content/uploads/2021/01/DepliantLRCH2021-2.pdf" target=" _blank"><div class="btn btn-danger btn-md"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div></a>
 		</div>	
 	</div>
 </div>

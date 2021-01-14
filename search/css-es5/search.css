@@ -30,6 +30,7 @@ body {
   color: #333;
 }
 .row {
+  margin-top: 10px;
   -webkit-box-align: center;
      -moz-box-align: center;
       -ms-flex-align: center;
@@ -172,9 +173,9 @@ div.name{
 /* .list .activity:not(.active):hover {
 	background-color: #eee;
 } */
-.btn {
+/* .btn {
   padding: 2px 6px;
-}
+} */
 
 .category-header {
   background-color: gray;
@@ -347,7 +348,6 @@ div.name{
   background-color: white;
 }
 .search-field {
-  margin-top: 10px;
   background: rgba(167, 167, 167, 0.1);
   border: 1px #bbb solid;
   border-radius: 15px;
