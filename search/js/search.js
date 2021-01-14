@@ -7,27 +7,29 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 //Check if printable mode has been set, if not, set it to false for display mode
 var printable = typeof printable !== "undefined" ? printable : false;
 
-var gridCssTemplateColumns = searchParams.columns
-  .filter(function (a) {
-    if (printable == true) {
-      return a.visiblePrint == true;
-    } else {
-      return a.visible == true;
-    }
-  })
-  .map(function (c) {
-    return c.width;
-  })
-  .join("fr ");
+var columnsToHide = searchParams.columns.filter(function (c) {
+  if (printable == true) {
+    return c.visiblePrint == false;
+  } else {
+    return c.visible == false;
+  }
+});
 
-var gridCssTemplateAreas = searchParams.columns
-  .filter(function (a) {
-    if (printable == true) {
-      return a.visiblePrint == true;
-    } else {
-      return a.visible == true;
-    }
+//Keep only visible columns
+searchParams.columns.filter(function (c) {
+  return printable == true ? c.visiblePrint == true : c.visible == true;
+});
+//Order columns by their rank
+searchParams.columns.sort(function (a, b) {
+  return a.rank - b.rank;
+});
+
+var gridCssTemplateColumns = searchParams.columns
+  .map(function (c) {
+    return c.width + "fr ";
   })
+  .join("");
+var gridCssTemplateAreas = searchParams.columns
   .map(function (c) {
     return c.type;
   })
@@ -37,6 +39,7 @@ var gridCssTemplateAreas = searchParams.columns
 //   "grid-template-columns",
 //   newSizing
 // );
+
 console.log("New columns is : " + gridCssTemplateColumns);
 console.log("New areas is : " + gridCssTemplateAreas);
 
@@ -56,13 +59,6 @@ var filtersToHide = searchParams.filters.filter(function (a) {
     return a.visiblePrint == false;
   } else {
     return a.visible == false;
-  }
-});
-var columnsToHide = searchParams.columns.filter(function (c) {
-  if (printable == true) {
-    return c.visiblePrint == false;
-  } else {
-    return c.visible == false;
   }
 });
 
@@ -87,7 +83,7 @@ $(document).ready(function () {
       filtersToHide.forEach((filter) => {
         $("[data='" + filter.type + "']").hide();
       });
-      //Hide unwanted columns as defined in searchParams.filters
+      //Show wanted columns as defined in searchParams.filters
       columnsToHide.forEach((filter) => {
         $("." + filter.type).hide();
       });
