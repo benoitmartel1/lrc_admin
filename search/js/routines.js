@@ -270,9 +270,9 @@ function createCategoryHeader(cat) {
     )
     .concat(
       text.columnHeaders.staff,
-      '</div>\n\t\t\t<div class="column-header starting">'
+      '</div>\n\t\t\t<div class="column-header start">'
     )
-    .concat(text.columnHeaders.starting, "</div>\t\n</div>");
+    .concat(text.columnHeaders.start, "</div>\t\n</div>");
   var header = $("<li>", {
     class: convertToClassSafe(cat.name) + " category-header",
   })
