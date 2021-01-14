@@ -10,9 +10,9 @@ var printable = typeof printable !== "undefined" ? printable : false;
 var gridCssTemplateColumns = searchParams.columns
   .filter(function (a) {
     if (printable == true) {
-      return a.visiblePrint == false;
+      return a.visiblePrint == true;
     } else {
-      return a.visible == false;
+      return a.visible == true;
     }
   })
   .map(function (c) {
@@ -23,9 +23,9 @@ var gridCssTemplateColumns = searchParams.columns
 var gridCssTemplateAreas = searchParams.columns
   .filter(function (a) {
     if (printable == true) {
-      return a.visiblePrint == false;
+      return a.visiblePrint == true;
     } else {
-      return a.visible == false;
+      return a.visible == true;
     }
   })
   .map(function (c) {

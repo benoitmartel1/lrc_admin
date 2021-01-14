@@ -10,18 +10,18 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 var printable = typeof printable !== "undefined" ? printable : false;
 var gridCssTemplateColumns = searchParams.columns.filter(function (a) {
   if (printable == true) {
-    return a.visiblePrint == false;
+    return a.visiblePrint == true;
   } else {
-    return a.visible == false;
+    return a.visible == true;
   }
 }).map(function (c) {
   return c.width;
 }).join("fr ");
 var gridCssTemplateAreas = searchParams.columns.filter(function (a) {
   if (printable == true) {
-    return a.visiblePrint == false;
+    return a.visiblePrint == true;
   } else {
-    return a.visible == false;
+    return a.visible == true;
   }
 }).map(function (c) {
   return c.type;
