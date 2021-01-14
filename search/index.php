@@ -18,14 +18,20 @@
 			<option id="text-category" hidden selected disabled></option>
 		</select>
 </div>
+<div class="row">
+    <div class="col-8">
 <div class="input-group search-field">
-<div class="applied-filters"></div>
-	<input type="text" class="search" placeholder="Trouver une activité">
-	<!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
+<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
+    </div>
+     	</div>
+        <div class="col-4">   
+	<div class="btn btn-danger btn-lg"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div><!-- <button class="erase bg-transparent" style="margin-left: -40px; z-index: 100;">
 		<i class="fa fa-times"></i>
 	</button> -->
-	
+</div>	
 </div>
+
+
 
 </div>
 <div >
