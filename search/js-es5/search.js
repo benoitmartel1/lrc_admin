@@ -8,13 +8,17 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 //Check if printable mode has been set, if not, set it to false for display mode
 
 var printable = typeof printable !== "undefined" ? printable : false;
+var gridCssTemplateColumns = "";
+var gridCssTemplateAreas = ['"', ""];
+var sortCategoriesByName;
 var columnsToHide = searchParams.columns.filter(function (c) {
   if (printable == true) {
     return c.visiblePrint == false;
   } else {
     return c.visible == false;
   }
-}); //Keep only visible columns
+}); //======Prepare Columns to display in activities grid
+//Keep only visible columns
 
 searchParams.columns = searchParams.columns.filter(function (c) {
   return printable == true ? c.visiblePrint == true : c.visible == true;
@@ -22,19 +26,14 @@ searchParams.columns = searchParams.columns.filter(function (c) {
 
 searchParams.columns.sort(function (a, b) {
   return a.rank - b.rank;
-});
-var gridCssTemplateColumns = searchParams.columns.map(function (c) {
-  return c.width + "fr ";
-}).join("");
-var gridCssTemplateAreas = searchParams.columns.map(function (c) {
-  return c.type;
-}).join(" "); // $(".category-header .grid, .activity.grid").css(
-//   "grid-template-columns",
-//   newSizing
-// );
+}); //Create strings for correct display of CSS grid according to columns in params
 
-console.log("New columns is : " + gridCssTemplateColumns);
-console.log("New areas is : " + gridCssTemplateAreas);
+searchParams.columns.forEach(function (c, index) {
+  gridCssTemplateColumns += c.width + "fr ";
+  gridCssTemplateAreas[0] += c.type + " ";
+  gridCssTemplateAreas[1] += index == 0 ? "spacer " : "details ";
+}); //==========================================
+
 var visiblePrograms = searchParams.programs.filter(function (a) {
   if (printable == true) {
     return a.visiblePrint == true;
@@ -51,7 +50,6 @@ var filtersToHide = searchParams.filters.filter(function (a) {
     return a.visible == false;
   }
 });
-var sortCategoriesByName;
 $(document).ready(function () {
   $("#scroll_up").click(function (e) {
     e.preventDefault();
@@ -66,11 +64,13 @@ $(document).ready(function () {
     $(".loading").slideUp();
     $(".filters").fadeIn(); // console.log(text);
 
-    fillGrid(JSON.parse(data), text); //Hide unwanted filters as defined in searchParams.filters
+    fillGrid(JSON.parse(data), text); //Update Grid CSS to show only selected columns
+
+    $(".category-header .grid, .activity.grid").css("grid-template-columns", gridCssTemplateColumns).css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"'); //Hide unwanted filters as defined in searchParams.filters
 
     filtersToHide.forEach(function (filter) {
       $("[data='" + filter.type + "']").hide();
-    }); //Show wanted columns as defined in searchParams.filters
+    }); //Hide unwanted columns as defined in searchParams.filters
 
     columnsToHide.forEach(function (filter) {
       $("." + filter.type).hide();

@@ -27,10 +27,10 @@
 #app .header {
   display: none;
 }
-.signup,
+/* .signup,
 .info {
   display: none !important;
-}
+} */
 div,
 li {
   page-break-inside: avoid;

@@ -1,1 +1,1 @@
-{"version":3,"sources":["manager.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,kBAAkB;AACpB","file":"manager.css","sourcesContent":["li .checkBox {\n  margin-right: 10px;\n  color: lightblue;\n}\nli .checkBox.checked {\n  color: deepskyblue;\n}\n"]}
+{"version":3,"sources":["manager.css"],"names":[],"mappings":"AAAA;EACE,gBAAgB;AAClB;AACA;EACE,kBAAkB;AACpB","file":"manager.css","sourcesContent":["li .checkBox {\n  color: lightblue;\n}\nli .checkBox.checked {\n  color: deepskyblue;\n}\n"]}

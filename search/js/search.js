@@ -1,11 +1,16 @@
 //Display parameters received from db search_params configured through manager.php
 var searchParams = params;
-
 var editMode = false; //If true, signup button becomes a link to Amilia activity edit
-var isOpenForRegistration = true; //If false, signup button alerts message instead of redirect
 
+var isOpenForRegistration = true; //If false, signup button alerts message instead of redirect
 //Check if printable mode has been set, if not, set it to false for display mode
+
 var printable = typeof printable !== "undefined" ? printable : false;
+
+let gridCssTemplateColumns = "";
+let gridCssTemplateAreas = ['"', ""];
+
+var sortCategoriesByName;
 
 var columnsToHide = searchParams.columns.filter(function (c) {
   if (printable == true) {
@@ -15,33 +20,26 @@ var columnsToHide = searchParams.columns.filter(function (c) {
   }
 });
 
+//======Prepare Columns to display in activities grid
+
 //Keep only visible columns
 searchParams.columns = searchParams.columns.filter(function (c) {
   return printable == true ? c.visiblePrint == true : c.visible == true;
 });
+
 //Order columns by their rank
 searchParams.columns.sort(function (a, b) {
   return a.rank - b.rank;
 });
 
-var gridCssTemplateColumns = searchParams.columns
-  .map(function (c) {
-    return c.width + "fr ";
-  })
-  .join("");
-var gridCssTemplateAreas = searchParams.columns
-  .map(function (c) {
-    return c.type;
-  })
-  .join(" ");
+//Create strings for correct display of CSS grid according to columns in params
+searchParams.columns.forEach((c, index) => {
+  gridCssTemplateColumns += c.width + "fr ";
+  gridCssTemplateAreas[0] += c.type + " ";
+  gridCssTemplateAreas[1] += index == 0 ? "spacer " : "details ";
+});
 
-// $(".category-header .grid, .activity.grid").css(
-//   "grid-template-columns",
-//   newSizing
-// );
-
-console.log("New columns is : " + gridCssTemplateColumns);
-console.log("New areas is : " + gridCssTemplateAreas);
+//==========================================
 
 var visiblePrograms = searchParams.programs
   .filter(function (a) {
@@ -54,6 +52,7 @@ var visiblePrograms = searchParams.programs
   .map(function (a) {
     return a.id;
   });
+
 var filtersToHide = searchParams.filters.filter(function (a) {
   if (printable == true) {
     return a.visiblePrint == false;
@@ -61,8 +60,6 @@ var filtersToHide = searchParams.filters.filter(function (a) {
     return a.visible == false;
   }
 });
-
-var sortCategoriesByName;
 
 $(document).ready(function () {
   $("#scroll_up").click((e) => {
@@ -79,11 +76,17 @@ $(document).ready(function () {
       $(".filters").fadeIn();
       // console.log(text);
       fillGrid(JSON.parse(data), text);
+
+      //Update Grid CSS to show only selected columns
+      $(".category-header .grid, .activity.grid")
+        .css("grid-template-columns", gridCssTemplateColumns)
+        .css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"');
+
       //Hide unwanted filters as defined in searchParams.filters
       filtersToHide.forEach((filter) => {
         $("[data='" + filter.type + "']").hide();
       });
-      //Show wanted columns as defined in searchParams.filters
+      //Hide unwanted columns as defined in searchParams.filters
       columnsToHide.forEach((filter) => {
         $("." + filter.type).hide();
       });
