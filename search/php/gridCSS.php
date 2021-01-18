@@ -8,8 +8,8 @@ provided you have a valid MySQL connection or whatever you are using.
 ***/
 include('params.php');
 
-foreach ($params['columns'] as $columns => $visible) {
-    # code...
+foreach ($params['columns'] as $column => $visible) {
+    echo $column['name']." ".$visible;
 }
 /** set the paragraph color ***/
 $para_color = '#0000ff';
