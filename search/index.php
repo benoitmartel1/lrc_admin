@@ -24,9 +24,9 @@
 				<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
 				</div>
 			</div>
-		<div class="col-3">   
+		<!-- <div class="col-3">   
 			<a href="https://f3473a0389274419de2e-da1e801b21d4d53ba6c41ecf2e2ba403.ssl.cf2.rackcdn.com/DepliantLRCH2021.pdf" target=" _blank"><div class="btn btn-danger btn-md"><i class="fa fa-download" aria-hidden="true"></i>Télécharger le dépliant</div></a>
-		</div>	
+		</div>	 -->
 	</div>
 </div>
 <div >
