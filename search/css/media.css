@@ -48,7 +48,7 @@
   }
   .activity.grid {
     grid-template-columns: 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: 30px 30px 30px auto;
+    grid-template-rows: minmax(30px, auto) 30px 30px auto;
     grid-template-areas:
       "name name name info"
       "age schedule schedule schedule"
