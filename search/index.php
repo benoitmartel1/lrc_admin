@@ -3,22 +3,25 @@
 <div id="app">
 
 <div class="header">
-<div class="filters">
-	<span id="text-filterBy"></span>
-		<select id="age-drop" class="btn btn-outline-primary" data="age">
-			<option id="text-age" hidden selected disabled></option>
-		</select>
-		<select id="day-drop" class="btn btn-outline-primary" data="day">
-			<option id="text-day" hidden selected disabled></option>
-		</select>
-		<select id="location-drop" class="btn btn-outline-primary" data="location">
-			<option id="text-location" hidden selected disabled></option>
-		</select>
-		<select id="category-drop" class="btn btn-outline-primary" data="category">
-			<option id="text-category" hidden selected disabled></option>
-		</select>
-</div>
+
 	<div class="row">
+		<div class="col-3">
+			<div class="filters">
+				<span id="text-filterBy"></span>
+					<select id="age-drop" class="btn btn-outline-primary" data="age">
+						<option id="text-age" hidden selected disabled></option>
+					</select>
+					<select id="day-drop" class="btn btn-outline-primary" data="day">
+						<option id="text-day" hidden selected disabled></option>
+					</select>
+					<select id="location-drop" class="btn btn-outline-primary" data="location">
+						<option id="text-location" hidden selected disabled></option>
+					</select>
+					<select id="category-drop" class="btn btn-outline-primary" data="category">
+						<option id="text-category" hidden selected disabled></option>
+					</select>
+			</div>
+		</div>
 		<div class="col-9">
 			<div class="input-group search-field">
 				<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
