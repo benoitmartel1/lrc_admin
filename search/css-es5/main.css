@@ -15,7 +15,7 @@ body ul li {
   overflow: hidden;
   padding: 10px 0 10px 0;
   background-color: #2299cb;
-  color: white;
+  /* color: white; */
 }
 .header .log-info {
   float: right;

@@ -5,7 +5,7 @@
 <div class="header">
 
 	<div class="row">
-		<div class="col-3">
+		<div class="col-sm-auto">
 			<div class="filters">
 				<span id="text-filterBy"></span>
 					<select id="age-drop" class="btn btn-outline-primary" data="age">
@@ -22,7 +22,7 @@
 					</select>
 			</div>
 		</div>
-		<div class="col-9">
+		<div class="col">
 			<div class="input-group search-field">
 				<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
 				</div>
