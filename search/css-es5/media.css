@@ -26,10 +26,6 @@
       "name info age schedule price cours session signup"
       "spacer details details details details details details details";
   } */
-  .activity .div:empty {
-    padding: 0;
-    margin: 0;
-  }
 }
 
 /* Landscape phones and down */
@@ -53,7 +49,7 @@
   }
   .activity.grid {
     grid-template-columns: 1fr 1fr 1fr 0.5fr;
-    grid-auto-rows: 30px 30px auto;
+    grid-template-rows: 30px 30px 30px auto;
     grid-template-areas:
       "name name name info"
       "age schedule schedule schedule"
@@ -62,7 +58,7 @@
   }
   .details .grid {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: auto 80px;
+    grid-template-rows: auto 80px;
     grid-template-areas:
       "summary infos infos"
       "thumb thumb thumb";
