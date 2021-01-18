@@ -24,7 +24,8 @@
 		</div>
 		<div class="col">
 			<div class="input-group search-field">
-				<input type="text" class="search" placeholder="Trouver une activité"><div class="applied-filters"></div>
+				<div class="applied-filters"></div>
+				<input type="text" class="search" placeholder="Trouver une activité">
 				</div>
 			</div>
 		<!-- <div class="col-3">   

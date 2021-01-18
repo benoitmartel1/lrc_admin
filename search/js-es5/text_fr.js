@@ -19,7 +19,7 @@ var text = {
   yearsOld: "ans",
   day: "Jour",
   noResult: "Désolé, cette activité n'est pas encore offerte.",
-  filterBy: "Filtrer",
+  filterBy: "Filtrer par ",
   location: "Lieu",
   category: "Catégorie",
   sessions: {
