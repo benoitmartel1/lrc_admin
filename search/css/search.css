@@ -92,14 +92,14 @@ div.name{
   display: grid;
 }
 
-.activity.grid,
+/* .activity.grid,
 .category-header .grid {
   grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
   grid-template-rows: minmax(40px, auto);
   grid-template-areas:
     "name info age schedule session price cours location staff start signup"
     "spacer details details details details details details details details details details";
-}
+} */
 .category-header .grid {
   grid-template-rows: auto;
 }
@@ -484,14 +484,14 @@ input {
 /* Modifications temporaires pour cours virtuels */
 /* ------------------------------ */
 
-.activity.grid,
+/* .activity.grid,
 .category-header .grid {
   grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
   grid-template-rows: minmax(40px, auto);
   grid-template-areas:
     "name info age schedule session price cours start signup"
     "spacer details details details details details details details details";
-}
+} */
 
 .cours-virtuels.activity .name,
 .cours-virtuels .spacer {

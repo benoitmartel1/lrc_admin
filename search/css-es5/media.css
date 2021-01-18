@@ -19,12 +19,16 @@
 }
 
 @media (min-width: 480px) and (max-width: 1260px) {
-  .activity.grid,
+  /* .activity.grid,
   .category-header .grid {
     grid-template-columns: 2fr 0.5fr 1fr 2fr 0.75fr 0.75fr 0.75fr 1fr;
     grid-template-areas:
       "name info age schedule price cours session signup"
       "spacer details details details details details details details";
+  } */
+  .activity .div:empty {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -47,7 +51,7 @@
   .activity .spacer {
     display: none !important;
   }
-  .activity.grid {
+  /* .activity.grid {
     grid-template-columns: 1fr 1fr 1fr 0.5fr;
     grid-auto-rows: 30px 30px auto;
     grid-template-areas:
@@ -62,7 +66,7 @@
     grid-template-areas:
       "summary infos infos"
       "thumb thumb thumb";
-  }
+  } */
   .thumb {
     margin: 0;
     height: 80px;

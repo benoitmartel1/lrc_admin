@@ -7,8 +7,8 @@ var isOpenForRegistration = true; //If false, signup button alerts message inste
 
 var printable = typeof printable !== "undefined" ? printable : false;
 
-let gridCssTemplateColumns = "";
-let gridCssTemplateAreas = ['"', ""];
+// let gridCssTemplateColumns = "";
+// let gridCssTemplateAreas = ['"', ""];
 
 var sortCategoriesByName;
 
@@ -27,17 +27,10 @@ searchParams.columns = searchParams.columns.filter(function (c) {
   return printable == true ? c.visiblePrint == true : c.visible == true;
 });
 
-//Order columns by their rank
-searchParams.columns.sort(function (a, b) {
-  return a.rank - b.rank;
-});
-
-//Create strings for correct display of CSS grid according to columns in params
-searchParams.columns.forEach((c, index) => {
-  gridCssTemplateColumns += c.width + "fr ";
-  gridCssTemplateAreas[0] += c.type + " ";
-  gridCssTemplateAreas[1] += index == 0 ? "spacer " : "details ";
-});
+// //Order columns by their rank
+// searchParams.columns.sort(function (a, b) {
+//   return a.rank - b.rank;
+// });
 
 //==========================================
 
@@ -77,14 +70,6 @@ $(document).ready(function () {
       // console.log(text);
       fillGrid(JSON.parse(data), text);
 
-      //Update Grid CSS to show only selected columns
-      $(".category-header .grid, .activity.grid")
-        .css("grid-template-columns", gridCssTemplateColumns)
-        .css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"');
-
-      $(window).resize(function () {
-        console.log($(window).width());
-      });
       //Hide unwanted filters as defined in searchParams.filters
       filtersToHide.forEach((filter) => {
         $("[data='" + filter.type + "']").hide();
