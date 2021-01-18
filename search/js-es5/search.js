@@ -66,7 +66,10 @@ $(document).ready(function () {
 
     fillGrid(JSON.parse(data), text); //Update Grid CSS to show only selected columns
 
-    $(".category-header .grid, .activity.grid").css("grid-template-columns", gridCssTemplateColumns).css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"'); //Hide unwanted filters as defined in searchParams.filters
+    $(".category-header .grid, .activity.grid").css("grid-template-columns", gridCssTemplateColumns).css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"');
+    $(window).resize(function () {
+      console.log($(window).width());
+    }); //Hide unwanted filters as defined in searchParams.filters
 
     filtersToHide.forEach(function (filter) {
       $("[data='" + filter.type + "']").hide();

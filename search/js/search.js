@@ -82,6 +82,9 @@ $(document).ready(function () {
         .css("grid-template-columns", gridCssTemplateColumns)
         .css("grid-template-areas", gridCssTemplateAreas.join('"\n"') + '"');
 
+      $(window).resize(function () {
+        console.log($(window).width());
+      });
       //Hide unwanted filters as defined in searchParams.filters
       filtersToHide.forEach((filter) => {
         $("[data='" + filter.type + "']").hide();

@@ -25,6 +25,10 @@
       "name info age schedule price cours session signup"
       "spacer details details details details details details details";
   }
+  .activity .div:empty {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* Landscape phones and down */
