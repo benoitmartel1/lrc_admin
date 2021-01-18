@@ -13,7 +13,7 @@ body ul li {
 .header {
   clear: both;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px 0 10px 0;
   background-color: #2299cb;
   color: white;
 }

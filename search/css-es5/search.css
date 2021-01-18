@@ -81,7 +81,7 @@ div.name{
 }
 #app .header,
 .header-padding {
-  padding: 20px 0;
+  /* padding: 20px 0; */
   /* padding: 20px 150px 15px 150px; */
 }
 .sticky {
@@ -544,6 +544,9 @@ option {
 }
 input.search {
   height: 30px !important;
+}
+input {
+  font-family: inherit !important;
 }
 .signup button {
   font-family: arial;
