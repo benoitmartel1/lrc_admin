@@ -9,7 +9,9 @@ body ul li {
 .wgl-theme-header.header_overlap {
   position: relative;
 }
-
+.tooltip {
+  pointer-events: none;
+}
 .header {
   clear: both;
   overflow: hidden;
