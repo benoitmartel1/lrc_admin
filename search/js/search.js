@@ -190,7 +190,7 @@ function fillGrid(data, text) {
 							<div class="signup">
 							${
                 this.SpotsRemaining == 0
-                  ? "<button class='isFull btn btn-light btn-sm' disabled>" +
+                  ? "<button class='isFull btn btn-light btn-sm' data-toggle='tooltip' title='Liste d'attente'>" +
                     text.full +
                     "</button>"
                   : "<button type='button' class='btn btn-success btn-sm'>" +
@@ -364,6 +364,8 @@ function fillGrid(data, text) {
     e.stopPropagation();
 
     var isFull = $(this).hasClass("isFull");
+    console.log(isFull);
+
     var id = $(this).closest("li").attr("data-id");
     var programId = $(this).closest("li").attr("data-program-id");
 
