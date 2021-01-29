@@ -150,7 +150,7 @@ function fillGrid(data, text) {
   }); //Activate tooltips
 
   $('[data-toggle="tooltip"]').tooltip({
-    placement: "top"
+    placement: "bottom"
   }); //Populate age filter menu
 
   for (var a = 18; a >= 0; a--) {
