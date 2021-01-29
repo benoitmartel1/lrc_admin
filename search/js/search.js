@@ -360,9 +360,10 @@ function fillGrid(data, text) {
   }
 
   //Signup button
-  $(".signup button:not(.isFull)").click(function (e) {
+  $(".signup button").click(function (e) {
     e.stopPropagation();
 
+    var isFull = $(this).hasClass("isFull");
     var id = $(this).closest("li").attr("data-id");
     var programId = $(this).closest("li").attr("data-program-id");
 
@@ -370,13 +371,21 @@ function fillGrid(data, text) {
       //Tracker
       sendTrackerInfo("signup", id);
       if (isOpenForRegistration) {
-        window.open(
-          "https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/" +
-            id +
-            "?quickRegisterId=" +
-            id,
-          "_blank"
-        );
+        if (isFull) {
+          window.open(
+            "https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/waitlist/Index/" +
+              id,
+            "_blank"
+          );
+        } else {
+          window.open(
+            "https://www.amilia.com/store/fr/loisirsrenaudcoursol/shop/activities/" +
+              id +
+              "?quickRegisterId=" +
+              id,
+            "_blank"
+          );
+        }
       } else {
         alert("Inscriptions dès le 15 septembre 2020.");
       }
