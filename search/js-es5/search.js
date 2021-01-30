@@ -73,6 +73,10 @@ $(document).ready(function () {
     //Return the text for the div according to its id text-*name
     var name = $(this).attr("id");
     $(this).text(text[name.split("-")[1]]);
+  }); //Activate tooltips
+
+  $('[data-toggle="tooltip"]').tooltip({
+    placement: "top"
   });
 });
 
@@ -147,10 +151,6 @@ function fillGrid(data, text) {
     if ($.trim($(this).text()) == "" || $.trim($(this).text()) == "&nbsp;" || $.trim($(this).text()) == "<br>") {
       $(this).remove();
     }
-  }); //Activate tooltips
-
-  $('[data-toggle="tooltip"]').tooltip({
-    placement: "bottom"
   }); //Populate age filter menu
 
   for (var a = 18; a >= 0; a--) {

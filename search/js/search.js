@@ -87,6 +87,9 @@ $(document).ready(function () {
     var name = $(this).attr("id");
     $(this).text(text[name.split("-")[1]]);
   });
+
+  //Activate tooltips
+  $('[data-toggle="tooltip"]').tooltip({ placement: "top" });
 });
 
 function fillGrid(data, text) {
@@ -273,8 +276,6 @@ function fillGrid(data, text) {
       $(this).remove();
     }
   });
-  //Activate tooltips
-  $('[data-toggle="tooltip"]').tooltip({ placement: "bottom" });
 
   //Populate age filter menu
   for (var a = 18; a >= 0; a--) {
