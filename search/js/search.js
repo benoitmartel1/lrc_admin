@@ -87,9 +87,6 @@ $(document).ready(function () {
     var name = $(this).attr("id");
     $(this).text(text[name.split("-")[1]]);
   });
-
-  //Activate tooltips
-  $('[data-toggle="tooltip"]').tooltip({ placement: "top" });
 });
 
 function fillGrid(data, text) {
@@ -571,4 +568,6 @@ function fillGrid(data, text) {
     });
     window.scrollTo(0, 0);
   });
+  //Activate tooltips
+  $('[data-toggle="tooltip"]').tooltip({ placement: "bottom", offset: 0 });
 }

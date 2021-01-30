@@ -73,10 +73,6 @@ $(document).ready(function () {
     //Return the text for the div according to its id text-*name
     var name = $(this).attr("id");
     $(this).text(text[name.split("-")[1]]);
-  }); //Activate tooltips
-
-  $('[data-toggle="tooltip"]').tooltip({
-    placement: "top"
   });
 });
 
@@ -385,5 +381,10 @@ function fillGrid(data, text) {
       }
     });
     window.scrollTo(0, 0);
+  }); //Activate tooltips
+
+  $('[data-toggle="tooltip"]').tooltip({
+    placement: "bottom",
+    offset: 0
   });
 }
