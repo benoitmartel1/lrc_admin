@@ -190,7 +190,7 @@ function fillGrid(data, text) {
 							<div class="signup">
 							${
                 this.SpotsRemaining == 0
-                  ? "<button class='isFull btn btn-light btn-sm' data-toggle='tooltip' title='Liste d'attente'>" +
+                  ? "<button class='isFull btn btn-light btn-sm'>" +
                     text.full +
                     "</button>"
                   : "<button type='button' class='btn btn-success btn-sm'>" +
@@ -569,5 +569,5 @@ function fillGrid(data, text) {
     window.scrollTo(0, 0);
   });
   //Activate tooltips
-  $('[data-toggle="tooltip"]').tooltip({ placement: "bottom", offset: 0 });
+  $('[data-toggle="tooltip"]').tooltip({ placement: "top", offset: 0 });
 }

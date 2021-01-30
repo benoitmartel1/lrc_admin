@@ -13,7 +13,7 @@ var text = {
   edit: "Éditer",
   signup: "S'inscrire",
   free: "Gratuit",
-  full: "Complet",
+  full: "Liste d'attente",
   new: "Nouveau",
   age: "Âge",
   yearsOld: "ans",
