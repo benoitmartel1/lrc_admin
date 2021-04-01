@@ -48,10 +48,10 @@ button {
 .hidden {
   display: none;
 } /*
-div.name{
-	display: flex;
-	align-items: center;
-} */
+  div.name{
+	  display: flex;
+	  align-items: center;
+  } */
 .name .label {
   font-size: 0.6em;
   background-color: red;
@@ -94,13 +94,13 @@ div.name{
 }
 
 /* .activity.grid,
-.category-header .grid {
-  grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
-  grid-template-rows: minmax(40px, auto);
-  grid-template-areas:
-    "name info age schedule session price cours location staff start signup"
-    "spacer details details details details details details details details details details";
-} */
+  .category-header .grid {
+	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
+	grid-template-rows: minmax(40px, auto);
+	grid-template-areas:
+	  "name info age schedule session price cours location staff start signup"
+	  "spacer details details details details details details details details details details";
+  } */
 .category-header .grid {
   grid-template-rows: auto;
 }
@@ -147,15 +147,16 @@ div.name{
   font-size: 0.8em;
 }
 /* .list .activity:not(.active):hover {
-	background-color: #eee;
-} */
+	  background-color: #eee;
+  } */
 /* .btn {
-  padding: 2px 6px;
-} */
+	padding: 2px 6px;
+  } */
 
 .category-header {
   background-color: gray;
 }
+
 .activity .name {
   background-color: lightgray;
 }
@@ -199,9 +200,44 @@ div.name{
 .activity > div:last-child {
   border-right: 0;
 }
+
+div.category-header:nth-of-type(1) {
+  background-color: rgba(30, 144, 255, 1);
+}
+div.category-header:nth-of-type(1) ~ .activity .name {
+  background-color: rgba(30, 144, 255, 0.2);
+}
+
+div.category-header:nth-of-type(2) {
+  background-color: rgba(45, 205, 75, 1);
+}
+div.category-header:nth-of-type(2) ~ .activity .name {
+  background-color: rgba(45, 205, 75, 0.2);
+}
+
+div.category-header:nth-of-type(3) {
+  background-color: rgba(238, 12, 12, 1);
+}
+div.category-header:nth-of-type(3) ~ .activity .name {
+  background-color: rgba(238, 12, 12, 0.2);
+}
+
+div.category-header:nth-of-type(4) {
+  background-color: rgba(255, 195, 5, 1);
+}
+div.category-header:nth-of-type(4) ~ .activity .name {
+  background-color: rgba(255, 195, 5, 0.2);
+}
+div.category-header:nth-of-type(5) {
+  background-color: rgba(140, 85, 135, 1);
+}
+div.category-header:nth-of-type(5) ~ .activity .name {
+  background-color: rgba(140, 85, 135, 0.2);
+}
+
 .arts.activity .name,
 .arts .spacer {
-  background-color: rgba(255, 195, 5, 0.2);
+  background-color: rgba(255, 195, 5, 0.2) !important;
 }
 .arts.category-header,
 .filter[data-value="arts"] {
@@ -209,7 +245,7 @@ div.name{
 }
 .arts-martiaux.activity .name,
 .arts-martiaux .spacer {
-  background-color: rgba(30, 144, 255, 0.2);
+  background-color: rgba(30, 144, 255, 0.2) !important;
 }
 .arts-martiaux.category-header,
 .filter[data-value="arts-martiaux"] {
@@ -217,7 +253,7 @@ div.name{
 }
 .langues.activity .name,
 .langues.spacer {
-  background-color: rgba(45, 205, 75, 0.2);
+  background-color: rgba(45, 205, 75, 0.2) !important;
 }
 .langues.category-header,
 .filter[data-value="langues"] {
@@ -225,7 +261,7 @@ div.name{
 }
 .activites-sportives.activity .name,
 .activites-sportives .spacer {
-  background-color: rgba(255, 127, 41, 0.2);
+  background-color: rgba(255, 127, 41, 0.2) !important;
 }
 .activites-sportives.category-header,
 .filter[data-value="activites-sportives"] {
@@ -233,7 +269,7 @@ div.name{
 }
 .danse.activity .name,
 .danse .spacer {
-  background-color: rgba(140, 85, 135, 0.2);
+  background-color: rgba(140, 85, 135, 0.2) !important;
 }
 .danse.category-header,
 .filter[data-value="danse"] {
@@ -241,24 +277,24 @@ div.name{
 }
 .secourisme.activity .name,
 .secourisme .spacer {
-  background-color: rgba(238, 12, 12, 0.2);
+  background-color: rgba(238, 12, 12, 0.2) !important;
 }
 .secourisme.category-header,
 .filter[data-value="secourisme"] {
   background-color: rgb(238, 12, 12) !important;
 }
 /* .arts-martiaux.activity .name, .arts-martiaux .spacer{
-	background-color:rgba(116,33,211,0.2);
-}
-.arts-martiaux.category-header{
-	background-color:rgb(116, 33, 211);
-} */
+	  background-color:rgba(116,33,211,0.2);
+  }
+  .arts-martiaux.category-header{
+	  background-color:rgb(116, 33, 211);
+  } */
 /* .danse.activity .name{
-	background-color:rgba(14,179,221,0.2);
-}
-.danse.category-header{
-	background-color:rgb(14, 179, 221);
-} */
+	  background-color:rgba(14,179,221,0.2);
+  }
+  .danse.category-header{
+	  background-color:rgb(14, 179, 221);
+  } */
 .category-header {
   color: white;
   margin-top: 15px;
@@ -463,8 +499,8 @@ select:not(#category-drop) {
   min-width: 75px;
 }
 /* select:focus{
-	min-width:150px;
-} */
+	  min-width:150px;
+  } */
 option {
   background-color: white !important;
 }
@@ -486,17 +522,17 @@ input {
 /* ------------------------------ */
 
 /* .activity.grid,
-.category-header .grid {
-  grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
-  grid-template-rows: minmax(40px, auto);
-  grid-template-areas:
-    "name info age schedule session price cours start signup"
-    "spacer details details details details details details details details";
-} */
+  .category-header .grid {
+	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
+	grid-template-rows: minmax(40px, auto);
+	grid-template-areas:
+	  "name info age schedule session price cours start signup"
+	  "spacer details details details details details details details details";
+  } */
 
 .cours-virtuels.activity .name,
 .cours-virtuels .spacer {
-  background-color: rgba(30, 144, 255, 0.2);
+  background-color: rgba(30, 144, 255, 0.2) !important;
 }
 .cours-virtuels.category-header,
 .filter[data-value="cours-virtuels"] {

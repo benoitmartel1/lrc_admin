@@ -81,8 +81,7 @@ function fillGrid(data, text) {
   var locations = data.locations; // If true, signup button becomes Edit and redirects to edit page in Amilia
   //If false, signup button redirects to subscribe page in Amilia
 
-  var sessionsToDisplay = [text.sessions.spring, // text.sessions.summer,
-  text.sessions.fall, text.sessions.winter, text.sessions.yearly];
+  var sessionsToDisplay = [text.sessions.spring, text.sessions.summer, text.sessions.fall, text.sessions.winter, text.sessions.yearly];
   var categories = activities.map(function (n) {
     var cat = {};
     cat.name = n.CategoryName;
@@ -219,8 +218,8 @@ function fillGrid(data, text) {
 
   $(".signup button").click(function (e) {
     e.stopPropagation();
-    var isFull = $(this).hasClass("isFull");
-    console.log(isFull);
+    var isFull = $(this).hasClass("isFull"); // console.log(isFull);
+
     var id = $(this).closest("li").attr("data-id");
     var programId = $(this).closest("li").attr("data-program-id");
 

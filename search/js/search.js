@@ -98,7 +98,7 @@ function fillGrid(data, text) {
 
   var sessionsToDisplay = [
     text.sessions.spring,
-    // text.sessions.summer,
+    text.sessions.summer,
     text.sessions.fall,
     text.sessions.winter,
     text.sessions.yearly,
@@ -362,7 +362,7 @@ function fillGrid(data, text) {
     e.stopPropagation();
 
     var isFull = $(this).hasClass("isFull");
-    console.log(isFull);
+    // console.log(isFull);
 
     var id = $(this).closest("li").attr("data-id");
     var programId = $(this).closest("li").attr("data-program-id");

@@ -124,15 +124,18 @@ function formatSession(sDate, eDate) {
       return text.sessions.winter;
       break;
 
-    case s < 6:
+    case s < 5:
       return text.sessions.spring;
       break;
+    case s < 9:
+      return text.sessions.summer;
+      break;
 
-    case s > 6 && e > 6:
+    case s > 8 && e > 8:
       return text.sessions.fall;
       break;
 
-    case s > 6 && e < 6:
+    case s > 8 && e < 6:
       return text.sessions.yearly;
       break;
   }
@@ -273,7 +276,7 @@ function createCategoryHeader(cat) {
       '</div>\n\t\t\t<div class="column-header start">'
     )
     .concat(text.columnHeaders.start, "</div>\t\n</div>");
-  var header = $("<li>", {
+  var header = $("<div>", {
     class: convertToClassSafe(cat.name) + " category-header",
   })
     .attr("data-always-visible", "true")
