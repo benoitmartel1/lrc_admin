@@ -48,10 +48,10 @@ button {
 .hidden {
   display: none;
 } /*
-  div.name{
-	  display: flex;
-	  align-items: center;
-  } */
+	div.name{
+		display: flex;
+		align-items: center;
+	} */
 .name .label {
   font-size: 0.6em;
   background-color: red;
@@ -94,13 +94,13 @@ button {
 }
 
 /* .activity.grid,
-  .category-header .grid {
-	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
-	grid-template-rows: minmax(40px, auto);
-	grid-template-areas:
-	  "name info age schedule session price cours location staff start signup"
-	  "spacer details details details details details details details details details details";
-  } */
+	.category-header .grid {
+	  grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
+	  grid-template-rows: minmax(40px, auto);
+	  grid-template-areas:
+		"name info age schedule session price cours location staff start signup"
+		"spacer details details details details details details details details details details";
+	} */
 .category-header .grid {
   grid-template-rows: auto;
 }
@@ -147,11 +147,11 @@ button {
   font-size: 0.8em;
 }
 /* .list .activity:not(.active):hover {
-	  background-color: #eee;
-  } */
+		background-color: #eee;
+	} */
 /* .btn {
-	padding: 2px 6px;
-  } */
+	  padding: 2px 6px;
+	} */
 
 .category-header {
   background-color: gray;
@@ -204,34 +204,39 @@ button {
 div.category-header:nth-of-type(1) {
   background-color: rgba(30, 144, 255, 1);
 }
-div.category-header:nth-of-type(1) ~ .activity .name {
+div.category-header:nth-of-type(1) ~ .activity .name,
+div.category-header:nth-of-type(1) ~ .activity .spacer {
   background-color: rgba(30, 144, 255, 0.2);
 }
 
 div.category-header:nth-of-type(2) {
   background-color: rgba(45, 205, 75, 1);
 }
-div.category-header:nth-of-type(2) ~ .activity .name {
+div.category-header:nth-of-type(2) ~ .activity .name,
+div.category-header:nth-of-type(2) ~ .activity .spacer {
   background-color: rgba(45, 205, 75, 0.2);
 }
 
 div.category-header:nth-of-type(3) {
   background-color: rgba(238, 12, 12, 1);
 }
-div.category-header:nth-of-type(3) ~ .activity .name {
+div.category-header:nth-of-type(3) ~ .activity .name,
+div.category-header:nth-of-type(3) ~ .activity .spacer {
   background-color: rgba(238, 12, 12, 0.2);
 }
 
 div.category-header:nth-of-type(4) {
   background-color: rgba(255, 195, 5, 1);
 }
-div.category-header:nth-of-type(4) ~ .activity .name {
+div.category-header:nth-of-type(4) ~ .activity .name,
+div.category-header:nth-of-type(4) ~ .activity .spacer {
   background-color: rgba(255, 195, 5, 0.2);
 }
 div.category-header:nth-of-type(5) {
   background-color: rgba(140, 85, 135, 1);
 }
-div.category-header:nth-of-type(5) ~ .activity .name {
+div.category-header:nth-of-type(5) ~ .activity .name,
+div.category-header:nth-of-type(5) ~ .activity .spacer {
   background-color: rgba(140, 85, 135, 0.2);
 }
 
@@ -284,17 +289,17 @@ div.category-header:nth-of-type(5) ~ .activity .name {
   background-color: rgb(238, 12, 12) !important;
 }
 /* .arts-martiaux.activity .name, .arts-martiaux .spacer{
-	  background-color:rgba(116,33,211,0.2);
-  }
-  .arts-martiaux.category-header{
-	  background-color:rgb(116, 33, 211);
-  } */
+		background-color:rgba(116,33,211,0.2);
+	}
+	.arts-martiaux.category-header{
+		background-color:rgb(116, 33, 211);
+	} */
 /* .danse.activity .name{
-	  background-color:rgba(14,179,221,0.2);
-  }
-  .danse.category-header{
-	  background-color:rgb(14, 179, 221);
-  } */
+		background-color:rgba(14,179,221,0.2);
+	}
+	.danse.category-header{
+		background-color:rgb(14, 179, 221);
+	} */
 .category-header {
   color: white;
   margin-top: 15px;
@@ -499,8 +504,8 @@ select:not(#category-drop) {
   min-width: 75px;
 }
 /* select:focus{
-	  min-width:150px;
-  } */
+		min-width:150px;
+	} */
 option {
   background-color: white !important;
 }
@@ -522,13 +527,13 @@ input {
 /* ------------------------------ */
 
 /* .activity.grid,
-  .category-header .grid {
-	grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
-	grid-template-rows: minmax(40px, auto);
-	grid-template-areas:
-	  "name info age schedule session price cours start signup"
-	  "spacer details details details details details details details details";
-  } */
+	.category-header .grid {
+	  grid-template-columns: 2fr 0.5fr 1fr 2fr 1fr 1fr 0.75fr 1fr 1fr;
+	  grid-template-rows: minmax(40px, auto);
+	  grid-template-areas:
+		"name info age schedule session price cours start signup"
+		"spacer details details details details details details details details";
+	} */
 
 .cours-virtuels.activity .name,
 .cours-virtuels .spacer {
