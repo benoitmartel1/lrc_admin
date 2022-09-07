@@ -120,22 +120,23 @@ function formatSession(sDate, eDate) {
   var e = eDate.month();
 
   switch (true) {
-    case s < 3:
+    case s < 2:
       return text.sessions.winter;
       break;
 
-    case s < 5:
+    case s < 4:
       return text.sessions.spring;
       break;
-    case s < 9:
+
+    case s < 8:
       return text.sessions.summer;
       break;
 
-    case s > 8 && e > 8:
+    case s > 7 && e > 7:
       return text.sessions.fall;
       break;
 
-    case s > 8 && e < 6:
+    case s > 7 && e < 5:
       return text.sessions.yearly;
       break;
   }
@@ -238,44 +239,45 @@ function createCategoryHeader(cat) {
     text: cat.name,
     class: "top",
   });
-  var columnHeaders = '<div class="grid">\n\t\t\t<div class="column-header name">'
-    .concat(
-      text.columnHeaders.activity,
-      '</div>\t\n\t\t\t<div class="column-header info">'
-    )
-    .concat(
-      text.columnHeaders.info,
-      '</div>\t\t\n\t\t\t<div class="column-header age">'
-    )
-    .concat(
-      text.columnHeaders.age,
-      '</div>\n\t\t\t<div class="column-header schedule">'
-    )
-    .concat(
-      text.columnHeaders.schedule,
-      '</div>\t\n\t\t\t<div class="column-header session">'
-    )
-    .concat(
-      text.columnHeaders.session,
-      '</div>\t\n\t\t\t<div class="column-header price">'
-    )
-    .concat(
-      text.columnHeaders.price,
-      '</div>\t\n\t\t\t<div class="column-header cours">'
-    )
-    .concat(
-      text.columnHeaders.duration,
-      '</div>\n\t\t\t<div class="column-header location">'
-    )
-    .concat(
-      text.columnHeaders.location,
-      '</div>\t\n\t\t\t<div class="column-header staff">'
-    )
-    .concat(
-      text.columnHeaders.staff,
-      '</div>\n\t\t\t<div class="column-header start">'
-    )
-    .concat(text.columnHeaders.start, "</div>\t\n</div>");
+  var columnHeaders =
+    '<div class="grid">\n\t\t\t<div class="column-header name">'
+      .concat(
+        text.columnHeaders.activity,
+        '</div>\t\n\t\t\t<div class="column-header info">'
+      )
+      .concat(
+        text.columnHeaders.info,
+        '</div>\t\t\n\t\t\t<div class="column-header age">'
+      )
+      .concat(
+        text.columnHeaders.age,
+        '</div>\n\t\t\t<div class="column-header schedule">'
+      )
+      .concat(
+        text.columnHeaders.schedule,
+        '</div>\t\n\t\t\t<div class="column-header session">'
+      )
+      .concat(
+        text.columnHeaders.session,
+        '</div>\t\n\t\t\t<div class="column-header price">'
+      )
+      .concat(
+        text.columnHeaders.price,
+        '</div>\t\n\t\t\t<div class="column-header cours">'
+      )
+      .concat(
+        text.columnHeaders.duration,
+        '</div>\n\t\t\t<div class="column-header location">'
+      )
+      .concat(
+        text.columnHeaders.location,
+        '</div>\t\n\t\t\t<div class="column-header staff">'
+      )
+      .concat(
+        text.columnHeaders.staff,
+        '</div>\n\t\t\t<div class="column-header start">'
+      )
+      .concat(text.columnHeaders.start, "</div>\t\n</div>");
   var header = $("<div>", {
     class: convertToClassSafe(cat.name) + " category-header",
   })
