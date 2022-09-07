@@ -135,7 +135,7 @@ function fillGrid(data, text) {
     //Create the list item for every activity
     $(categoryActivities).each(function () {
       this.Name = formatName(this.Name);
-
+      console.log(this);
       // var sDate = new Date(this.StartDate);
       // var eDate = new Date(this.EndDate);
       // console.log(sDate);
@@ -150,6 +150,16 @@ function fillGrid(data, text) {
         sessionsToDisplay.indexOf(formatSession(sDate, eDate)) > -1
       ) {
         var signupText = editMode == true ? text.edit : text.signup;
+
+        var isRegistering = false;
+        //If current date within registration dates
+        if (this.RegistrationPeriods.length > 0) {
+          var now = new Date();
+          var isRegistering =
+            new Date(this.RegistrationPeriods[0].EndTime) > now &&
+            now > new Date(this.RegistrationPeriods[0].StartTime);
+        }
+
         var dur =
           eDate.hours() +
           eDate.minutes() / 60 -
@@ -166,6 +176,16 @@ function fillGrid(data, text) {
         for (var i in this.Tags) {
           tags += this.Tags[i].Name + " ";
         }
+
+        var signUpButton =
+          this.SpotsRemaining == 0
+            ? "<button class='isFull btn btn-light btn-sm'>" +
+              text.full +
+              "</button>"
+            : "<button type='button' class='btn btn-success btn-sm'>" +
+              signupText +
+              "</button>";
+
         $(".list").append(
           `<li class="activity grid ${categoryClass}" data-id='${
             this.Id
@@ -187,16 +207,7 @@ function fillGrid(data, text) {
 							<div class="staff">${staff ? staff.split(" ")[0] : ""}</div>
 							<div class="start">${formatStartingDate(sDate)}</div>
 							<div class="spacer"></div>
-							<div class="signup">
-							${
-                this.SpotsRemaining == 0
-                  ? "<button class='isFull btn btn-light btn-sm'>" +
-                    text.full +
-                    "</button>"
-                  : "<button type='button' class='btn btn-success btn-sm'>" +
-                    signupText +
-                    "</button>"
-              }</div>
+							<div class="signup">${isRegistering == true ? signUpButton : ""}</div>
 						<div class="details hidden">
 							<div class="grid">
 								<div class="thumb" style="background-image:url('${this.PictureUrl}')"></div>
@@ -518,18 +529,34 @@ function fillGrid(data, text) {
       .replace(/^url\(['"](.+)['"]\)/, "$1");
     $(target).find(".grid>div").css("opacity", 0);
     $(target).slideToggle(250, function () {
-      $("<img/>")
-        .attr("src", imgSrc)
-        .on("load", function () {
-          $(target)
-            .find(".grid>div")
-            .each(function (index) {
-              // console.log(this);
-              $(this)
-                .delay(100 * index)
-                .animate({ opacity: 1 }, 300);
-            });
-        });
+      var isNullImage = $(target)
+        .find(".thumb")
+        .css("background-image")
+        .includes("null");
+
+      if (!isNullImage) {
+        $("<img/>")
+          .attr("src", imgSrc)
+          .on("load", function () {
+            $(target)
+              .find(".grid>div")
+              .each(function (index) {
+                // console.log(this);
+                $(this)
+                  .delay(100 * index)
+                  .animate({ opacity: 1 }, 300);
+              });
+          });
+      } else {
+        $(target)
+          .find(".grid>div")
+          .each(function (index) {
+            // console.log(this);
+            $(this)
+              .delay(100 * index)
+              .animate({ opacity: 1 }, 300);
+          });
+      }
     });
   }
 
